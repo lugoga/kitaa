@@ -1,0 +1,17 @@
+---
+page-layout: full
+title-block-banner: true
+---
+
+Learning to code with the R language opens up a vast world of possibilities in data analysis, visualization, and spatial data handling. While the journey may seem daunting at first, having the right resources can significantly ease the learning curve. Here's a curated list of relevant books to help you navigate through the intricacies of R programming:
+
+
+1. [R for Data Science](https://r4ds.hadley.nz/)  R for Data Science is a practical guide that serves as an excellent starting point for beginners. Authored by Hadley Wickham and Garrett Grolemund, this book introduces R programming for data analysis and visualization, with a strong emphasis on the tidyverse approach. Through hands-on examples and clear explanations, readers learn how to manipulate, explore, and visualize data effectively.
+
+1. [Modern R with the tidyverse](https://modern-rstats.eu/) takes a contemporary approach to R programming, focusing on modern packages, particularly those from the tidyverse ecosystem. Written by authors Thomas Mock and Rick Scavetta, this book goes beyond traditional R concepts, introducing readers to efficient data manipulation techniques and best practices for writing clean, readable code.
+
+
+1. [Practical Spatial Data](https://lugoga.github.io/geomarine/) is an invaluable resource for those interested in working with spatial data, particularly in coastal and marine environments. Authored by Masumbuko Semba, this book provides a comprehensive introduction to R programming with a specific focus on handling spatial data. From importing geographic information to performing spatial analysis, readers gain practical insights and hands-on experience in utilizing R for geospatial applications.
+
+1. [Geospatial Technology and Spatial Analysis in R](https://lugoga.github.io/spatialgoR/) delves deeper into the realm of geospatial data analysis using R. Written by Masumbuko Semba, this book explores the latest tools and packages available for modern spatial data handling and manipulation. Through step-by-step tutorials and real-world examples, readers learn how to harness the power of R for tasks such as geographic visualization, spatial statistics, and remote sensing analysis.
+

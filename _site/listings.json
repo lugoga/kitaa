@@ -1,0 +1,20 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/datastructures/index.html",
+      "/posts/dataTypes/index.html",
+      "/posts/get started/index.html",
+      "/posts/timeline/index.html"
+    ]
+  },
+  {
+    "listing": "/archive.html",
+    "items": [
+      "/posts/datastructures/index.html",
+      "/posts/dataTypes/index.html",
+      "/posts/get started/index.html",
+      "/posts/timeline/index.html"
+    ]
+  }
+]

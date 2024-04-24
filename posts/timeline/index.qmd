@@ -1,0 +1,19 @@
+---
+title: "Creating a Timeline graphic using R and ggplot2"
+description: "Creating a timeline graphic using ggplot2, which is a powerful data visualization library in R"
+author: "Masumbuko Semba"
+date: "2023-11-24"
+date-modified: "2023-12-24"
+categories: [visualization, code, analysis]
+image: "milestone_timeline-01.png"
+
+---
+
+
+In this post we’re going to be using R and ggplot2 to create a project timeline with milestones and milestone statuses.
+
+The finished product will look like as illustrated in @fig-milestone
+
+![A timeline of the Milestone for learning Modern](milestone_timeline-01.png){#fig-milestone}
+
+
