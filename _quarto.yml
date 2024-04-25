@@ -3,17 +3,22 @@ project:
   output-dir: docs
 
 website:
-  title: "Penya"
+  title: "Illuminate Data with R"
+  back-to-top-navigation: true
+  page-navigation: true
   navbar:
+    background: dark
+    search: false
+    # logo: 
     right:
-      - text: About
-        href: about.qmd
       - text: Meet People
         href: people.qmd
       - text: Presentations
         href: slides.qmd
       - text: Books
         href: books.qmd
+      - text: About
+        href: about.qmd
       - icon: github
         href: https://github.com/lugoga/kitaa
       # - icon: twitter
@@ -52,6 +57,7 @@ format:
   html:
     theme: litera
     css: styles.css
+    include-after-body: footer.html
 
 
 
