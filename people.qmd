@@ -12,7 +12,7 @@ title-block-banner: true
 
 ### Mr. Masumbuko Semba
 
-![](resources/semba.png){border-radius: 50%;}
+![](resources/semba.png)
 
 **Role**: Mentor
 
@@ -43,11 +43,11 @@ Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color
 
 ### Mr. Barakael Matulu
 
-![](resources/corals.png)
+![](resources/barakael.png)
 
 **Role**: Mentee
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Barakael works on the USAID Heshimu Bahari Project. He is an aquatic ecologist with interests in marine resources management and climate change issues. Recently, he has also developed an interest in automating data acquisition, processing, analysis, and reporting in R, as well as graphic design.
 
 
 :::
@@ -56,7 +56,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Emmanuel Mpina
 
-![](resources/corals.png)
+![](resources/mpina.png)
 
 **Role**: Facilitator 
 
@@ -73,7 +73,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Ailars MIMP
 
-![](resources/corals.png)
+![](resources/ailars.png)
 
 **Role**: Mentee
 
@@ -86,7 +86,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Alex Peter
 
-![](resources/corals.png)
+![](resources/alex.png)
 
 **Role**: Facilitator 
 
@@ -102,7 +102,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Amina Kibola
 
-![](resources/corals.png)
+![](resources/amina.png)
 
 **Role**: Mentee
 
@@ -115,7 +115,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Juma Charles
 
-![](resources/corals.png)
+![](resources/juma.png)
 
 **Role**: Facilitator 
 
@@ -131,7 +131,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Benjamini Mpinga
 
-![](resources/corals.png)
+![](resources/benja.png)
 
 **Role**: Mentee
 
@@ -144,7 +144,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Bernaid MPRU
 
-![](resources/corals.png)
+![](resources/bernaid.png)
 
 **Role**: Facilitator 
 
@@ -160,7 +160,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Dr. Deo Shirima
 
-![](resources/corals.png)
+![](resources/deo.png)
 
 **Role**: Mentee
 
@@ -173,7 +173,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Elika Kileo
 
-![](resources/corals.png)
+![](resources/elika.png)
 
 **Role**: Mentee 
 
@@ -189,7 +189,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Dr. Elikana
 
-![](resources/corals.png)
+![](resources/elikana.png)
 
 **Role**: Mentee
 
@@ -202,7 +202,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Glady K.
 
-![](resources/corals.png)
+![](resources/gladys.png)
 
 **Role**: Mentee 
 
@@ -218,7 +218,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Hilary Mkai
 
-![](resources/corals.png)
+![](resources/mkai.png)
 
 **Role**: Mentee
 
@@ -231,7 +231,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Humphrey Mahundi
 
-![](resources/corals.png)
+![](resources/mahundi.png)
 
 **Role**: Mentee 
 
@@ -247,7 +247,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Ikumbi
 
-![](resources/corals.png)
+![](resources/ikumbi.png)
 
 **Role**: Mentee
 
@@ -260,7 +260,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Kaijage
 
-![](resources/corals.png)
+![](resources/kaijage.png)
 
 **Role**: Facilitator 
 
@@ -276,7 +276,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Kassim
 
-![](resources/corals.png)
+![](resources/kassim.png)
 
 **Role**: Mentee
 
@@ -289,7 +289,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Kessy Revocatus
 
-![](resources/corals.png)
+![](resources/kessy.png)
 
 **Role**: Facilitator 
 
@@ -305,7 +305,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Kulwa Mtaki
 
-![](resources/corals.png)
+![](resources/kulwa.png)
 
 **Role**: Mentee
 
@@ -318,7 +318,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Maria Pentzel
 
-![](resources/corals.png)
+![](resources/maria.png)
 
 **Role**: Facilitator 
 
@@ -334,7 +334,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Paschal Mkongola
 
-![](resources/corals.png)
+![](resources/paschal.png)
 
 **Role**: Mentee
 
@@ -347,7 +347,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Sam Job
 
-![](resources/corals.png)
+![](resources/job.png)
 
 **Role**: Facilitator 
 
@@ -363,7 +363,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr.Stephano Semba
 
-![](resources/corals.png)
+![](resources/stephano.png)
 
 **Role**: Mentee
 
@@ -376,7 +376,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Edward Senkondo
 
-![](resources/corals.png)
+![](resources/senkondo.png)
 
 **Role**: Facilitator 
 
@@ -392,7 +392,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr.Shadrack Nyanda
 
-![](resources/corals.png)
+![](resources/nyanda.png)
 
 **Role**: Mentee
 
@@ -405,7 +405,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. January Wegoro
 
-![](resources/corals.png)
+![](resources/wegoro.png)
 
 **Role**: Mentee 
 
@@ -421,7 +421,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Zac Maritine
 
-![](resources/corals.png)
+![](resources/zac.png)
 
 **Role**: Facilitator
 
@@ -434,7 +434,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Edina G
 
-![](resources/corals.png)
+![](resources/edna.png)
 
 **Role**: Mentee 
 
@@ -450,7 +450,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. James
 
-![](resources/corals.png)
+![](resources/james.png)
 
 **Role**: Mentee
 
@@ -463,7 +463,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Ms. Kally 
 
-![](resources/corals.png)
+![](resources/kally.png)
 
 **Role**: Mentee 
 
@@ -479,7 +479,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Namate
 
-![](resources/corals.png)
+![](resources/namate.png)
 
 **Role**: Mentee
 
@@ -492,6 +492,38 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ### Mr. Samwel
 
+![](resources/samwel.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+:::
+:::
+
+
+
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Julius Olumeh
+
+![](resources/julius.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. xxxxx
+
 ![](resources/corals.png)
 
 **Role**: Facilitator 
@@ -500,6 +532,9 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 :::
 :::
+
+
+
 
 
 *****************
@@ -523,7 +558,6 @@ leaflet() %>%
 ```
 
 
-**********
 
 
 ::: {#fig-cern}
