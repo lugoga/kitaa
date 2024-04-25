@@ -37,7 +37,8 @@ title-block-banner: true
 
 ```{r}
 #| eval: true
-#| 
+#| warning: false
+#| message: false
 
 chinook = readr::read_csv(
   file = "https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv")
@@ -56,6 +57,11 @@ chinook |>
 
 
 ```{r}
+#| eval: true
+#| warning: false
+#| message: false
+
+
 co = readr::read_csv("https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv")
 ```
 
@@ -66,3 +72,10 @@ co |>
   FSA::headtail() |> 
   flextable::flextable()
 ```
+
+
+::: callout-info
+
+Note that you can import the dataset from online API to Rstudio with easy as the chunk above highlight
+
+:::

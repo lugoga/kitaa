@@ -15,7 +15,7 @@ website:
       - text: People
         href: people.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/lugoga/kitaa
       - icon: twitter
       #   href: https://twitter.com
       # - icon: youtube
