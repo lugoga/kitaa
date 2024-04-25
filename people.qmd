@@ -56,6 +56,33 @@ Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color
 
 
 
+::: columns
+::: {.column width="50%"}
+
+### Mr. Kassim
+
+![](resources/kassim.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Kessy Revocatus
+
+![](resources/kessy.png)
+
+**Role**: Mentor 
+
+Kessy Revocatus is a mathematician  current teaches at Hannah Bennie Schools (HBS) Nursery and Primary School. Recognising the importance of data in driving business, he decided to learn R programming aimed to automate data analysis, model and reporting.
+
+:::
+:::
+
 
 
 ::: columns
@@ -290,33 +317,6 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 :::
 
 
-
-::: columns
-::: {.column width="50%"}
-
-### Mr. Kassim
-
-![](resources/kassim.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-
-:::
-
-::: {.column width="50%"}
-
-### Mr. Kessy Revocatus
-
-![](resources/kessy.png)
-
-**Role**: Mentor 
-
-Kessy Revocatus is a mathematician  current teaches at Hannah Bennie Schools (HBS) Nursery and Primary School. Recognising the importance of data in driving business, he has made a strategic decision to enhance his teaching toolkit by learning to code using R programming language. With the skills, he plan to use data to generate insights that support decision making processes
-
-:::
-:::
 
 
 
