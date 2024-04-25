@@ -1,7 +1,8 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/archive.html",
     "items": [
+      "/posts/stats_intro/index.html",
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
       "/posts/get started/index.html",
@@ -9,8 +10,9 @@
     ]
   },
   {
-    "listing": "/archive.html",
+    "listing": "/index.html",
     "items": [
+      "/posts/stats_intro/index.html",
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
       "/posts/get started/index.html",

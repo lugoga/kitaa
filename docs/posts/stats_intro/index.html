@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Masumbuko Semba">
+<meta name="dcterms.date" content="2024-04-25">
+<meta name="description" content="examining measures of central tendency and dispersion, we can gain valuable insights into the characteristics and distribution of a dataset">
 
-<title>Illuminate Data with R</title>
+<title>Illuminate Data with R - Understanding Descriptive Statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,26 +98,24 @@ cookieconsent.run({
 });
 </script> 
   
-<link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Illuminate Data with R">
-<meta name="twitter:description" content="">
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Illuminate Data with R - Understanding Descriptive Statistics">
+<meta name="twitter:description" content="examining measures of central tendency and dispersion, we can gain valuable insights into the characteristics and distribution of a dataset">
 <meta name="twitter:image" content="thumbnail_blog.png">
 <meta name="twitter:creator" content="@semba2024">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Illuminate Data with R</span>
     </a>
   </div>
@@ -159,19 +126,19 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
+    <a class="nav-link" href="../../people.html"> 
 <span class="menu-text">Meet People</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./slides.html" aria-current="page"> 
+    <a class="nav-link" href="../../slides.html"> 
 <span class="menu-text">Presentations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./books.html"> 
+    <a class="nav-link" href="../../books.html"> 
 <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -180,7 +147,7 @@ cookieconsent.run({
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./blog.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -208,7 +175,7 @@ cookieconsent.run({
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./archive.html"> 
+    <a class="nav-link" href="../../archive.html"> 
 <span class="menu-text">Archive</span></a>
   </li>  
 </ul>
@@ -219,81 +186,96 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Understanding Descriptive Statistics</h1>
+                  <div>
+        <div class="description">
+          examining measures of central tendency and dispersion, we can gain valuable insights into the characteristics and distribution of a dataset
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Masumbuko Semba </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 25, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<section id="learning-agenda" class="level3">
-<h3 class="anchored" data-anchor-id="learning-agenda"><span style="background: lightblue; color: color">Learning Agenda</span></h3>
-<ol type="1">
-<li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/1.prerequisite.html#/key-concepts">An introduction</a></p></li>
-<li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/2.%20installs.html#/title-slide">Get familiar with R and Rstudio</a></p></li>
-<li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/4.data_types.html#/title-slide">Data types</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/lugoga/kitaa/main/slides/5.data_structure.html">Data structures</a></p></li>
-<li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/6.xlds_csv_format.html">Reading and writing data in Rstudio</a></p></li>
-<li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/7.%20data_manipulation.html#/title-slide">Tidying Data with tidyverse</a></p></li>
-<li><p>Plotting</p>
-<ol type="1">
-<li><a href="https://raw.githack.com/lugoga/kitaa/main/slides/7_data_visualization.html#/title-slide">Plotting and Visualization_A</a></li>
-<li><a href="https://raw.githack.com/lugoga/kitaa/main/slides/8_data_visualization.html">Plotting and Visualization_B</a></li>
-<li><a href="https://raw.githack.com/lugoga/kitaa/main/slides/9_ggplot2_continues.html">Plotting and Visualization_C</a></li>
-</ol></li>
-<li><p>Data Manipulation</p></li>
-<li><p>Descriptive Statistics</p></li>
-<li><p>Inferential Statistics</p></li>
-<li><p>Modelling and simulation</p></li>
-<li><p>Spatial Handling and Analysis</p></li>
-<li><p>Further topics</p>
-<ol type="1">
-<li>GIt and Github</li>
-<li>Reproducibility with Quarto</li>
-<li>Websites and blog</li>
-<li>Using python from Rstudio</li>
-<li>Generating HTML, PDF and Word Reports</li>
-</ol></li>
-</ol>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In the world of statistics, there are three main types that are commonly used to analyze and interpret data: descriptive, inferential, and Bayesian. Each type serves a specific purpose and provides valuable insights into different aspects of the data.</p>
+<p>While descriptive statistics provides valuable insights into the basic features of a dataset (<a href="#fig-ds" class="quarto-xref">Figure&nbsp;1</a>), inferential statistics takes it a step further by making inferences or predictions about a population based on a sample. This type of statistics involves hypothesis testing, confidence intervals, and regression analysis, among other techniques.</p>
+<p>Bayesian statistics, on the other hand, provides a framework for updating beliefs about parameters or hypotheses based on new evidence or data. It differs from traditional frequentist statistics in that it incorporates prior knowledge or beliefs about the parameters being estimated.</p>
+<div id="fig-ds" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="statistics-01.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The common metrics of descriptive statistics
+</figcaption>
+</figure>
+</div>
+<p>In future sessions, we will delve deeper into inferential and Bayesian statistics to explore their applications and implications in data analysis. In this blog post, we will focus on descriptive statistics (<a href="#fig-ds" class="quarto-xref">Figure&nbsp;1</a>) and explore the central tendency theorem, as well as the measures of center and dispersion.</p>
 </section>
-<section id="datasets" class="level3">
-<h3 class="anchored" data-anchor-id="datasets"><span style="background: lightblue; color: color">Datasets</span></h3>
-<ol type="1">
-<li><strong>Chinook</strong> – contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below;</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>chinook <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="tabwid"><style>.cl-7e56444e{}.cl-7e4d3d2c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-7e514cfa{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7e514d04{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7e515e3e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7e515e48{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7e515e49{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7e515e4a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7e515e52{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7e515e53{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-7e56444e"><thead><tr style="overflow-wrap:break-word;"><th class="cl-7e515e3e"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">tl</span></p></th><th class="cl-7e515e3e"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">w</span></p></th><th class="cl-7e515e48"><p class="cl-7e514d04"><span class="cl-7e4d3d2c">loc</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">120.1</span></p></td><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">17.9</span></p></td><td class="cl-7e515e4a"><p class="cl-7e514d04"><span class="cl-7e4d3d2c">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">115.0</span></p></td><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">17.2</span></p></td><td class="cl-7e515e4a"><p class="cl-7e514d04"><span class="cl-7e4d3d2c">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">111.2</span></p></td><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">16.8</span></p></td><td class="cl-7e515e4a"><p class="cl-7e514d04"><span class="cl-7e4d3d2c">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">29.2</span></p></td><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">0.3</span></p></td><td class="cl-7e515e4a"><p class="cl-7e514d04"><span class="cl-7e4d3d2c">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">25.2</span></p></td><td class="cl-7e515e49"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">0.3</span></p></td><td class="cl-7e515e4a"><p class="cl-7e514d04"><span class="cl-7e4d3d2c">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7e515e52"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">18.0</span></p></td><td class="cl-7e515e52"><p class="cl-7e514cfa"><span class="cl-7e4d3d2c">0.1</span></p></td><td class="cl-7e515e53"><p class="cl-7e514d04"><span class="cl-7e4d3d2c">Puyehue</span></p></td></tr></tbody></table></div>
-</div>
-</div>
-<ol type="1">
-<li><strong>Mauna Loa Atmospheric CO2 Concentration</strong>– store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>`</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>co <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="tabwid"><style>.cl-7ef97de4{}.cl-7ef10786{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-7ef4238a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7ef43cbc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7ef43cc6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7ef43cc7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-7ef97de4"><thead><tr style="overflow-wrap:break-word;"><th class="cl-7ef43cbc"><p class="cl-7ef4238a"><span class="cl-7ef10786">day</span></p></th><th class="cl-7ef43cbc"><p class="cl-7ef4238a"><span class="cl-7ef10786">months</span></p></th><th class="cl-7ef43cbc"><p class="cl-7ef4238a"><span class="cl-7ef10786">year</span></p></th><th class="cl-7ef43cbc"><p class="cl-7ef4238a"><span class="cl-7ef10786">co2</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">15</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">1</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">1,959</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">315.42</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">15</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">2</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">1,959</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">316.31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">15</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">3</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">1,959</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">316.50</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">15</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">10</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">1,997</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">360.83</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">15</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">11</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">1,997</span></p></td><td class="cl-7ef43cc6"><p class="cl-7ef4238a"><span class="cl-7ef10786">362.49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7ef43cc7"><p class="cl-7ef4238a"><span class="cl-7ef10786">15</span></p></td><td class="cl-7ef43cc7"><p class="cl-7ef4238a"><span class="cl-7ef10786">12</span></p></td><td class="cl-7ef43cc7"><p class="cl-7ef4238a"><span class="cl-7ef10786">1,997</span></p></td><td class="cl-7ef43cc7"><p class="cl-7ef4238a"><span class="cl-7ef10786">364.34</span></p></td></tr></tbody></table></div>
-</div>
-</div>
-<div class="callout-info">
-<p>Note that you can import the dataset from online API to Rstudio with easy as the chunk above highlight</p>
-</div>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
+<p>Descriptive statistics is the branch of statistics that deals with summarizing and describing the main features of a dataset. It provides simple summaries about the sample and the measures. This type of statistics is particularly useful for gaining a basic understanding of the data before diving into more complex analyses.</p>
+</section>
+<section id="central-tendency-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="central-tendency-theorem">Central Tendency Theorem</h2>
+<p>One of the fundamental concepts in descriptive statistics is the central tendency theorem, which refers to the tendency of data to cluster around a central value.</p>
+<section id="measure-of-center" class="level3">
+<h3 class="anchored" data-anchor-id="measure-of-center">Measure of Center:</h3>
+<p>The three main measures of central tendency are the mean, median, and mode. The mean is the average of all the values in a dataset, calculated by adding up all the values and dividing by the total number of values. The median is the middle value in a dataset when it is ordered from least to greatest, and the mode is the value that appears most frequently.</p>
+<ul>
+<li><p>The mean, also known as the average, is calculated by adding up all the values in a dataset and dividing by the number of values. It is sensitive to extreme values, also known as outliers.</p></li>
+<li><p>The median is the middle value in a dataset when the values are arranged in ascending order. It is less affected by extreme values compared to the mean.</p></li>
+<li><p>The mode is the value that appears most frequently in a dataset. A dataset can have one mode (unimodal), two modes (bimodal), or more than two modes (multimodal).</p></li>
+</ul>
+<p>These measures provide different perspectives on the center of a dataset and can help to understand where the bulk of the data is located. For example, if the mean, median, and mode are all close in value, it suggests that the data is symmetrically distributed. On the other hand, if these measures are significantly different, it may indicate that the data is skewed.</p>
+</section>
+<section id="measure-of-dispersion" class="level3">
+<h3 class="anchored" data-anchor-id="measure-of-dispersion">Measure of Dispersion:</h3>
+<p>In addition to central tendency, descriptive statistics also includes measures of dispersion, which quantify the spread or variability of a dataset. The two common measures of dispersion are the range and standard deviation.</p>
+<ul>
+<li><p>The <strong>range</strong> is simply the difference between the largest and smallest values in a dataset. While it provides a simple measure of spread, it is heavily influenced by outliers.</p></li>
+<li><p>The <strong>standard deviation</strong> measures the amount of variation or dispersion of a set of values. It indicates how much the values deviate from the mean. A smaller standard deviation indicates that the values are close to the mean, while a larger standard deviation indicates that the values are more spread out.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Understanding both central tendency and dispersion is essential for gaining insights into the characteristics of a dataset. Together, these measures can help to identify patterns, trends, and potential outliers within the data.</p>
 
 
 </section>
@@ -699,6 +681,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">

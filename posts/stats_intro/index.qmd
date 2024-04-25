@@ -1,0 +1,59 @@
+---
+title: "Understanding Descriptive Statistics"
+description: "examining measures of central tendency and dispersion, we can gain valuable insights into the characteristics and distribution of a dataset"
+author: "Masumbuko Semba"
+date: "2024-04-25"
+
+---
+
+
+## Introduction
+
+In the world of statistics, there are three main types that are commonly used to analyze and interpret data: descriptive, inferential, and Bayesian. Each type serves a specific purpose and provides valuable insights into different aspects of the data. 
+
+While descriptive statistics provides valuable insights into the basic features of a dataset (@fig-ds), inferential statistics takes it a step further by making inferences or predictions about a population based on a sample. This type of statistics involves hypothesis testing, confidence intervals, and regression analysis, among other techniques.
+
+Bayesian statistics, on the other hand, provides a framework for updating beliefs about parameters or hypotheses based on new evidence or data. It differs from traditional frequentist statistics in that it incorporates prior knowledge or beliefs about the parameters being estimated.
+
+![The common metrics of descriptive statistics](statistics-01.png){#fig-ds}
+
+In future sessions, we will delve deeper into inferential and Bayesian statistics to explore their applications and implications in data analysis. In this blog post, we will focus on descriptive statistics (@fig-ds) and explore the central tendency theorem, as well as the measures of center and dispersion.
+
+
+## Descriptive Statistics
+
+Descriptive statistics is the branch of statistics that deals with summarizing and describing the main features of a dataset. It provides simple summaries about the sample and the measures. This type of statistics is particularly useful for gaining a basic understanding of the data before diving into more complex analyses.
+
+## Central Tendency Theorem
+
+One of the fundamental concepts in descriptive statistics is the central tendency theorem, which refers to the tendency of data to cluster around a central value. 
+
+
+
+### Measure of Center:
+
+The three main measures of central tendency are the mean, median, and mode. The mean is the average of all the values in a dataset, calculated by adding up all the values and dividing by the total number of values. The median is the middle value in a dataset when it is ordered from least to greatest, and the mode is the value that appears most frequently.
+
+
+
++ The mean, also known as the average, is calculated by adding up all the values in a dataset and dividing by the number of values. It is sensitive to extreme values, also known as outliers. 
+
++ The median is the middle value in a dataset when the values are arranged in ascending order. It is less affected by extreme values compared to the mean.
+
++ The mode is the value that appears most frequently in a dataset. A dataset can have one mode (unimodal), two modes (bimodal), or more than two modes (multimodal).
+
+These measures provide different perspectives on the center of a dataset and can help to understand where the bulk of the data is located. For example, if the mean, median, and mode are all close in value, it suggests that the data is symmetrically distributed. On the other hand, if these measures are significantly different, it may indicate that the data is skewed.
+
+### Measure of Dispersion:
+
+In addition to central tendency, descriptive statistics also includes measures of dispersion, which quantify the spread or variability of a dataset. The two common measures of dispersion are the range and standard deviation.
+
++ The **range** is simply the difference between the largest and smallest values in a dataset. While it provides a simple measure of spread, it is heavily influenced by outliers.
+
++ The **standard deviation** measures the amount of variation or dispersion of a set of values. It indicates how much the values deviate from the mean. A smaller standard deviation indicates that the values are close to the mean, while a larger standard deviation indicates that the values are more spread out.
+
+
+## Summary
+
+Understanding both central tendency and dispersion is essential for gaining insights into the characteristics of a dataset. Together, these measures can help to identify patterns, trends, and potential outliers within the data.
+
