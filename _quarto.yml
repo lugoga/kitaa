@@ -8,15 +8,15 @@ website:
     right:
       - text: About
         href: about.qmd
-      - text: Slides
+      - text: Meet People
+        href: people.qmd
+      - text: Presentations
         href: slides.qmd
       - text: Books
         href: books.qmd
-      - text: People
-        href: people.qmd
       - icon: github
         href: https://github.com/lugoga/kitaa
-      - icon: twitter
+      # - icon: twitter
       #   href: https://twitter.com
       # - icon: youtube
       #   href: https://www.youtube.com/user/Alfrodo123
