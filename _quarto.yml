@@ -17,6 +17,8 @@ website:
         href: slides.qmd
       - text: Books
         href: books.qmd
+      - text: Datasets
+        href: data.qmd
       - text: About
         href: about.qmd
       - icon: github
@@ -34,6 +36,8 @@ website:
             href: https://semba-blog.netlify.app/
           - text: Semba website
             href: https://lugoga.github.io/semba-quarto/
+          - text: Nyamisi blog
+            href: https://nyamisi.github.io/nyamisi/blog.html
           - text: R Weekly
             href: https://rweekly.org/
           - text: R Bloggers

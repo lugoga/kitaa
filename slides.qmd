@@ -4,7 +4,7 @@ title-block-banner: true
 ---
 
 
-### [Learning Agenda]{style="background: lightblue; color: color"} 
+### [Our Agenda]{style="background: lightblue; color: color"} 
 
 
 1. [An introduction](https://raw.githack.com/lugoga/kitaa/main/slides/1.prerequisite.html#/key-concepts)
@@ -30,52 +30,4 @@ title-block-banner: true
     1. Using python from Rstudio
     1. Generating HTML, PDF and Word Reports
     
-    
-### [Datasets]{style="background: lightblue; color: color"} 
-
-1. **Chinook** -- contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below; 
-
-```{r}
-#| eval: true
-#| warning: false
-#| message: false
-
-chinook = readr::read_csv(
-  file = "https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv")
-
-
-```
-
-```{r}
-chinook |> 
-  FSA::headtail() |> 
-  flextable::flextable()
-```
-
-
-1. **Mauna Loa Atmospheric CO2 Concentration**-- store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk
-
-
-```{r}
-#| eval: true
-#| warning: false
-#| message: false
-
-
-co = readr::read_csv("https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv")
-```
-
-`
-
-```{r}
-co |> 
-  FSA::headtail() |> 
-  flextable::flextable()
-```
-
-
-::: callout-info
-
-Note that you can import the dataset from online API to Rstudio with easy as the chunk above highlight
-
-:::
+ 

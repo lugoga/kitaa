@@ -36,8 +36,16 @@ Pause for a moment and ***Join us***
 
 **Role**: Mentor
 
-Semba works at the [Nelson Mandela African Institution of Science and Technology]{style="background: #433E49; color: #ABDFF1"}. He is an expert in data science and spatial analytics, web app development, typset and layout of printing material and graphic designer
+Semba works at the [Nelson Mandela African Institution of Science and Technology]{style="background: #433E49; color: #ABDFF1"}. He use programming language like R and Python to manage and analyse data and report using Web Applications, Website or blogs. Semba also design graphics and automate plots, maps for static and interactive document.
 
+<i class="fa-solid fa-envelope"></i>    [lugosemba@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>   [ +255 717 603 703]{style="color: #0069BF;"}
+
+
+<!-- {{< fa square-phone >}}   +255 717 603 703 -->
+
+<!-- {{< fa brands github >}} [Github](https://github.com/lugoga) -->
 
 :::
 
@@ -49,7 +57,11 @@ Semba works at the [Nelson Mandela African Institution of Science and Technology
 
 **Role**: Mentor
 
-Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color: #ABDFF1"}. She is phytoplankton exeprt using earth observation data and automate data acquisation, process, analyse, and report in R
+Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color: #ABDFF1"}. She is phytoplankton exeprt using earth observation data and automate data acquisation, process, analyse. She is excellent in using quarto that combine R codes and text to automate generation of technical documents in word, pdf or html formats.
+
+<i class="fa-solid fa-envelope"></i>    [nyamisip@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 717 516 711]{style="color: #0069BF;"}
 
 :::
 :::
@@ -67,6 +79,8 @@ Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color
 
 Kassim is an accountant and financial analyst. He works as an accountant at Letshego Faidika Bank and as a financial consultant at Asasi ya Uwezeshaji Tanzania under the USAID Heshimu Bahari Project.
 
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 743 956 226]{style="color: #0069BF;"}
+
 :::
 
 ::: {.column width="50%"}
@@ -77,8 +91,9 @@ Kassim is an accountant and financial analyst. He works as an accountant at Lets
 
 **Role**: Mentor 
 
-Kessy Revocatus is a mathematician  current teaches at Hannah Bennie Schools (HBS) Nursery and Primary School. Recognising the importance of data in driving business, he decided to learn R programming aimed to automate data analysis, model and reporting.
+Kessy Revocatus is a mathematician  current teaches at Hannah Bennie Schools School. Recognizing the role of data in driving business, he is learning R programming to automate data analysis, model and reporting.
 
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 711 396 392]{style="color: #0069BF;"}
 :::
 :::
 
@@ -163,10 +178,11 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ![](resources/juma.png)
 
-**Role**: Facilitator 
+**Role**: Mentee 
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Juma Charles works at TANESCO as land surveyor. He uses tools like Excel, ArcGIS Pro, and AutoCAD to transform spatial data into information. Currently, he's expanding his expertise by mastering R to enhance his career capabilities.
 
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 783 293 841]{style="color: #0069BF;"}
 :::
 :::
 
@@ -328,8 +344,11 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 **Role**: Mentee
 
+Ms. Kulwa Mtaki serves as a Marine Conservation Warden at the Marine Parks and Reserves Unit in Tanzania. Her expertise lies in fisheries and aquaculture, marine ecosystem monitoring, and data management and analysis using R-program. 
 
-Ms. Kulwa Mtaki serves as a Marine Conservation Warden at the Marine Parks and Reserves Unit in Tanzania. Her expertise lies in fisheries and aquaculture, marine ecosystem monitoring, and data management and analysis using R-program. For inquiries, you can reach her via email at mtakikulwa@yahoo.com or kulwa.mtaki@marineparks.go.tz.
+
+<i class="fa-solid fa-envelope"></i> mtakikulwa@yahoo.com
+
 
 :::
 
@@ -386,8 +405,9 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 **Role**: Mentee
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Stephano Semba is employed by the Tanzania Forestry Service (TFS) as a Forestry Conservator. Understanding the importance of programming, I have dedicated myself to acquiring knowledge in data science, report writing, and spatial analysis to address the challenges in conservation.
 
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 677 250 711]{style="color: #0069BF;"}
 
 :::
 
@@ -496,14 +516,15 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 ::: columns
 ::: {.column width="50%"}
 
-### Mr. Namate
+### Mr. Gabriely J. Namate
 
 ![](resources/namate.png)
 
 **Role**: Mentee
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Namate is employed at Pangani District Council as a Fisheries Officer and Aquaculture Specialist. Recognizing the power of R programming in data, he decided to learn and acquired necessary skills for statistical analysis, plotting, and sharing the finding.
 
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 654 989 271]{style="color: #0069BF;"}
 
 :::
 

@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Masumbuko Semba">
-<meta name="dcterms.date" content="2024-01-26">
-<meta name="description" content="Learn the primary data types in R, which are the foundation of data programming in R">
 
-<title>Illuminate Data with R - Understanding and using Data types in R</title>
+<title>Illuminate Data with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,24 +57,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,24 +129,26 @@ cookieconsent.run({
 });
 </script> 
   
+<link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Illuminate Data with R - Understanding and using Data types in R">
-<meta name="twitter:description" content="Learn the primary data types in R, which are the foundation of data programming in R">
-<meta name="twitter:image" content="data_types.png">
+<link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="Illuminate Data with R">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="thumbnail_blog.png">
 <meta name="twitter:creator" content="@semba2024">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Illuminate Data with R</span>
     </a>
   </div>
@@ -160,23 +159,23 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../people.html"> 
+    <a class="nav-link" href="./people.html"> 
 <span class="menu-text">Meet People</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../slides.html"> 
+    <a class="nav-link" href="./slides.html"> 
 <span class="menu-text">Presentations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../books.html"> 
+    <a class="nav-link" href="./books.html"> 
 <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../data.html"> 
+    <a class="nav-link active" href="./data.html" aria-current="page"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -185,7 +184,7 @@ cookieconsent.run({
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./blog.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -217,7 +216,7 @@ cookieconsent.run({
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../archive.html"> 
+    <a class="nav-link" href="./archive.html"> 
 <span class="menu-text">Archive</span></a>
   </li>  
 </ul>
@@ -228,159 +227,51 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Understanding and using Data types in R</h1>
-                  <div>
-        <div class="description">
-          Learn the primary data types in R, which are the foundation of data programming in R
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">visualization</div>
-                <div class="quarto-category">code</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Masumbuko Semba </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">January 26, 2024</p>
-      </div>
-    </div>
-    
-      <div>
-      <div class="quarto-title-meta-heading">Modified</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date-modified">January 26, 2024</p>
-      </div>
-    </div>
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
-
-<p>In the realm of data science and statistical analysis, mastering data types is akin to understanding the building blocks of a language. In R, a powerful statistical computing language, data types form the foundation upon which all analyses are conducted. From integers to dates, each data type serves a unique purpose and understanding their nuances is critical for efficient and accurate data manipulation.</p>
-<p>Understanding and effectively utilizing these core data types in R is essential for performing data analysis, visualization, and modeling tasks. Mastery of data types empowers data scientists to manipulate data efficiently and extract valuable insights from complex datasets. Whether performing arithmetic operations, manipulating text, or handling temporal information, the versatility of R’s data types makes it a powerful tool for data analysis and statistical computing.</p>
-<p>In this guide, we will delve into the core data types in R, exploring their characteristics and providing illustrative examples. Before we dive in, let pause for a moment and watch video in <a href="#fig-datatypes" class="quarto-xref">Figure&nbsp;1</a></p>
-<div id="fig-datatypes" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/VtUVQWl0aRA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="datasets" class="level3">
+<h3 class="anchored" data-anchor-id="datasets"><span style="background: lightblue; color: color">Datasets</span></h3>
+<ol type="1">
+<li><strong>Chinook</strong> – contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below;</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Primary data types in R
-</figcaption>
-</figure>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>chinook <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-da770d80{}.cl-da6fd768{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-da72f894{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-da72f8a8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-da730b86{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da730b87{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da730b90{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da730b91{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da730b92{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da730b9a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-da770d80"><thead><tr style="overflow-wrap:break-word;"><th class="cl-da730b86"><p class="cl-da72f894"><span class="cl-da6fd768">tl</span></p></th><th class="cl-da730b86"><p class="cl-da72f894"><span class="cl-da6fd768">w</span></p></th><th class="cl-da730b87"><p class="cl-da72f8a8"><span class="cl-da6fd768">loc</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">120.1</span></p></td><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">17.9</span></p></td><td class="cl-da730b91"><p class="cl-da72f8a8"><span class="cl-da6fd768">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">115.0</span></p></td><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">17.2</span></p></td><td class="cl-da730b91"><p class="cl-da72f8a8"><span class="cl-da6fd768">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">111.2</span></p></td><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">16.8</span></p></td><td class="cl-da730b91"><p class="cl-da72f8a8"><span class="cl-da6fd768">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">29.2</span></p></td><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">0.3</span></p></td><td class="cl-da730b91"><p class="cl-da72f8a8"><span class="cl-da6fd768">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">25.2</span></p></td><td class="cl-da730b90"><p class="cl-da72f894"><span class="cl-da6fd768">0.3</span></p></td><td class="cl-da730b91"><p class="cl-da72f8a8"><span class="cl-da6fd768">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da730b92"><p class="cl-da72f894"><span class="cl-da6fd768">18.0</span></p></td><td class="cl-da730b92"><p class="cl-da72f894"><span class="cl-da6fd768">0.1</span></p></td><td class="cl-da730b9a"><p class="cl-da72f8a8"><span class="cl-da6fd768">Puyehue</span></p></td></tr></tbody></table></div>
 </div>
-<section id="integer" class="level3">
-<h3 class="anchored" data-anchor-id="integer">Integer:</h3>
-<p>Integers are whole numbers without any decimal or fractional component. In R, integers are represented by the <code>integer</code> class. They are commonly used for indexing and counting operations.</p>
-<div id="exm-moja" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an integer variable</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>L</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x) <span class="co"># Output: "integer"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Arithmetic operations with integers</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="numeric" class="level3">
-<h3 class="anchored" data-anchor-id="numeric">Numeric:</h3>
-<p>Numeric data type, also known as double in other programming languages, represents numbers with decimal points. Numeric data types are used for most mathematical calculations and statistical operations in R.</p>
-<div id="exm-2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a numeric variable</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fl">175.5</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(height) <span class="co"># Output: "numeric"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Arithmetic operations with numeric variables</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>bmi <span class="ot">&lt;-</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li><strong>Mauna Loa Atmospheric CO2 Concentration</strong>– store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="character" class="level3">
-<h3 class="anchored" data-anchor-id="character">Character:</h3>
-<p>Character data type represents textual data such as strings of letters, words, or sentences. In R, character values are enclosed in either single or double quotes.</p>
-<div id="exm-3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a character variable</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(name) <span class="co"># Output: "character"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenating character strings</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>greeting <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Hello"</span>, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>`</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>co <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-db0ede9e{}.cl-db082888{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-db0a593c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-db0a6f9e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-db0a6fa8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-db0a7034{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-db0ede9e"><thead><tr style="overflow-wrap:break-word;"><th class="cl-db0a6f9e"><p class="cl-db0a593c"><span class="cl-db082888">day</span></p></th><th class="cl-db0a6f9e"><p class="cl-db0a593c"><span class="cl-db082888">months</span></p></th><th class="cl-db0a6f9e"><p class="cl-db0a593c"><span class="cl-db082888">year</span></p></th><th class="cl-db0a6f9e"><p class="cl-db0a593c"><span class="cl-db082888">co2</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">15</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">1</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">1,959</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">315.42</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">15</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">2</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">1,959</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">316.31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">15</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">3</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">1,959</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">316.50</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">15</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">10</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">1,997</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">360.83</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">15</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">11</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">1,997</span></p></td><td class="cl-db0a6fa8"><p class="cl-db0a593c"><span class="cl-db082888">362.49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-db0a7034"><p class="cl-db0a593c"><span class="cl-db082888">15</span></p></td><td class="cl-db0a7034"><p class="cl-db0a593c"><span class="cl-db082888">12</span></p></td><td class="cl-db0a7034"><p class="cl-db0a593c"><span class="cl-db082888">1,997</span></p></td><td class="cl-db0a7034"><p class="cl-db0a593c"><span class="cl-db082888">364.34</span></p></td></tr></tbody></table></div>
 </div>
-</section>
-<section id="logical" class="level3">
-<h3 class="anchored" data-anchor-id="logical">Logical:</h3>
-<p>Logical data type, often referred to as Boolean, represents binary values: TRUE or FALSE. Logical values are fundamental in controlling program flow and making decisions based on conditions.</p>
-<div id="exm-4" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating logical variables</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>is_adult <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(is_adult) <span class="co"># Output: "logical"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Conditional statements with logical variables</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (is_adult) {</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"You are an adult."</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"You are not an adult."</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="factor" class="level3">
-<h3 class="anchored" data-anchor-id="factor">Factor:</h3>
-<p>Factor data type is used to represent categorical data in R. Factors are stored as integers with associated labels, making them efficient for statistical modeling and analysis.</p>
-<div id="exm-5" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a factor variable</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(gender) <span class="co"># Output: "factor"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics with factors</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-info">
+<p>Note that you can import the dataset from online API to Rstudio with easy as the chunk above highlight</p>
 </div>
-</section>
-<section id="date-and-time" class="level3">
-<h3 class="anchored" data-anchor-id="date-and-time">Date and Time:</h3>
-<p>Date and time data types are crucial for handling temporal information in R. R provides specialized classes for dates (<code>Date</code>) and date-time values (<code>POSIXct</code>, <code>POSIXlt</code>).</p>
-<div id="exm-6" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a date variable</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-04-25"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(today) <span class="co"># Output: "Date"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Date arithmetic</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>next_week <span class="ot">&lt;-</span> today <span class="sc">+</span> <span class="dv">7</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a POSIXct variable (date-time)</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(current_time) <span class="co"># Output: "POSIXct"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In this post we learned about different R data types and what kind of data do they hold. Data type is very important concept in programming and can not be ignored. We have explained about each data type with example in this article.</p>
 
 
 </section>
@@ -786,8 +677,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">
