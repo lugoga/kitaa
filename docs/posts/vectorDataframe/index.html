@@ -236,7 +236,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Understanding vector and dataframe</h1>
+      <div class="quarto-title-block"><div><h1 class="title">Understanding vector and dataframe</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
         <div class="description">
           Understanding vectoor and dataframe as core data storage in R is an important part, which allows for data analysis and visualization
@@ -849,6 +849,8 @@ Table&nbsp;3: The time fishers departed for fishing with the distance to th fish
 </div>
 
 
+<!-- -->
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -931,6 +933,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1240,7 +1293,475 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb93" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Understanding vector and dataframe"</span></span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Understanding vectoor and dataframe as core data storage in R is an important part, which allows for data analysis and visualization"</span></span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-02-12"</span></span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a><span class="co"># date-modified: "2024-01-26"</span></span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [visualization, code]</span></span>
+<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "DATATYPES.svg"</span></span>
+<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-13"><a href="#cb93-13" aria-hidden="true" tabindex="-1"></a>**R** language is a flexible language that allows to work with different kind of data format [@R-base]. This include `integer`, `numeric`, `character`, `complex`, `dates` and `logical`. The default data type or class in **R** is double precision-- numeric. In a nutshell, R treats all kind of data into five categories but we deal with only four in this book. Datasets in R are often a combination of seven different data types are highlighted in @fig-datatypes;</span>
+<span id="cb93-14"><a href="#cb93-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-15"><a href="#cb93-15" aria-hidden="true" tabindex="-1"></a><span class="al">![Common data types often collected and stored for anaysis and modelling ](DATATYPES.svg)</span>{#fig-datatypes}</span>
+<span id="cb93-16"><a href="#cb93-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-17"><a href="#cb93-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-18"><a href="#cb93-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># Vectors</span></span>
+<span id="cb93-19"><a href="#cb93-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-20"><a href="#cb93-20" aria-hidden="true" tabindex="-1"></a>Often times we want to store a set of numbers in once place. One way to do this is using the vectors in R. Vector is the most basic data structure in R. It is a sequence of elements of the same data type. if the elements are of different data types, they be coerced to a common type that can accommodate all the elements. Vector are generally created using the <span class="in">`c()`</span> function widely called <span class="in">`concatenate`</span>, though depending on the type vector being created, other method. Vectors store several numbers-- a set of numbers in one container. let us look on the example below</span>
+<span id="cb93-21"><a href="#cb93-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-24"><a href="#cb93-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-25"><a href="#cb93-25" aria-hidden="true" tabindex="-1"></a>id <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb93-26"><a href="#cb93-26" aria-hidden="true" tabindex="-1"></a>mean.tl <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">158</span>,<span class="dv">659</span>,<span class="dv">782</span>,<span class="dv">659</span>,<span class="dv">759</span>)</span>
+<span id="cb93-27"><a href="#cb93-27" aria-hidden="true" tabindex="-1"></a>country <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Somalia"</span>, <span class="st">"Kenya"</span>, <span class="st">"Mauritius"</span>, <span class="st">"Seychelles"</span>,  <span class="st">"Mozambique"</span>)</span>
+<span id="cb93-28"><a href="#cb93-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-29"><a href="#cb93-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-30"><a href="#cb93-30" aria-hidden="true" tabindex="-1"></a>Notice that the <span class="in">`c()`</span> function, which is short for concatenate wraps the list of numbers. The <span class="in">`c()`</span> function combines all numbers together into one container. Notice also that all the individual numbers are separated with a comma. The comma is referred to an an item-delimiter. It allows R to hold each of the numbers separately. This is vital as without the item-delimiter, R will treat a vector as one big, unseperated number.</span>
+<span id="cb93-31"><a href="#cb93-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-32"><a href="#cb93-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numeric</span></span>
+<span id="cb93-33"><a href="#cb93-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-34"><a href="#cb93-34" aria-hidden="true" tabindex="-1"></a>The most common data type in R is numeric. The numeric class holds the set of real numbers --- decimal place numbers. We create a numeric vector using a <span class="in">`c()`</span> function but you can use any function that creates a sequence of numbers.  For example, we can create a numeric vector of SST as follows;</span>
+<span id="cb93-35"><a href="#cb93-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-38"><a href="#cb93-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-39"><a href="#cb93-39" aria-hidden="true" tabindex="-1"></a>sst <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">25.4</span>, <span class="dv">26</span>, <span class="dv">28</span>, <span class="fl">27.8</span>, <span class="dv">29</span>, <span class="fl">24.8</span>, <span class="fl">22.3</span>)</span>
+<span id="cb93-40"><a href="#cb93-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-41"><a href="#cb93-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-42"><a href="#cb93-42" aria-hidden="true" tabindex="-1"></a>We can check whether the variable sst is numeric with <span class="in">`is.numeric`</span> function</span>
+<span id="cb93-45"><a href="#cb93-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-46"><a href="#cb93-46" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(sst)</span>
+<span id="cb93-47"><a href="#cb93-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-48"><a href="#cb93-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-49"><a href="#cb93-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-50"><a href="#cb93-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Integer</span></span>
+<span id="cb93-51"><a href="#cb93-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-52"><a href="#cb93-52" aria-hidden="true" tabindex="-1"></a>Integer vector data type is actually a special case of numeric data. Unlike <span class="in">`numeric`</span>, <span class="in">`integer`</span> values do not have decimal places.They are commonly used for counting or indexing.  Creating an integer vector is similar to numeric vector except that we need to instruct R to treat the data as integer and not numeric or double. To command R creating integer, we specify a suffix <span class="in">`L`</span> to an element</span>
+<span id="cb93-53"><a href="#cb93-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-56"><a href="#cb93-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-57"><a href="#cb93-57" aria-hidden="true" tabindex="-1"></a>depth <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>L, <span class="dv">10</span>L, <span class="dv">15</span>L, <span class="dv">20</span>L, <span class="dv">25</span>L,<span class="dv">30</span>L)</span>
+<span id="cb93-58"><a href="#cb93-58" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(depth);<span class="fu">class</span>(depth)</span>
+<span id="cb93-59"><a href="#cb93-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-60"><a href="#cb93-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-61"><a href="#cb93-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-62"><a href="#cb93-62" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb93-63"><a href="#cb93-63" aria-hidden="true" tabindex="-1"></a>if your variable does not have decimals, R will automatically set the type as integers instead of numeric.</span>
+<span id="cb93-64"><a href="#cb93-64" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb93-65"><a href="#cb93-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-66"><a href="#cb93-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-69"><a href="#cb93-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-70"><a href="#cb93-70" aria-hidden="true" tabindex="-1"></a>aa <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">68</span>,<span class="dv">78</span>,<span class="dv">50</span>)</span>
+<span id="cb93-71"><a href="#cb93-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-72"><a href="#cb93-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-73"><a href="#cb93-73" aria-hidden="true" tabindex="-1"></a>You can check if the data is integer with <span class="in">`is.integer()`</span> and can convert numeric value to an integer with <span class="in">`as.integer()`</span> </span>
+<span id="cb93-74"><a href="#cb93-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-77"><a href="#cb93-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-78"><a href="#cb93-78" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(aa)</span>
+<span id="cb93-79"><a href="#cb93-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-80"><a href="#cb93-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-81"><a href="#cb93-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-82"><a href="#cb93-82" aria-hidden="true" tabindex="-1"></a>You can query the class of the object with the <span class="in">`class()`</span> to know the class of the object</span>
+<span id="cb93-85"><a href="#cb93-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-86"><a href="#cb93-86" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(aa)</span>
+<span id="cb93-87"><a href="#cb93-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-88"><a href="#cb93-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-89"><a href="#cb93-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-90"><a href="#cb93-90" aria-hidden="true" tabindex="-1"></a>Although the object bb is integer as confirmed with <span class="in">`as.integer()`</span> function, the <span class="in">`class()`</span> ouput the answer as numeric. This is because the defaul type of number in r is numeric. However, you can use the function <span class="in">`as.integer()`</span> to convert numeric value to integer</span>
+<span id="cb93-91"><a href="#cb93-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-94"><a href="#cb93-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-95"><a href="#cb93-95" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">as.integer</span>(aa))</span>
+<span id="cb93-96"><a href="#cb93-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-97"><a href="#cb93-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-98"><a href="#cb93-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-99"><a href="#cb93-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Character</span></span>
+<span id="cb93-100"><a href="#cb93-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-101"><a href="#cb93-101" aria-hidden="true" tabindex="-1"></a>In programming terms, we usually call text as *string*. This often are <span class="in">`text`</span> data like names. A character vector may contain a single character , a word or a group of words. The elements must be enclosed with a single or double quotations mark.</span>
+<span id="cb93-102"><a href="#cb93-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-105"><a href="#cb93-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-106"><a href="#cb93-106" aria-hidden="true" tabindex="-1"></a>sites <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Pemba Channel"</span>, <span class="st">"Zanzibar Channnel"</span>, <span class="st">"Pemba Channel"</span>)</span>
+<span id="cb93-107"><a href="#cb93-107" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(sites); <span class="fu">class</span>(sites)</span>
+<span id="cb93-108"><a href="#cb93-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-109"><a href="#cb93-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-110"><a href="#cb93-110" aria-hidden="true" tabindex="-1"></a>We can be sure whether the object is a string with <span class="in">`is.character()`</span> or check the class of the object with <span class="in">`class()`</span>.</span>
+<span id="cb93-111"><a href="#cb93-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-114"><a href="#cb93-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-115"><a href="#cb93-115" aria-hidden="true" tabindex="-1"></a>countries <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Kenya"</span>, <span class="st">"Uganda"</span>, <span class="st">"Rwanda"</span>, <span class="st">"Tanzania"</span>)</span>
+<span id="cb93-116"><a href="#cb93-116" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(countries)</span>
+<span id="cb93-117"><a href="#cb93-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-118"><a href="#cb93-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-119"><a href="#cb93-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-120"><a href="#cb93-120" aria-hidden="true" tabindex="-1"></a>::: callout-note   </span>
+<span id="cb93-121"><a href="#cb93-121" aria-hidden="true" tabindex="-1"></a>Everything inside <span class="in">`""`</span> will be considered as character, no matter if it looks like character or not</span>
+<span id="cb93-122"><a href="#cb93-122" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb93-123"><a href="#cb93-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-124"><a href="#cb93-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-125"><a href="#cb93-125" aria-hidden="true" tabindex="-1"></a><span class="fu">## Factor</span></span>
+<span id="cb93-126"><a href="#cb93-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-127"><a href="#cb93-127" aria-hidden="true" tabindex="-1"></a>Factor variables are a special case of character variables in the sense that it also contains text. However, factor variables are used when there are a limited number of unique character strings. It often represents a categorical variable. For instance, the gender will usually take on only two values, \"female\" or \"male\" (and will be considered as a factor variable) whereas the name will generally have lots of possibilities (and thus will be considered as a character variable). To create a factor variable use the <span class="in">`factor()`</span> function:</span>
+<span id="cb93-130"><a href="#cb93-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-131"><a href="#cb93-131" aria-hidden="true" tabindex="-1"></a>    maturity.stage <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"I"</span>, <span class="st">"II"</span>, <span class="st">"III"</span>, <span class="st">"IV"</span>, <span class="st">"V"</span>))</span>
+<span id="cb93-132"><a href="#cb93-132" aria-hidden="true" tabindex="-1"></a>    maturity.stage</span>
+<span id="cb93-133"><a href="#cb93-133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-134"><a href="#cb93-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-135"><a href="#cb93-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-136"><a href="#cb93-136" aria-hidden="true" tabindex="-1"></a>To know the different levels of a factor variable, use <span class="in">`levels()`</span>:</span>
+<span id="cb93-137"><a href="#cb93-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-140"><a href="#cb93-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-141"><a href="#cb93-141" aria-hidden="true" tabindex="-1"></a> <span class="fu">levels</span>(maturity.stage)</span>
+<span id="cb93-142"><a href="#cb93-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-143"><a href="#cb93-143" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb93-144"><a href="#cb93-144" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb93-145"><a href="#cb93-145" aria-hidden="true" tabindex="-1"></a>By default, the levels are sorted alphabetically. You can reorder the levels with the argument <span class="in">`levels`</span> in the <span class="in">`factor()`</span> function:</span>
+<span id="cb93-146"><a href="#cb93-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-149"><a href="#cb93-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-150"><a href="#cb93-150" aria-hidden="true" tabindex="-1"></a>mature <span class="ot">&lt;-</span> <span class="fu">factor</span>(maturity.stage, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"V"</span>, <span class="st">"III"</span>))</span>
+<span id="cb93-151"><a href="#cb93-151" aria-hidden="true" tabindex="-1"></a>    <span class="fu">levels</span>(mature)</span>
+<span id="cb93-152"><a href="#cb93-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-153"><a href="#cb93-153" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb93-154"><a href="#cb93-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-155"><a href="#cb93-155" aria-hidden="true" tabindex="-1"></a>Character strings can be converted to factors with <span class="in">`as.factor()`</span>:</span>
+<span id="cb93-156"><a href="#cb93-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-159"><a href="#cb93-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-160"><a href="#cb93-160" aria-hidden="true" tabindex="-1"></a> text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"test1"</span>, <span class="st">"test2"</span>, <span class="st">"test1"</span>, <span class="st">"test1"</span>) <span class="co"># create a character vector</span></span>
+<span id="cb93-161"><a href="#cb93-161" aria-hidden="true" tabindex="-1"></a>    <span class="fu">class</span>(text) <span class="co"># to know the class</span></span>
+<span id="cb93-162"><a href="#cb93-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-163"><a href="#cb93-163" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb93-166"><a href="#cb93-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-167"><a href="#cb93-167" aria-hidden="true" tabindex="-1"></a> text_factor <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(text) <span class="co"># transform to factor</span></span>
+<span id="cb93-168"><a href="#cb93-168" aria-hidden="true" tabindex="-1"></a>    <span class="fu">class</span>(text_factor) <span class="co"># recheck the class</span></span>
+<span id="cb93-169"><a href="#cb93-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-170"><a href="#cb93-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-171"><a href="#cb93-171" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb93-172"><a href="#cb93-172" aria-hidden="true" tabindex="-1"></a>The character strings have been transformed to factors, as shown by its class of the type <span class="in">`factor`</span>.</span>
+<span id="cb93-173"><a href="#cb93-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-174"><a href="#cb93-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-175"><a href="#cb93-175" aria-hidden="true" tabindex="-1"></a>Often we wish to take a continuous numerical vector and transform it into a factor. The function <span class="in">`cut()`</span> takes a vector of numerical data and creates a factor based on your give cut-points. Let us make a fictional total length of 508 bigeye tuna with <span class="in">`rnorm()`</span> function. </span>
+<span id="cb93-176"><a href="#cb93-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-179"><a href="#cb93-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-180"><a href="#cb93-180" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-hist</span></span>
+<span id="cb93-181"><a href="#cb93-181" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Normal distribution of bigeye tuna's tota length</span></span>
+<span id="cb93-182"><a href="#cb93-182" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-pos: H</span></span>
+<span id="cb93-183"><a href="#cb93-183" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 3</span></span>
+<span id="cb93-184"><a href="#cb93-184" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
+<span id="cb93-185"><a href="#cb93-185" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb93-186"><a href="#cb93-186" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb93-187"><a href="#cb93-187" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb93-188"><a href="#cb93-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-189"><a href="#cb93-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-190"><a href="#cb93-190" aria-hidden="true" tabindex="-1"></a>tl.cm <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">508</span>, <span class="at">mean =</span> <span class="dv">40</span>, <span class="at">sd =</span> <span class="dv">18</span>)</span>
+<span id="cb93-191"><a href="#cb93-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-192"><a href="#cb93-192" aria-hidden="true" tabindex="-1"></a><span class="co"># mosaic::plotDist(dist = "norm", mean = 40, sd = 18, under = F, kind = "cdf", add = TRUE)</span></span>
+<span id="cb93-193"><a href="#cb93-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-194"><a href="#cb93-194" aria-hidden="true" tabindex="-1"></a>tl.cm <span class="sc">|&gt;</span></span>
+<span id="cb93-195"><a href="#cb93-195" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">as.tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb93-196"><a href="#cb93-196" aria-hidden="true" tabindex="-1"></a>  ggstatsplot<span class="sc">::</span><span class="fu">gghistostats</span>(<span class="at">x =</span> value, <span class="at">binwidth =</span> <span class="dv">10</span>, <span class="at">test.value =</span> <span class="fl">40.2</span>, <span class="at">type =</span> <span class="st">"n"</span>, <span class="at">normal.curve =</span> T, <span class="at">centrality.type =</span> <span class="st">"p"</span>, <span class="at">xlab =</span> <span class="st">"Total length (cm)"</span>)</span>
+<span id="cb93-197"><a href="#cb93-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-198"><a href="#cb93-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-199"><a href="#cb93-199" aria-hidden="true" tabindex="-1"></a>We can now breaks the distribution into groups and make a simple plot as shown in @fig-lfq, where frequency of bigeye tuna color coded with the group size</span>
+<span id="cb93-200"><a href="#cb93-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-203"><a href="#cb93-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-204"><a href="#cb93-204" aria-hidden="true" tabindex="-1"></a>group <span class="ot">=</span> <span class="fu">cut</span>(tl.cm, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">110</span>),</span>
+<span id="cb93-205"><a href="#cb93-205" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Below 20"</span>, <span class="st">"30-60"</span>, <span class="st">"Above 60"</span>))</span>
+<span id="cb93-206"><a href="#cb93-206" aria-hidden="true" tabindex="-1"></a><span class="fu">is.factor</span>(group)</span>
+<span id="cb93-207"><a href="#cb93-207" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(group)</span>
+<span id="cb93-208"><a href="#cb93-208" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-209"><a href="#cb93-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-210"><a href="#cb93-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-213"><a href="#cb93-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-214"><a href="#cb93-214" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bar</span></span>
+<span id="cb93-215"><a href="#cb93-215" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-pos: H</span></span>
+<span id="cb93-216"><a href="#cb93-216" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Length frequency of bigeye tuna</span></span>
+<span id="cb93-217"><a href="#cb93-217" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 4</span></span>
+<span id="cb93-218"><a href="#cb93-218" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
+<span id="cb93-219"><a href="#cb93-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-220"><a href="#cb93-220" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(group), <span class="at">las =</span> <span class="dv">1</span>, <span class="at">horiz =</span> <span class="cn">FALSE</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>), <span class="at">ylab =</span> <span class="st">"Frequency"</span>, <span class="at">xlab =</span> <span class="st">""</span>)</span>
+<span id="cb93-221"><a href="#cb93-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-222"><a href="#cb93-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-223"><a href="#cb93-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-224"><a href="#cb93-224" aria-hidden="true" tabindex="-1"></a><span class="fu">## Logical</span></span>
+<span id="cb93-225"><a href="#cb93-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-226"><a href="#cb93-226" aria-hidden="true" tabindex="-1"></a>Logical data (or simply logical ) represent the logical <span class="in">`TRUE`</span> state and the logical <span class="in">`FALSE`</span> state. Logical variables are the variables in which logical data are stored. Logical variables can assume only two states:</span>
+<span id="cb93-227"><a href="#cb93-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-228"><a href="#cb93-228" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>FALSE, always represent by 0;</span>
+<span id="cb93-229"><a href="#cb93-229" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>TRUE, always represented by a nonzero object. Usually, the digit 1 is used for TRUE. </span>
+<span id="cb93-230"><a href="#cb93-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-231"><a href="#cb93-231" aria-hidden="true" tabindex="-1"></a>We can create logical variables indirectly, through logical operations, such as the result of a comparison between two numbers. These operations return logical values. For example, type the following statement at the R console: </span>
+<span id="cb93-232"><a href="#cb93-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-233"><a href="#cb93-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-236"><a href="#cb93-236" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-237"><a href="#cb93-237" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">3</span>;</span>
+<span id="cb93-238"><a href="#cb93-238" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
+<span id="cb93-239"><a href="#cb93-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-240"><a href="#cb93-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-241"><a href="#cb93-241" aria-hidden="true" tabindex="-1"></a>Since 5 is indeed greater than 3, the result of the comparison is true, however, 5 is not less than 3, and hence the comparison is false. The sign <span class="in">`&gt;`</span> and <span class="in">`&lt;`</span> are relational operators, returning logical data types as a result. </span>
+<span id="cb93-242"><a href="#cb93-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-243"><a href="#cb93-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-244"><a href="#cb93-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-247"><a href="#cb93-247" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-248"><a href="#cb93-248" aria-hidden="true" tabindex="-1"></a> value1 <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb93-249"><a href="#cb93-249" aria-hidden="true" tabindex="-1"></a>    value2 <span class="ot">&lt;-</span> <span class="dv">9</span></span>
+<span id="cb93-250"><a href="#cb93-250" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-251"><a href="#cb93-251" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb93-254"><a href="#cb93-254" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-255"><a href="#cb93-255" aria-hidden="true" tabindex="-1"></a>    greater <span class="ot">&lt;-</span> value1 <span class="sc">&gt;</span> value2</span>
+<span id="cb93-256"><a href="#cb93-256" aria-hidden="true" tabindex="-1"></a>    greater</span>
+<span id="cb93-257"><a href="#cb93-257" aria-hidden="true" tabindex="-1"></a>    <span class="fu">class</span>(greater)</span>
+<span id="cb93-258"><a href="#cb93-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-259"><a href="#cb93-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-260"><a href="#cb93-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-261"><a href="#cb93-261" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb93-264"><a href="#cb93-264" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-265"><a href="#cb93-265" aria-hidden="true" tabindex="-1"></a>    <span class="co"># is value1 less than or equal to value2?</span></span>
+<span id="cb93-266"><a href="#cb93-266" aria-hidden="true" tabindex="-1"></a>    less <span class="ot">&lt;-</span> value1 <span class="sc">&lt;=</span> value2</span>
+<span id="cb93-267"><a href="#cb93-267" aria-hidden="true" tabindex="-1"></a>    less</span>
+<span id="cb93-268"><a href="#cb93-268" aria-hidden="true" tabindex="-1"></a>    <span class="fu">class</span>(less)</span>
+<span id="cb93-269"><a href="#cb93-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-270"><a href="#cb93-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-271"><a href="#cb93-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-272"><a href="#cb93-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-273"><a href="#cb93-273" aria-hidden="true" tabindex="-1"></a>It is also possible to transform logical data into numeric data. After the transformation from logical to numeric with the <span class="in">`as.numeric()`</span> command, <span class="in">`FALSE`</span> values equal to 0 and <span class="in">`TRUE`</span> values equal to 1:</span>
+<span id="cb93-274"><a href="#cb93-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-277"><a href="#cb93-277" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-278"><a href="#cb93-278" aria-hidden="true" tabindex="-1"></a> greater_num <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(greater)</span>
+<span id="cb93-279"><a href="#cb93-279" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(greater)</span>
+<span id="cb93-280"><a href="#cb93-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-281"><a href="#cb93-281" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb93-284"><a href="#cb93-284" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-285"><a href="#cb93-285" aria-hidden="true" tabindex="-1"></a>   less_num <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(less)</span>
+<span id="cb93-286"><a href="#cb93-286" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(less)</span>
+<span id="cb93-287"><a href="#cb93-287" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-288"><a href="#cb93-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-289"><a href="#cb93-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-290"><a href="#cb93-290" aria-hidden="true" tabindex="-1"></a>Conversely, numeric data can be converted to logical data, with <span class="in">`FALSE`</span> for all values equal to 0 and <span class="in">`TRUE`</span> for all other values.</span>
+<span id="cb93-291"><a href="#cb93-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-294"><a href="#cb93-294" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-295"><a href="#cb93-295" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb93-296"><a href="#cb93-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.logical</span>(x)</span>
+<span id="cb93-297"><a href="#cb93-297" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-298"><a href="#cb93-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-299"><a href="#cb93-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-302"><a href="#cb93-302" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-303"><a href="#cb93-303" aria-hidden="true" tabindex="-1"></a> y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb93-304"><a href="#cb93-304" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(y)</span>
+<span id="cb93-305"><a href="#cb93-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-306"><a href="#cb93-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-307"><a href="#cb93-307" aria-hidden="true" tabindex="-1"></a><span class="fu">## Date and Time</span></span>
+<span id="cb93-308"><a href="#cb93-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-309"><a href="#cb93-309" aria-hidden="true" tabindex="-1"></a>Date and time are also treated as vector in R</span>
+<span id="cb93-310"><a href="#cb93-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-313"><a href="#cb93-313" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-314"><a href="#cb93-314" aria-hidden="true" tabindex="-1"></a>date.time <span class="ot">=</span> <span class="fu">seq</span>(lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="dv">010121</span>), </span>
+<span id="cb93-315"><a href="#cb93-315" aria-hidden="true" tabindex="-1"></a>                lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="dv">250121</span>), </span>
+<span id="cb93-316"><a href="#cb93-316" aria-hidden="true" tabindex="-1"></a>                <span class="at">length.out =</span> <span class="dv">5</span>)</span>
+<span id="cb93-317"><a href="#cb93-317" aria-hidden="true" tabindex="-1"></a>date.time</span>
+<span id="cb93-318"><a href="#cb93-318" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-319"><a href="#cb93-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-320"><a href="#cb93-320" aria-hidden="true" tabindex="-1"></a><span class="fu"># Generating vectors</span></span>
+<span id="cb93-321"><a href="#cb93-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-322"><a href="#cb93-322" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sequence Numbers</span></span>
+<span id="cb93-323"><a href="#cb93-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-324"><a href="#cb93-324" aria-hidden="true" tabindex="-1"></a>There are few R operators that are designed for creating vecor of non-random numbers. These functions provide multiple ways for generating sequences of numbers</span>
+<span id="cb93-325"><a href="#cb93-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-326"><a href="#cb93-326" aria-hidden="true" tabindex="-1"></a>The colon <span class="in">`:`</span> operator, explicitly generate regular sequence of numbers between the lower and upper boundary numbers specified. For example, generating number beween 0 and 10, we simply write;</span>
+<span id="cb93-327"><a href="#cb93-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-330"><a href="#cb93-330" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-331"><a href="#cb93-331" aria-hidden="true" tabindex="-1"></a>vector.seq <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb93-332"><a href="#cb93-332" aria-hidden="true" tabindex="-1"></a>vector.seq</span>
+<span id="cb93-333"><a href="#cb93-333" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-334"><a href="#cb93-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-335"><a href="#cb93-335" aria-hidden="true" tabindex="-1"></a>However, if you want to generate a vector of sequence number with specified interval, let say we want to generate number between 0 and 10 with interval of 2, then the <span class="in">`seq()`</span> function is used</span>
+<span id="cb93-338"><a href="#cb93-338" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-339"><a href="#cb93-339" aria-hidden="true" tabindex="-1"></a>regular.vector <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>,<span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb93-340"><a href="#cb93-340" aria-hidden="true" tabindex="-1"></a>regular.vector</span>
+<span id="cb93-341"><a href="#cb93-341" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-342"><a href="#cb93-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-343"><a href="#cb93-343" aria-hidden="true" tabindex="-1"></a>unlike the <span class="in">`seq()`</span> function and <span class="in">`:`</span> operator that works with numbers, the <span class="in">`rep()`</span> function generate sequence of repeated numbers or strings to create a vector</span>
+<span id="cb93-344"><a href="#cb93-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-347"><a href="#cb93-347" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-348"><a href="#cb93-348" aria-hidden="true" tabindex="-1"></a>id <span class="ot">=</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">3</span>, <span class="at">each =</span> <span class="dv">4</span>)</span>
+<span id="cb93-349"><a href="#cb93-349" aria-hidden="true" tabindex="-1"></a>station <span class="ot">=</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="st">"Station1"</span>, <span class="at">each =</span> <span class="dv">4</span>)</span>
+<span id="cb93-350"><a href="#cb93-350" aria-hidden="true" tabindex="-1"></a>id;station</span>
+<span id="cb93-351"><a href="#cb93-351" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-352"><a href="#cb93-352" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sequence characters</span></span>
+<span id="cb93-353"><a href="#cb93-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-354"><a href="#cb93-354" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rep()`</span> function allows to parse <span class="in">`each`</span> and <span class="in">`times`</span> arguments. The <span class="in">`each`</span> argument allows creation of vector that that repeat each element in a vector according to specified number. </span>
+<span id="cb93-357"><a href="#cb93-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-358"><a href="#cb93-358" aria-hidden="true" tabindex="-1"></a>sampled.months <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"January"</span>, <span class="st">"March"</span>, <span class="st">"May"</span>)</span>
+<span id="cb93-359"><a href="#cb93-359" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> sampled.months, <span class="at">each =</span> <span class="dv">3</span>)</span>
+<span id="cb93-360"><a href="#cb93-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-361"><a href="#cb93-361" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-362"><a href="#cb93-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-363"><a href="#cb93-363" aria-hidden="true" tabindex="-1"></a>But the <span class="in">`times`</span> argument repeat the whole vector to specfied times</span>
+<span id="cb93-366"><a href="#cb93-366" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-367"><a href="#cb93-367" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> sampled.months, <span class="at">times =</span> <span class="dv">3</span>)</span>
+<span id="cb93-368"><a href="#cb93-368" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-369"><a href="#cb93-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-370"><a href="#cb93-370" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generating normal distribution</span></span>
+<span id="cb93-371"><a href="#cb93-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-372"><a href="#cb93-372" aria-hidden="true" tabindex="-1"></a>The central limit theorem that ensure the data is normal distributed is well known to statistician. R has a <span class="in">`rnorm()`</span> function which makes vector of normal distributed values. For example to generate a vector of 40 sea surface temperature values from a normal distribution with a <span class="in">`mean`</span> of 25, and <span class="in">`standard deviation`</span> of 1.58, we simply type this expression in console;</span>
+<span id="cb93-375"><a href="#cb93-375" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-376"><a href="#cb93-376" aria-hidden="true" tabindex="-1"></a>sst <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">40</span>, <span class="at">mean =</span> <span class="dv">25</span>,<span class="at">sd =</span> <span class="fl">1.58</span>)</span>
+<span id="cb93-377"><a href="#cb93-377" aria-hidden="true" tabindex="-1"></a>sst</span>
+<span id="cb93-378"><a href="#cb93-378" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-379"><a href="#cb93-379" aria-hidden="true" tabindex="-1"></a><span class="fu"># Common task</span></span>
+<span id="cb93-380"><a href="#cb93-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-381"><a href="#cb93-381" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rounding off numbers</span></span>
+<span id="cb93-382"><a href="#cb93-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-383"><a href="#cb93-383" aria-hidden="true" tabindex="-1"></a>There are many ways of rounding off numerical number to the nearest integers or specify the number of decimal places. the code block below illustrate the common way to round off:</span>
+<span id="cb93-384"><a href="#cb93-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-387"><a href="#cb93-387" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-388"><a href="#cb93-388" aria-hidden="true" tabindex="-1"></a>chl <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> .<span class="dv">55</span>, <span class="at">sd =</span> .<span class="dv">2</span>)</span>
+<span id="cb93-389"><a href="#cb93-389" aria-hidden="true" tabindex="-1"></a>chl <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb93-390"><a href="#cb93-390" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-391"><a href="#cb93-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-392"><a href="#cb93-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-393"><a href="#cb93-393" aria-hidden="true" tabindex="-1"></a><span class="fu">## Number of elements in a vector</span></span>
+<span id="cb93-394"><a href="#cb93-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-395"><a href="#cb93-395" aria-hidden="true" tabindex="-1"></a>Sometimes you may have a long vector and want to know the numbers of elements in the object. R has <span class="in">`length()`</span> function that allows you to query the vector and print the answer</span>
+<span id="cb93-396"><a href="#cb93-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-399"><a href="#cb93-399" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-400"><a href="#cb93-400" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(chl)</span>
+<span id="cb93-401"><a href="#cb93-401" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-402"><a href="#cb93-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-403"><a href="#cb93-403" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Frame</span></span>
+<span id="cb93-404"><a href="#cb93-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-405"><a href="#cb93-405" aria-hidden="true" tabindex="-1"></a>One of R’s greatest strengths is in manipulating data. One of the primary structures for storing data in R is called a Data Frame. Much of your work in R will be working with and manipulating data frames. Data frames are made up of rows and columns. The top row is a header and describes the contents of each variable. Each row represents an individual measured or observed record. Records can also have names. Each record contains multiple cells of values. Let’s illustrates data frame using historical catch data in the Western Indian Ocean Region from FAO. This dataset  is called <span class="in">`landings_wio_country.csv`</span> and contains some data about total landed catches of ten countries in the WIO region reported in FAO between 1951 and 2015 (@tbl-landings).</span>
+<span id="cb93-406"><a href="#cb93-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-409"><a href="#cb93-409" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-410"><a href="#cb93-410" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb93-411"><a href="#cb93-411" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb93-412"><a href="#cb93-412" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb93-413"><a href="#cb93-413" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-landings</span></span>
+<span id="cb93-414"><a href="#cb93-414" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Landing of fish by country</span></span>
+<span id="cb93-415"><a href="#cb93-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-416"><a href="#cb93-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-417"><a href="#cb93-417" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"../data/landings_wio_country.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb93-418"><a href="#cb93-418" aria-hidden="true" tabindex="-1"></a>  <span class="co"># dplyr::filter(year == 2015)|&gt;</span></span>
+<span id="cb93-419"><a href="#cb93-419" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb93-420"><a href="#cb93-420" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="at">country=</span>name, year, catch) <span class="sc">|&gt;</span> </span>
+<span id="cb93-421"><a href="#cb93-421" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span>
+<span id="cb93-422"><a href="#cb93-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-423"><a href="#cb93-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-424"><a href="#cb93-424" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-425"><a href="#cb93-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-426"><a href="#cb93-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-427"><a href="#cb93-427" aria-hidden="true" tabindex="-1"></a><span class="in">`data.frame`</span> is very much like a simple Excel spreadsheet where each column represents a variable type and each row represent observations. A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. A data frame is a list of equal--length vectors with rows as records and columns as variables. This makes data frames unique in data storing as it can store different classes of objects in each column (i.e. numeric, character, factor, logic, etc). </span>
+<span id="cb93-428"><a href="#cb93-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-429"><a href="#cb93-429" aria-hidden="true" tabindex="-1"></a>In this section, we will create data frames and add attributes to data frames. Perhaps the easiest way to create a data frame is to parse vectors in a <span class="in">`data.frame()`</span> function. For instance, in this case we create a simple data frame <span class="in">`dt`</span> and assess its internal structure</span>
+<span id="cb93-430"><a href="#cb93-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-433"><a href="#cb93-433" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-434"><a href="#cb93-434" aria-hidden="true" tabindex="-1"></a><span class="co"># create vectors</span></span>
+<span id="cb93-435"><a href="#cb93-435" aria-hidden="true" tabindex="-1"></a>country  <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'Kenya'</span>,<span class="st">'Mozambique'</span>,<span class="st">'Seychelles'</span>)</span>
+<span id="cb93-436"><a href="#cb93-436" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">92</span>)</span>
+<span id="cb93-437"><a href="#cb93-437" aria-hidden="true" tabindex="-1"></a>maturity <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"I"</span>, <span class="st">"II"</span>, <span class="st">"V"</span>)</span>
+<span id="cb93-438"><a href="#cb93-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-439"><a href="#cb93-439" aria-hidden="true" tabindex="-1"></a><span class="do">## use the vectors to make a data frame</span></span>
+<span id="cb93-440"><a href="#cb93-440" aria-hidden="true" tabindex="-1"></a>dt <span class="ot">=</span> <span class="fu">data.frame</span>(country, weight, maturity)</span>
+<span id="cb93-441"><a href="#cb93-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-442"><a href="#cb93-442" aria-hidden="true" tabindex="-1"></a><span class="do">## assess the internal structure</span></span>
+<span id="cb93-443"><a href="#cb93-443" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dt)</span>
+<span id="cb93-444"><a href="#cb93-444" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-445"><a href="#cb93-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-446"><a href="#cb93-446" aria-hidden="true" tabindex="-1"></a>Note how Variable <span class="in">`Name`</span> in dt was converted to a column of factors . This is because there is a default setting in <span class="in">`data.frame()`</span> that converts character columns to factors . We can turn this off by setting the <span class="in">`stringsAsFactors = FALSE`</span> argument:</span>
+<span id="cb93-447"><a href="#cb93-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-450"><a href="#cb93-450" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-451"><a href="#cb93-451" aria-hidden="true" tabindex="-1"></a><span class="do">## use the vectors to make a data frame</span></span>
+<span id="cb93-452"><a href="#cb93-452" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(country, weight, maturity, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb93-453"><a href="#cb93-453" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">str</span>()</span>
+<span id="cb93-454"><a href="#cb93-454" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-455"><a href="#cb93-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-456"><a href="#cb93-456" aria-hidden="true" tabindex="-1"></a>Now the variable <span class="in">`Name`</span> is of character class in the data frame. The inherited problem of data frame to convert character columns into a factor is resolved by introduction f advanced data frames called *tibble* <span class="co">[</span><span class="ot">@tibble</span><span class="co">]</span>, which provides sticker checking and better formating than the traditional data.frame.</span>
+<span id="cb93-457"><a href="#cb93-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-460"><a href="#cb93-460" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-461"><a href="#cb93-461" aria-hidden="true" tabindex="-1"></a><span class="do">## use the vectors to make a tibble</span></span>
+<span id="cb93-462"><a href="#cb93-462" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">=</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(country, weight, maturity) </span>
+<span id="cb93-463"><a href="#cb93-463" aria-hidden="true" tabindex="-1"></a><span class="do">## check the internal structure of the tibble</span></span>
+<span id="cb93-464"><a href="#cb93-464" aria-hidden="true" tabindex="-1"></a>tb <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
+<span id="cb93-465"><a href="#cb93-465" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-466"><a href="#cb93-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-467"><a href="#cb93-467" aria-hidden="true" tabindex="-1"></a>@tbl-score show the the data frame created by fusing the two vectors together.</span>
+<span id="cb93-468"><a href="#cb93-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-469"><a href="#cb93-469" aria-hidden="true" tabindex="-1"></a><span class="in">```{r tab301, echo=FALSE}</span></span>
+<span id="cb93-470"><a href="#cb93-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-471"><a href="#cb93-471" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-score</span></span>
+<span id="cb93-472"><a href="#cb93-472" aria-hidden="true" tabindex="-1"></a><span class="in">#| tbl-cap: Variables in the data frame</span></span>
+<span id="cb93-473"><a href="#cb93-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-474"><a href="#cb93-474" aria-hidden="true" tabindex="-1"></a><span class="in">tb |&gt;</span></span>
+<span id="cb93-475"><a href="#cb93-475" aria-hidden="true" tabindex="-1"></a><span class="in">  flextable::flextable()</span></span>
+<span id="cb93-476"><a href="#cb93-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-477"><a href="#cb93-477" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-478"><a href="#cb93-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-479"><a href="#cb93-479" aria-hidden="true" tabindex="-1"></a>Because the columns have meaning and we have given them column names, it is desirable to want to access an element by the name of the column as opposed to the column number.In large Excel spreadsheets I often get annoyed trying to remember which column something was. The <span class="in">`$`</span>sign and <span class="in">`[]`</span>are used in R to select variable from the data frame.</span>
+<span id="cb93-480"><a href="#cb93-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-483"><a href="#cb93-483" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-484"><a href="#cb93-484" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">$</span>country</span>
+<span id="cb93-485"><a href="#cb93-485" aria-hidden="true" tabindex="-1"></a>dt[,<span class="dv">1</span>]</span>
+<span id="cb93-486"><a href="#cb93-486" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-487"><a href="#cb93-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-490"><a href="#cb93-490" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-491"><a href="#cb93-491" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">$</span>weight</span>
+<span id="cb93-492"><a href="#cb93-492" aria-hidden="true" tabindex="-1"></a>dt[,<span class="dv">2</span>]</span>
+<span id="cb93-493"><a href="#cb93-493" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-494"><a href="#cb93-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-495"><a href="#cb93-495" aria-hidden="true" tabindex="-1"></a>The FSA package in R has build in dataset that we can use for illustration. For example, <span class="in">`ChinookArg`</span> dataset  contains total length and weight of 112 Chinook salmon collected in three sites in Argentina (@tbl-chinook). </span>
+<span id="cb93-496"><a href="#cb93-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-499"><a href="#cb93-499" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-500"><a href="#cb93-500" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-chinook</span></span>
+<span id="cb93-501"><a href="#cb93-501" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Length and weight of chinook samlon sampled at three different sites</span></span>
+<span id="cb93-502"><a href="#cb93-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-503"><a href="#cb93-503" aria-hidden="true" tabindex="-1"></a>chinook <span class="ot">=</span> FSA<span class="sc">::</span>ChinookArg</span>
+<span id="cb93-504"><a href="#cb93-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-505"><a href="#cb93-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-506"><a href="#cb93-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-507"><a href="#cb93-507" aria-hidden="true" tabindex="-1"></a>chinook <span class="sc">|&gt;</span></span>
+<span id="cb93-508"><a href="#cb93-508" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span></span>
+<span id="cb93-509"><a href="#cb93-509" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb93-510"><a href="#cb93-510" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">autofit</span>()</span>
+<span id="cb93-511"><a href="#cb93-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-512"><a href="#cb93-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-513"><a href="#cb93-513" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-514"><a href="#cb93-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-515"><a href="#cb93-515" aria-hidden="true" tabindex="-1"></a>Sometimes you may need to create set of values and store them in vectors, then combine the vectors into a data frame. Let us see how this can be done. First create three vectors. One contains id for ten individuals, the second vector hold the time each individual signed in the attendance book and the third vector is the distance of each individual from office. We can concatenate the set of values to make vectors.</span>
+<span id="cb93-516"><a href="#cb93-516" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-519"><a href="#cb93-519" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-520"><a href="#cb93-520" aria-hidden="true" tabindex="-1"></a>vessel.id  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb93-521"><a href="#cb93-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-522"><a href="#cb93-522" aria-hidden="true" tabindex="-1"></a>departure.time <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">ymd_hms</span>(<span class="fu">c</span>(<span class="st">"2018-11-20 06:35:25 EAT"</span>, <span class="st">"2018-11-20 06:52:05 EAT"</span>, </span>
+<span id="cb93-523"><a href="#cb93-523" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"2018-11-20 07:08:45 EAT"</span>, <span class="st">"2018-11-20 07:25:25 EAT"</span>, </span>
+<span id="cb93-524"><a href="#cb93-524" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"2018-11-20 07:42:05 EAT"</span>, <span class="st">"2018-11-20 07:58:45 EAT"</span>, </span>
+<span id="cb93-525"><a href="#cb93-525" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"2018-11-20 08:15:25 EAT"</span>, <span class="st">"2018-11-20 08:32:05 EAT"</span>, </span>
+<span id="cb93-526"><a href="#cb93-526" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"2018-11-20 08:48:45 EAT"</span>, <span class="st">"2018-11-20 09:05:25 EAT"</span>), <span class="at">tz =</span> <span class="st">""</span>)</span>
+<span id="cb93-527"><a href="#cb93-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-528"><a href="#cb93-528" aria-hidden="true" tabindex="-1"></a>distance.ground <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">85</span>, <span class="dv">45</span>, <span class="dv">69</span>, <span class="dv">42</span>,  <span class="dv">52</span>, <span class="dv">6</span>, <span class="dv">45</span>, <span class="dv">36</span>, <span class="dv">7</span>)</span>
+<span id="cb93-529"><a href="#cb93-529" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-530"><a href="#cb93-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-531"><a href="#cb93-531" aria-hidden="true" tabindex="-1"></a>Once we have the vectors that have the same length dimension, we can use the function <span class="in">`data.frame()`</span> to combine the the three vectors into one data frame shown in @tbl-tab23</span>
+<span id="cb93-532"><a href="#cb93-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-535"><a href="#cb93-535" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-536"><a href="#cb93-536" aria-hidden="true" tabindex="-1"></a>fishing.dep <span class="ot">=</span> <span class="fu">data.frame</span>(vessel.id, </span>
+<span id="cb93-537"><a href="#cb93-537" aria-hidden="true" tabindex="-1"></a>                     departure.time, </span>
+<span id="cb93-538"><a href="#cb93-538" aria-hidden="true" tabindex="-1"></a>                     distance.ground)</span>
+<span id="cb93-539"><a href="#cb93-539" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-540"><a href="#cb93-540" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-541"><a href="#cb93-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-544"><a href="#cb93-544" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb93-545"><a href="#cb93-545" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb93-546"><a href="#cb93-546" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-tab23</span></span>
+<span id="cb93-547"><a href="#cb93-547" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: The time fishers departed for fishing with the distance to th fishing ground</span></span>
+<span id="cb93-548"><a href="#cb93-548" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-549"><a href="#cb93-549" aria-hidden="true" tabindex="-1"></a>fishing.dep <span class="sc">|&gt;</span></span>
+<span id="cb93-550"><a href="#cb93-550" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate</span>(departure.time, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"time"</span>), <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span></span>
+<span id="cb93-551"><a href="#cb93-551" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb93-552"><a href="#cb93-552" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">autofit</span>()</span>
+<span id="cb93-553"><a href="#cb93-553" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-554"><a href="#cb93-554" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb93-555"><a href="#cb93-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-556"><a href="#cb93-556" aria-hidden="true" tabindex="-1"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

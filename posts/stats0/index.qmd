@@ -1,0 +1,432 @@
+---
+title: "Understanding Descriptive Statistics"
+description: "Examine measures of center and dispersion of the data so that we can gain valuable insights into the characteristics and distribution of various metrics that are in a dataset"
+author: "Masumbuko Semba"
+date: "2024-04-25"
+date-modified: "2024-04-26"
+categories: [visualization, code, Statistics]
+image: "statistics-01.png"
+toc: true
+---
+
+
+## Introduction
+
+In the world of statistics, there are three main types that are commonly used to analyze and interpret data: descriptive, inferential, and Bayesian. Each type serves a specific purpose and provides valuable insights into different aspects of the data. 
+
+While descriptive statistics provides valuable insights into the basic features of a dataset (@fig-ds), inferential statistics takes it a step further by making inferences or predictions about a population based on a sample. This type of statistics involves hypothesis testing, confidence intervals, and regression analysis, among other techniques.
+
+Bayesian statistics, on the other hand, provides a framework for updating beliefs about parameters or hypotheses based on new evidence or data. It differs from traditional frequentist statistics in that it incorporates prior knowledge or beliefs about the parameters being estimated.
+
+![The common metrics of descriptive statistics](statistics-01.png){#fig-ds}
+
+In future sessions, we will delve deeper into inferential and Bayesian statistics to explore their applications and implications in data analysis. In this blog post, we will focus on descriptive statistics (@fig-ds) and explore the central tendency theorem, as well as the measures of center and dispersion.
+
+
+## Descriptive Statistics
+
+Descriptive statistics is a branch of statistics focused on summarizing, organizing, and presenting data in a clear and understandable way. Its primary aim is to define and analyze the fundamental characteristics of a dataset without making sweeping generalizations or assumptions about the entire data set.
+
+The main purpose of descriptive statistics is to provide a straightforward and concise overview of the data, enabling researchers or analysts to gain insights and understand patterns, trends, and distributions within the dataset.
+
+Descriptive statistics typically involve measures of central tendency (such as mean, median, mode), dispersion (such as range, variance, standard deviation), and distribution shape (including skewness and kurtosis). Additionally, graphical representations like charts, graphs, and tables are commonly used to visualize and interpret the data.
+
+Histograms, bar charts, pie charts, scatter plots, and box plots are some examples of widely used graphical techniques in descriptive statistics.
+
+
+## Types of Descriptive Statistics
+There are two types of descriptive statistics:
+
+1. Measures of Central Tendency
+1. Measures of Dispersion
+
+### Measures of Central Tendency
+
+The central tendency is defined as a statistical measure that may be used to describe a complete distribution or dataset with a single value, known as a measure of central tendency. Any of the central tendency measures accurately describes the whole data distribution. In the following sections, we will look at the central tendency measures, their formulae, applications, and kinds in depth.
+
+
+```{r}
+#| echo: false
+#| fig-width: 3
+#| fig-height: 2.5
+#| warning: false
+#| message: false
+#| comment: ""
+#| label: fig-central
+#| fig-cap: The location of the mean value of the normal distribution
+
+
+mosaic::xpnorm(q = c(25), mean = 25, sd = 1.2,
+               digits = 2,log.p = T,plot = T,
+               invisible = TRUE,
+               xlab = expression(Temperature~(degree*C)))
+
+```
+
+#### Mean
+
+Mean is the sum of all the components in a group or collection divided by the number of items in that group or collection. Mean of a data collection is typically represented as x̄ (pronounced “x bar”). The formula for calculating the mean for ungrouped data to express it as the measure is given as follows:
+
+For a series of observations:
+
+$$
+\bar x = \sum \frac{x}{n}
+$${#eq-eqn1}
+
+
+Where,
+
+  + $\bar x$ = Mean values of the vector
+  + $\sum x$ Sum of all terms
+  + $n$ number of observations
+  
+  
+  
+
+
+::: {#exm-mean}
+Weights of 7 girls in kg are 54, 32, 45, 61, 20, 66 and 50. create a vector object from these values and compute the mean of the data.
+:::
+
+
+::: {#sol-mean}
+
+```{r}
+weights = c(54, 32, 45, 61, 20, 66, 50)
+
+weights |> mean()
+```
+:::
+
+
+
+
+#### Median
+
+Median of a data set is the value of the middle-most observation obtained after organizing the data in ascending order, which is one of the measures of central tendency. Median formula may be used to compute the median for many types of data, such as grouped and ungrouped data.
+
+
+::: {#exm-med}
+
+Weights of 7 girls in kg are 54, 32, 45, 61, 20, 66 and 50. crreate a vector object from these values and compute the median of the data.
+:::
+
+
+::: {#sol-med}
+
+```{r}
+weights = c(54, 32, 45, 61, 20, 66, 50)
+weights |> median()
+```
+:::
+
+
+
+#### Mode
+
+Mode is one of the measures of central tendency, defined as the value that appears the most frequently in the provided data, i.e. the observation with the highest frequency is known as the mode of data. The mode formulae provided below can be used to compute the mode for ungrouped data.
+
+
+
+::: {#exm-mod}
+Weights of 7 girls in kg are 54, 32, 45, 61, 20, 66 and 50. create a vector object from these values and compute the mode of these data.
+:::
+
+
+::: {#sol-mod}
+
+```{r}
+#|eval: false
+weights = c(54, 32, 45, 61, 20, 55, 50)
+
+
+weights |> mode()
+```
+:::
+
+
+
+
+### Measure of Dispersion
+
+Another important property of a distribution is the dispersion. Some of the parameters that can be used to quantify dispersion are illustrated in @fig-dispersion. 
+
+```{r}
+#| echo: false
+#| fig-width: 3
+#| fig-height: 2.5
+#| warning: false
+#| message: false
+#| comment: ""
+#| label: fig-dispersion
+#| fig-cap: The location of the standard deviation values of the normal distribution
+
+
+mosaic::xpnorm(q = c(22.65,27.35), mean = 25, sd = 1.2,
+               digits = 2,log.p = T,plot = T,
+               invisible = TRUE,
+               xlab = expression(Temperature~(degree*C)))
+
+```
+
+
+
+If the variability of data within an experiment must be established, absolute measures of variability should be employed. These metrics often reflect differences in a data collection in terms of the average deviations of the observations. The most prevalent absolute measurements of deviation are mentioned below. In the following sections, we will look at the variability measures, their formulae in depth.
+
+1. Range
+1. Standard Deviation
+1. Variance
+
+
+### Range
+The range represents the spread of your data from the lowest to the highest value in the distribution. It is the most straightforward measure of variability to compute. To get the range, subtract the data set’s lowest and highest values.
+
+Range = Highest Value – Lowest Value
+
+
+
+
+::: {#exm-range}
+Calculate the range of the following data series:  5, 13, 32, 42, 15, 84
+:::
+
+
+::: {#sol-range}
+
+```{r}
+#|eval: false
+weights = c(5, 13, 32, 42, 15, 84)
+
+
+weights |> range()
+```
+:::
+
+
+
+### Standard Deviation
+
+
+Standard deviation (s or SD) represents the average level of variability in your dataset. It represents the average deviation of each score from the mean. The higher the standard deviation, the more varied the dataset is.
+
+To calculate standard deviation, follow these six steps:
+
+
+1. Make a list of each score and calculate the mean.
+
+1. Calculate deviation from the mean, by subtracting the mean from each score.
+
+1. Square each of these differences.
+
+1. Sum up all squared variances.
+
+1. Divide the total of squared variances by N-1.
+
+1.Find the square root of the number that you discovered.
+
+
+
+
+::: {#exm-sd}
+Calculate standard deviation of the following data series:  5, 13, 32, 42, 15, 84.
+:::
+
+
+::: {#sol-sd}
+
+```{r}
+#|eval: false
+weights = c(5, 13, 32, 42, 15, 84)
+
+
+weights |> sd()
+```
+:::
+
+
+### Variance
+
+Variance is calculated as average of squared departures from the mean. Variance measures the degree of dispersion in a data collection. The more scattered the data, the larger the variance in relation to the mean. To calculate the variance, square the standard deviation.
+
+
+
+::: {#exm-var}
+Calculate standard deviation of the following data series:  5, 13, 32, 42, 15, 84.
+:::
+
+
+::: {#sol-var}
+
+```{r}
+#|eval: false
+weights = c(5, 13, 32, 42, 15, 84)
+
+
+weights |> sd()
+```
+:::
+
+
+
+### Shape of the distribution
+
+#### Skewness
+
+Skewness is a measure of the asymmetry of the tails of a distribution. A negative skew indicates that the distribution is spread out more to the left of the mean value, assuming values increasing towards the right along the axis. Th e sample mean is in this case smaller than the mode. Distributions with positive skewness have large tails that extend towards the right. Th e skewness of the symmetric normal distribution is zero.  
+
+The most popular way to compute the asymmetry of a distribution is by Pearson’s mode skewness: 
+
+$$
+skewness = \frac{mean - mode}{standar deviation}
+$$
+Although Pearson’s measure is a useful one, a Fisher formula is often used, which is defined as;
+
+$$
+skewness = \sum_{i-1}^N \frac{(x - \bar x)}{s^3}^2
+$$
+
+#### Kurtosis
+
+The second important measure for the sape of the distribution is the *kurtosis*. The kurtosis is a measure of whether the data are peaked or flat relative to
+a normal distribution. A normal distribution has a kurtosis of three. A high kurtosis indicates that the distribution has a distinct peak near the mean, whereas a distribution characterized by a low kurtosis shows a flat top near the mean and broad tails. Higher peakedness in a distribution results from rare extreme deviations, whereas a low kurtosis is caused by frequent moderate deviations.   Kurtosis formula is defined as :
+
+$$
+kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
+$$
+
+
+
+### Example of distribution
+
+R has several functions to numerically summarize variables. These include the capability of calculating the mean, standard deviation, variance, median, five number summary, interquartile range (IQR) as well as arbitrary quantiles. To improve the legibility of output, we will also set the default number of digits to display to a more reasonable level (see ?options() for more configuration possibilities).
+
+```{r}
+options(digits = 3)
+```
+
+
+### Simulate the weight of tuna species in the WIO region
+
+As an example, we can simulate the weight of yellow fin tuna in the tropical Indian ocean. According to , yellow fin tuna weight range from 0.5 to 7.8 kg and we can use `runif` function in R to generate a sample of 200 individual as the code highlight;
+
+
+```{r}
+weight = runif(n = 200, min = 0.5, max = 7.8)
+# weight = rnorm(n = 200, mean = 4.10, sd = .28)
+
+weight |> hist()
+```
+
+Inbuilt function exists for summary statistics.
+
+```{r}
+weight |>
+  mean()
+```
+
+```{r}
+weight |>
+  median()
+```
+
+```{r}
+weight |>
+  sd()
+```
+
+
+```{r}
+weight |>
+  range()
+```
+
+
+
+```{r}
+weight |>
+  mode()
+```
+
+It is also straightforward to calculate quantiles of the distribution.
+
+```{r}
+weight |>
+  quantile()
+```
+
+Rather than computing the metrics as individual, some packages have dedicated functions that produce the summary statistic. For example, the **psych** package has `describe` function;
+
+
+```{r}
+weight |>
+  psych::describe()
+  
+```
+
+
+
+```{r}
+
+weight |>
+  summarytools::descr()
+
+```
+
+
+```{r}
+weight |>
+  EnvStats::summaryFull()
+```
+
+Finally, the `report` function in the report package provides a concise summary of many useful statistics.
+
+```{r}
+weight |>
+  report::report()
+```
+
+Likewise, the fav_stats function in **mosaic** package
+
+```{r}
+weight |>
+  mosaic::fav_stats()
+```
+
+### Graphical Summaries
+```{r}
+length = rnorm(n = 200, mean = 60, sd = 8)
+```
+
+Th e functions `hist` provide numerous ways of binning the data, of normalizing the data, and of displaying the histogram.
+
+```{r}
+length |>
+  hist()
+```
+
+Th e functions `boxplot` provide five summary number (min, Q1, median, Q3, max) values that are displayed in boxplot
+
+```{r}
+length |>
+  boxplot()
+```
+
+
+```{r}
+length |>
+  densityplot()
+```
+
+
+
+
+
+
+
+
+
+
+## Summary
+
+Understanding both central tendency and dispersion is essential for gaining insights into the characteristics of a dataset. Together, these measures can help to identify patterns, trends, and potential outliers within the data.
+

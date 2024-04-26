@@ -1,0 +1,140 @@
+---
+title: "Importing table files into R"
+author: "Masumbuko Semba"
+description: "Learning to import tabular files from local directory intot R session is an important skills in R programming"
+date: "2024-02-26"
+categories: [visualization, code]
+image: "data_types.png"
+---
+
+
+
+## Importing Data
+So far, we’ve looked at several dataset in previous chapter and we have also created ourselves some datasets. While you can do all your data entry work in R or Excel, it is much more common to load data from other sources. Local and international organization have been collecting fisheries dependent and fisheries independent data for years. These historical dataset with fisheries information like fish catch, effort, landing sites, fishing ground and critical habitats can be obtained from several databases---some are open and other closed. 
+
+Much of the data we download or receive from is either comma-separated value files `.csv` or and Excel spreadsheets, `.xlsx.` .csv files are spreadsheets stored as text files - basically Excel files stripped down to the bare minimum - no formatting, no formulas, no macros. You can open and edit them in spreadsheet software like LibreOffice Calc, Google Sheets or Microsoft Excel. Many devices and databases can export data in .csv format, making it a commonly used file format that you are likely to encounter sooner rather than later. 
+
+Whether that be a comma separated (csv) or a tab delimited file, there are multiple functions that can read these data into R. We will stick to loading these data from the **tidyverse** packages but be aware these are not the only methods for doing this. We will use the tidyverse functions just to maintain consistency with everything else we do. The first package in **tidyverse** we will use is called **readr** [@readr], which is a collection of functions to load the tabular data from working directory in our machine into R session. Some of its functions include:
+
++ `read_csv()`: comma separated (CSV) files
++ `read_tsv()`: tab separated files
++ `read_delim()`: general delimited files
++ `read_fwf()`: fixed width files
++ `read_table()`: tabular files where columns are separated by white-space.
++ `read_log()`: web log files
++ **readxl** reads in Excel files.
+
+Before we import the data, we need to load the packages that we will use their functions in this chapter
+
+```{r}
+#| warning: false
+#| message: false
+
+require(tidyverse)
+require(magrittr)
+```
+
+
+### Importing csv files
+
+A `CSV` file is a type of file where each line contains a single record, and all the columns are separated from each other via a comma. In order to load data from a file into R, you need its path - that is, you need to tell R where to find the file. Unless you specify otherwise, R will look for files in its current working directory. You can read `.csv` file using `read_csv()` function of the **readr** package [@readr] as shown in the chunk below;
+
+
+
+```{r}
+#| eval: false
+imported.lfq = read_csv("dataset/project/tidy_LFQ_sample_4.csv")
+
+lf4
+```
+
+We imported `tidy_LFQ_sample_4.csv` from working directory into R using `read_csv()` and specify the path to the file in your working directory and store as `imported.lfq. If you get an error message, it means that `tidy_LFQ_sample_4.csv` is not in your working directory. Either move the file to the right directory (remember, you can use run `getwd()` to see what your working directory is) or change your working directory.
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+imported.lfq = read_csv("../data/tidy/tidy_LFQ_sample_4.csv")
+
+
+```
+If you glimpse the dataframe with `glimpse()` function, you should see the internal structure of the `imported.lfq` object we just loaded;
+
+```{r}
+imported.lfq %>% 
+  glimpse()
+```
+
+The dataset contains six variables and 6,185 records. The variables `site` and `sex` both contain text, and have been imported as character vectors4. The `date` column has been imported as date format, the variable `tl_mm` and `fl_mm` are measured length and have been imported as numeric vector measured in millimeters. The variable `wt_gm` is the weight of fish measured in grams and also have been imported as numeric vector. 
+
+
+So, what can you do in case you need to import data from a file that is not in your working directory? This is a common problem, as many of us store script files and data files in separate folders (or even on separate drives). One option is to use `file.choose`, which opens a pop-up window that lets you choose which file to open using a graphical interface:
+
+```r
+imported.lfq2 = read_csv(file.choose())
+```
+
+This solution work just fine if you just want to open a single file once. But if you want to reuse your code or run it multiple times, you probably don’t want to have to click and select your file each time. Instead, you can specify the path to your file in the call to `read_csv`.
+
+
+### Importing Excel files
+
+Commonly our data is stored as a Excel file. There are several packages that can be used to import Excel files to R. I prefer the **readxl** package [@readxl], so let’s install that:
+
+```r
+install.packages("readxl")
+```
+The package has `read_exel()` function that allows us to specify which sheet within the Excel file to read. The  function automatically convert the worksheet into a `.csv` file and read it. Let's us import the the data in first sheet of the `tidy_LFQ_sample_4.xlsx`. Is a similar dataset that just imported in the previous section, but is in Excel format.  We will use this file to illustrate how to import the excel file into R workspace with `readxl` package [@readxl].
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+imported.lfq = readxl::read_excel("../data/tidy/tidy_LFQ_sample_4.xlsx", sheet = 1)
+
+```
+
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+imported.lfq
+
+```
+
+```{r}
+imported.lfq %>% 
+  skimr::skim()
+```
+
+
+## Saving and exporting your data
+In many a case, data manipulation is a huge part of statistical work, and of course you want to be able to save a data frame after manipulating it. There are two options for doing this in R - you can either export the data as e.g. a .csv or a .xlsx file, or save it in R format as an .RData file.
+
+### Exporting data
+Just as we used the functions `read_csv` and `read_excel` to import data, we can use `write_csv`to export it. The code below saves the bookstore data frame as a .csv file file, which will be created in the current working directory. If you wish to store 
+
+
+```r
+
+imported.lfq %>%  write_csv("assets/fao_paul_dataset/tidy/tidy_lfq.csv")
+
+```
+
+### Saving and loading R data
+Being able to export to different spreadsheet formats is very useful, but sometimes you want to save an object that can’t be saved in a spreadsheet format. For instance, you may wish to save a multiple processed data, functions and formula that you’ve created. `.RData` files can be used to store one or more R objects. To save the objects bookstore and age in a `.Rdata` file, we can use the save function:
+
+
+
+```r
+
+save.image("assets/fao_paul_dataset/tidy/myData.RData")
+
+```
+
+
+

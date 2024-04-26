@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -258,31 +292,33 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(6)</span></div><div class="category" data-category="visualization">visualization <span class="quarto-category-count">(6)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(9)</span></div><div class="category" data-category="visualization">visualization <span class="quarto-category-count">(9)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 
 
 
 
 
 
+
+<!-- -->
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="visualization,code,Statistics" data-listing-date-sort="1713992400000" data-listing-file-modified-sort="1714101494565" data-listing-date-modified-sort="1714078800000" data-listing-reading-time-sort="4" data-listing-word-count-sort="628">
+<div class="quarto-post image-right" data-index="0" data-categories="visualization,code,Statistics" data-listing-date-sort="1713992400000" data-listing-file-modified-sort="1714169507479" data-listing-date-modified-sort="1714078800000" data-listing-reading-time-sort="9" data-listing-word-count-sort="1799">
 <div class="thumbnail">
-<p><a href="./posts/stats_intro/index.html" class="no-external"></a></p><a href="./posts/stats_intro/index.html" class="no-external">
-<p><img src="./posts/stats_intro/statistics-01.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/stats_intro/index.html" class="no-external"></a></p>
+<p><a href="./posts/stats0/index.html" class="no-external"></a></p><a href="./posts/stats0/index.html" class="no-external">
+<p><img src="./posts/stats0/statistics-01.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/stats0/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/stats_intro/index.html" class="no-external">Understanding Descriptive Statistics</a>
+<a href="./posts/stats0/index.html" class="no-external">Understanding Descriptive Statistics</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/stats_intro/index.html" class="no-external"></a>
+<a href="./posts/stats0/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
@@ -296,11 +332,11 @@ Statistics
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/stats_intro/index.html" class="no-external">examining measures of central tendency and dispersion, we can gain valuable insights into the characteristics and distribution of a dataset</a>
+<a href="./posts/stats0/index.html" class="no-external">Examine measures of center and dispersion of the data so that we can gain valuable insights into the characteristics and distribution of various metrics that are in a dataset</a>
 </div>
 </div>
 <div class="metadata">
-<a href="./posts/stats_intro/index.html" class="no-external">
+<a href="./posts/stats0/index.html" class="no-external">
 <div class="listing-date">
 Apr 25, 2024
 </div>
@@ -310,7 +346,43 @@ Masumbuko Semba
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="visualization,code" data-listing-date-sort="1707685200000" data-listing-file-modified-sort="1714149714093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2619">
+<div class="quarto-post image-right" data-index="1" data-categories="visualization,code" data-listing-date-sort="1708894800000" data-listing-file-modified-sort="1714172420692" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1045">
+<div class="thumbnail">
+<p><a href="./posts/importingData/index.html" class="no-external"></a></p><a href="./posts/importingData/index.html" class="no-external">
+<p><img src="./posts/importingData/data_types.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/importingData/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/importingData/index.html" class="no-external">Importing table files into R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/importingData/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
+visualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/importingData/index.html" class="no-external">Learning to import tabular files from local directory intot R session is an important skills in R programming</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/importingData/index.html" class="no-external">
+<div class="listing-date">
+Feb 26, 2024
+</div>
+<div class="listing-author">
+Masumbuko Semba
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="visualization,code" data-listing-date-sort="1707685200000" data-listing-file-modified-sort="1714149714093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2619">
 <div class="thumbnail">
 <p><a href="./posts/vectorDataframe/index.html" class="no-external"></a></p><a href="./posts/vectorDataframe/index.html" class="no-external">
 <p><img src="./posts/vectorDataframe/DATATYPES.svg" class="thumbnail-image"></p>
@@ -346,7 +418,7 @@ Masumbuko Semba
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="visualization,code" data-listing-date-sort="1706907600000" data-listing-file-modified-sort="1714005130047" data-listing-date-modified-sort="1714078800000" data-listing-reading-time-sort="3" data-listing-word-count-sort="510">
+<div class="quarto-post image-right" data-index="3" data-categories="visualization,code" data-listing-date-sort="1706907600000" data-listing-file-modified-sort="1714005130047" data-listing-date-modified-sort="1714078800000" data-listing-reading-time-sort="3" data-listing-word-count-sort="510">
 <div class="thumbnail">
 <p><a href="./posts/datastructures/index.html" class="no-external"></a></p><a href="./posts/datastructures/index.html" class="no-external">
 <p><img src="./posts/datastructures/dataStructures.png" class="thumbnail-image"></p>
@@ -382,7 +454,7 @@ Masumbuko Semba
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="visualization,code" data-listing-date-sort="1706216400000" data-listing-file-modified-sort="1713997571138" data-listing-date-modified-sort="1706216400000" data-listing-reading-time-sort="3" data-listing-word-count-sort="502">
+<div class="quarto-post image-right" data-index="4" data-categories="visualization,code" data-listing-date-sort="1706216400000" data-listing-file-modified-sort="1713997571138" data-listing-date-modified-sort="1706216400000" data-listing-reading-time-sort="3" data-listing-word-count-sort="502">
 <div class="thumbnail">
 <p><a href="./posts/dataTypes/index.html" class="no-external"></a></p><a href="./posts/dataTypes/index.html" class="no-external">
 <p><img src="./posts/dataTypes/data_types.png" class="thumbnail-image"></p>
@@ -418,7 +490,46 @@ Masumbuko Semba
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="visualization,code" data-listing-date-sort="1706043600000" data-listing-file-modified-sort="1713996134356" data-listing-date-modified-sort="1706389200000" data-listing-reading-time-sort="22" data-listing-word-count-sort="4226">
+<div class="quarto-post image-right" data-index="5" data-categories="visualization,code,analysis" data-listing-date-sort="1706216400000" data-listing-file-modified-sort="1714174157453" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1238">
+<div class="thumbnail">
+<p><a href="./posts/exploreR/index.html" class="no-external"></a></p><a href="./posts/exploreR/index.html" class="no-external">
+<p><img src="./posts/screenshots/rstudio_gui.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/exploreR/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/exploreR/index.html" class="no-external">Famliarize with R and Rstudio</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/exploreR/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
+visualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
+analysis
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/exploreR/index.html" class="no-external">Understanding the software and layout of the tools make it easy to access the right tools while interacting with the data and software</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/exploreR/index.html" class="no-external">
+<div class="listing-date">
+Jan 26, 2024
+</div>
+<div class="listing-author">
+Masumbuko Semba
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="visualization,code" data-listing-date-sort="1706043600000" data-listing-file-modified-sort="1713996134356" data-listing-date-modified-sort="1706389200000" data-listing-reading-time-sort="22" data-listing-word-count-sort="4226">
 <div class="thumbnail">
 <p><a href="./posts/get started/index.html" class="no-external"></a></p><a href="./posts/get started/index.html" class="no-external">
 <p><img src="./posts/get started/r_gui.png" class="thumbnail-image"></p>
@@ -454,7 +565,46 @@ Masumbuko Semba
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="visualization,code,analysis" data-listing-date-sort="1700773200000" data-listing-file-modified-sort="1714000150281" data-listing-date-modified-sort="1703365200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
+<div class="quarto-post image-right" data-index="7" data-categories="visualization,code,analysis" data-listing-date-sort="1706043600000" data-listing-file-modified-sort="1714173612195" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3741">
+<div class="thumbnail">
+<p><a href="./posts/thebasics/index.html" class="no-external"></a></p><a href="./posts/thebasics/index.html" class="no-external">
+<p><img src="./posts/screenshots/Rproject.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/thebasics/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/thebasics/index.html" class="no-external">The basics of R and Rstudio</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/thebasics/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
+visualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
+analysis
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/thebasics/index.html" class="no-external">Understanding the building blocks of R and its working environment Rstudio for smooth operations in data science</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/thebasics/index.html" class="no-external">
+<div class="listing-date">
+Jan 24, 2024
+</div>
+<div class="listing-author">
+Masumbuko Semba
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="visualization,code,analysis" data-listing-date-sort="1700773200000" data-listing-file-modified-sort="1714000150281" data-listing-date-modified-sort="1703365200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
 <div class="thumbnail">
 <p><a href="./posts/timeline/index.html" class="no-external"></a></p><a href="./posts/timeline/index.html" class="no-external">
 <p><img src="./posts/timeline/milestone_timeline-01.png" class="thumbnail-image"></p>
@@ -577,6 +727,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -884,7 +1085,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: posts</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: "date desc"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  type: default</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  categories: true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  sort-ui: false</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  filter-ui: false</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

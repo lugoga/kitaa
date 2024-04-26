@@ -68,10 +68,13 @@ feed: true
 # borrowed from other sources
 format:
   html:
+    code-fold: false
+    code-tools: true
     theme:
       - styles.scss
     mainfont: Nunito
     toc: true
+    toc-depth: 3
 
 
 

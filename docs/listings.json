@@ -1,23 +1,29 @@
 [
   {
-    "listing": "/archive.html",
+    "listing": "/index.html",
     "items": [
-      "/posts/stats_intro/index.html",
+      "/posts/stats0/index.html",
+      "/posts/importingData/index.html",
       "/posts/vectorDataframe/index.html",
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
+      "/posts/exploreR/index.html",
       "/posts/get started/index.html",
+      "/posts/thebasics/index.html",
       "/posts/timeline/index.html"
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/archive.html",
     "items": [
-      "/posts/stats_intro/index.html",
+      "/posts/stats0/index.html",
+      "/posts/importingData/index.html",
       "/posts/vectorDataframe/index.html",
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
+      "/posts/exploreR/index.html",
       "/posts/get started/index.html",
+      "/posts/thebasics/index.html",
       "/posts/timeline/index.html"
     ]
   }
