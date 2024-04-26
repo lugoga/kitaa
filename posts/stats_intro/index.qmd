@@ -3,7 +3,10 @@ title: "Understanding Descriptive Statistics"
 description: "examining measures of central tendency and dispersion, we can gain valuable insights into the characteristics and distribution of a dataset"
 author: "Masumbuko Semba"
 date: "2024-04-25"
-
+date-modified: "2024-04-26"
+categories: [visualization, code, Statistics]
+image: "statistics-01.png"
+toc: true
 ---
 
 
