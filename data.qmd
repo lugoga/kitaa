@@ -1,4 +1,5 @@
 ---
+title: "The dataset for the program"
 page-layout: full
 title-block-banner: true
 ---
@@ -9,12 +10,24 @@ title-block-banner: true
 1. **Chinook** -- contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below; 
 
 ```{r}
-#| eval: true
+#| eval: false
 #| warning: false
 #| message: false
 
 chinook = readr::read_csv(
   file = "https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv")
+
+
+```
+
+```{r}
+#| eval: true
+#| warning: false
+#| message: false
+#| echo: false
+
+chinook = readr::read_csv(
+  file = "datasets/chinook_lw.csv")
 
 
 ```
@@ -30,7 +43,7 @@ chinook |>
 
 
 ```{r}
-#| eval: true
+#| eval: false
 #| warning: false
 #| message: false
 
@@ -38,6 +51,15 @@ chinook |>
 co = readr::read_csv("https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv")
 ```
 
+```{r}
+#| eval: true
+#| warning: false
+#| message: false
+#| echo: false
+
+
+co = readr::read_csv("datasets/long_form_co2.csv")
+```
 `
 
 ```{r}

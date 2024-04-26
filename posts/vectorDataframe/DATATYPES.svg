@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="212.493px" viewBox="0 0 450 212.493" enable-background="new 0 0 450 212.493" xml:space="preserve">
+<path fill="#679ACC" d="M193.681,145.943V182c0,4.295,13.552,7.778,30.268,7.778c16.718,0,30.268-3.483,30.268-7.778v-36.057
+	H193.681z"/>
+<ellipse fill="#A1C3DF" stroke="#0169AA" stroke-width="0.5" stroke-miterlimit="10" cx="223.948" cy="146.544" rx="30.268" ry="7.778"/>
+<g>
+	<text transform="matrix(1 0 0 1 205.8535 174.4058)" fill="#231F20" font-family="'MyriadPro-Bold'" font-size="12">STORE</text>
+</g>
+<polygon fill="#CB2A7C" points="63.388,25.215 29.845,25.215 29.845,72.192 79.307,72.192 79.307,38.453 63.388,38.453 "/>
+<polygon fill="#EB5FA2" points="63.861,25.215 63.388,25.215 63.388,38.453 79.307,38.453 79.307,37.431 "/>
+<text transform="matrix(1 0 0 1 40.0923 50.1841)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">INTEGER</tspan><tspan x="0" y="9.41" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">DATA</tspan></text>
+<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" points="63.388,24.749 63.388,38.453 
+	79.307,38.453 "/>
+<polygon fill="#0677BA" points="120.633,25.215 87.09,25.215 87.09,72.192 136.552,72.192 136.552,38.453 120.633,38.453 "/>
+<polygon fill="#4998D2" points="121.106,25.215 120.633,25.215 120.633,38.453 136.552,38.453 136.552,37.432 "/>
+<text transform="matrix(1 0 0 1 91.3374 50.1841)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">CHARACTER</tspan><tspan x="0" y="9.41" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">DATA</tspan></text>
+<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" points="120.633,24.749 120.633,38.453 
+	136.552,38.453 "/>
+<polygon fill="#00A89C" points="177.879,25.214 144.336,25.214 144.336,72.192 193.797,72.192 193.797,38.453 177.879,38.453 "/>
+<polygon fill="#5FC4BC" points="178.352,25.214 177.879,25.214 177.879,38.453 193.797,38.453 193.797,37.431 "/>
+<text transform="matrix(1 0 0 1 147.2144 50.1841)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">NUMERICAL</tspan><tspan x="10.357" y="9.41" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">DATA</tspan></text>
+<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" points="177.879,24.749 177.879,38.453 
+	193.797,38.453 "/>
+<polygon fill="#7DAA51" stroke="#3C6C34" stroke-miterlimit="10" points="235.76,25.215 202.217,25.215 202.217,72.192 
+	251.679,72.192 251.679,38.453 235.76,38.453 "/>
+<polygon fill="#7DAA51" stroke="#83A462" stroke-miterlimit="10" points="236.233,25.215 235.76,25.215 235.76,38.453 
+	251.679,38.453 251.679,37.431 "/>
+<text transform="matrix(1 0 0 1 212.4644 50.1841)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">FACTOR</tspan><tspan x="0" y="9.41" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">DATA</tspan></text>
+<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" points="235.76,24.749 235.76,38.453 
+	251.679,38.453 "/>
+<polygon fill="#D98247" stroke="#D96827" stroke-miterlimit="10" points="293.006,25.215 259.462,25.215 259.462,72.192 
+	308.924,72.192 308.924,38.453 293.006,38.453 "/>
+<text transform="matrix(1 0 0 1 269.7095 50.1841)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">LOGICAL</tspan><tspan x="0" y="9.41" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">FACTOR</tspan></text>
+<polyline fill="#A95E00" stroke="#FFFFFF" stroke-miterlimit="10" points="293.006,24.749 293.006,38.453 308.924,38.453 "/>
+<polygon fill="#BE2426" points="350.252,25.214 316.708,25.214 316.708,72.192 366.17,72.192 366.17,38.453 350.252,38.453 "/>
+<polygon fill="#BE2426" points="350.725,25.214 350.252,25.214 350.252,38.453 366.17,38.453 366.17,37.431 "/>
+<text transform="matrix(1 0 0 1 330.1191 50.1841)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">DATE</tspan><tspan x="-0.176" y="9.41" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">DATA</tspan></text>
+<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" points="350.252,24.749 350.252,38.453 
+	366.17,38.453 "/>
+<polygon fill="#5A0B6D" points="407.17,25.215 373.627,25.215 373.627,72.192 423.088,72.192 423.088,38.453 407.17,38.453 "/>
+<polygon fill="#5A0B6D" points="407.643,25.215 407.17,25.215 407.17,38.453 423.088,38.453 423.088,37.431 "/>
+<text transform="matrix(1 0 0 1 383.873 50.1841)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">COMPLEX</tspan><tspan x="0" y="9.41" fill="#FFFFFF" font-family="'ArialNarrow-Bold'" font-size="7.8413">DATA</tspan></text>
+<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" points="407.17,24.749 407.17,38.453 
+	423.088,38.453 "/>
+<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M48.005,24.749"/>
+<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M401.061,24.749"/>
+<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="48.005,73.749 48.005,105.5 401.061,105.5 401.061,73.749 
+	"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="109.517" y1="105.5" x2="109.517" y2="73.749"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="166.496" y1="105.5" x2="166.496" y2="73.749"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="223.475" y1="105.5" x2="223.475" y2="73.749"/>
+<g>
+	<g>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="223.475" y1="131.216" x2="223.475" y2="105.5"/>
+		<g>
+			<path d="M223.475,137.251c1.054-2.84,2.852-6.363,4.756-8.547l-4.756,1.72l-4.755-1.72
+				C220.625,130.888,222.422,134.412,223.475,137.251z"/>
+		</g>
+	</g>
+</g>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="280.454" y1="105.5" x2="280.454" y2="73.749"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="337.434" y1="105.5" x2="337.434" y2="73.749"/>
+</svg>

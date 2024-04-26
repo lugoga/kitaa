@@ -1,4 +1,5 @@
 ---
+title: "People you meet along the initiative"
 page-layout: full
 title-block-banner: true
 ---
@@ -562,13 +563,18 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ::: {.column width="50%"}
 
-### Mr. Peter Kiwelu
+### Mr. Ekumbi Boniphace
 
-![](resources/kiwelu.png)
+![](resources/ekumbi.png)
 
 **Role**: Facilitator 
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Ekumbi Boniphace is currently working on the [project](www.school.co.tz), where he is responsible for promoting schools in Tanzania. He utilizes various tools such as ArcGIS, Kobo, and Adobe Photoshop to carry out his tasks. Recently, he is expanding his skill set by learning R and Python for data processing, analysis and reporting.
+
+<i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>   [ +255 716 494 125]{style="color: #0069BF;"}
+
 
 :::
 :::

@@ -100,7 +100,6 @@ cookieconsent.run({
   
 
 
-<link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Illuminate Data with R - Getting Started with R and RStudio">
 <meta name="twitter:description" content="Learn the basic of programming with R using RStudio. We’ll install R, and RStudio RStudio, an extremely popular development environment for R">
 <meta name="twitter:image" content="r_gui.png">
@@ -108,7 +107,7 @@ cookieconsent.run({
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -140,6 +139,10 @@ cookieconsent.run({
   <li class="nav-item">
     <a class="nav-link" href="../../data.html"> 
 <span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../photos.html"> 
+<span class="menu-text">Gallery</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
@@ -240,7 +243,31 @@ cookieconsent.run({
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started-with-rstudio" id="toc-getting-started-with-rstudio" class="nav-link active" data-scroll-target="#getting-started-with-rstudio">Getting Started with RStudio</a></li>
+  <li><a href="#install-r" id="toc-install-r" class="nav-link" data-scroll-target="#install-r">1. Install R</a></li>
+  <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">2. Install RStudio</a></li>
+  <li><a href="#first-look-at-rstudio" id="toc-first-look-at-rstudio" class="nav-link" data-scroll-target="#first-look-at-rstudio">3. First Look at RStudio</a></li>
+  <li><a href="#the-console" id="toc-the-console" class="nav-link" data-scroll-target="#the-console">4. The Console</a></li>
+  <li><a href="#the-global-environment" id="toc-the-global-environment" class="nav-link" data-scroll-target="#the-global-environment">5. The Global Environment</a></li>
+  <li><a href="#install-the-tidyverse-packages" id="toc-install-the-tidyverse-packages" class="nav-link" data-scroll-target="#install-the-tidyverse-packages">6. Install the tidyverse Packages</a></li>
+  <li><a href="#load-the-tidyverse-packages-into-memory" id="toc-load-the-tidyverse-packages-into-memory" class="nav-link" data-scroll-target="#load-the-tidyverse-packages-into-memory">7. Load the tidyverse Packages into Memory</a></li>
+  <li><a href="#identify-loaded-packages" id="toc-identify-loaded-packages" class="nav-link" data-scroll-target="#identify-loaded-packages">8. Identify Loaded Packages</a></li>
+  <li><a href="#get-help-on-a-package" id="toc-get-help-on-a-package" class="nav-link" data-scroll-target="#get-help-on-a-package">9. Get Help on a Package</a></li>
+  <li><a href="#get-help-on-a-function" id="toc-get-help-on-a-function" class="nav-link" data-scroll-target="#get-help-on-a-function">10. Get Help on a Function</a></li>
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects">11. RStudio Projects</a></li>
+  <li><a href="#save-your-real-work.-delete-the-rest." id="toc-save-your-real-work.-delete-the-rest." class="nav-link" data-scroll-target="#save-your-real-work.-delete-the-rest.">12. Save Your "Real" Work. Delete the Rest.</a></li>
+  <li><a href="#r-scripts" id="toc-r-scripts" class="nav-link" data-scroll-target="#r-scripts">13. R Scripts</a></li>
+  <li><a href="#run-code" id="toc-run-code" class="nav-link" data-scroll-target="#run-code">14. Run Code</a></li>
+  <li><a href="#access-built-in-datasets" id="toc-access-built-in-datasets" class="nav-link" data-scroll-target="#access-built-in-datasets">15. Access Built-in Datasets</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -480,20 +507,6 @@ Figure&nbsp;1: Watch the video that guide you through the key step of using Rstu
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
-<div>
-<hr>
-
-<h3> Stay in touch </h3>
-
-<p> If you enjoyed this post, then don't miss out on any future posts by subscribing to our newsletter. </p>
-
-
-<iframe src="https://embeds.beehiiv.com/6dd9beae-8348-43f1-8843-50dcd1667ad7?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
-
-
-
-<hr>
-</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

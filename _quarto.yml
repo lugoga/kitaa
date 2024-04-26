@@ -19,6 +19,8 @@ website:
         href: books.qmd
       - text: Datasets
         href: data.qmd
+      - text: Gallery
+        href: photos.qmd
       - text: About
         href: about.qmd
       - icon: github
@@ -57,11 +59,19 @@ feed: true
 ######################### 
 
 
+# format:
+#   html:
+#     theme: litera
+#     css: styles.css
+#     include-after-body: footer.html
+
+# borrowed from other sources
 format:
   html:
-    theme: litera
-    css: styles.css
-    include-after-body: footer.html
+    theme:
+      - styles.scss
+    mainfont: Nunito
+    toc: true
 
 
 
