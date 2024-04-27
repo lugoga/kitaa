@@ -1,0 +1,1235 @@
+---
+title: "Basic plots with ggplot2"
+author: "Masumbuko Semba"
+date: "2024-04-01"
+categories: [visualization, code, analysis]
+# image: "../screenshots/Rproject.png"
+execute: 
+  warning: false
+  message: false
+  comment: ""
+number-sections: true  
+---
+
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+
+library(tidyverse)
+library(readxl)
+library(magrittr)
+
+knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
+
+
+```
+
+
+## Introduction
+
+\newpage
+
+## Basic plots
+The **ggplot2** package provides a set of functions that mirror the *Grammar of Graphics*, enabling you to efficaciously specify what you want a plot to look like. To have a glimpse of **ggplot2**, we start with five basic types of plots that are familiar to most people. These include: scatterplot, linegraphs, boxplots, histograms, and barplots. The first four graphs works with *quantitative* data and barplots are appropriate for *categorical* data. 
+
+Thus, understanding the type of data is inevitable before you throw the variable into **ggplot2** to make plot for you.  In this post, we will cover the most common plot types, such as line plots, histograms, pie charts, scatter plots, and bar plots, along with several other plot types that build upon these. 
+ 
+ 
+### Scatterplot
+
+Scatterplots are also called bivariate, allows you to visualize the association between two numerical variables. They are among the widely used plot in fisheries science particularly when looking for association between length and weight of a particular fish. Probably you might have come across a scatterplot like the one in @fig-scatter-chinook that base R was used, but probably you have not made one based on the fundamental theorem of *grammar of graphics*. 
+
+
+```{r}
+#| label: fig-scatter-chinook
+#| fig-cap: Length and weight relationship of Chinook Salmon sampled in Atantic Ocean
+#| fig-pos: H
+#| fig-width: 3.5
+#| fig-height: 3.5
+#| echo: false
+#| 
+FSA::ChinookArg %$%
+  plot(x = tl, y = w, las = 1, xlab = "Total length (cm)", ylab = "Weight (kg)")
+```
+
+
+We are going to visualize the relationship between length and weight of fish measured in the coastal waters of Kenya. We use the `tidy_LFQ_sample_4.csv` file.  Let's import the dataset in the session using `read_csv` function. 
+
+```{r}
+#| message: false
+#| warning: false
+lfq4 = read_csv("../data/tidy/tidy_LFQ_sample_4.csv")
+
+
+```
+
+This file contain length and weight measurements along with sex sampled in Mombasa and Voi from March 2016 to September 2020 (@tbl-lfq).
+
+```{r}
+#| label: tbl-lfq
+#| tbl-cap: Sample length and weight of sampled fish 
+#| echo: false
+#| 
+lfq4 %>% 
+  FSA::headtail() %>% 
+ flextable::flextable() |> 
+  flextable::autofit()
+```
+
+
+Let's now dive into the code of using the *grammar of graphics**  to create the scatterplot. We use the `ggplot()` function from **ggplot2** package. The code highlighted in the chunk below was used to plot @fig-scatter1
+
+
+```{r}
+#| label: fig-scatter1
+#| fig-cap: Length and weight relationship
+#| fig-width: 3
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm))+
+  geom_point()+
+  labs(x = "Total length (mm)", y = "Weight (gm)")
+
+```
+
+Let's explore the code above piece-by-piece
+
++ The plotting in **ggplot2** begin with `ggplot()` function, where the two components of *grammar of graphics* are required. in the `data` component we specified the dataset  by setting `data = lfq4`. Then the second argument `aes`thetic that map the plot with coordinate was set by `aes(x = tl_mm, y = wt_gm))`. In a nutshell, the `aes()` define the variable -- axis specifications. 
++ We then added a layer to the `ggplot()` function call using the `+` sign. The added layer specify the third part of the *grammar---the `geom`etric component. Because we want to plot scatterplot, the appropriate `geom` for this case is the `geom_point()`. 
++ added a layer `labs` that allows us to label axis with meaningful axis titles
+
+**adding regression line**
+you can simply add the regression line by adding a `geom_smooth()` layer. However,  @fig-scatter1 is non-linear and hence we need to specify the modal that fits the data, the `loess` model is mostly used for non-linear data. Therefore, we parse the argument`method = "loess"` to draw a non-linear regression line but also parse an argument `se = FALSE` to prevent plotting confidence error.
+
+```{r}
+#| label: fig-scatter2
+#| fig-cap: Length and weight relationship with non-linear regression line
+#| fig-width: 3
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+  ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm))+
+  geom_point()+
+  geom_smooth(method = "loess", se = FALSE)+
+  labs(x = "Total length (mm)", y = "Weight (gm)")
+
+```
+
+If we want to add a linear regression line i the scatter plot instead of the non linear shown in @ig-scatter2, we simply replace `method = "loess"` with `method = "lm"`
+
+```{r}
+#| label: fig-scatter3
+#| fig-cap: Length and weight relationship with linear regression line
+#| fig-width: 3
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+  ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "Total length (mm)", y = "Weight (gm)")
+
+```
+
+The linear regression line we added in @fig-scatter3 does not fit the data points. That's is nature of the length and weight measurements of most fishes as their growth is allometric and not isometric. To make use of the linear model in such data points, we often log-transform the data points first and replot. But in **ggplot** framework, you do need to do that but simply add the `scale_x_log10` and `scale_y_log10` layer
+
+
+```{r}
+#| label: fig-scatter4
+#| fig-cap: Log-transformed length and weight relationship with linear regression line
+#| fig-width: 3
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+  ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "Total length (mm)", y = "Weight (gm)")+
+  scale_x_log10() +
+  scale_y_log10()
+
+```
+
+Knowing whether the relationship is positive or negative and whether is linear or non linear is one thing, but people would like to know the strength of the relationship that you have simply presented in @fig-scatter4. Luckily, Pedro Aphalo developed a **ggpmisc** package [@ggpmisc], which extend the statistical function of **ggplot2**. By simply adding a layer `ggpmisc::stat_correlation()` in @fig-scatter4, the function generates labels for correlation coefficients and p-value, coefficient of determination (R^2) for method "pearson" and number of observations and add them into the plot (@fig-scatter0).
+
+```{r}
+#| label: fig-scatter0
+#| fig-cap: Log-transformed length and weight relationship with linear regression line with correlation coefficient
+#| fig-width: 3
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+  ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "Total length (mm)", y = "Weight (gm)")+
+  scale_x_log10() +
+  scale_y_log10()+
+  ggpmisc::stat_correlation()
+
+```
+
+
+We might be interested to distinguish the data points and the regression line based on the site. We can do that by adding the color argument in the aesthetic, which change from `aes(x = tl_mm, y = wt_gm)` to `aes(x = tl_mm, y = wt_gm, color = site)`. The argument ` color = site` will force the data points and the regression line to adhere to colors based on the site but the points and line are plotted on the same plot. 
+
+```{r}
+#| label: fig-scatter41
+#| fig-cap: Log-transformed length and weight relationship with linear regression line by site
+#| fig-width: 4
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+  ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm, color = site))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "Total length (mm)", y = "Weight (gm)")+
+  scale_x_log10() +
+  scale_y_log10()+
+  ggpmisc::stat_correlation()
+
+```
+Looking on @fig-scatter41, it is clear that sample from Mombasa station has relatively bigger and heavier fish than those sampled from Voi. But the problem with @fig-scatter41 is that most of the Mombasa data points are masked by Voi data points, which are overlaid on Mombasa data points. We can overcome the issue of point cluttering by simply adding a transparency level in point with `alpha = .2`.
+
+
+```{r}
+#| label: fig-scatter5
+#| fig-cap: Log-transformed length and weight relationship with linear regression line by site. Points density is highlighted with transparency
+#| fig-width: 4
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+  ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm, color = site))+
+  geom_point(alpha = .2)+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "Total length (mm)", y = "Weight (gm)")+
+  ggpmisc::stat_correlation()+
+  scale_x_log10() +
+  scale_y_log10()+
+  ggpmisc::stat_correlation()
+
+```
+
+Sometimes you may wish to plot @fig-scatter5 as separate plot shown in @fig-scatter6. That's is achieved with `facet_wrap` function, which facet plots based on the levels that are in the variable that is specified. For instance, in our case, the variable chosen is site and there are two sites--Voi and Mombasa. Therefore by simply adding a `facet_wrap(~site)` layer will force ggplot to make two plots
+
+```{r}
+#| label: fig-scatter6
+#| fig-cap: Faceted Log-transformed length and weight relationship with linear regression line
+#| fig-width: 5
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+ 
+  ggplot(data = lfq4, aes(x = tl_mm, y = wt_gm))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "Total length (mm)", y = "Weight (gm)")+
+  scale_x_log10() +
+  scale_y_log10()+
+  ggpmisc::stat_correlation()+
+  facet_wrap(~site, nrow = 1)
+
+```
+
+
+### Linegraph
+The next basic graph of **ggplot2** is the linegraph. Line graphs is similar to drawing points, except that it connects the points with line. often times you don't show the points. Let's illustrate how to create linegraphs using catch data in the region. We first load the dataset in the session
+
+```{r}
+#| warning: false
+#| message: false
+#| eval: True
+#| 
+landing.countries = read_csv("../data/tidy/landings_wio_country.csv", skip = 4)
+
+```
+
+The `landing.countries` dataset contain 660 records of landed fisheries catch information recorded between 1950 and 2015 from Somalia, Kenya, Mozambique, South Africa, Madagascar, Mauritius, Seychelles, Mayotte, Tanzania and Zanzibar. 
+
+```{r}
+
+landing.countries %>% 
+  FSA::headtail() |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+
+```
+
+Linegraphs are used to show time series data. Its inappropriate to use the linegraphs for data that has no clear sequential ordering and should be continuous and not discrete data type. The internal structure of the catch dataset we just loaded indicate that with exception of country's name, year, catch and epoch are numeric values. 
+
+```{r}
+landing.countries %>% 
+  glimpse() 
+```
+
+
+Let's us plot the annual landings of fish over the period with ggplot. Like the scatterplot we made earlier, where supply the data frame in `data` argument and specified the `aes`thetic mapping  with `x` and `y` coordinates, but instead of using `geom_point()`, we use the `geom_line()`.  The code to make the line graph of annual landing in the WIO region shown in @fig-line1 is written as;
+
+```{r}
+#| label: fig-line1
+#| fig-cap: Annual alnding in the WIO region
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+
+ggplot(data = landing.countries,
+       aes(x = year, y = catch)) +
+  geom_line()+
+  labs(x = "Year", y = "Annual catch (MT)")
+```
+
+Although we added a `geom_line`, but we notice that @fig-line1 display a plot which we did not expect. The problem is that line for the ten countries are all lumped together and result in the chaotic situation. For illustration purpose, I will use the catch data from Mauritius. Let's filter Mauritius' catch information from the `landing.countries` dataset and display its rows and variables;
+
+```{r}
+mauritius.landings = landing.countries %>% 
+  filter(name == "Mauritius")
+```
+
+```{r}
+mauritius.landings %>% 
+  FSA::headtail() |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+There are only 66 rows in Mauritius which are equivalent to 66 records each per year from 1950 to 2015. Let's use the `mauritius.landings` dataset to plot 
+
+```{r}
+#| label: fig-line2
+#| fig-cap: Mauritius' annual landing
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+
+ggplot(data = mauritius.landings,
+       aes(x = year, y = catch)) +
+  geom_line()+
+  labs(x = "Year", y = "Annual catch (MT)")
+```
+
+Often times you find that linegraphs has points. You can also do that in ggplot environment by adding a `geom_point` layer
+
+```{r}
+#| label: fig-line3
+#| fig-cap: Mauritius' annual landing
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+
+ggplot(data = mauritius.landings,
+       aes(x = year, y = catch)) +
+  geom_line()+
+  geom_point()+
+  labs(x = "Year", y = "Annual catch (MT)")
+```
+
+You can also customize the appearance of the line and point by parsing the color argument in the geom_point and geom_line layers
+
+```{r}
+#| label: fig-line4
+#| fig-cap: Mauritius' annual landing
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+
+ggplot(data = mauritius.landings,
+       aes(x = year, y = catch)) +
+  geom_line(color = "black")+
+  geom_point(color = "red")+
+  labs(x = "Year", y = "Annual catch (MT)")
+```
+
+The problem we faced in @fig-line1 is that catch data for all ten countries were pooled together, and the plot was not informative. But what is we want to compare the trend of catch among the countries. That is achieved by simply distinguishing the color layer for each country. That is done by adding an argument `color=name` in `aes` function as the code below highlight
+
+```{r}
+#| label: fig-line5
+#| fig-cap: Annual landing by countries in the WIO region
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+
+ggplot(data = landing.countries,
+       aes(x = year, y = catch, color = name)) +
+  geom_line()+
+  # geom_point(color = "red")+
+  labs(x = "Year", y = "Annual catch (MT)")
+```
+
+The landings from South Africa is far higher than the rest of the WIO's countries, which overshadow the appearance of other countries (@fig-line5). There several approaches to resolve this issues where some countries have low catch values while others have relatively very high catches. For our case, we have decided to remove South Africa from the plot. We can do that by negating the selection with `filter` function from **dplyr** package. By parsing `filter(!name == "South Africa")`, note the exclamation mark before `name` tell to reverse selection and therefore select all countries except South Africa.
+
+```{r}
+other.countries = landing.countries %>% 
+  filter(!name == "South Africa")
+```
+
+We then plot and parse the argument `data = other.countries` instead of `data = landing.countries` to make @fig-line7.
+
+```{r}
+#| label: fig-line7
+#| fig-cap: Annual landing by countries in the WIO region with South Africa ommited
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+
+ggplot(data = other.countries,
+       aes(x = year, y = catch, color = name)) +
+  geom_line()+
+  # geom_point(color = "red")+
+  labs(x = "Year", y = "Annual catch (MT)")
+
+```
+
+
+We notice that Tanzania and Zanzibar are presented as separate entity. Although the two states report to the FAO separate, but would be interested to know the landing of the combined Tanzania and Zanzibar catches. But before we combine these two states, lets see how their catches vary over the period. First we need to select only records for Tanzania and Zanzibar using a `filter` function as illustrated below;
+
+```{r}
+tanzania.zanzibar = landing.countries %>% 
+  filter(name %in% c("Tanzania", "Zanzibar")) 
+```
+
+
+Once we have created a `tanzania.zanzibar` object, we can use it to make plots that compare catch trend of Tanzania and Zanzibar over the last 66 years. The code in this chunk is used to make @fig-line8
+
+```{r}
+#| label: fig-line8
+#| fig-cap: Annual landing for mainland Tanzania and Zanzibar
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+
+  ggplot(data = tanzania.zanzibar,
+       aes(x = year, y = catch, color = name)) +
+  geom_line()+
+  # geom_point(color = "red")+
+  labs(x = "Year", y = "Annual catch (MT)")
+```
+
+```{r}
+#| label: fig-line9
+#| fig-cap: Annual landing for WIO where mainland Tanzania and Zanzibar are combined 
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+landing.countries %>% 
+  mutate(name = str_replace(string = name, 
+                            pattern = "Zanzibar", 
+                            replacement = "Tanzania")) %>% 
+  filter(!name == "South Africa") %>% 
+  group_by(name, year) %>% 
+  summarise(catch_new = sum(catch, na.rm = TRUE)) %>% 
+  ggplot(
+       aes(x = year, y = catch_new, color = name)) +
+  geom_line()+
+  # geom_point(color = "red")+
+  labs(x = "Year", y = "Annual catch (MT)")
+```
+
+### Area plot
+
+The `geom_area` method is used to create an area plot. It can be used as a component in the **ggplot** method. The `alpha` parameter in the `geom_area` method is used to depict the opacity of a genome, the value ranges from zero to one integral values. In case, we choose a lower value, this means that a more transparent color version will be chosen to depict the plot and its smoothness. We have used the value for the alpha parameter to be one by two means it is somewhat translucent in nature. 
+
+```{r}
+#| label: fig-line-area
+#| fig-cap: Area plot showing Annual landing for mainland Tanzania and Zanzibar
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = tanzania.zanzibar,
+       aes(x = year, y = catch, fill = name)) +
+  geom_area(alpha = 0.6, position="identity")+
+  # geom_point(color = "red")+
+  labs(x = "Year", y = "Annual catch (MT)")
+
+
+
+```
+
+
+### Histogram
+A histogram is a plot that can be used to examine the shape and spread of continuous data. It looks very similar to a bar graph and organized in intervals or classes. It divides the range of the data into `bin` equal intervals (also called bins or classes), count the number of observations in each bin, and display the frequency distribution of observations as a bar plot. Such histogram plots provide valuable information on the characteristics of the data, such as the `central tendency`, the `dispersion` and the general `shape` of the distribution. With `lfq4` dataset, we can plot the histogram of `tl_mm`. Since histogram works for single variable that contains quantitative values, you can not bother looking for relationship as we have seen in previous plots, but histogram offers an opportunity to answer question like
+
+1. What are the smallest and largest values of tl_mm?
+2. What is the center value?
+3 How does these values spread out?
+
+We can make a histogram shown in @fig-hist by simply setting `aes(x = tl_mm)` and add `geom_histogram()`. Within the `geom_histogram()`, we simply specify the number of bins `bins = 30`, fill color for the colum and also the color separating each columns of the histogram with `col == "red"` and `fill = "red"`. However, a word of caution regarding histograms—bin size matters. The reproducible code to plot @fig-hist is written as;
+
+```{r}
+#| label: fig-hist
+#| fig-cap: Histogram of total length
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = tl_mm)) +
+  geom_histogram(bins = 30, fill = "red", color = "red", alpha = 0.4)+
+  labs(x = "Total length (mm)", y = "Frequency")+
+  theme_minimal()
+
+
+
+```
+The resulting histogram gives us an idea of the range of total length of fish we can expect from the sample. You may be interested to compare histogram of the data values sampled from two or sites. For example, in our case, we are interested to compare the distribution of total length using samples collected from Mombasa and Voi sites. We simply add the `fill = site` argument in the `aes` function
+
+```{r}
+#| label: fig-hist2
+#| fig-cap: Histogram of total length by sites
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = tl_mm, fill = site)) +
+  geom_histogram(bins = 50, alpha = 0.6)+
+  labs(x = "Total length (mm)", y = "Frequency")+
+  theme_minimal()
+
+
+
+
+```
+
+
+The histogram of Mombasa and Voi is plotted as shown in @fig-hist2, however, despite the transparency level of the bins is set to 0.6 (alpha = .6), yet the bins from Mombasa are masked with bins from Voi. The voi bins are plotted over the Mombasa ones and prevent us to visualize the underneath Mombasa bins. To correct for this issue, we need to parse `position = "identity"`in the `geom_bin`, which create an different color where the Mombasa and Voi bins are intersected.
+
+```{r}
+#| label: fig-hist3
+#| fig-cap: Histogram of total length by sites
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = tl_mm, fill = site)) +
+  geom_histogram(bins = 50, alpha = 0.6, position = "identity")+
+  labs(x = "Total length (mm)", y = "Frequency")+
+  theme_minimal()
+
+```
+
+
+
+### Frequency polygons
+It is often useful to visualise the distribution of a numerical variable. Comparing the distributions of different groups can lead to important insights. Visualising distributions is also essential when checking assumptions used for various statistical tests (sometimes called initial data analysis). In this section we will illustrate how this can be done using the diamonds data from the **ggplot2** package, which you started to explore in Chapter 2.
+
+
+An advantage with frequency polygons is that they can be used to compare groups, e.g. diamonds with different cuts, without facetting:
+
+```{r}
+#| label: fig-freqpoly
+#| fig-cap: Frequency polygon of total length by sites
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = tl_mm, color = site)) +
+  geom_freqpoly(alpha = 0.6, position = "identity")+
+  labs(x = "Total length (mm)", y = "Frequency")+
+  theme_minimal()
+
+```
+
+It is clear from this figure that the total length of fish from Voi is larger in size than those from Mombasa. The polygons have roughly the same shape, except the shape of Mombasa a long right tail indicating the presence of outlier points.
+
+
+### Density plots
+In some cases, we are more interested in the shape of the distribution than in the actual counts in the different bins. Density plots are similar to frequency polygons but show an estimate of the density function of the underlying random variable. These estimates are smooth curves that are scaled so that the area below them is 1 (i.e. scaled to be proper density functions):
+
+
+
+```{r}
+#| label: fig-density
+#| fig-cap: Density plot of total length by sites
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#|
+
+  ggplot(data = lfq4,
+       aes(x = tl_mm, fill = site)) +
+  geom_density(alpha = 0.4, position = "identity")+
+  labs(x = "Total length (mm)", y = "Frequency")+
+  theme_minimal()
+
+```
+
+From @fig-density, it's clear that small size fish tend to have better total length, which wasn’t obvious from the frequency polygons. However, the plot does not provide any information about how common different total length are.
+
+
+### Boxplot
+The boxplot is a standardized way of displaying the distribution of data based on the five number summary: minimum, first quantile, median, third quantile, and maximum. Boxplots are useful for detecting outliers and for comparing distributions. These five number summary also called the 25^th^ percentile, median, and 75^th^ percentile of the quantitative data. The whisker (vertical lines) capture roungly 99% of a distribution, and observation outside this range are plotted as points representing outliers as shown in @fig-boxplot1.
+
+```{r}
+#| label: fig-boxplot1
+#| fig-cap: Conceputal boxplot diagram
+#| fig-pos: H
+#| echo: false
+#| 
+knitr::include_graphics("boxplot-01.png")
+# knitr::include_graphics("plots/boxplot.pdf")
+```
+
+
+Boxplots is one of statistical plot that present continuous variable and in **ggplot** a `geom_boxplot()` function is dedicated for that. The aes function always have at least two arguments. The first argument should be a categrial variable and the second one is numeric. 
+
+
+```{r}
+#| label: fig-boxplot2
+#| fig-cap: Boxplot of total length by sites
+#| fig-width: 3
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = site, y = tl_mm)) +
+  geom_boxplot(alpha = 0.6, position = "identity")+
+  labs(x = "Sites", y = "Total length (mm)")+
+  theme_minimal()
+
+```
+
+the `geom_boxplot()` has `outlier_` arguments that allows to highlight and modify the color, shape, size, alpha ... etc of outliers ---extreme observation. For instance, you can highlight the outlier with;
+
+
+
+```{r}
+#| label: fig-boxplot3
+#| fig-cap: Boxplot of total length by sites
+#| fig-width: 5
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = site, y = tl_mm, fill = site)) +
+  geom_boxplot(alpha = 0.6, position = "identity", outlier.colour = "red", outlier.color = )+
+  labs(x = "Sites", y = "Total length (mm)")+
+  theme_minimal()
+
+
+
+
+```
+
+We can also map the fill and color to variable in to distinguish boxplot. for example, we can specify the `fill = site` argument in the `aes()` to fill the boxplot based on site.
+
+
+```{r}
+#| label: fig-boxplot4
+#| fig-cap: Boxplot of total length and color to distinguish sites
+#| fig-width: 5
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = site, y = tl_mm, fill = site)) +
+  geom_boxplot(alpha = 0.6, position = "identity", outlier.colour = "red", outlier.color = )+
+  labs(x = "Sites", y = "Total length (mm)")+
+  theme_minimal()
+
+
+```
+
+
+We can add the points on top of the boxplot with the `geom_jitter()`. It also allows for specifying other arguments like  colors and width of the points.
+
+
+```{r}
+#| label: fig-boxplot5
+#| fig-cap: Boxplot with points of total length by sites
+#| fig-width: 5
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = site, y = tl_mm, fill = site)) +
+  geom_boxplot(alpha = 0.6, position = "identity", 
+               outlier.colour = "red", outlier.color = )+
+  geom_jitter(width = .1, height = .5, alpha = 0.1)+
+  labs(x = "Sites", y = "Total length (mm)")+
+  theme_minimal()
+
+
+```
+
+
+### Violin plots
+Instead of using a boxplot, we can use a violin plot. Each group is represented by a “violin”, given by a rotated and duplicated density plot:
+
+```{r}
+#| label: fig-violin
+#| fig-cap: Violin of total length by sites
+#| fig-width: 5
+#| fig-height: 3
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+  ggplot(data = lfq4,
+       aes(x = site, y = tl_mm, fill = site)) +
+  geom_violin(alpha = 0.6, position = "identity")+
+  labs(x = "Sites", y = "Total length (mm)")+
+  theme_minimal()
+
+
+
+
+```
+
+
+### Barplot
+Bar graphs are perhaps the widely used plot. They are typically used to display count values on the y-axis for different groups on the x-axis. There is an important distinction you should be aware of when making bar graphs. The height of a bar in barplot may represent either the counts or percentage of elements in the dataset. Let's begin with the former---count. We use the `shrimps_cleaned.csv` dataset, which contains weight and length of four shrimp species. To access the variable and values of this file we need to load the file using a `read_csv` function as the code in the chunk below highlight;
+
+```{r}
+#| message: false
+#| warning: false
+#| 
+shrimp = read_csv("../data/tidy/shrimps_cleaned.csv")
+
+
+
+```
+
+The sample dataset of shrimp is shown in @tbl-shrimp. It contain six variables year, season, tide, species, weight (total_wt_kg) and length (tl_mm).
+
+```{r}
+#| label: tbl-shrimp
+#| tbl-cap: Shrimp dataset
+#| echo: false
+#| 
+shrimp %>% 
+  FSA::headtail() %>% 
+  gt::gt()
+```
+
+We realize that the scientific names are too long and may not fit into the plotting area. Therefore, we use a `case_when` function from dplyr package to change species name and assign it as a new variable called `species.short` 
+
+```{r}
+shrimp = shrimp %>% 
+  mutate(species.short = case_when(
+    species == "Metapenaeus monoceros"~ "M.monoceros",
+    species == "Penaeus monodon"~ "P.monodon",
+    species == "Fenneropenaeus indicus"~ "F.indicus",
+    species == "Penaeus semisulcatus"~ "P.semisulcatus")
+    ) %>% 
+  relocate(species.short, .after = species)
+```
+
+#### Barplot for count
+To make the bar graph that show the number of shrimp per species over the sampling period you you simply specify the the variable `species` in the `x` coordinates in the `aes`thetic and add the `geom_bar()`
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar
+#| fig-cap: Frequency of shrimp species
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp, aes(x = species.short))+
+  geom_bar()+
+  labs(x = "Species", y= "Frequency")
+
+```
+
+Then to stack the bar based on the sampling season, we add the argument `fill = season` in `aes()` part
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar1
+#| fig-cap: Frequency of shrimp species by season
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp, aes(x = species.short, fill = season))+
+  geom_bar()+
+  labs(x = "Species", y ="Frequency")
+
+```
+
+
+
+You can flip the order of bar with `position = position_stack(reverse = TRUE)`
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar2
+#| fig-cap: Frequency of shrimp species by season
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp, aes(x = species.short, fill = season))+
+  geom_bar(position = position_stack(reverse = TRUE))+
+  labs(x = "Species", y ="Frequency")
+
+```
+
+
+Instead of stacking, you can dodge the bar with `position = position_dodge()` argument
+
+
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar3
+#| fig-cap: Frequency of shrimp species by season with span
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp, aes(x = species.short, fill = season))+
+  geom_bar(position = position_dodge())+
+  labs(x = "Species", y ="Frequency")
+
+```
+
+We notice that the species that only appear one season, the count for that species is span across and make the bar wideer than those species occur in both seasons. We can fix that by parsing `position = position_dodge(preserve = "single")` in the `geom_bar` function
+
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar4
+#| fig-cap: Frequency of shrimp species by season without span
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp, aes(x = species.short, fill = season))+
+  geom_bar(position = position_dodge(preserve = "single"))+
+  labs(x = "Species", y ="Frequency")
+
+```
+
+
+To add a black stroke color of the bar, add the argument `col = "black"` inside the `geom_bar()`
+
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar5
+#| fig-cap: Frequency of shrimp species by season without span with black bar color
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp, aes(x = species.short, fill = season))+
+  geom_bar(position = position_dodge(preserve = "single"), color = "black")+
+  labs(x = "Species", y ="Frequency")
+```
+And to specify the width of the bar you specify a value in `width=.75` argument in `geom_bar()`
+
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar6
+#| fig-cap: Frequency of shrimp species by season without span with black bar color
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp, aes(x = species.short, fill = season))+
+  geom_bar(position = position_dodge(preserve = "single"), color = "black", width = .75)+
+  labs(x = "Species", y ="Frequency")
+```
+
+
+#### Barplot for values
+We have seen how to make barplot that show the count with `geom_bar()`. You can also use the barplot to show the values with the `geom_col()` function and specify what variables you want on the `x` and `y` axis. For instance, we want to show percentage of shrimp species by season. Because the `geom_col()` requires summarized statistics, we need to compute the percentage for each season as the chunk below highlight. 
+
+```{r}
+shrimp.pct = shrimp %>% 
+  group_by(species.short, season) %>% 
+  summarise(n = n()) %>% 
+  mutate(pct = n/sum(n), 
+         pct = (pct * 100) %>% round(2))
+
+shrimp.pct
+```
+
+
+Once we have computed the statistics, we can use them to make barplot. Note that unlike the `geom_bar()`, which need only the `x` variable, `geom_col()` requires `x` and `y` variables specified. For illustration, we specified the `x = species`, and `y = pct` in the `aes()` to make a barplot that show the percentage of shrimp by season (@fig-bar7). 
+
+
+```{r, fig.width=7, fig.height=3}
+#| label: fig-bar7
+#| fig-cap: Percentage of shrimp species by season without span with black bar color
+#| fig-width: 5
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+ggplot(data = shrimp.pct, aes(x = species.short, y = pct, fill = season))+
+  geom_col(position = position_dodge(preserve = "single"), color = "black", width = .75)+
+  labs(x = "Species", y ="Percentage")
+```
+
+### Pie and donut charts
+
+A pie chart is a disk divided into pie-shaped pieces proportional to the relative frequencies of the classes. To obtain angle for any class, we multiply the relative frequencies by 360 degree, which corresponds to the complete circle. Either variables or attributes can be portrayed in this manner, but a pie chart is especially useful for attributes. A pie diagram for contribution of different fish groups/species to the total fish landings at a landing site of a river is shown in @fig-pie.   
+
+```{r}
+#| label: fig-pie
+#| fig-cap: Percentage composition of prawn species
+#| fig-pos: H
+#| fig-width: 3.5
+#| fig-height: 3
+#| 
+
+shrimp %>% 
+  group_by(species) %>% 
+  summarise(n = n()) %>% 
+  mutate(pct = round(n/sum(n)*100), 2) %>% 
+  mutate(species = str_replace(string = species, pattern = " ", replacement = "\n")) %>% 
+  mutate(label = paste0("(",pct,"%",")")) %>% 
+  ggpubr::ggpie(x = "pct", label = "label", fill = "species", lab.pos = "in", palette = "jama", color = "ivory", ggtheme = theme_void(), )
+  
+  
+
+```
+
+An extended pie chart is donut shown in @fig-donut
+
+```{r}
+#| label: fig-donut
+#| fig-cap: Percentage composition of prawn species
+#| fig-pos: H
+#| fig-width: 3.5
+#| fig-height: 3
+#| 
+shrimp %>% 
+  group_by(species) %>% 
+  summarise(n = n()) %>% 
+  mutate(pct = round(n/sum(n)*100), 2) %>% 
+  mutate(species = str_replace(string = species, pattern = " ", replacement = "\n")) %>% 
+  mutate(label = paste0("(",pct,"%",")")) %>% 
+  ggpubr::ggdonutchart(x = "pct", label = "label", fill = "species", lab.pos = "in", palette = "jama", color = "ivory", ggtheme = theme_void())
+```
+
+### Bar with polar tranformation
+
+```{r}
+#| fig-width: 4
+#| fig-height: 4
+#| fig-pos: H
+#| label: fig-polar
+#| fig-cap: Barplot with polar transformation
+
+shrimp %>% 
+  group_by(species.short) %>% 
+  count() %>% 
+  arrange(-n) %>% 
+  ggplot(aes(x = reorder(species.short,n), y = n, 
+             fill = species.short), stat = "identity")+
+  geom_col() +
+  coord_polar(theta = "y")+
+  theme_bw() +
+  theme(axis.title = element_blank(), legend.position = "right", axis.text.y = element_blank(), axis.ticks = element_blank())+
+  scale_fill_brewer(palette = "Set2", name = "Species")
+  
+```
+
+```{r, fig.width=4, fig.height=4}
+#| fig-width: 4
+#| fig-height: 4
+#| fig-pos: H
+#| label: fig-polar2
+#| fig-cap: Stacked barplot with polar transformation
+
+shrimp %>% 
+  ggplot() +
+  geom_bar(aes(x = tide, fill = species.short),
+           color = "ivory") +
+  labs(x = "Tide", y = "Count") +
+  coord_polar()+
+  theme_bw() +
+  theme(axis.title = element_blank(), 
+        legend.position = "right")+
+  scale_fill_brewer(palette = "Set2", name = "Species")
+```
+
+
+### Ridge plot
+
+Although the **ggridges** package provides `geom_ridgeline` and `geom_density_ridges`, we focus on the latter because it has ability to estimates data densities and then draws those using ridgelines.The geom `geom_density_ridges` calculates density estimates from the provided data and then plots those, using the ridgeline visualization.
+
+
+```{r, fig.width=5, fig.height=4}
+#| warning: false
+#| message: false
+#| fig-width: 5
+#| fig-height: 4
+#| fig-pos: H
+#| 
+lfq4 %>% 
+  mutate(months = lubridate::month(date, label = TRUE)) %>%
+  ggplot()+
+  ggridges::geom_density_ridges(aes(x = tl_mm, y = months, fill = site), alpha = .7)+
+  scale_fill_brewer(palette = "Set2", name = "Sampling\nsite")+
+  theme_minimal()+
+  theme(legend.position = c(.85,.2), legend.background = element_rect())+
+  labs(y = "Months", x = "Total length (mm.)")
+
+```
+
+
+## Combining multiple plots
+When exploring data with many variables, you’ll often want to make the same kind of plot (e.g. a violin plot) for several variables. It will frequently make sense to place these side-by-side in the same plot window. The **patchwork** package extends **ggplot2** by letting you do just that. Let’s install it:
+
+```r
+install.packages("patchwork")
+```
+
+Then load a package in the workspace
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+require(patchwork)
+
+```
+
+
+To use **patchwork** [@patchwork], save each plot as a plot object :
+
+```{r}
+plot.tl = ggplot(data = lfq4,
+       aes(x = tl_mm, fill = site)) +
+  geom_density(alpha = 0.4, position = "identity")+
+  labs(x = "Total length (mm)", y = "Frequency")+
+  theme_minimal()
+
+ plot.wt = ggplot(data = lfq4,
+       aes(x = wt_gm, fill = site)) +
+  geom_density(alpha = 0.4, position = "identity")+
+  labs(x = "Weight (gram)", y = "Frequency")+
+  theme_minimal()+
+   theme(legend.position = "none")
+```
+
+then add them together
+
+```{r}
+#| label: fig-patchwork
+#| fig-cap: Density plot by sites for total length (left panel) and weight (right panel)
+#| fig-width: 7
+#| fig-height: 2
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+plot.tl + plot.wt
+```
+`
+
+```{r}
+#| label: fig-patchwork1
+#| fig-cap: Density plot by sites for total length (top panel) and weight (bottom panel)
+#| fig-width: 5
+#| fig-height: 4
+#| fig-pos: H
+#| warning: false
+#| message: false
+#| 
+
+plot.tl / plot.wt
+```
+
+We need first to extract monsoon seasons from the dataset. We know from literature that the coasal waters of East Africa is affected by monsoon season, which is influenced trade winds, which is broadly categorized as;
+
++ Northeast monsoon season --- November through March
++ Southeast monsoon season --- May to september
++ Intermonsoon season --- April and October
+
+We can use the month information to break our dataset into three monsoon seasons as;
+
+```{r}
+lfq4.season = lfq4 %>% 
+  mutate(month = lubridate::month(date),
+         season = case_when(month > 10 | month < 4 ~ "NE",
+                            month >=5 & month < 10 ~ "SE",
+                            month == 4 | month == 10 ~ "INT")) %>% select(-month)
+  
+```
+
+```{r}
+plot.int =lfq4.season %>% 
+  filter(site == "Voi" & season == "INT") %>% 
+  ggplot(aes(x = tl_mm, y = wt_gm))+
+  geom_point(alpha = .2)+
+  theme_bw()+
+  scale_x_continuous(name = "Total length (mm)")+
+  scale_y_continuous(name = "Weight (gram)")+
+  annotate(geom = "label",x = 120, y = 80, label = "Northeast\nSeason")
+
+plot.ne = lfq4.season %>% 
+  filter(site == "Voi" & season == "NE") %>% 
+  ggplot(aes(x = tl_mm, y = wt_gm))+
+  geom_point(alpha = .2)+
+  theme_bw()+
+  scale_x_continuous(name = "Total length (mm)")+
+  scale_y_continuous(name = "Weight (gram)")+
+  annotate(geom = "label",x = 140, y = 80, label = "Southeast\nSeason")
+
+plot.se = lfq4.season %>% 
+  filter(site == "Voi" & season == "SE") %>% 
+  ggplot(aes(x = tl_mm, y = wt_gm))+
+  geom_point(alpha = .2)+
+  theme_bw()+
+  scale_x_continuous(name = "Total length (mm)")+
+  scale_y_continuous(name = "Weight (gram)")+
+  annotate(geom = "label",x = 120, y = 80, label = "Inter\n Monsoon")
+
+plot.all = lfq4.season %>% 
+  filter(site == "Voi") %>% 
+  ggplot(aes(x = tl_mm, y = wt_gm, color = season))+
+  geom_point(alpha = .2)+
+  theme_bw()+
+  scale_x_continuous(name = "Total length (mm)")+
+  scale_y_continuous(name = "Weight (gram)")+
+  theme(legend.position = c(.2,.8))
+
+```
+
+Yuo may plot One row with three plots and one row with a single plot
+
+```{r}
+#| fig-width: 5
+#| fig-height: 3.5
+#| 
+(plot.ne + plot.se + plot.int)/
+  plot.all
+```
+
+Or one column with three plots and one column with a single plot
+`
+
+```{r, fig.width=5, fig.height=3.5}
+#| fig-width: 5
+#| fig-height: 3.5
+#| 
+plot.all | (plot.ne / plot.se / plot.int)
+```
+
+## Labelling outliers
+Interactive plots are great when exploring a dataset but are not always possible to use in other contexts, e.g. for printed reports and some presentations. In these other cases, we can instead annotate the plot with notes about outliers. One way to do this is to use a geom called geom_text.
+
+
+```{r, fig.width=4, fig.height=2.5}
+#| fig-width: 4
+#| fig-height: 2.5
+#| 
+lfq4.season %>% 
+  filter(!site == "Voi") %>% 
+  ggplot(aes(x = season, y = wt_gm, fill = season))+
+  geom_boxplot(alpha = .4, width = .29)+
+  ggrepel::geom_text_repel(aes(label = if_else( wt_gm > 175, site, ""))) +
+  theme_bw()+
+  scale_x_discrete(name = "Monsoon season")+
+  scale_y_continuous(name = "Weight (gram)")+
+  theme(legend.position = "none")
+
+```
+
+
+
+
+
+## Add-on packages
+The R community has developed packages that extend the capability of **ggplot2**. Some of the packages include:
+
++ **metR**: Provide addition tools for plotting filled contour, and label contour lines
++ **ggrepel**: Contains tools for automatically position non-overlapping text labels
++ **ggspatial**: Spatial Data Framework for **ggplot2**
++ **RcolorBrewer**: Contains color palettes for continuous and discrete plots
++ **cowplot**: Contains addition themes and tools to combine **ggplot2** plots in one panel
++ **egg**: Provide tools for plot aligning and symmetrised **ggplot2** plots
++ **oce**: Provide color pallete for visualization of Oceanographic Data 
++ **ggsn**: Provide tools for mapping North symbols and scale bars on maps created with **ggplot2**
++ **gganimate**: convert static ggplot2 plots to animations
++ **ggformula**:  adds some additional plot options to **ggplot2**
++ **sf** : Add capabilities of **ggplot2** to map spatial data such as simple features
++ **ggthemes**: contains extra themes, scales, and geoms, and functions for and related to ggplot2
++ **ggridges**: extend the geom_density function by plotiing closed polygons insted of ridgelines
++ **ggpmisc**
+
+

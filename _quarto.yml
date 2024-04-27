@@ -6,6 +6,8 @@ website:
   title: "DATIKA"
   back-to-top-navigation: true
   page-navigation: true
+  description: "Coding for all for better today and tommorow"
+  
   navbar:
     background: dark
     search: false
@@ -53,6 +55,14 @@ website:
     card-style: summary_large_image
     creator: "@semba2024"
 feed: true
+code-line-numbers: true
+code-copy: true
+code-tools: true
+code-block-border-left: true
+bibliography: reference.bib
+# csl: apa.csl
+
+
 
 # filters:
 #   - code-filename

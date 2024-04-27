@@ -134,7 +134,7 @@ cookieconsent.run({
 
 
 <meta name="twitter:title" content="DATIKA - The dataset for the program">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Coding for all for better today and tommorow">
 <meta name="twitter:image" content="thumbnail_blog.png">
 <meta name="twitter:creator" content="@semba2024">
 <meta name="twitter:card" content="summary_large_image">
@@ -267,13 +267,13 @@ cookieconsent.run({
 <li><strong>Chinook</strong> – contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below;</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>chinook <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>chinook <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="tabwid"><style>.cl-baa0c262{}.cl-ba8fa9b4{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-ba959e28{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ba959e32{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ba95ac6a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ba95ac6b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ba95ac74{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ba95ac75{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ba95ac7e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ba95ac7f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-baa0c262"><thead><tr style="overflow-wrap:break-word;"><th class="cl-ba95ac6a"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">tl</span></p></th><th class="cl-ba95ac6a"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">w</span></p></th><th class="cl-ba95ac6b"><p class="cl-ba959e32"><span class="cl-ba8fa9b4">loc</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">120.1</span></p></td><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">17.9</span></p></td><td class="cl-ba95ac75"><p class="cl-ba959e32"><span class="cl-ba8fa9b4">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">115.0</span></p></td><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">17.2</span></p></td><td class="cl-ba95ac75"><p class="cl-ba959e32"><span class="cl-ba8fa9b4">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">111.2</span></p></td><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">16.8</span></p></td><td class="cl-ba95ac75"><p class="cl-ba959e32"><span class="cl-ba8fa9b4">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">29.2</span></p></td><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">0.3</span></p></td><td class="cl-ba95ac75"><p class="cl-ba959e32"><span class="cl-ba8fa9b4">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">25.2</span></p></td><td class="cl-ba95ac74"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">0.3</span></p></td><td class="cl-ba95ac75"><p class="cl-ba959e32"><span class="cl-ba8fa9b4">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ba95ac7e"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">18.0</span></p></td><td class="cl-ba95ac7e"><p class="cl-ba959e28"><span class="cl-ba8fa9b4">0.1</span></p></td><td class="cl-ba95ac7f"><p class="cl-ba959e32"><span class="cl-ba8fa9b4">Puyehue</span></p></td></tr></tbody></table></div>
 </div>
@@ -282,13 +282,13 @@ cookieconsent.run({
 <li><strong>Mauna Loa Atmospheric CO2 Concentration</strong>– store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>`</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>co <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>co <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="tabwid"><style>.cl-bac83ffe{}.cl-bac1fdba{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-bac40236{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bac40ea2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bac40ea3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bac40eac{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-bac83ffe"><thead><tr style="overflow-wrap:break-word;"><th class="cl-bac40ea2"><p class="cl-bac40236"><span class="cl-bac1fdba">day</span></p></th><th class="cl-bac40ea2"><p class="cl-bac40236"><span class="cl-bac1fdba">months</span></p></th><th class="cl-bac40ea2"><p class="cl-bac40236"><span class="cl-bac1fdba">year</span></p></th><th class="cl-bac40ea2"><p class="cl-bac40236"><span class="cl-bac1fdba">co2</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">15</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">1</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">1,959</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">315.42</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">15</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">2</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">1,959</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">316.31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">15</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">3</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">1,959</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">316.50</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">15</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">10</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">1,997</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">360.83</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">15</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">11</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">1,997</span></p></td><td class="cl-bac40ea3"><p class="cl-bac40236"><span class="cl-bac1fdba">362.49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-bac40eac"><p class="cl-bac40236"><span class="cl-bac1fdba">15</span></p></td><td class="cl-bac40eac"><p class="cl-bac40236"><span class="cl-bac1fdba">12</span></p></td><td class="cl-bac40eac"><p class="cl-bac40236"><span class="cl-bac1fdba">1,997</span></p></td><td class="cl-bac40eac"><p class="cl-bac40236"><span class="cl-bac1fdba">364.34</span></p></td></tr></tbody></table></div>
 </div>
@@ -741,83 +741,83 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The dataset for the program"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Datasets]{style="background: lightblue; color: color"} </span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Chinook** -- contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below; </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv"</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"datasets/chinook_lw.csv"</span>)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>chinook <span class="sc">|&gt;</span> </span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Mauna Loa Atmospheric CO2 Concentration**-- store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv"</span>)</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"datasets/long_form_co2.csv"</span>)</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>`</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>co <span class="sc">|&gt;</span> </span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>::: callout-info</span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>Note that you can import the dataset from online API to Rstudio with easy as the chunk above highlight</span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> "The dataset for the program"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">---</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">### [Datasets]{style="background: lightblue; color: color"} </span></span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="ss">1. </span>**Chinook** -- contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below; </span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="in">```{r}</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co">#| eval: false</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="co">#| warning: false</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="co">#| message: false</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a></span>
+<span id="cb5-19"><a href="#cb5-19"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
+<span id="cb5-20"><a href="#cb5-20"></a>  <span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/chinook_lw.csv"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21"></a></span>
+<span id="cb5-22"><a href="#cb5-22"></a></span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="in">```</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a></span>
+<span id="cb5-27"><a href="#cb5-27"></a><span class="in">```{r}</span></span>
+<span id="cb5-28"><a href="#cb5-28"></a><span class="co">#| eval: true</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a><span class="co">#| warning: false</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="co">#| message: false</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-32"><a href="#cb5-32"></a></span>
+<span id="cb5-33"><a href="#cb5-33"></a>chinook <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
+<span id="cb5-34"><a href="#cb5-34"></a>  <span class="at">file =</span> <span class="st">"datasets/chinook_lw.csv"</span>)</span>
+<span id="cb5-35"><a href="#cb5-35"></a></span>
+<span id="cb5-36"><a href="#cb5-36"></a></span>
+<span id="cb5-37"><a href="#cb5-37"></a><span class="in">```</span></span>
+<span id="cb5-38"><a href="#cb5-38"></a></span>
+<span id="cb5-41"><a href="#cb5-41"></a><span class="in">```{r}</span></span>
+<span id="cb5-42"><a href="#cb5-42"></a>chinook <span class="sc">|&gt;</span> </span>
+<span id="cb5-43"><a href="#cb5-43"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-44"><a href="#cb5-44"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span>
+<span id="cb5-45"><a href="#cb5-45"></a><span class="in">```</span></span>
+<span id="cb5-46"><a href="#cb5-46"></a></span>
+<span id="cb5-47"><a href="#cb5-47"></a></span>
+<span id="cb5-48"><a href="#cb5-48"></a><span class="ss">1. </span>**Mauna Loa Atmospheric CO2 Concentration**-- store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk</span>
+<span id="cb5-49"><a href="#cb5-49"></a></span>
+<span id="cb5-50"><a href="#cb5-50"></a></span>
+<span id="cb5-53"><a href="#cb5-53"></a><span class="in">```{r}</span></span>
+<span id="cb5-54"><a href="#cb5-54"></a><span class="co">#| eval: false</span></span>
+<span id="cb5-55"><a href="#cb5-55"></a><span class="co">#| warning: false</span></span>
+<span id="cb5-56"><a href="#cb5-56"></a><span class="co">#| message: false</span></span>
+<span id="cb5-57"><a href="#cb5-57"></a></span>
+<span id="cb5-58"><a href="#cb5-58"></a></span>
+<span id="cb5-59"><a href="#cb5-59"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/long_form_co2.csv"</span>)</span>
+<span id="cb5-60"><a href="#cb5-60"></a><span class="in">```</span></span>
+<span id="cb5-61"><a href="#cb5-61"></a></span>
+<span id="cb5-64"><a href="#cb5-64"></a><span class="in">```{r}</span></span>
+<span id="cb5-65"><a href="#cb5-65"></a><span class="co">#| eval: true</span></span>
+<span id="cb5-66"><a href="#cb5-66"></a><span class="co">#| warning: false</span></span>
+<span id="cb5-67"><a href="#cb5-67"></a><span class="co">#| message: false</span></span>
+<span id="cb5-68"><a href="#cb5-68"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-69"><a href="#cb5-69"></a></span>
+<span id="cb5-70"><a href="#cb5-70"></a></span>
+<span id="cb5-71"><a href="#cb5-71"></a>co <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"datasets/long_form_co2.csv"</span>)</span>
+<span id="cb5-72"><a href="#cb5-72"></a><span class="in">```</span></span>
+<span id="cb5-73"><a href="#cb5-73"></a>`</span>
+<span id="cb5-74"><a href="#cb5-74"></a></span>
+<span id="cb5-77"><a href="#cb5-77"></a><span class="in">```{r}</span></span>
+<span id="cb5-78"><a href="#cb5-78"></a>co <span class="sc">|&gt;</span> </span>
+<span id="cb5-79"><a href="#cb5-79"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-80"><a href="#cb5-80"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span>
+<span id="cb5-81"><a href="#cb5-81"></a><span class="in">```</span></span>
+<span id="cb5-82"><a href="#cb5-82"></a></span>
+<span id="cb5-83"><a href="#cb5-83"></a></span>
+<span id="cb5-84"><a href="#cb5-84"></a>::: callout-info</span>
+<span id="cb5-85"><a href="#cb5-85"></a></span>
+<span id="cb5-86"><a href="#cb5-86"></a>Note that you can import the dataset from online API to Rstudio with easy as the chunk above highlight</span>
+<span id="cb5-87"><a href="#cb5-87"></a></span>
+<span id="cb5-88"><a href="#cb5-88"></a>:::</span>
+<span id="cb5-89"><a href="#cb5-89"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

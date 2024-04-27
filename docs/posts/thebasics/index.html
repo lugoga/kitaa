@@ -57,7 +57,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -178,10 +198,6 @@ cookieconsent.run({
     <a class="nav-link" href="../../photos.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lugoga/kitaa"> <i class="bi bi-github" role="img">
 </i> 
@@ -234,7 +250,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">R and Rstudio</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <div class="quarto-title-block"><div><h1 class="title">The basics of R and Rstudio</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
         <div class="description">
           Understanding the building blocks of R and its working environment Rstudio for smooth operations in data science
@@ -362,8 +378,8 @@ Tip
 </div>
 </div>
 <ol start="2" type="1">
-<li><p>Click Download R for Mac/Windows. Once you have clicked the download link (<span class="citation" data-cites="cran">@cran</span>), you have the chance to select a mirror site. These mirrors sites are hosted in servers across the world and using a local one will generally result in a speedier download.</p></li>
-<li><p>Click the link appropriate for your system (Linux, Mac, Windows). Once you have selected a mirror site, you can click the link that relates to your operating system (<span class="citation" data-cites="Rdownload">@Rdownload</span>). If you use a Mac then you will go to a page where you can select the best option for you (there are versions for various flavours of OSX). If you use Windows then you will go to a Windows-specific page. If you are a Linux user then read the documentation; you generally install R through the terminal rather than via the web page.</p></li>
+<li><p>Click Download R for Mac/Windows. Once you have clicked the download link (<span class="citation" data-cites="cran">(<a href="#ref-cran" role="doc-biblioref"><strong>cran?</strong></a>)</span>), you have the chance to select a mirror site. These mirrors sites are hosted in servers across the world and using a local one will generally result in a speedier download.</p></li>
+<li><p>Click the link appropriate for your system (Linux, Mac, Windows). Once you have selected a mirror site, you can click the link that relates to your operating system (<span class="citation" data-cites="Rdownload">(<a href="#ref-Rdownload" role="doc-biblioref"><strong>Rdownload?</strong></a>)</span>). If you use a Mac then you will go to a page where you can select the best option for you (there are versions for various flavours of OSX). If you use Windows then you will go to a Windows-specific page. If you are a Linux user then read the documentation; you generally install R through the terminal rather than via the web page.</p></li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
@@ -385,7 +401,7 @@ Tip
 <p>Now R is ready to work for you. Launch R using the regular methods specific to your operating system. If you added a desktop icon or a quick launch button then you can use these or run R from the Applications or Windows Start button.</p>
 <p>R is mainly used as an interactive program — you give R a command and it responds to that command. The result may influence the next command that you give R. Between the time you start R and it gives you the first prompt, any number of things might happen (depending on your installation). But the thing that always happens is that some number of <strong>packages</strong> are <code>attached</code> to the <code>search list</code>. You can see what those packages are in your case with the command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">search</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -403,13 +419,13 @@ Tip
 <p>The first item on the search list is the “global environment”. This is your work space where the objects that you create during the R session will be.</p>
 <p>You quit R with the command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">q</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>R will ask you if you want to save or delete the global environment when you quit. If you do save the global environment, then you can start another R session with those objects in the global environment at the start of the new session. You are saving the objects in the global environment, you are not saving the session. In particular, you are not saving the search list.</p>
 </section>
 <section id="installing-rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="installing-rstudio">Installing RStudio</h3>
-<p>RStudio is an integrated development environment (IDE) for R programming <span class="citation" data-cites="rstudio">[@rstudio]</span>. RStudio is a set of integrated tools that allows for a more user-friendly experience for using R. Although you will likely use RStudio as your main console and editor, you must first install R, as RStudio uses R behind the scenes. Similar to R, RStudio is freely-available, cross-platform, and open-source.</p>
+<p>RStudio is an integrated development environment (IDE) for R programming <span class="citation" data-cites="rstudio">(<a href="#ref-rstudio" role="doc-biblioref"><strong>rstudio?</strong></a>)</span>. RStudio is a set of integrated tools that allows for a more user-friendly experience for using R. Although you will likely use RStudio as your main console and editor, you must first install R, as RStudio uses R behind the scenes. Similar to R, RStudio is freely-available, cross-platform, and open-source.</p>
 <p>Download and install it from http://www.rstudio.com/download. RStudio is updated a couple of times a year. When a new version is available, RStudio will let you know. It’s a good idea to upgrade regularly so you can take advantage of the latest and greatest features.</p>
 <ol type="1">
 <li>Go to https://www.rstudio.com/products/rstudio/download/</li>
@@ -449,7 +465,7 @@ Figure&nbsp;1: The interface of Rstudio IDE with four key panels
 <p>Another function is simply called <code>c()</code>; which combines values together.</p>
 <p>So let’s create a new R code chunk. And we’ll write:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 7 8 9</code></pre>
 </div>
@@ -472,14 +488,14 @@ Note
 </blockquote>
 <p>So you can see that this combines these values all into the same place, which is called a vector here. We could also do this with a non-numeric examples, which are called “strings”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"San Francisco"</span>, <span class="st">"Cal Academy"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">c</span>(<span class="st">"San Francisco"</span>, <span class="st">"Cal Academy"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "San Francisco" "Cal Academy"  </code></pre>
 </div>
 </div>
 <p>We need to put quotes around non-numeric values so that R does not interpret them as an object. It would definitely get grumpy and give us an error that it did not have an object by these names. And you see that R also prints in quotes. We can also put functions inside of other functions.This is called nested functions. When we add another function inside a function, R will evaluate them from the inside-out.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sum</span>(cars<span class="sc">$</span>dist), <span class="st">"San Francisco"</span>, <span class="st">"Cal Academy"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">c</span>(<span class="fu">sum</span>(cars<span class="sc">$</span>dist), <span class="st">"San Francisco"</span>, <span class="st">"Cal Academy"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2149"          "San Francisco" "Cal Academy"  </code></pre>
 </div>
@@ -490,7 +506,7 @@ Note
 <section id="packages" class="level2">
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <p>So far we’ve been using a couple functions that are included with R out-of-the-box such as <code>plot()</code> and <code>c()</code>. We say that these functions are from “Base R”. But, one of the amazing things about R is its users’ community that create new functions and packages. An R <strong>package</strong> is a collection of functions, data, and documentation that extends the capabilities of base R. Using packages is key to the successful use of R. The majority of the packages that you will learn in this manual are part of the so-called <strong>tidyverse</strong>, which is an ecosystem of packages that <em>share a common philosophy of data and R programming, and are designed to work together naturally</em>.</p>
-<p>The tidyverse is a coherent system of packages for data manipulation, exploration and visualization that share a common design philosophy. The <strong>Tidyverse</strong> <span class="citation" data-cites="tidyverse">[@tidyverse]</span> packages form a core set of functions that will allow us to perform most any type of data cleaning or analysis we will need to do. We will use the following packages from the tidyverse</p>
+<p>The tidyverse is a coherent system of packages for data manipulation, exploration and visualization that share a common design philosophy. The <strong>Tidyverse</strong> <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> packages form a core set of functions that will allow us to perform most any type of data cleaning or analysis we will need to do. We will use the following packages from the tidyverse</p>
 <ul>
 <li><strong>ggplot2</strong>—for data visualisation.</li>
 <li><strong>dplyr</strong>—for data manipulation.</li>
@@ -502,71 +518,71 @@ Note
 <section id="installing-r-packages" class="level3">
 <h3 class="anchored" data-anchor-id="installing-r-packages">Installing R packages</h3>
 <p>For us to use <strong>tidyverse</strong> and any other package that is not included in Base R, we must install them first. The easiest way to install packages is to use the <code>install.packages()</code> command. For example, let’s go ahead and install the <strong>tidyverse</strong> package on your machine:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>On your own computer, type that line of code in the console, and then press enter to run it. R will download the packages from CRAN and install it to your computer. If you have problems installing, make sure that you are connected to the internet, and that https://cloud.r-project.org/ isn’t blocked by your firewall or proxy.</p>
 </section>
 <section id="loading-installed-packages" class="level3">
 <h3 class="anchored" data-anchor-id="loading-installed-packages">Loading installed packages</h3>
 <p>Now we’ve installed the package, but we need to tell R that we are going to use some functions within the <strong>tidyverse</strong> package. With exception to base R package, add on package that are installed must be called with either <code>library</code> or <code>require</code> functions to make their tools accessible in R session. Let’s us load the <strong>tidyverse</strong> package we just installed</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">require</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You notice that when we load <strong>tidyverse</strong>, it popup a notification message showing the loaded packages and the conflicts they bring in. These conflicts happen when packages have functions with the same names as other functions. This is OK when you prefer the function in a package like tidyverse rather than some other function. Basically the last package loaded in will mask over other functions if they have common names.</p>
 </section>
 <section id="other-packages" class="level3">
 <h3 class="anchored" data-anchor-id="other-packages">Other packages</h3>
-<p>There are many other excellent packages that are not part of the tidyverse, because they solve problems in a different domain, or are designed with a different set of underlying principles. This doesn’t make them better or worse, just different. In other words, the complement to the tidyverse is not the messyverse, but many other universes of interrelated packages <span class="citation" data-cites="r4ds">[@r4ds]</span>. As you tackle more data science projects with R, you’ll learn new packages and new ways of thinking about data. In this course we’ll use several data packages from outside the tidyverse:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>additional.packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"metR"</span>, <span class="st">"cowplot"</span>, <span class="st">"ggspatial"</span>, <span class="st">"patchwork"</span>, <span class="st">"ggrepel"</span>,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"oce"</span>, <span class="st">"tmap"</span>, <span class="st">"leaflet"</span>, <span class="st">"bookdown"</span>, <span class="st">"blogdown"</span>, </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"rmarkdown"</span>, <span class="st">"tinytex"</span>, <span class="st">"tidymodels"</span>, <span class="st">"terra"</span>, </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"tidyterra"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(additional.packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are many other excellent packages that are not part of the tidyverse, because they solve problems in a different domain, or are designed with a different set of underlying principles. This doesn’t make them better or worse, just different. In other words, the complement to the tidyverse is not the messyverse, but many other universes of interrelated packages <span class="citation" data-cites="r4ds">(<a href="#ref-r4ds" role="doc-biblioref"><strong>r4ds?</strong></a>)</span>. As you tackle more data science projects with R, you’ll learn new packages and new ways of thinking about data. In this course we’ll use several data packages from outside the tidyverse:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>additional.packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"metR"</span>, <span class="st">"cowplot"</span>, <span class="st">"ggspatial"</span>, <span class="st">"patchwork"</span>, <span class="st">"ggrepel"</span>,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>                        <span class="st">"oce"</span>, <span class="st">"tmap"</span>, <span class="st">"leaflet"</span>, <span class="st">"bookdown"</span>, <span class="st">"blogdown"</span>, </span>
+<span id="cb12-3"><a href="#cb12-3"></a>                        <span class="st">"rmarkdown"</span>, <span class="st">"tinytex"</span>, <span class="st">"tidymodels"</span>, <span class="st">"terra"</span>, </span>
+<span id="cb12-4"><a href="#cb12-4"></a>                        <span class="st">"tidyterra"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">install.packages</span>(additional.packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="useful-r-commands" class="level3">
 <h3 class="anchored" data-anchor-id="useful-r-commands">Useful R commands</h3>
 <p>Show version number of R and installed OS</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>show R version</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">etRversion</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">etRversion</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>show current working directory</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>change working directory to a user defined location</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">setwd</span>(<span class="st">"C:/..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>list all packages in the R package library</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>open download mirrors list for package installation</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">available.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">available.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>download R packages from CRAN repository to a local folder</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">download.packages("package_name", "download_directory")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="st">`</span><span class="at">download.packages("package_name", "download_directory")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>update all packages</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">checkBuilt=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">update.packages</span>(<span class="at">checkBuilt=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>show version numbers of R packages, dependencies of packages, recommended packages, license info and builded R version number</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">installed.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">installed.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>parses and returns the description file of a package</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">packageDescription</span>(<span class="st">"package_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">packageDescription</span>(<span class="st">"package_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>remove packages</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">remove.packages("package_name", "installed_directory")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="st">`</span><span class="at">remove.packages("package_name", "installed_directory")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>show license info</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">license</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>display citation</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">citation</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>load packagesinto the session</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(package_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">require</span>(package_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>running time of R</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">proc.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">proc.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>current memory usage</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">memory.size</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">memory.size</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>total available memory</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">memory.limit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">memory.limit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>terminate an R session</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">q</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>display warning messages</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">warnings</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">warnings</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="getting-help-for-r" class="level3">
 <h3 class="anchored" data-anchor-id="getting-help-for-r">Getting help for R</h3>
 <p>Both online and offline help documentations and manuals for R are available. You can start help while using R with help.start() function from the console. For more help, you can use online documentations from the official R website by using these links: + Help page: https://www.r-project.org/help.html + Manuals page: https://cran.r-project.org/manuals.html + Frequently Asked Questions (FAQs) Page: https://cran.r-project.org/faqs.html</p>
 <p>Every function available to you should have a help page, and you access it by typing a question mark preceding the function name in the Console. Let’s have a deeper look at the arguments for <code>plot()</code>, using the help pages.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>    ?plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>    ?plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This opens up the correct page in the Help Tab in the bottom-right of the RStudio IDE. You can also click on the tab and type in the function name in the search bar.</p>
 <p>All help pages will have the same format, here is how I look at it:</p>
 <p>The help page tells the name of the package in the top left, and broken down into sections:</p>
@@ -603,10 +619,15 @@ Figure&nbsp;2: A cosine function of x
 
 <!-- -->
 
+
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1047,402 +1068,403 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb33" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The basics of R and Rstudio"</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Understanding the building blocks of R and its working environment Rstudio for smooth operations in  data science"</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-01-24"</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [visualization, code, analysis]</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "../screenshots/Rproject.png"</span></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># R, Rstudio </span></span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>What you will learn in this post</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The R program</span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Why learn R programming</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Installation of R, Rstudio and R packages</span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Introduction to Rmarkdown</span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Loading packages in R</span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## The R program</span></span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>R is a language and package-based software environment that provides a wide variety of functions for statistical computing and graphics. It is available free at the Comprehensive R Archive Network (CRAN) on the Internet. It is also open source and available for all major operating systems. Because R is a programming language it can seem a bit daunting; you have to type in commands to get it to work; however, it does have a Graphical User Interface (GUI) to make things easier and it is not so different from typing formula into Excel. R cope with a huge variety of analyses and someone have written a routine to perform nearly any type of calculation. R comes with a powerful set of routines built in at the start but there are some useful extra packages available on the CRAN website. These include routines for more specialized analyses covering many aspects of scientific research as well as other fields (e.g. economics). There are many advantages in using R:</span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>It is free, always a consideration.</span>
-<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>It is open source; this means that many bugs are ironed out.</span>
-<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>It is extremely powerful and will handle very complex analyses as easily as simple ones.</span>
-<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>It handle a wide variety of analyses. This is one of the most important features: you only need to know how to use R and you can do more or less any type of analysis; there is no need to learn several different (and expensive) programs.</span>
-<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>It uses simple text commands. At first this seems hard but it is actually quite easy. The upshot is that you can build up a library of commands and copy/paste them when you need them.</span>
-<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>Documentation. There is a wealth of help for R. The CRAN site itself hosts a lot of material but there are also other websites that provide examples and documentation. Simply adding CRAN to a web search command will bring up plenty of options.</span>
-<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### Why R?</span></span>
-<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, ...) and graphical techniques, and is highly extensible. The R language serves as a vehicle of choice for research in statistical methodology, and an Open Source route to participation in that activity. One of R's strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. R is also available as Free Software under the terms of the Free Software Foundation's GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.</span>
-<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a>Many users think of R as a statistics system and forget that it as an environment within which statistical techniques are implemented.</span>
-<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb33-40"><a href="#cb33-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-41"><a href="#cb33-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Install R</span></span>
-<span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-43"><a href="#cb33-43" aria-hidden="true" tabindex="-1"></a>A new major version of R comes out once a year, and there are 2-3 minor releases each year. It's a good idea to update regularly. Upgrading can be a bit of a hassle, especially for major versions, which require you to re-install all your packages, but putting it off only makes it worse. Getting R is easy via the Internet. The R Project website is a vast enterprise and has local mirror sites in many countries. </span>
-<span id="cb33-44"><a href="#cb33-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-45"><a href="#cb33-45" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The first step is to go to https://cran.r-project.org/. The project's website is the main official information source and can be reached from <span class="co">[</span><span class="ot">@fig-rproject</span><span class="co">]</span>.</span>
-<span id="cb33-46"><a href="#cb33-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-49"><a href="#cb33-49" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-50"><a href="#cb33-50" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: cran</span></span>
-<span id="cb33-51"><a href="#cb33-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Getting R from the R Project website. Click the download link and select the nearest mirror site</span></span>
-<span id="cb33-52"><a href="#cb33-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: "100%"</span></span>
-<span id="cb33-53"><a href="#cb33-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb33-54"><a href="#cb33-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-keep: high</span></span>
-<span id="cb33-55"><a href="#cb33-55" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-56"><a href="#cb33-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-57"><a href="#cb33-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-58"><a href="#cb33-58" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"../screenshots/Rproject.png"</span>)</span>
-<span id="cb33-59"><a href="#cb33-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-60"><a href="#cb33-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-61"><a href="#cb33-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-62"><a href="#cb33-62" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Click Download R for Mac/Windows. Once you have clicked the download link (@cran), you have the chance to select a mirror site. These mirrors sites are hosted in servers across the world and using a local one will generally result in a speedier download.</span>
-<span id="cb33-63"><a href="#cb33-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-64"><a href="#cb33-64" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Click the link appropriate for your system (Linux, Mac, Windows). Once you have selected a mirror site, you can click the link that relates to your operating system (@Rdownload). If you use a Mac then you will go to a page where you can select the best option for you (there are versions for various flavours of OSX). If you use Windows then you will go to a Windows-specific page. If you are a Linux user then read the documentation; you generally install R through the terminal rather than via the web page.</span>
-<span id="cb33-65"><a href="#cb33-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-66"><a href="#cb33-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-69"><a href="#cb33-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-70"><a href="#cb33-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: Rdownload</span></span>
-<span id="cb33-71"><a href="#cb33-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Getting R from the R Project website. You can select the version that is specific to your operating system</span></span>
-<span id="cb33-72"><a href="#cb33-72" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: "100%"</span></span>
-<span id="cb33-73"><a href="#cb33-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb33-74"><a href="#cb33-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-75"><a href="#cb33-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-76"><a href="#cb33-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-77"><a href="#cb33-77" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"../screenshots/cranDownload.png"</span>)</span>
-<span id="cb33-78"><a href="#cb33-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-79"><a href="#cb33-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-80"><a href="#cb33-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-81"><a href="#cb33-81" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Now the final step is to click the link and download the installer file, which will download in the usual manner according to the setup of your computer.</span>
-<span id="cb33-82"><a href="#cb33-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-83"><a href="#cb33-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-84"><a href="#cb33-84" aria-hidden="true" tabindex="-1"></a>Once you have downloaded the install file, you need to run it to get R onto your computer. If you use a Mac you need to double-click the disk image file to mount the virtual disk. Then double-click the package file to install. If you use Windows, then you need to find the EXE file and run it. The installer will copy the relevant files and you will soon be ready to run R.</span>
-<span id="cb33-85"><a href="#cb33-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-86"><a href="#cb33-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### What happens at R startup</span></span>
-<span id="cb33-87"><a href="#cb33-87" aria-hidden="true" tabindex="-1"></a>Now R is ready to work for you. Launch R using the regular methods specific to your operating system. If you added a desktop icon or a quick launch button then you can use these or run R from the Applications or Windows Start button.</span>
-<span id="cb33-88"><a href="#cb33-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-89"><a href="#cb33-89" aria-hidden="true" tabindex="-1"></a>R is mainly used as an interactive program --- you give R a command and it responds to that command. The result may influence the next command that you give R. Between the time you start R and it gives you the first prompt, any number of things might happen (depending on your installation). But the thing that always happens is that some number of **packages** are <span class="in">`attached`</span> to the <span class="in">`search list`</span>. You can see what those packages are in your case with the command:</span>
-<span id="cb33-90"><a href="#cb33-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-93"><a href="#cb33-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-94"><a href="#cb33-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb33-95"><a href="#cb33-95" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span>
-<span id="cb33-96"><a href="#cb33-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-97"><a href="#cb33-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-98"><a href="#cb33-98" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb33-99"><a href="#cb33-99" aria-hidden="true" tabindex="-1"></a>You don't type the "&gt;" --- that is the R prompt, but you do hit the return key at the end of the line</span>
-<span id="cb33-100"><a href="#cb33-100" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb33-101"><a href="#cb33-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-102"><a href="#cb33-102" aria-hidden="true" tabindex="-1"></a>The first item on the search list is the "global environment". This is your work space where the objects that you create during the R session will be.</span>
-<span id="cb33-103"><a href="#cb33-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-104"><a href="#cb33-104" aria-hidden="true" tabindex="-1"></a>You quit R with the command:</span>
-<span id="cb33-105"><a href="#cb33-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-108"><a href="#cb33-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-109"><a href="#cb33-109" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb33-110"><a href="#cb33-110" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span>
-<span id="cb33-111"><a href="#cb33-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-112"><a href="#cb33-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-113"><a href="#cb33-113" aria-hidden="true" tabindex="-1"></a>R will ask you if you want to save or delete the global environment when you quit. If you do save the global environment, then you can start another R session with those objects in the global environment at the start of the new session. You are saving the objects in the global environment, you are not saving the session. In particular, you are not saving the search list.</span>
-<span id="cb33-114"><a href="#cb33-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-115"><a href="#cb33-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-116"><a href="#cb33-116" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installing RStudio</span></span>
-<span id="cb33-117"><a href="#cb33-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-118"><a href="#cb33-118" aria-hidden="true" tabindex="-1"></a>RStudio is an integrated development environment (IDE) for R programming <span class="co">[</span><span class="ot">@rstudio</span><span class="co">]</span>. RStudio is a set of integrated tools that allows for a more user-friendly experience for using R. Although you will likely use RStudio as your main console and editor, you must first install R, as RStudio uses R behind the scenes. Similar to R, RStudio is freely-available, cross-platform, and open-source.</span>
-<span id="cb33-119"><a href="#cb33-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-120"><a href="#cb33-120" aria-hidden="true" tabindex="-1"></a>Download and install it from http://www.rstudio.com/download. RStudio is updated a couple of times a year. When a new version is available, RStudio will let you know. It's a good idea to upgrade regularly so you can take advantage of the latest and greatest features.</span>
-<span id="cb33-121"><a href="#cb33-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-122"><a href="#cb33-122" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Go to https://www.rstudio.com/products/rstudio/download/</span>
-<span id="cb33-123"><a href="#cb33-123" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Click Download under RStudio Desktop.</span>
-<span id="cb33-124"><a href="#cb33-124" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Click the link appropriate for your system (Linux, Mac, Windows)</span>
-<span id="cb33-125"><a href="#cb33-125" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Follow the instructions of the Installer.</span>
-<span id="cb33-126"><a href="#cb33-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-127"><a href="#cb33-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Rstudio Layout</span></span>
-<span id="cb33-128"><a href="#cb33-128" aria-hidden="true" tabindex="-1"></a>Whenever we want to work with R, we'll open RStudio. RStudio interfaces directly with R, and is an Integrated Development Environment (IDE). This means that RStudio comes with built-in features that make using R a little easier. When you start RStudio, you'll see four key panels in the interface shown in @fig-interface. We'll refer to these four "panes" as the <span class="in">`editor`</span>, the <span class="in">`Console`</span>, the <span class="in">`Environment`</span>, and the <span class="in">`Files`</span> panes. The large square on the left is the Console pane, the square in the top right is the Environment pane, and the square in the bottom right is the Files pane. As you work with R more, you'll find yourself using the tabs within each of the panes.</span>
-<span id="cb33-129"><a href="#cb33-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-130"><a href="#cb33-130" aria-hidden="true" tabindex="-1"></a>When we create a new file, such as an R script, an R Markdown file, or a Shiny app, RStudio will open a fourth pane, known as the source or editor pane. The source pane should show up as a square in the top left. We can open up an .R script in the source pane by going to File, selecting New File, and then selecting R Script:</span>
-<span id="cb33-131"><a href="#cb33-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-132"><a href="#cb33-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig022mo, out.width="100%", fig.cap="The interface of Rstudio IDE with four key panels"}</span></span>
-<span id="cb33-133"><a href="#cb33-133" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-interface</span></span>
-<span id="cb33-134"><a href="#cb33-134" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: The interface of Rstudio IDE with four key panels</span></span>
-<span id="cb33-135"><a href="#cb33-135" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-pos: H</span></span>
-<span id="cb33-136"><a href="#cb33-136" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: "100%"</span></span>
-<span id="cb33-137"><a href="#cb33-137" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
-<span id="cb33-138"><a href="#cb33-138" aria-hidden="true" tabindex="-1"></a><span class="in">#| </span></span>
-<span id="cb33-139"><a href="#cb33-139" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("../screenshots/basics/rstudio.png")  </span></span>
-<span id="cb33-140"><a href="#cb33-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-141"><a href="#cb33-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-142"><a href="#cb33-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-143"><a href="#cb33-143" aria-hidden="true" tabindex="-1"></a>We are going to have our first experience with R through RMarkdown, so let's do the following.</span>
-<span id="cb33-144"><a href="#cb33-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-145"><a href="#cb33-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-146"><a href="#cb33-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## R functions</span></span>
-<span id="cb33-147"><a href="#cb33-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-148"><a href="#cb33-148" aria-hidden="true" tabindex="-1"></a>Like Excel, the power of R comes not from doing small operations individually (like <span class="in">`8*22.3`</span>). But rather R's power comes from being able to operate on whole suites of numbers and datasets. And also like Excel, some of the biggest power in R is that there are built-in functions that you can use in your analyses (and, as we'll see, R users can easily create and share functions, and it is this open source developer and contributor community that makes R so awesome).</span>
-<span id="cb33-149"><a href="#cb33-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-150"><a href="#cb33-150" aria-hidden="true" tabindex="-1"></a>R has a mind-blowing collection of built-in functions that are used with the same syntax: function name with parentheses around what the function needs to do what it is supposed to do. We've seen a few functions already: we've seen <span class="in">`plot()`</span> and <span class="in">`summary()`</span>.</span>
-<span id="cb33-151"><a href="#cb33-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-152"><a href="#cb33-152" aria-hidden="true" tabindex="-1"></a>Functions always have the same structure: a name, parentheses, and arguments that you can specify. <span class="in">`function_name(arguments)`</span>. When we talk about function names, we use the convention <span class="in">`function_name()`</span> (the name with empty parentheses), but in practice, we usually supply arguments to the function <span class="in">`function_name(arguments)`</span> so that it works on some data.</span>
-<span id="cb33-153"><a href="#cb33-153" aria-hidden="true" tabindex="-1"></a>Let's see a few more function examples.</span>
-<span id="cb33-154"><a href="#cb33-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-155"><a href="#cb33-155" aria-hidden="true" tabindex="-1"></a>Like in Excel, there is a function called "sum" to calculate a total.</span>
-<span id="cb33-156"><a href="#cb33-156" aria-hidden="true" tabindex="-1"></a>In R, it is spelled lowercase: <span class="in">`sum()`</span>. (As I type in the Console, R will provide suggestions). Let's use the <span class="in">`sum()`</span> function to calculate the sum of all the distances traveled in the <span class="in">`cars`</span> dataset.</span>
-<span id="cb33-157"><a href="#cb33-157" aria-hidden="true" tabindex="-1"></a>We specify a single column of a dataset using the <span class="in">`$`</span> operator:</span>
-<span id="cb33-158"><a href="#cb33-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-159"><a href="#cb33-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-160"><a href="#cb33-160" aria-hidden="true" tabindex="-1"></a><span class="in">sum(cars$dist)</span></span>
-<span id="cb33-161"><a href="#cb33-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-162"><a href="#cb33-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-163"><a href="#cb33-163" aria-hidden="true" tabindex="-1"></a>Another function is simply called <span class="in">`c()`</span>; which combines values together.</span>
-<span id="cb33-164"><a href="#cb33-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-165"><a href="#cb33-165" aria-hidden="true" tabindex="-1"></a>So let's create a new R code chunk.</span>
-<span id="cb33-166"><a href="#cb33-166" aria-hidden="true" tabindex="-1"></a>And we'll write:</span>
-<span id="cb33-167"><a href="#cb33-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-168"><a href="#cb33-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{r c-example}</span></span>
-<span id="cb33-169"><a href="#cb33-169" aria-hidden="true" tabindex="-1"></a><span class="in">c(1, 7:9)</span></span>
-<span id="cb33-170"><a href="#cb33-170" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-171"><a href="#cb33-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-172"><a href="#cb33-172" aria-hidden="true" tabindex="-1"></a>:::callout-note</span>
-<span id="cb33-173"><a href="#cb33-173" aria-hidden="true" tabindex="-1"></a>some functions don't require arguments: try typing <span class="in">`date()`</span> into the Console.</span>
-<span id="cb33-174"><a href="#cb33-174" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb33-175"><a href="#cb33-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-176"><a href="#cb33-176" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Be sure to type the parentheses (</span><span class="in">`date()`</span><span class="at">); otherwise R will return the code behind the </span><span class="in">`date()`</span><span class="at"> function rather than the output that you want/expect.</span></span>
-<span id="cb33-177"><a href="#cb33-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-178"><a href="#cb33-178" aria-hidden="true" tabindex="-1"></a>So you can see that this combines these values all into the same place, which is called a vector here.</span>
-<span id="cb33-179"><a href="#cb33-179" aria-hidden="true" tabindex="-1"></a>We could also do this with a non-numeric examples, which are called "strings":</span>
-<span id="cb33-180"><a href="#cb33-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-181"><a href="#cb33-181" aria-hidden="true" tabindex="-1"></a><span class="in">```{r c-ex2}</span></span>
-<span id="cb33-182"><a href="#cb33-182" aria-hidden="true" tabindex="-1"></a><span class="in">c("San Francisco", "Cal Academy") </span></span>
-<span id="cb33-183"><a href="#cb33-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-184"><a href="#cb33-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-185"><a href="#cb33-185" aria-hidden="true" tabindex="-1"></a>We need to put quotes around non-numeric values so that R does not interpret them as an object. It would definitely get grumpy and give us an error that it did not have an object by these names. And you see that R also prints in quotes. We can also put functions inside of other functions.This is called nested functions. When we add another function inside a function, R will evaluate them from the inside-out.</span>
-<span id="cb33-186"><a href="#cb33-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-187"><a href="#cb33-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{r c-ex3}</span></span>
-<span id="cb33-188"><a href="#cb33-188" aria-hidden="true" tabindex="-1"></a><span class="in">c(sum(cars$dist), "San Francisco", "Cal Academy") </span></span>
-<span id="cb33-189"><a href="#cb33-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-190"><a href="#cb33-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-191"><a href="#cb33-191" aria-hidden="true" tabindex="-1"></a>So R first evaluated the <span class="in">`sum(cars$dist)`</span>, and then evaluates the <span class="in">`c()`</span> statement. This example demonstrates another key idea in R: the idea of **classes**. The output R provides is called a vector, and everything within that vector has to be the same type of thing: we can't have both numbers and words inside. So here R is able to first calculate <span class="in">`sum(cars$dist)`</span> as a number, but then <span class="in">`c()`</span> will turn that number into a text, called a "string" in R: you see that it is in quotes. It is no longer a numeric, it is a string.</span>
-<span id="cb33-192"><a href="#cb33-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-193"><a href="#cb33-193" aria-hidden="true" tabindex="-1"></a>This is a big difference between R and Excel, since Excel allows you to have a mix of text and numeric in the same column or row. R's way can feel restrictive, but it is also more predictable. In Excel, you might have a single number in your whole sheet that Excel is silently interpreting as text so it is causing errors in the analyses. In R, the whole column will be the same type. This can still cause trouble, but that is where the good practices that we are learning together can help minimize that kind of trouble.</span>
-<span id="cb33-194"><a href="#cb33-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-195"><a href="#cb33-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-196"><a href="#cb33-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## Packages</span></span>
-<span id="cb33-197"><a href="#cb33-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-198"><a href="#cb33-198" aria-hidden="true" tabindex="-1"></a>So far we've been using a couple functions that are included with R out-of-the-box such as <span class="in">`plot()`</span> and <span class="in">`c()`</span>. We say that these functions are from "Base R". But, one of the amazing things about R is its users' community that create new functions and packages. An R **package** is a collection of functions, data, and documentation that extends the capabilities of base R. Using packages is key to the successful use of R. The majority of the packages that you will learn in this manual are part of the so-called **tidyverse**, which is an ecosystem of packages that *share a common philosophy of data and R programming, and are designed to work together naturally*.</span>
-<span id="cb33-199"><a href="#cb33-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-200"><a href="#cb33-200" aria-hidden="true" tabindex="-1"></a>The tidyverse is a coherent system of packages for data manipulation, exploration and visualization that share a common design philosophy. The **Tidyverse** <span class="co">[</span><span class="ot">@tidyverse</span><span class="co">]</span> packages form a core set of functions that will allow us to perform most any type of data cleaning or analysis we will need to do. We will use the following packages from the tidyverse</span>
-<span id="cb33-201"><a href="#cb33-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-202"><a href="#cb33-202" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**ggplot2**---for data visualisation.</span>
-<span id="cb33-203"><a href="#cb33-203" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**dplyr**---for data manipulation.</span>
-<span id="cb33-204"><a href="#cb33-204" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**tidyr**---for data tidying.</span>
-<span id="cb33-205"><a href="#cb33-205" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**readr**---for data import.</span>
-<span id="cb33-206"><a href="#cb33-206" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**purrr**---for functional programming.</span>
-<span id="cb33-207"><a href="#cb33-207" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**tibble**---for tibbles, a modern re-imagining of data frames.</span>
-<span id="cb33-208"><a href="#cb33-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-209"><a href="#cb33-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-210"><a href="#cb33-210" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installing R packages</span></span>
-<span id="cb33-211"><a href="#cb33-211" aria-hidden="true" tabindex="-1"></a>For us to use **tidyverse** and any other package that is not included in Base R, we must install them first. The easiest way to install packages is to use the `install.packages()` command. For example, let's go ahead and install the **tidyverse** package on your machine:</span>
-<span id="cb33-212"><a href="#cb33-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-213"><a href="#cb33-213" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-214"><a href="#cb33-214" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
-<span id="cb33-215"><a href="#cb33-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-216"><a href="#cb33-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-217"><a href="#cb33-217" aria-hidden="true" tabindex="-1"></a>On your own computer, type that line of code in the console, and then press enter to run it. R will download the packages from CRAN and install it to your computer. If you have problems installing, make sure that you are connected to the internet, and that https://cloud.r-project.org/ isn't blocked by your firewall or proxy.</span>
-<span id="cb33-218"><a href="#cb33-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-219"><a href="#cb33-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-220"><a href="#cb33-220" aria-hidden="true" tabindex="-1"></a><span class="fu">### Loading installed packages</span></span>
-<span id="cb33-221"><a href="#cb33-221" aria-hidden="true" tabindex="-1"></a>Now we've installed the package, but we need to tell R that we are going to use some functions within the **tidyverse** package. With exception to base R package, add on package that are installed must be called with either `library` or `require` functions to make their tools accessible in R session. Let's us load the **tidyverse** package we just installed</span>
-<span id="cb33-222"><a href="#cb33-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-223"><a href="#cb33-223" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-224"><a href="#cb33-224" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span>
-<span id="cb33-225"><a href="#cb33-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-226"><a href="#cb33-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-227"><a href="#cb33-227" aria-hidden="true" tabindex="-1"></a>You notice that when we load **tidyverse**, it popup a notification message showing the loaded packages and the conflicts they bring in. These conflicts happen when packages have functions with the same names as other functions. This is OK when you prefer the function in a package like tidyverse rather than some other function. Basically the last package loaded in will mask over other functions if they have common names.</span>
-<span id="cb33-228"><a href="#cb33-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-229"><a href="#cb33-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-230"><a href="#cb33-230" aria-hidden="true" tabindex="-1"></a><span class="fu">### Other packages</span></span>
-<span id="cb33-231"><a href="#cb33-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-232"><a href="#cb33-232" aria-hidden="true" tabindex="-1"></a>There are many other excellent packages that are not part of the tidyverse, because they solve problems in a different domain, or are designed with a different set of underlying principles. This doesn't make them better or worse, just different. In other words, the complement to the tidyverse is not the messyverse, but many other universes of interrelated packages <span class="co">[</span><span class="ot">@r4ds</span><span class="co">]</span>. As you tackle more data science projects with R, you'll learn new packages and new ways of thinking about data. In this course we'll use several data packages from outside the tidyverse:</span>
-<span id="cb33-233"><a href="#cb33-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-234"><a href="#cb33-234" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-235"><a href="#cb33-235" aria-hidden="true" tabindex="-1"></a>additional.packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"metR"</span>, <span class="st">"cowplot"</span>, <span class="st">"ggspatial"</span>, <span class="st">"patchwork"</span>, <span class="st">"ggrepel"</span>,</span>
-<span id="cb33-236"><a href="#cb33-236" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"oce"</span>, <span class="st">"tmap"</span>, <span class="st">"leaflet"</span>, <span class="st">"bookdown"</span>, <span class="st">"blogdown"</span>, </span>
-<span id="cb33-237"><a href="#cb33-237" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"rmarkdown"</span>, <span class="st">"tinytex"</span>, <span class="st">"tidymodels"</span>, <span class="st">"terra"</span>, </span>
-<span id="cb33-238"><a href="#cb33-238" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"tidyterra"</span>)</span>
-<span id="cb33-239"><a href="#cb33-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-240"><a href="#cb33-240" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(additional.packages)</span>
-<span id="cb33-241"><a href="#cb33-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-242"><a href="#cb33-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-243"><a href="#cb33-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-244"><a href="#cb33-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-245"><a href="#cb33-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-246"><a href="#cb33-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-247"><a href="#cb33-247" aria-hidden="true" tabindex="-1"></a><span class="fu">### Useful R commands</span></span>
-<span id="cb33-248"><a href="#cb33-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-249"><a href="#cb33-249" aria-hidden="true" tabindex="-1"></a>Show version number of R and installed OS</span>
-<span id="cb33-250"><a href="#cb33-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-251"><a href="#cb33-251" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
-<span id="cb33-252"><a href="#cb33-252" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
-<span id="cb33-253"><a href="#cb33-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-254"><a href="#cb33-254" aria-hidden="true" tabindex="-1"></a>show R version</span>
-<span id="cb33-255"><a href="#cb33-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-256"><a href="#cb33-256" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-257"><a href="#cb33-257" aria-hidden="true" tabindex="-1"></a><span class="fu">etRversion</span>()</span>
-<span id="cb33-258"><a href="#cb33-258" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-259"><a href="#cb33-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-260"><a href="#cb33-260" aria-hidden="true" tabindex="-1"></a>show current working directory</span>
-<span id="cb33-261"><a href="#cb33-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-262"><a href="#cb33-262" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-263"><a href="#cb33-263" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
-<span id="cb33-264"><a href="#cb33-264" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-265"><a href="#cb33-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-266"><a href="#cb33-266" aria-hidden="true" tabindex="-1"></a>change working directory to a user defined location</span>
-<span id="cb33-267"><a href="#cb33-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-268"><a href="#cb33-268" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-269"><a href="#cb33-269" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/..."</span>)</span>
-<span id="cb33-270"><a href="#cb33-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-271"><a href="#cb33-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-272"><a href="#cb33-272" aria-hidden="true" tabindex="-1"></a>list all packages in the R package library</span>
-<span id="cb33-273"><a href="#cb33-273" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-274"><a href="#cb33-274" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>()</span>
-<span id="cb33-275"><a href="#cb33-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-276"><a href="#cb33-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-277"><a href="#cb33-277" aria-hidden="true" tabindex="-1"></a> open download mirrors list for package installation</span>
-<span id="cb33-278"><a href="#cb33-278" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-279"><a href="#cb33-279" aria-hidden="true" tabindex="-1"></a><span class="fu">available.packages</span>()</span>
-<span id="cb33-280"><a href="#cb33-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-281"><a href="#cb33-281" aria-hidden="true" tabindex="-1"></a>download R packages from CRAN repository to a local folder</span>
-<span id="cb33-282"><a href="#cb33-282" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-283"><a href="#cb33-283" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">download.packages("package_name", "download_directory")</span></span>
-<span id="cb33-284"><a href="#cb33-284" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb33-285"><a href="#cb33-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-286"><a href="#cb33-286" aria-hidden="true" tabindex="-1"></a>update all packages</span>
-<span id="cb33-287"><a href="#cb33-287" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb33-288"><a href="#cb33-288" aria-hidden="true" tabindex="-1"></a><span class="at">update.packages(checkBuilt=TRUE)</span></span>
-<span id="cb33-289"><a href="#cb33-289" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb33-290"><a href="#cb33-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-291"><a href="#cb33-291" aria-hidden="true" tabindex="-1"></a>show version numbers of R packages, dependencies of packages, recommended</span>
-<span id="cb33-292"><a href="#cb33-292" aria-hidden="true" tabindex="-1"></a>packages, license info and builded R version number</span>
-<span id="cb33-293"><a href="#cb33-293" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb33-294"><a href="#cb33-294" aria-hidden="true" tabindex="-1"></a><span class="at">installed.packages()</span></span>
-<span id="cb33-295"><a href="#cb33-295" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb33-296"><a href="#cb33-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-297"><a href="#cb33-297" aria-hidden="true" tabindex="-1"></a>parses and returns the description file of a package</span>
-<span id="cb33-298"><a href="#cb33-298" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb33-299"><a href="#cb33-299" aria-hidden="true" tabindex="-1"></a><span class="at">packageDescription("package_name")</span></span>
-<span id="cb33-300"><a href="#cb33-300" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb33-301"><a href="#cb33-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-302"><a href="#cb33-302" aria-hidden="true" tabindex="-1"></a>remove packages</span>
-<span id="cb33-303"><a href="#cb33-303" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb33-304"><a href="#cb33-304" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="fu">remove.packages</span>(<span class="st">"package_name"</span>, <span class="st">"installed_directory"</span>)</span>
-<span id="cb33-305"><a href="#cb33-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-306"><a href="#cb33-306" aria-hidden="true" tabindex="-1"></a>show license info</span>
-<span id="cb33-307"><a href="#cb33-307" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-308"><a href="#cb33-308" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span>()</span>
-<span id="cb33-309"><a href="#cb33-309" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-310"><a href="#cb33-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-311"><a href="#cb33-311" aria-hidden="true" tabindex="-1"></a>display citation</span>
-<span id="cb33-312"><a href="#cb33-312" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-313"><a href="#cb33-313" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span>
-<span id="cb33-314"><a href="#cb33-314" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-315"><a href="#cb33-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-316"><a href="#cb33-316" aria-hidden="true" tabindex="-1"></a>load packagesinto the session</span>
-<span id="cb33-317"><a href="#cb33-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-318"><a href="#cb33-318" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-319"><a href="#cb33-319" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(package_name)</span>
-<span id="cb33-320"><a href="#cb33-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-321"><a href="#cb33-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-322"><a href="#cb33-322" aria-hidden="true" tabindex="-1"></a>running time of R</span>
-<span id="cb33-323"><a href="#cb33-323" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-324"><a href="#cb33-324" aria-hidden="true" tabindex="-1"></a><span class="fu">proc.time</span>()</span>
-<span id="cb33-325"><a href="#cb33-325" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-326"><a href="#cb33-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-327"><a href="#cb33-327" aria-hidden="true" tabindex="-1"></a>current memory usage</span>
-<span id="cb33-328"><a href="#cb33-328" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-329"><a href="#cb33-329" aria-hidden="true" tabindex="-1"></a><span class="fu">memory.size</span>()</span>
-<span id="cb33-330"><a href="#cb33-330" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-331"><a href="#cb33-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-332"><a href="#cb33-332" aria-hidden="true" tabindex="-1"></a>total available memory</span>
-<span id="cb33-333"><a href="#cb33-333" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-334"><a href="#cb33-334" aria-hidden="true" tabindex="-1"></a><span class="fu">memory.limit</span>()</span>
-<span id="cb33-335"><a href="#cb33-335" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-336"><a href="#cb33-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-337"><a href="#cb33-337" aria-hidden="true" tabindex="-1"></a>terminate an R session</span>
-<span id="cb33-338"><a href="#cb33-338" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-339"><a href="#cb33-339" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span>
-<span id="cb33-340"><a href="#cb33-340" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-341"><a href="#cb33-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-342"><a href="#cb33-342" aria-hidden="true" tabindex="-1"></a>display warning messages</span>
-<span id="cb33-343"><a href="#cb33-343" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb33-344"><a href="#cb33-344" aria-hidden="true" tabindex="-1"></a><span class="fu">warnings</span>()</span>
-<span id="cb33-345"><a href="#cb33-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-346"><a href="#cb33-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-347"><a href="#cb33-347" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting help for R</span></span>
-<span id="cb33-348"><a href="#cb33-348" aria-hidden="true" tabindex="-1"></a>Both online and offline help documentations and manuals for R are available. You can start help while using R with help.start() function from the console. For more help, you can use online documentations from the official R website by using these links:</span>
-<span id="cb33-349"><a href="#cb33-349" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>Help page: https://www.r-project.org/help.html</span>
-<span id="cb33-350"><a href="#cb33-350" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>Manuals page: https://cran.r-project.org/manuals.html</span>
-<span id="cb33-351"><a href="#cb33-351" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>Frequently Asked Questions (FAQs) Page: https://cran.r-project.org/faqs.html</span>
-<span id="cb33-352"><a href="#cb33-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-353"><a href="#cb33-353" aria-hidden="true" tabindex="-1"></a>Every function available to you should have a help page, and you access it by typing a question mark preceding the function name in the Console. Let's have a deeper look at the arguments for <span class="in">`plot()`</span>, using the help pages.</span>
-<span id="cb33-354"><a href="#cb33-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-355"><a href="#cb33-355" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
-<span id="cb33-356"><a href="#cb33-356" aria-hidden="true" tabindex="-1"></a>    ?plot</span>
-<span id="cb33-357"><a href="#cb33-357" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-358"><a href="#cb33-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-359"><a href="#cb33-359" aria-hidden="true" tabindex="-1"></a>This opens up the correct page in the Help Tab in the bottom-right of the RStudio IDE. You can also click on the tab and type in the function name in the search bar.</span>
-<span id="cb33-360"><a href="#cb33-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-361"><a href="#cb33-361" aria-hidden="true" tabindex="-1"></a>All help pages will have the same format, here is how I look at it:</span>
-<span id="cb33-362"><a href="#cb33-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-363"><a href="#cb33-363" aria-hidden="true" tabindex="-1"></a>The help page tells the name of the package in the top left, and broken down into sections:</span>
-<span id="cb33-364"><a href="#cb33-364" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-365"><a href="#cb33-365" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Help pages\</span></span>
-<span id="cb33-366"><a href="#cb33-366" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - Description: An extended description of what the function does.</span></span>
-<span id="cb33-367"><a href="#cb33-367" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - Usage: The arguments of the function and their default values.</span></span>
-<span id="cb33-368"><a href="#cb33-368" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - Arguments: An explanation of the data each argument is expecting.</span></span>
-<span id="cb33-369"><a href="#cb33-369" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - Details: Any important details to be aware of.</span></span>
-<span id="cb33-370"><a href="#cb33-370" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - Value: The data the function returns.</span></span>
-<span id="cb33-371"><a href="#cb33-371" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - See Also: Any related functions you might find useful.</span></span>
-<span id="cb33-372"><a href="#cb33-372" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - Examples: Some examples for how to use the function.</span></span>
-<span id="cb33-373"><a href="#cb33-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-374"><a href="#cb33-374" aria-hidden="true" tabindex="-1"></a>When I look at a help page, I start with the Description to see if I am in the right place for what I need to do.</span>
-<span id="cb33-375"><a href="#cb33-375" aria-hidden="true" tabindex="-1"></a>Reading the description for <span class="in">`plot`</span> lets me know that yup, this is the function I want.</span>
-<span id="cb33-376"><a href="#cb33-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-377"><a href="#cb33-377" aria-hidden="true" tabindex="-1"></a>I next look at the usage and arguments, which give me a more concrete view into what the function does. <span class="in">`plot`</span> requires arguments for <span class="in">`x`</span> and <span class="in">`y`</span>.</span>
-<span id="cb33-378"><a href="#cb33-378" aria-hidden="true" tabindex="-1"></a>But we passed only one argument to <span class="in">`plot()`</span>: we passed the cars dataset (<span class="in">`plot(cars)`</span>). R is able to understand that it should use the two columns in that dataset as x and y, and it does so based on order: the first column "speed" becomes x and the second column "dist" becomes y.</span>
-<span id="cb33-379"><a href="#cb33-379" aria-hidden="true" tabindex="-1"></a>The <span class="in">`...`</span> means that there are many other arguments we can pass to <span class="in">`plot()`</span>, which we should expect: I think we can all agree that it would be nice to have the option of making this figure a little more beautiful and compelling. Glancing at some of the arguments, we can understand here to be about the style of the plots.</span>
-<span id="cb33-380"><a href="#cb33-380" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-381"><a href="#cb33-381" aria-hidden="true" tabindex="-1"></a>Next, I usually scroll down to the bottom to the examples. This is where I can actually see how the function is used, and I can also paste those examples into the Console to see their output.</span>
-<span id="cb33-382"><a href="#cb33-382" aria-hidden="true" tabindex="-1"></a>Let's try it:</span>
-<span id="cb33-383"><a href="#cb33-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-384"><a href="#cb33-384" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-help-example, fig.width=3, fig.height=3}</span></span>
-<span id="cb33-385"><a href="#cb33-385" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-fig1</span></span>
-<span id="cb33-386"><a href="#cb33-386" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: A cosine function of x</span></span>
-<span id="cb33-387"><a href="#cb33-387" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
-<span id="cb33-388"><a href="#cb33-388" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 3</span></span>
-<span id="cb33-389"><a href="#cb33-389" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 3</span></span>
-<span id="cb33-390"><a href="#cb33-390" aria-hidden="true" tabindex="-1"></a><span class="in">#| eva: false</span></span>
-<span id="cb33-391"><a href="#cb33-391" aria-hidden="true" tabindex="-1"></a><span class="in">#| </span></span>
-<span id="cb33-392"><a href="#cb33-392" aria-hidden="true" tabindex="-1"></a><span class="in">plot(sin, -pi, 2*pi, las = 1)</span></span>
-<span id="cb33-393"><a href="#cb33-393" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-394"><a href="#cb33-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-395"><a href="#cb33-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-396"><a href="#cb33-396" aria-hidden="true" tabindex="-1"></a><span class="fu">## Flavours of R: base and tidyverse</span></span>
-<span id="cb33-397"><a href="#cb33-397" aria-hidden="true" tabindex="-1"></a>R is a programming language, and just like any language, it has different dialects. When you read about R online, you’ll frequently see people mentioning the words “base” and “tidyverse.” These are the two most common dialects of R. Base R is just that, R in its purest form. The tidyverse is a collection of add-on packages for working with different types of data. The two are fully compatible, and you can mix and match as much as you like. Both **ggplot2** and **magrittr** are part of the **tidyverse**.</span>
-<span id="cb33-398"><a href="#cb33-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-399"><a href="#cb33-399" aria-hidden="true" tabindex="-1"></a>In recent years, the tidyverse has been heavily promoted as being “modern” R which “makes data science faster, easier and more fun.” You should believe the hype. The tidyverse is marvellous. But if you only learn tidyverse R, you will miss out on much of what R has to offer. Base R is just as marvellous, and can definitely make data science as fast, easy and fun as the tidyverse. Besides, nobody uses just base R anyway - there are a ton of non-tidyverse packages that extend and enrich R in exciting new ways. Perhaps “extended R” would be better names for the non-tidyverse dialect.</span>
-<span id="cb33-400"><a href="#cb33-400" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-401"><a href="#cb33-401" aria-hidden="true" tabindex="-1"></a>Anyone who tells you to just learn one of these dialects is wrong. Both are great, they work extremely well together, and they are similar enough that you shouldn’t limit yourself to just mastering one of them. This book will show you both base R and tidyverse solutions to problems, so that you can decide for yourself which is faster, easier, and more fun.</span>
-<span id="cb33-402"><a href="#cb33-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-403"><a href="#cb33-403" aria-hidden="true" tabindex="-1"></a>A defining property of the tidyverse is that there are separate functions for everything, which is perfect for code that relies on pipes. In contrast, base R uses fewer functions, but with more parameters, to perform the same tasks. If you use tidyverse solutions there is a good chance that there exists a function which performs exactly the task you’re going to do with its default settings. This is great (once again, especially if you want to use pipes), but it means that there are many more functions to master for tidyverse users, whereas you can make do with much fewer in base R. You will spend more time looking up function arguments when working with  base R (which fortunately is fairly straightforward using the ? documentation), but on the other hand, looking up arguments for a function that you know the name of is easier than finding a function that does something very specific that you don’t know the name of. There are advantages and disadvantages to both approaches.</span>
-<span id="cb33-404"><a href="#cb33-404" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb33" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">---</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="an">title:</span><span class="co"> "The basics of R and Rstudio"</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="an">description:</span><span class="co"> "Understanding the building blocks of R and its working environment Rstudio for smooth operations in  data science"</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="an">date:</span><span class="co"> "2024-01-24"</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="an">highlight-style:</span><span class="co"> zenburn</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a><span class="an">categories:</span><span class="co"> [visualization, code, analysis]</span></span>
+<span id="cb33-8"><a href="#cb33-8"></a><span class="an">image:</span><span class="co"> "../screenshots/Rproject.png"</span></span>
+<span id="cb33-9"><a href="#cb33-9"></a></span>
+<span id="cb33-10"><a href="#cb33-10"></a><span class="co">---</span></span>
+<span id="cb33-11"><a href="#cb33-11"></a></span>
+<span id="cb33-12"><a href="#cb33-12"></a><span class="fu"># R, Rstudio </span></span>
+<span id="cb33-13"><a href="#cb33-13"></a></span>
+<span id="cb33-14"><a href="#cb33-14"></a>What you will learn in this post</span>
+<span id="cb33-15"><a href="#cb33-15"></a></span>
+<span id="cb33-16"><a href="#cb33-16"></a><span class="ss">- </span>The R program</span>
+<span id="cb33-17"><a href="#cb33-17"></a><span class="ss">- </span>Why learn R programming</span>
+<span id="cb33-18"><a href="#cb33-18"></a><span class="ss">- </span>Installation of R, Rstudio and R packages</span>
+<span id="cb33-19"><a href="#cb33-19"></a><span class="ss">- </span>Introduction to Rmarkdown</span>
+<span id="cb33-20"><a href="#cb33-20"></a><span class="ss">- </span>Loading packages in R</span>
+<span id="cb33-21"><a href="#cb33-21"></a></span>
+<span id="cb33-22"><a href="#cb33-22"></a></span>
+<span id="cb33-23"><a href="#cb33-23"></a><span class="fu">## The R program</span></span>
+<span id="cb33-24"><a href="#cb33-24"></a></span>
+<span id="cb33-25"><a href="#cb33-25"></a>R is a language and package-based software environment that provides a wide variety of functions for statistical computing and graphics. It is available free at the Comprehensive R Archive Network (CRAN) on the Internet. It is also open source and available for all major operating systems. Because R is a programming language it can seem a bit daunting; you have to type in commands to get it to work; however, it does have a Graphical User Interface (GUI) to make things easier and it is not so different from typing formula into Excel. R cope with a huge variety of analyses and someone have written a routine to perform nearly any type of calculation. R comes with a powerful set of routines built in at the start but there are some useful extra packages available on the CRAN website. These include routines for more specialized analyses covering many aspects of scientific research as well as other fields (e.g. economics). There are many advantages in using R:</span>
+<span id="cb33-26"><a href="#cb33-26"></a></span>
+<span id="cb33-27"><a href="#cb33-27"></a><span class="ss">+ </span>It is free, always a consideration.</span>
+<span id="cb33-28"><a href="#cb33-28"></a><span class="ss">+ </span>It is open source; this means that many bugs are ironed out.</span>
+<span id="cb33-29"><a href="#cb33-29"></a>It is extremely powerful and will handle very complex analyses as easily as simple ones.</span>
+<span id="cb33-30"><a href="#cb33-30"></a><span class="ss">+ </span>It handle a wide variety of analyses. This is one of the most important features: you only need to know how to use R and you can do more or less any type of analysis; there is no need to learn several different (and expensive) programs.</span>
+<span id="cb33-31"><a href="#cb33-31"></a><span class="ss">+ </span>It uses simple text commands. At first this seems hard but it is actually quite easy. The upshot is that you can build up a library of commands and copy/paste them when you need them.</span>
+<span id="cb33-32"><a href="#cb33-32"></a><span class="ss">+ </span>Documentation. There is a wealth of help for R. The CRAN site itself hosts a lot of material but there are also other websites that provide examples and documentation. Simply adding CRAN to a web search command will bring up plenty of options.</span>
+<span id="cb33-33"><a href="#cb33-33"></a></span>
+<span id="cb33-34"><a href="#cb33-34"></a><span class="fu">### Why R?</span></span>
+<span id="cb33-35"><a href="#cb33-35"></a></span>
+<span id="cb33-36"><a href="#cb33-36"></a>R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, ...) and graphical techniques, and is highly extensible. The R language serves as a vehicle of choice for research in statistical methodology, and an Open Source route to participation in that activity. One of R's strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. R is also available as Free Software under the terms of the Free Software Foundation's GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.</span>
+<span id="cb33-37"><a href="#cb33-37"></a></span>
+<span id="cb33-38"><a href="#cb33-38"></a>::: callout-tip</span>
+<span id="cb33-39"><a href="#cb33-39"></a>Many users think of R as a statistics system and forget that it as an environment within which statistical techniques are implemented.</span>
+<span id="cb33-40"><a href="#cb33-40"></a>:::</span>
+<span id="cb33-41"><a href="#cb33-41"></a></span>
+<span id="cb33-42"><a href="#cb33-42"></a><span class="fu">### Install R</span></span>
+<span id="cb33-43"><a href="#cb33-43"></a></span>
+<span id="cb33-44"><a href="#cb33-44"></a>A new major version of R comes out once a year, and there are 2-3 minor releases each year. It's a good idea to update regularly. Upgrading can be a bit of a hassle, especially for major versions, which require you to re-install all your packages, but putting it off only makes it worse. Getting R is easy via the Internet. The R Project website is a vast enterprise and has local mirror sites in many countries. </span>
+<span id="cb33-45"><a href="#cb33-45"></a></span>
+<span id="cb33-46"><a href="#cb33-46"></a><span class="ss">1. </span>The first step is to go to https://cran.r-project.org/. The project's website is the main official information source and can be reached from <span class="co">[</span><span class="ot">@fig-rproject</span><span class="co">]</span>.</span>
+<span id="cb33-47"><a href="#cb33-47"></a></span>
+<span id="cb33-50"><a href="#cb33-50"></a><span class="in">```{r}</span></span>
+<span id="cb33-51"><a href="#cb33-51"></a><span class="co">#| label: cran</span></span>
+<span id="cb33-52"><a href="#cb33-52"></a><span class="co">#| fig-cap: Getting R from the R Project website. Click the download link and select the nearest mirror site</span></span>
+<span id="cb33-53"><a href="#cb33-53"></a><span class="co">#| out-width: "100%"</span></span>
+<span id="cb33-54"><a href="#cb33-54"></a><span class="co">#| echo: false</span></span>
+<span id="cb33-55"><a href="#cb33-55"></a><span class="co">#| fig-keep: high</span></span>
+<span id="cb33-56"><a href="#cb33-56"></a><span class="co">#| fig-pos: H</span></span>
+<span id="cb33-57"><a href="#cb33-57"></a></span>
+<span id="cb33-58"><a href="#cb33-58"></a></span>
+<span id="cb33-59"><a href="#cb33-59"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"../screenshots/Rproject.png"</span>)</span>
+<span id="cb33-60"><a href="#cb33-60"></a><span class="in">```</span></span>
+<span id="cb33-61"><a href="#cb33-61"></a></span>
+<span id="cb33-62"><a href="#cb33-62"></a></span>
+<span id="cb33-63"><a href="#cb33-63"></a><span class="ss">2.  </span>Click Download R for Mac/Windows. Once you have clicked the download link (@cran), you have the chance to select a mirror site. These mirrors sites are hosted in servers across the world and using a local one will generally result in a speedier download.</span>
+<span id="cb33-64"><a href="#cb33-64"></a></span>
+<span id="cb33-65"><a href="#cb33-65"></a><span class="ss">3.  </span>Click the link appropriate for your system (Linux, Mac, Windows). Once you have selected a mirror site, you can click the link that relates to your operating system (@Rdownload). If you use a Mac then you will go to a page where you can select the best option for you (there are versions for various flavours of OSX). If you use Windows then you will go to a Windows-specific page. If you are a Linux user then read the documentation; you generally install R through the terminal rather than via the web page.</span>
+<span id="cb33-66"><a href="#cb33-66"></a></span>
+<span id="cb33-67"><a href="#cb33-67"></a></span>
+<span id="cb33-70"><a href="#cb33-70"></a><span class="in">```{r}</span></span>
+<span id="cb33-71"><a href="#cb33-71"></a><span class="co">#| label: Rdownload</span></span>
+<span id="cb33-72"><a href="#cb33-72"></a><span class="co">#| fig-cap: Getting R from the R Project website. You can select the version that is specific to your operating system</span></span>
+<span id="cb33-73"><a href="#cb33-73"></a><span class="co">#| out-width: "100%"</span></span>
+<span id="cb33-74"><a href="#cb33-74"></a><span class="co">#| echo: false</span></span>
+<span id="cb33-75"><a href="#cb33-75"></a><span class="co">#| fig-pos: H</span></span>
+<span id="cb33-76"><a href="#cb33-76"></a></span>
+<span id="cb33-77"><a href="#cb33-77"></a></span>
+<span id="cb33-78"><a href="#cb33-78"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"../screenshots/cranDownload.png"</span>)</span>
+<span id="cb33-79"><a href="#cb33-79"></a><span class="in">```</span></span>
+<span id="cb33-80"><a href="#cb33-80"></a></span>
+<span id="cb33-81"><a href="#cb33-81"></a></span>
+<span id="cb33-82"><a href="#cb33-82"></a><span class="ss">4. </span>Now the final step is to click the link and download the installer file, which will download in the usual manner according to the setup of your computer.</span>
+<span id="cb33-83"><a href="#cb33-83"></a></span>
+<span id="cb33-84"><a href="#cb33-84"></a></span>
+<span id="cb33-85"><a href="#cb33-85"></a>Once you have downloaded the install file, you need to run it to get R onto your computer. If you use a Mac you need to double-click the disk image file to mount the virtual disk. Then double-click the package file to install. If you use Windows, then you need to find the EXE file and run it. The installer will copy the relevant files and you will soon be ready to run R.</span>
+<span id="cb33-86"><a href="#cb33-86"></a></span>
+<span id="cb33-87"><a href="#cb33-87"></a><span class="fu">### What happens at R startup</span></span>
+<span id="cb33-88"><a href="#cb33-88"></a>Now R is ready to work for you. Launch R using the regular methods specific to your operating system. If you added a desktop icon or a quick launch button then you can use these or run R from the Applications or Windows Start button.</span>
+<span id="cb33-89"><a href="#cb33-89"></a></span>
+<span id="cb33-90"><a href="#cb33-90"></a>R is mainly used as an interactive program --- you give R a command and it responds to that command. The result may influence the next command that you give R. Between the time you start R and it gives you the first prompt, any number of things might happen (depending on your installation). But the thing that always happens is that some number of **packages** are <span class="in">`attached`</span> to the <span class="in">`search list`</span>. You can see what those packages are in your case with the command:</span>
+<span id="cb33-91"><a href="#cb33-91"></a></span>
+<span id="cb33-94"><a href="#cb33-94"></a><span class="in">```{r}</span></span>
+<span id="cb33-95"><a href="#cb33-95"></a><span class="co">#| eval: false</span></span>
+<span id="cb33-96"><a href="#cb33-96"></a><span class="fu">search</span>()</span>
+<span id="cb33-97"><a href="#cb33-97"></a><span class="in">```</span></span>
+<span id="cb33-98"><a href="#cb33-98"></a></span>
+<span id="cb33-99"><a href="#cb33-99"></a>::: callout-tip</span>
+<span id="cb33-100"><a href="#cb33-100"></a>You don't type the "&gt;" --- that is the R prompt, but you do hit the return key at the end of the line</span>
+<span id="cb33-101"><a href="#cb33-101"></a>:::</span>
+<span id="cb33-102"><a href="#cb33-102"></a></span>
+<span id="cb33-103"><a href="#cb33-103"></a>The first item on the search list is the "global environment". This is your work space where the objects that you create during the R session will be.</span>
+<span id="cb33-104"><a href="#cb33-104"></a></span>
+<span id="cb33-105"><a href="#cb33-105"></a>You quit R with the command:</span>
+<span id="cb33-106"><a href="#cb33-106"></a></span>
+<span id="cb33-109"><a href="#cb33-109"></a><span class="in">```{r}</span></span>
+<span id="cb33-110"><a href="#cb33-110"></a><span class="co">#| eval: false</span></span>
+<span id="cb33-111"><a href="#cb33-111"></a><span class="fu">q</span>()</span>
+<span id="cb33-112"><a href="#cb33-112"></a><span class="in">```</span></span>
+<span id="cb33-113"><a href="#cb33-113"></a></span>
+<span id="cb33-114"><a href="#cb33-114"></a>R will ask you if you want to save or delete the global environment when you quit. If you do save the global environment, then you can start another R session with those objects in the global environment at the start of the new session. You are saving the objects in the global environment, you are not saving the session. In particular, you are not saving the search list.</span>
+<span id="cb33-115"><a href="#cb33-115"></a></span>
+<span id="cb33-116"><a href="#cb33-116"></a></span>
+<span id="cb33-117"><a href="#cb33-117"></a><span class="fu">### Installing RStudio</span></span>
+<span id="cb33-118"><a href="#cb33-118"></a></span>
+<span id="cb33-119"><a href="#cb33-119"></a>RStudio is an integrated development environment (IDE) for R programming <span class="co">[</span><span class="ot">@rstudio</span><span class="co">]</span>. RStudio is a set of integrated tools that allows for a more user-friendly experience for using R. Although you will likely use RStudio as your main console and editor, you must first install R, as RStudio uses R behind the scenes. Similar to R, RStudio is freely-available, cross-platform, and open-source.</span>
+<span id="cb33-120"><a href="#cb33-120"></a></span>
+<span id="cb33-121"><a href="#cb33-121"></a>Download and install it from http://www.rstudio.com/download. RStudio is updated a couple of times a year. When a new version is available, RStudio will let you know. It's a good idea to upgrade regularly so you can take advantage of the latest and greatest features.</span>
+<span id="cb33-122"><a href="#cb33-122"></a></span>
+<span id="cb33-123"><a href="#cb33-123"></a><span class="ss">1.  </span>Go to https://www.rstudio.com/products/rstudio/download/</span>
+<span id="cb33-124"><a href="#cb33-124"></a><span class="ss">2.  </span>Click Download under RStudio Desktop.</span>
+<span id="cb33-125"><a href="#cb33-125"></a><span class="ss">3.  </span>Click the link appropriate for your system (Linux, Mac, Windows)</span>
+<span id="cb33-126"><a href="#cb33-126"></a><span class="ss">4.  </span>Follow the instructions of the Installer.</span>
+<span id="cb33-127"><a href="#cb33-127"></a></span>
+<span id="cb33-128"><a href="#cb33-128"></a><span class="fu">### Rstudio Layout</span></span>
+<span id="cb33-129"><a href="#cb33-129"></a>Whenever we want to work with R, we'll open RStudio. RStudio interfaces directly with R, and is an Integrated Development Environment (IDE). This means that RStudio comes with built-in features that make using R a little easier. When you start RStudio, you'll see four key panels in the interface shown in @fig-interface. We'll refer to these four "panes" as the <span class="in">`editor`</span>, the <span class="in">`Console`</span>, the <span class="in">`Environment`</span>, and the <span class="in">`Files`</span> panes. The large square on the left is the Console pane, the square in the top right is the Environment pane, and the square in the bottom right is the Files pane. As you work with R more, you'll find yourself using the tabs within each of the panes.</span>
+<span id="cb33-130"><a href="#cb33-130"></a></span>
+<span id="cb33-131"><a href="#cb33-131"></a>When we create a new file, such as an R script, an R Markdown file, or a Shiny app, RStudio will open a fourth pane, known as the source or editor pane. The source pane should show up as a square in the top left. We can open up an .R script in the source pane by going to File, selecting New File, and then selecting R Script:</span>
+<span id="cb33-132"><a href="#cb33-132"></a></span>
+<span id="cb33-133"><a href="#cb33-133"></a><span class="in">```{r fig022mo, out.width="100%", fig.cap="The interface of Rstudio IDE with four key panels"}</span></span>
+<span id="cb33-134"><a href="#cb33-134"></a><span class="in">#| label: fig-interface</span></span>
+<span id="cb33-135"><a href="#cb33-135"></a><span class="in">#| fig-cap: The interface of Rstudio IDE with four key panels</span></span>
+<span id="cb33-136"><a href="#cb33-136"></a><span class="in">#| fig-pos: H</span></span>
+<span id="cb33-137"><a href="#cb33-137"></a><span class="in">#| out-width: "100%"</span></span>
+<span id="cb33-138"><a href="#cb33-138"></a><span class="in">#| echo: false</span></span>
+<span id="cb33-139"><a href="#cb33-139"></a><span class="in">#| </span></span>
+<span id="cb33-140"><a href="#cb33-140"></a><span class="in">knitr::include_graphics("../screenshots/basics/rstudio.png")  </span></span>
+<span id="cb33-141"><a href="#cb33-141"></a><span class="in">```</span></span>
+<span id="cb33-142"><a href="#cb33-142"></a></span>
+<span id="cb33-143"><a href="#cb33-143"></a></span>
+<span id="cb33-144"><a href="#cb33-144"></a>We are going to have our first experience with R through RMarkdown, so let's do the following.</span>
+<span id="cb33-145"><a href="#cb33-145"></a></span>
+<span id="cb33-146"><a href="#cb33-146"></a></span>
+<span id="cb33-147"><a href="#cb33-147"></a><span class="fu">## R functions</span></span>
+<span id="cb33-148"><a href="#cb33-148"></a></span>
+<span id="cb33-149"><a href="#cb33-149"></a>Like Excel, the power of R comes not from doing small operations individually (like <span class="in">`8*22.3`</span>). But rather R's power comes from being able to operate on whole suites of numbers and datasets. And also like Excel, some of the biggest power in R is that there are built-in functions that you can use in your analyses (and, as we'll see, R users can easily create and share functions, and it is this open source developer and contributor community that makes R so awesome).</span>
+<span id="cb33-150"><a href="#cb33-150"></a></span>
+<span id="cb33-151"><a href="#cb33-151"></a>R has a mind-blowing collection of built-in functions that are used with the same syntax: function name with parentheses around what the function needs to do what it is supposed to do. We've seen a few functions already: we've seen <span class="in">`plot()`</span> and <span class="in">`summary()`</span>.</span>
+<span id="cb33-152"><a href="#cb33-152"></a></span>
+<span id="cb33-153"><a href="#cb33-153"></a>Functions always have the same structure: a name, parentheses, and arguments that you can specify. <span class="in">`function_name(arguments)`</span>. When we talk about function names, we use the convention <span class="in">`function_name()`</span> (the name with empty parentheses), but in practice, we usually supply arguments to the function <span class="in">`function_name(arguments)`</span> so that it works on some data.</span>
+<span id="cb33-154"><a href="#cb33-154"></a>Let's see a few more function examples.</span>
+<span id="cb33-155"><a href="#cb33-155"></a></span>
+<span id="cb33-156"><a href="#cb33-156"></a>Like in Excel, there is a function called "sum" to calculate a total.</span>
+<span id="cb33-157"><a href="#cb33-157"></a>In R, it is spelled lowercase: <span class="in">`sum()`</span>. (As I type in the Console, R will provide suggestions). Let's use the <span class="in">`sum()`</span> function to calculate the sum of all the distances traveled in the <span class="in">`cars`</span> dataset.</span>
+<span id="cb33-158"><a href="#cb33-158"></a>We specify a single column of a dataset using the <span class="in">`$`</span> operator:</span>
+<span id="cb33-159"><a href="#cb33-159"></a></span>
+<span id="cb33-160"><a href="#cb33-160"></a><span class="in">```</span></span>
+<span id="cb33-161"><a href="#cb33-161"></a><span class="in">sum(cars$dist)</span></span>
+<span id="cb33-162"><a href="#cb33-162"></a><span class="in">```</span></span>
+<span id="cb33-163"><a href="#cb33-163"></a></span>
+<span id="cb33-164"><a href="#cb33-164"></a>Another function is simply called <span class="in">`c()`</span>; which combines values together.</span>
+<span id="cb33-165"><a href="#cb33-165"></a></span>
+<span id="cb33-166"><a href="#cb33-166"></a>So let's create a new R code chunk.</span>
+<span id="cb33-167"><a href="#cb33-167"></a>And we'll write:</span>
+<span id="cb33-168"><a href="#cb33-168"></a></span>
+<span id="cb33-169"><a href="#cb33-169"></a><span class="in">```{r c-example}</span></span>
+<span id="cb33-170"><a href="#cb33-170"></a><span class="in">c(1, 7:9)</span></span>
+<span id="cb33-171"><a href="#cb33-171"></a><span class="in">```</span></span>
+<span id="cb33-172"><a href="#cb33-172"></a></span>
+<span id="cb33-173"><a href="#cb33-173"></a>:::callout-note</span>
+<span id="cb33-174"><a href="#cb33-174"></a>some functions don't require arguments: try typing <span class="in">`date()`</span> into the Console.</span>
+<span id="cb33-175"><a href="#cb33-175"></a>:::</span>
+<span id="cb33-176"><a href="#cb33-176"></a></span>
+<span id="cb33-177"><a href="#cb33-177"></a><span class="at">&gt; Be sure to type the parentheses (</span><span class="in">`date()`</span><span class="at">); otherwise R will return the code behind the </span><span class="in">`date()`</span><span class="at"> function rather than the output that you want/expect.</span></span>
+<span id="cb33-178"><a href="#cb33-178"></a></span>
+<span id="cb33-179"><a href="#cb33-179"></a>So you can see that this combines these values all into the same place, which is called a vector here.</span>
+<span id="cb33-180"><a href="#cb33-180"></a>We could also do this with a non-numeric examples, which are called "strings":</span>
+<span id="cb33-181"><a href="#cb33-181"></a></span>
+<span id="cb33-182"><a href="#cb33-182"></a><span class="in">```{r c-ex2}</span></span>
+<span id="cb33-183"><a href="#cb33-183"></a><span class="in">c("San Francisco", "Cal Academy") </span></span>
+<span id="cb33-184"><a href="#cb33-184"></a><span class="in">```</span></span>
+<span id="cb33-185"><a href="#cb33-185"></a></span>
+<span id="cb33-186"><a href="#cb33-186"></a>We need to put quotes around non-numeric values so that R does not interpret them as an object. It would definitely get grumpy and give us an error that it did not have an object by these names. And you see that R also prints in quotes. We can also put functions inside of other functions.This is called nested functions. When we add another function inside a function, R will evaluate them from the inside-out.</span>
+<span id="cb33-187"><a href="#cb33-187"></a></span>
+<span id="cb33-188"><a href="#cb33-188"></a><span class="in">```{r c-ex3}</span></span>
+<span id="cb33-189"><a href="#cb33-189"></a><span class="in">c(sum(cars$dist), "San Francisco", "Cal Academy") </span></span>
+<span id="cb33-190"><a href="#cb33-190"></a><span class="in">```</span></span>
+<span id="cb33-191"><a href="#cb33-191"></a></span>
+<span id="cb33-192"><a href="#cb33-192"></a>So R first evaluated the <span class="in">`sum(cars$dist)`</span>, and then evaluates the <span class="in">`c()`</span> statement. This example demonstrates another key idea in R: the idea of **classes**. The output R provides is called a vector, and everything within that vector has to be the same type of thing: we can't have both numbers and words inside. So here R is able to first calculate <span class="in">`sum(cars$dist)`</span> as a number, but then <span class="in">`c()`</span> will turn that number into a text, called a "string" in R: you see that it is in quotes. It is no longer a numeric, it is a string.</span>
+<span id="cb33-193"><a href="#cb33-193"></a></span>
+<span id="cb33-194"><a href="#cb33-194"></a>This is a big difference between R and Excel, since Excel allows you to have a mix of text and numeric in the same column or row. R's way can feel restrictive, but it is also more predictable. In Excel, you might have a single number in your whole sheet that Excel is silently interpreting as text so it is causing errors in the analyses. In R, the whole column will be the same type. This can still cause trouble, but that is where the good practices that we are learning together can help minimize that kind of trouble.</span>
+<span id="cb33-195"><a href="#cb33-195"></a></span>
+<span id="cb33-196"><a href="#cb33-196"></a></span>
+<span id="cb33-197"><a href="#cb33-197"></a><span class="fu">## Packages</span></span>
+<span id="cb33-198"><a href="#cb33-198"></a></span>
+<span id="cb33-199"><a href="#cb33-199"></a>So far we've been using a couple functions that are included with R out-of-the-box such as <span class="in">`plot()`</span> and <span class="in">`c()`</span>. We say that these functions are from "Base R". But, one of the amazing things about R is its users' community that create new functions and packages. An R **package** is a collection of functions, data, and documentation that extends the capabilities of base R. Using packages is key to the successful use of R. The majority of the packages that you will learn in this manual are part of the so-called **tidyverse**, which is an ecosystem of packages that *share a common philosophy of data and R programming, and are designed to work together naturally*.</span>
+<span id="cb33-200"><a href="#cb33-200"></a></span>
+<span id="cb33-201"><a href="#cb33-201"></a>The tidyverse is a coherent system of packages for data manipulation, exploration and visualization that share a common design philosophy. The **Tidyverse** <span class="co">[</span><span class="ot">@tidyverse</span><span class="co">]</span> packages form a core set of functions that will allow us to perform most any type of data cleaning or analysis we will need to do. We will use the following packages from the tidyverse</span>
+<span id="cb33-202"><a href="#cb33-202"></a></span>
+<span id="cb33-203"><a href="#cb33-203"></a><span class="ss">-   </span>**ggplot2**---for data visualisation.</span>
+<span id="cb33-204"><a href="#cb33-204"></a><span class="ss">-   </span>**dplyr**---for data manipulation.</span>
+<span id="cb33-205"><a href="#cb33-205"></a><span class="ss">-   </span>**tidyr**---for data tidying.</span>
+<span id="cb33-206"><a href="#cb33-206"></a><span class="ss">-   </span>**readr**---for data import.</span>
+<span id="cb33-207"><a href="#cb33-207"></a><span class="ss">-   </span>**purrr**---for functional programming.</span>
+<span id="cb33-208"><a href="#cb33-208"></a><span class="ss">-   </span>**tibble**---for tibbles, a modern re-imagining of data frames.</span>
+<span id="cb33-209"><a href="#cb33-209"></a></span>
+<span id="cb33-210"><a href="#cb33-210"></a></span>
+<span id="cb33-211"><a href="#cb33-211"></a><span class="fu">### Installing R packages</span></span>
+<span id="cb33-212"><a href="#cb33-212"></a>For us to use **tidyverse** and any other package that is not included in Base R, we must install them first. The easiest way to install packages is to use the `install.packages()` command. For example, let's go ahead and install the **tidyverse** package on your machine:</span>
+<span id="cb33-213"><a href="#cb33-213"></a></span>
+<span id="cb33-214"><a href="#cb33-214"></a><span class="in">```r</span></span>
+<span id="cb33-215"><a href="#cb33-215"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb33-216"><a href="#cb33-216"></a><span class="in">```</span></span>
+<span id="cb33-217"><a href="#cb33-217"></a></span>
+<span id="cb33-218"><a href="#cb33-218"></a>On your own computer, type that line of code in the console, and then press enter to run it. R will download the packages from CRAN and install it to your computer. If you have problems installing, make sure that you are connected to the internet, and that https://cloud.r-project.org/ isn't blocked by your firewall or proxy.</span>
+<span id="cb33-219"><a href="#cb33-219"></a></span>
+<span id="cb33-220"><a href="#cb33-220"></a></span>
+<span id="cb33-221"><a href="#cb33-221"></a><span class="fu">### Loading installed packages</span></span>
+<span id="cb33-222"><a href="#cb33-222"></a>Now we've installed the package, but we need to tell R that we are going to use some functions within the **tidyverse** package. With exception to base R package, add on package that are installed must be called with either `library` or `require` functions to make their tools accessible in R session. Let's us load the **tidyverse** package we just installed</span>
+<span id="cb33-223"><a href="#cb33-223"></a></span>
+<span id="cb33-224"><a href="#cb33-224"></a><span class="in">```r</span></span>
+<span id="cb33-225"><a href="#cb33-225"></a><span class="fu">require</span>(tidyverse)</span>
+<span id="cb33-226"><a href="#cb33-226"></a><span class="in">```</span></span>
+<span id="cb33-227"><a href="#cb33-227"></a></span>
+<span id="cb33-228"><a href="#cb33-228"></a>You notice that when we load **tidyverse**, it popup a notification message showing the loaded packages and the conflicts they bring in. These conflicts happen when packages have functions with the same names as other functions. This is OK when you prefer the function in a package like tidyverse rather than some other function. Basically the last package loaded in will mask over other functions if they have common names.</span>
+<span id="cb33-229"><a href="#cb33-229"></a></span>
+<span id="cb33-230"><a href="#cb33-230"></a></span>
+<span id="cb33-231"><a href="#cb33-231"></a><span class="fu">### Other packages</span></span>
+<span id="cb33-232"><a href="#cb33-232"></a></span>
+<span id="cb33-233"><a href="#cb33-233"></a>There are many other excellent packages that are not part of the tidyverse, because they solve problems in a different domain, or are designed with a different set of underlying principles. This doesn't make them better or worse, just different. In other words, the complement to the tidyverse is not the messyverse, but many other universes of interrelated packages <span class="co">[</span><span class="ot">@r4ds</span><span class="co">]</span>. As you tackle more data science projects with R, you'll learn new packages and new ways of thinking about data. In this course we'll use several data packages from outside the tidyverse:</span>
+<span id="cb33-234"><a href="#cb33-234"></a></span>
+<span id="cb33-235"><a href="#cb33-235"></a><span class="in">```r</span></span>
+<span id="cb33-236"><a href="#cb33-236"></a>additional.packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"metR"</span>, <span class="st">"cowplot"</span>, <span class="st">"ggspatial"</span>, <span class="st">"patchwork"</span>, <span class="st">"ggrepel"</span>,</span>
+<span id="cb33-237"><a href="#cb33-237"></a>                        <span class="st">"oce"</span>, <span class="st">"tmap"</span>, <span class="st">"leaflet"</span>, <span class="st">"bookdown"</span>, <span class="st">"blogdown"</span>, </span>
+<span id="cb33-238"><a href="#cb33-238"></a>                        <span class="st">"rmarkdown"</span>, <span class="st">"tinytex"</span>, <span class="st">"tidymodels"</span>, <span class="st">"terra"</span>, </span>
+<span id="cb33-239"><a href="#cb33-239"></a>                        <span class="st">"tidyterra"</span>)</span>
+<span id="cb33-240"><a href="#cb33-240"></a></span>
+<span id="cb33-241"><a href="#cb33-241"></a><span class="fu">install.packages</span>(additional.packages)</span>
+<span id="cb33-242"><a href="#cb33-242"></a></span>
+<span id="cb33-243"><a href="#cb33-243"></a><span class="in">```</span></span>
+<span id="cb33-244"><a href="#cb33-244"></a></span>
+<span id="cb33-245"><a href="#cb33-245"></a></span>
+<span id="cb33-246"><a href="#cb33-246"></a></span>
+<span id="cb33-247"><a href="#cb33-247"></a></span>
+<span id="cb33-248"><a href="#cb33-248"></a><span class="fu">### Useful R commands</span></span>
+<span id="cb33-249"><a href="#cb33-249"></a></span>
+<span id="cb33-250"><a href="#cb33-250"></a>Show version number of R and installed OS</span>
+<span id="cb33-251"><a href="#cb33-251"></a></span>
+<span id="cb33-252"><a href="#cb33-252"></a><span class="in">``` r</span></span>
+<span id="cb33-253"><a href="#cb33-253"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb33-254"><a href="#cb33-254"></a><span class="in">```</span></span>
+<span id="cb33-255"><a href="#cb33-255"></a>show R version</span>
+<span id="cb33-256"><a href="#cb33-256"></a></span>
+<span id="cb33-257"><a href="#cb33-257"></a><span class="in">```r</span></span>
+<span id="cb33-258"><a href="#cb33-258"></a><span class="fu">etRversion</span>()</span>
+<span id="cb33-259"><a href="#cb33-259"></a><span class="in">```</span></span>
+<span id="cb33-260"><a href="#cb33-260"></a></span>
+<span id="cb33-261"><a href="#cb33-261"></a>show current working directory</span>
+<span id="cb33-262"><a href="#cb33-262"></a></span>
+<span id="cb33-263"><a href="#cb33-263"></a><span class="in">```r</span></span>
+<span id="cb33-264"><a href="#cb33-264"></a><span class="fu">getwd</span>()</span>
+<span id="cb33-265"><a href="#cb33-265"></a><span class="in">```</span></span>
+<span id="cb33-266"><a href="#cb33-266"></a></span>
+<span id="cb33-267"><a href="#cb33-267"></a>change working directory to a user defined location</span>
+<span id="cb33-268"><a href="#cb33-268"></a></span>
+<span id="cb33-269"><a href="#cb33-269"></a><span class="in">```r</span></span>
+<span id="cb33-270"><a href="#cb33-270"></a><span class="fu">setwd</span>(<span class="st">"C:/..."</span>)</span>
+<span id="cb33-271"><a href="#cb33-271"></a><span class="in">```</span></span>
+<span id="cb33-272"><a href="#cb33-272"></a></span>
+<span id="cb33-273"><a href="#cb33-273"></a>list all packages in the R package library</span>
+<span id="cb33-274"><a href="#cb33-274"></a><span class="in">```r</span></span>
+<span id="cb33-275"><a href="#cb33-275"></a><span class="fu">library</span>()</span>
+<span id="cb33-276"><a href="#cb33-276"></a><span class="in">```</span></span>
+<span id="cb33-277"><a href="#cb33-277"></a></span>
+<span id="cb33-278"><a href="#cb33-278"></a> open download mirrors list for package installation</span>
+<span id="cb33-279"><a href="#cb33-279"></a><span class="in">```r</span></span>
+<span id="cb33-280"><a href="#cb33-280"></a><span class="fu">available.packages</span>()</span>
+<span id="cb33-281"><a href="#cb33-281"></a><span class="in">```</span></span>
+<span id="cb33-282"><a href="#cb33-282"></a>download R packages from CRAN repository to a local folder</span>
+<span id="cb33-283"><a href="#cb33-283"></a><span class="in">```r</span></span>
+<span id="cb33-284"><a href="#cb33-284"></a><span class="st">`</span><span class="at">download.packages("package_name", "download_directory")</span></span>
+<span id="cb33-285"><a href="#cb33-285"></a><span class="st">```</span></span>
+<span id="cb33-286"><a href="#cb33-286"></a></span>
+<span id="cb33-287"><a href="#cb33-287"></a>update all packages</span>
+<span id="cb33-288"><a href="#cb33-288"></a><span class="st">```</span><span class="at">r</span></span>
+<span id="cb33-289"><a href="#cb33-289"></a><span class="at">update.packages(checkBuilt=TRUE)</span></span>
+<span id="cb33-290"><a href="#cb33-290"></a><span class="st">```</span></span>
+<span id="cb33-291"><a href="#cb33-291"></a></span>
+<span id="cb33-292"><a href="#cb33-292"></a>show version numbers of R packages, dependencies of packages, recommended</span>
+<span id="cb33-293"><a href="#cb33-293"></a>packages, license info and builded R version number</span>
+<span id="cb33-294"><a href="#cb33-294"></a><span class="st">```</span><span class="at">r</span></span>
+<span id="cb33-295"><a href="#cb33-295"></a><span class="at">installed.packages()</span></span>
+<span id="cb33-296"><a href="#cb33-296"></a><span class="st">```</span></span>
+<span id="cb33-297"><a href="#cb33-297"></a></span>
+<span id="cb33-298"><a href="#cb33-298"></a>parses and returns the description file of a package</span>
+<span id="cb33-299"><a href="#cb33-299"></a><span class="st">```</span><span class="at">r</span></span>
+<span id="cb33-300"><a href="#cb33-300"></a><span class="at">packageDescription("package_name")</span></span>
+<span id="cb33-301"><a href="#cb33-301"></a><span class="st">```</span></span>
+<span id="cb33-302"><a href="#cb33-302"></a></span>
+<span id="cb33-303"><a href="#cb33-303"></a>remove packages</span>
+<span id="cb33-304"><a href="#cb33-304"></a><span class="st">```</span><span class="at">r</span></span>
+<span id="cb33-305"><a href="#cb33-305"></a><span class="st">`</span><span class="fu">remove.packages</span>(<span class="st">"package_name"</span>, <span class="st">"installed_directory"</span>)</span>
+<span id="cb33-306"><a href="#cb33-306"></a><span class="in">```</span></span>
+<span id="cb33-307"><a href="#cb33-307"></a>show license info</span>
+<span id="cb33-308"><a href="#cb33-308"></a><span class="in">```r</span></span>
+<span id="cb33-309"><a href="#cb33-309"></a><span class="fu">license</span>()</span>
+<span id="cb33-310"><a href="#cb33-310"></a><span class="in">```</span></span>
+<span id="cb33-311"><a href="#cb33-311"></a></span>
+<span id="cb33-312"><a href="#cb33-312"></a>display citation</span>
+<span id="cb33-313"><a href="#cb33-313"></a><span class="in">```r</span></span>
+<span id="cb33-314"><a href="#cb33-314"></a><span class="fu">citation</span>()</span>
+<span id="cb33-315"><a href="#cb33-315"></a><span class="in">```</span></span>
+<span id="cb33-316"><a href="#cb33-316"></a></span>
+<span id="cb33-317"><a href="#cb33-317"></a>load packagesinto the session</span>
+<span id="cb33-318"><a href="#cb33-318"></a></span>
+<span id="cb33-319"><a href="#cb33-319"></a><span class="in">```r</span></span>
+<span id="cb33-320"><a href="#cb33-320"></a><span class="fu">require</span>(package_name)</span>
+<span id="cb33-321"><a href="#cb33-321"></a><span class="in">```</span></span>
+<span id="cb33-322"><a href="#cb33-322"></a></span>
+<span id="cb33-323"><a href="#cb33-323"></a>running time of R</span>
+<span id="cb33-324"><a href="#cb33-324"></a><span class="in">```r</span></span>
+<span id="cb33-325"><a href="#cb33-325"></a><span class="fu">proc.time</span>()</span>
+<span id="cb33-326"><a href="#cb33-326"></a><span class="in">```</span></span>
+<span id="cb33-327"><a href="#cb33-327"></a></span>
+<span id="cb33-328"><a href="#cb33-328"></a>current memory usage</span>
+<span id="cb33-329"><a href="#cb33-329"></a><span class="in">```r</span></span>
+<span id="cb33-330"><a href="#cb33-330"></a><span class="fu">memory.size</span>()</span>
+<span id="cb33-331"><a href="#cb33-331"></a><span class="in">```</span></span>
+<span id="cb33-332"><a href="#cb33-332"></a></span>
+<span id="cb33-333"><a href="#cb33-333"></a>total available memory</span>
+<span id="cb33-334"><a href="#cb33-334"></a><span class="in">```r</span></span>
+<span id="cb33-335"><a href="#cb33-335"></a><span class="fu">memory.limit</span>()</span>
+<span id="cb33-336"><a href="#cb33-336"></a><span class="in">```</span></span>
+<span id="cb33-337"><a href="#cb33-337"></a></span>
+<span id="cb33-338"><a href="#cb33-338"></a>terminate an R session</span>
+<span id="cb33-339"><a href="#cb33-339"></a><span class="in">```r</span></span>
+<span id="cb33-340"><a href="#cb33-340"></a><span class="fu">q</span>()</span>
+<span id="cb33-341"><a href="#cb33-341"></a><span class="in">```</span></span>
+<span id="cb33-342"><a href="#cb33-342"></a></span>
+<span id="cb33-343"><a href="#cb33-343"></a>display warning messages</span>
+<span id="cb33-344"><a href="#cb33-344"></a><span class="in">```r</span></span>
+<span id="cb33-345"><a href="#cb33-345"></a><span class="fu">warnings</span>()</span>
+<span id="cb33-346"><a href="#cb33-346"></a><span class="in">```</span></span>
+<span id="cb33-347"><a href="#cb33-347"></a></span>
+<span id="cb33-348"><a href="#cb33-348"></a><span class="fu">### Getting help for R</span></span>
+<span id="cb33-349"><a href="#cb33-349"></a>Both online and offline help documentations and manuals for R are available. You can start help while using R with help.start() function from the console. For more help, you can use online documentations from the official R website by using these links:</span>
+<span id="cb33-350"><a href="#cb33-350"></a><span class="ss">+ </span>Help page: https://www.r-project.org/help.html</span>
+<span id="cb33-351"><a href="#cb33-351"></a><span class="ss">+ </span>Manuals page: https://cran.r-project.org/manuals.html</span>
+<span id="cb33-352"><a href="#cb33-352"></a><span class="ss">+ </span>Frequently Asked Questions (FAQs) Page: https://cran.r-project.org/faqs.html</span>
+<span id="cb33-353"><a href="#cb33-353"></a></span>
+<span id="cb33-354"><a href="#cb33-354"></a>Every function available to you should have a help page, and you access it by typing a question mark preceding the function name in the Console. Let's have a deeper look at the arguments for <span class="in">`plot()`</span>, using the help pages.</span>
+<span id="cb33-355"><a href="#cb33-355"></a></span>
+<span id="cb33-356"><a href="#cb33-356"></a><span class="in">``` r</span></span>
+<span id="cb33-357"><a href="#cb33-357"></a>    ?plot</span>
+<span id="cb33-358"><a href="#cb33-358"></a><span class="in">```</span></span>
+<span id="cb33-359"><a href="#cb33-359"></a></span>
+<span id="cb33-360"><a href="#cb33-360"></a>This opens up the correct page in the Help Tab in the bottom-right of the RStudio IDE. You can also click on the tab and type in the function name in the search bar.</span>
+<span id="cb33-361"><a href="#cb33-361"></a></span>
+<span id="cb33-362"><a href="#cb33-362"></a>All help pages will have the same format, here is how I look at it:</span>
+<span id="cb33-363"><a href="#cb33-363"></a></span>
+<span id="cb33-364"><a href="#cb33-364"></a>The help page tells the name of the package in the top left, and broken down into sections:</span>
+<span id="cb33-365"><a href="#cb33-365"></a></span>
+<span id="cb33-366"><a href="#cb33-366"></a><span class="at">&gt; Help pages\</span></span>
+<span id="cb33-367"><a href="#cb33-367"></a><span class="at">&gt; - Description: An extended description of what the function does.</span></span>
+<span id="cb33-368"><a href="#cb33-368"></a><span class="at">&gt; - Usage: The arguments of the function and their default values.</span></span>
+<span id="cb33-369"><a href="#cb33-369"></a><span class="at">&gt; - Arguments: An explanation of the data each argument is expecting.</span></span>
+<span id="cb33-370"><a href="#cb33-370"></a><span class="at">&gt; - Details: Any important details to be aware of.</span></span>
+<span id="cb33-371"><a href="#cb33-371"></a><span class="at">&gt; - Value: The data the function returns.</span></span>
+<span id="cb33-372"><a href="#cb33-372"></a><span class="at">&gt; - See Also: Any related functions you might find useful.</span></span>
+<span id="cb33-373"><a href="#cb33-373"></a><span class="at">&gt; - Examples: Some examples for how to use the function.</span></span>
+<span id="cb33-374"><a href="#cb33-374"></a></span>
+<span id="cb33-375"><a href="#cb33-375"></a>When I look at a help page, I start with the Description to see if I am in the right place for what I need to do.</span>
+<span id="cb33-376"><a href="#cb33-376"></a>Reading the description for <span class="in">`plot`</span> lets me know that yup, this is the function I want.</span>
+<span id="cb33-377"><a href="#cb33-377"></a></span>
+<span id="cb33-378"><a href="#cb33-378"></a>I next look at the usage and arguments, which give me a more concrete view into what the function does. <span class="in">`plot`</span> requires arguments for <span class="in">`x`</span> and <span class="in">`y`</span>.</span>
+<span id="cb33-379"><a href="#cb33-379"></a>But we passed only one argument to <span class="in">`plot()`</span>: we passed the cars dataset (<span class="in">`plot(cars)`</span>). R is able to understand that it should use the two columns in that dataset as x and y, and it does so based on order: the first column "speed" becomes x and the second column "dist" becomes y.</span>
+<span id="cb33-380"><a href="#cb33-380"></a>The <span class="in">`...`</span> means that there are many other arguments we can pass to <span class="in">`plot()`</span>, which we should expect: I think we can all agree that it would be nice to have the option of making this figure a little more beautiful and compelling. Glancing at some of the arguments, we can understand here to be about the style of the plots.</span>
+<span id="cb33-381"><a href="#cb33-381"></a></span>
+<span id="cb33-382"><a href="#cb33-382"></a>Next, I usually scroll down to the bottom to the examples. This is where I can actually see how the function is used, and I can also paste those examples into the Console to see their output.</span>
+<span id="cb33-383"><a href="#cb33-383"></a>Let's try it:</span>
+<span id="cb33-384"><a href="#cb33-384"></a></span>
+<span id="cb33-385"><a href="#cb33-385"></a><span class="in">```{r plot-help-example, fig.width=3, fig.height=3}</span></span>
+<span id="cb33-386"><a href="#cb33-386"></a><span class="in">#| label: fig-fig1</span></span>
+<span id="cb33-387"><a href="#cb33-387"></a><span class="in">#| fig-cap: A cosine function of x</span></span>
+<span id="cb33-388"><a href="#cb33-388"></a><span class="in">#| echo: false</span></span>
+<span id="cb33-389"><a href="#cb33-389"></a><span class="in">#| fig-width: 3</span></span>
+<span id="cb33-390"><a href="#cb33-390"></a><span class="in">#| fig-height: 3</span></span>
+<span id="cb33-391"><a href="#cb33-391"></a><span class="in">#| eva: false</span></span>
+<span id="cb33-392"><a href="#cb33-392"></a><span class="in">#| </span></span>
+<span id="cb33-393"><a href="#cb33-393"></a><span class="in">plot(sin, -pi, 2*pi, las = 1)</span></span>
+<span id="cb33-394"><a href="#cb33-394"></a><span class="in">```</span></span>
+<span id="cb33-395"><a href="#cb33-395"></a></span>
+<span id="cb33-396"><a href="#cb33-396"></a></span>
+<span id="cb33-397"><a href="#cb33-397"></a><span class="fu">## Flavours of R: base and tidyverse</span></span>
+<span id="cb33-398"><a href="#cb33-398"></a>R is a programming language, and just like any language, it has different dialects. When you read about R online, you’ll frequently see people mentioning the words “base” and “tidyverse.” These are the two most common dialects of R. Base R is just that, R in its purest form. The tidyverse is a collection of add-on packages for working with different types of data. The two are fully compatible, and you can mix and match as much as you like. Both **ggplot2** and **magrittr** are part of the **tidyverse**.</span>
+<span id="cb33-399"><a href="#cb33-399"></a></span>
+<span id="cb33-400"><a href="#cb33-400"></a>In recent years, the tidyverse has been heavily promoted as being “modern” R which “makes data science faster, easier and more fun.” You should believe the hype. The tidyverse is marvellous. But if you only learn tidyverse R, you will miss out on much of what R has to offer. Base R is just as marvellous, and can definitely make data science as fast, easy and fun as the tidyverse. Besides, nobody uses just base R anyway - there are a ton of non-tidyverse packages that extend and enrich R in exciting new ways. Perhaps “extended R” would be better names for the non-tidyverse dialect.</span>
+<span id="cb33-401"><a href="#cb33-401"></a></span>
+<span id="cb33-402"><a href="#cb33-402"></a>Anyone who tells you to just learn one of these dialects is wrong. Both are great, they work extremely well together, and they are similar enough that you shouldn’t limit yourself to just mastering one of them. This book will show you both base R and tidyverse solutions to problems, so that you can decide for yourself which is faster, easier, and more fun.</span>
+<span id="cb33-403"><a href="#cb33-403"></a></span>
+<span id="cb33-404"><a href="#cb33-404"></a>A defining property of the tidyverse is that there are separate functions for everything, which is perfect for code that relies on pipes. In contrast, base R uses fewer functions, but with more parameters, to perform the same tasks. If you use tidyverse solutions there is a good chance that there exists a function which performs exactly the task you’re going to do with its default settings. This is great (once again, especially if you want to use pipes), but it means that there are many more functions to master for tidyverse users, whereas you can make do with much fewer in base R. You will spend more time looking up function arguments when working with  base R (which fortunately is fairly straightforward using the ? documentation), but on the other hand, looking up arguments for a function that you know the name of is easier than finding a function that does something very specific that you don’t know the name of. There are advantages and disadvantages to both approaches.</span>
+<span id="cb33-405"><a href="#cb33-405"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -178,10 +178,6 @@ cookieconsent.run({
     <a class="nav-link" href="../../photos.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lugoga/kitaa"> <i class="bi bi-github" role="img">
 </i> 
@@ -316,12 +312,12 @@ Figure&nbsp;1: Primary data types in R
 <p>Integers are whole numbers without any decimal or fractional component. In R, integers are represented by the <code>integer</code> class. They are commonly used for indexing and counting operations.</p>
 <div id="exm-moja" class="theorem example">
 <p><span class="theorem-title"><strong>Example 1</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an integer variable</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>L</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x) <span class="co"># Output: "integer"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Arithmetic operations with integers</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Creating an integer variable</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>L</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">class</span>(x) <span class="co"># Output: "integer"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Arithmetic operations with integers</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="numeric" class="level3">
@@ -329,12 +325,12 @@ Figure&nbsp;1: Primary data types in R
 <p>Numeric data type, also known as double in other programming languages, represents numbers with decimal points. Numeric data types are used for most mathematical calculations and statistical operations in R.</p>
 <div id="exm-2" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a numeric variable</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fl">175.5</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(height) <span class="co"># Output: "numeric"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Arithmetic operations with numeric variables</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>bmi <span class="ot">&lt;-</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Creating a numeric variable</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>height <span class="ot">&lt;-</span> <span class="fl">175.5</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">class</span>(height) <span class="co"># Output: "numeric"</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># Arithmetic operations with numeric variables</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>bmi <span class="ot">&lt;-</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="character" class="level3">
@@ -342,12 +338,12 @@ Figure&nbsp;1: Primary data types in R
 <p>Character data type represents textual data such as strings of letters, words, or sentences. In R, character values are enclosed in either single or double quotes.</p>
 <div id="exm-3" class="theorem example">
 <p><span class="theorem-title"><strong>Example 3</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a character variable</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(name) <span class="co"># Output: "character"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenating character strings</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>greeting <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Hello"</span>, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Creating a character variable</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>name <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">class</span>(name) <span class="co"># Output: "character"</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># Concatenating character strings</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>greeting <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Hello"</span>, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="logical" class="level3">
@@ -355,16 +351,16 @@ Figure&nbsp;1: Primary data types in R
 <p>Logical data type, often referred to as Boolean, represents binary values: TRUE or FALSE. Logical values are fundamental in controlling program flow and making decisions based on conditions.</p>
 <div id="exm-4" class="theorem example">
 <p><span class="theorem-title"><strong>Example 4</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating logical variables</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>is_adult <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(is_adult) <span class="co"># Output: "logical"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Conditional statements with logical variables</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (is_adult) {</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"You are an adult."</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"You are not an adult."</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Creating logical variables</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>is_adult <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">class</span>(is_adult) <span class="co"># Output: "logical"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># Conditional statements with logical variables</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="cf">if</span> (is_adult) {</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">print</span>(<span class="st">"You are an adult."</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">print</span>(<span class="st">"You are not an adult."</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="factor" class="level3">
@@ -372,12 +368,12 @@ Figure&nbsp;1: Primary data types in R
 <p>Factor data type is used to represent categorical data in R. Factors are stored as integers with associated labels, making them efficient for statistical modeling and analysis.</p>
 <div id="exm-5" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a factor variable</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(gender) <span class="co"># Output: "factor"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics with factors</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Creating a factor variable</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">class</span>(gender) <span class="co"># Output: "factor"</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># Summary statistics with factors</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">table</span>(gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="date-and-time" class="level3">
@@ -385,16 +381,16 @@ Figure&nbsp;1: Primary data types in R
 <p>Date and time data types are crucial for handling temporal information in R. R provides specialized classes for dates (<code>Date</code>) and date-time values (<code>POSIXct</code>, <code>POSIXlt</code>).</p>
 <div id="exm-6" class="theorem example">
 <p><span class="theorem-title"><strong>Example 6</strong></span> &nbsp;</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a date variable</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-04-25"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(today) <span class="co"># Output: "Date"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Date arithmetic</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>next_week <span class="ot">&lt;-</span> today <span class="sc">+</span> <span class="dv">7</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a POSIXct variable (date-time)</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(current_time) <span class="co"># Output: "POSIXct"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Creating a date variable</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>today <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-04-25"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">class</span>(today) <span class="co"># Output: "Date"</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co"># Date arithmetic</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>next_week <span class="ot">&lt;-</span> today <span class="sc">+</span> <span class="dv">7</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co"># Creating a POSIXct variable (date-time)</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>current_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="fu">class</span>(current_time) <span class="co"># Output: "POSIXct"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this post we learned about different R data types and what kind of data do they hold. Data type is very important concept in programming and can not be ignored. We have explained about each data type with example in this article.</p>
 
@@ -844,140 +840,140 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Understanding and using Data types in R"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Learn the primary data types in R, which are the foundation of data programming in R "</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-01-26"</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> "2024-01-26"</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [visualization, code]</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "data_types.png"</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>In the realm of data science and statistical analysis, mastering data types is akin to understanding the building blocks of a language. In R, a powerful statistical computing language, data types form the foundation upon which all analyses are conducted. From integers to dates, each data type serves a unique purpose and understanding their nuances is critical for efficient and accurate data manipulation. </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>Understanding and effectively utilizing these core data types in R is essential for performing data analysis, visualization, and modeling tasks. Mastery of data types empowers data scientists to manipulate data efficiently and extract valuable insights from complex datasets. Whether performing arithmetic operations, manipulating text, or handling temporal information, the versatility of R's data types makes it a powerful tool for data analysis and statistical computing.</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>In this guide, we will delve into the core data types in R, exploring their characteristics and providing illustrative examples. Before we dive in, let pause for a moment and watch video in @fig-datatypes</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>::: {#fig-datatypes}</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/VtUVQWl0aRA &gt;}}</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>Primary data types in R</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### Integer:</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>Integers are whole numbers without any decimal or fractional component. In R, integers are represented by the <span class="in">`integer`</span> class. They are commonly used for indexing and counting operations.</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>::: {#exm-moja}</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="in">```R</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an integer variable</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>L</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x) <span class="co"># Output: "integer"</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Arithmetic operations with integers</span></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">3</span></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### Numeric:</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>Numeric data type, also known as double in other programming languages, represents numbers with decimal points. Numeric data types are used for most mathematical calculations and statistical operations in R.</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>::: {#exm-2}</span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="in">```R</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a numeric variable</span></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fl">175.5</span></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(height) <span class="co"># Output: "numeric"</span></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Arithmetic operations with numeric variables</span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>bmi <span class="ot">&lt;-</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### Character:</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>Character data type represents textual data such as strings of letters, words, or sentences. In R, character values are enclosed in either single or double quotes.</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>::: {#exm-3}</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="in">```R</span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a character variable</span></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(name) <span class="co"># Output: "character"</span></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenating character strings</span></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>greeting <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Hello"</span>, name)</span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Logical:</span></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>Logical data type, often referred to as Boolean, represents binary values: TRUE or FALSE. Logical values are fundamental in controlling program flow and making decisions based on conditions.</span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>::: {#exm-4}</span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="in">```R</span></span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating logical variables</span></span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>is_adult <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(is_adult) <span class="co"># Output: "logical"</span></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="co"># Conditional statements with logical variables</span></span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (is_adult) {</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"You are an adult."</span>)</span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"You are not an adult."</span>)</span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### Factor:</span></span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>Factor data type is used to represent categorical data in R. Factors are stored as integers with associated labels, making them efficient for statistical modeling and analysis.</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>::: {#exm-5}</span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="in">```R</span></span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a factor variable</span></span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>))</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(gender) <span class="co"># Output: "factor"</span></span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics with factors</span></span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gender)</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="fu">### Date and Time:</span></span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>Date and time data types are crucial for handling temporal information in R. R provides specialized classes for dates (<span class="in">`Date`</span>) and date-time values (<span class="in">`POSIXct`</span>, <span class="in">`POSIXlt`</span>).</span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>::: {#exm-6}</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="in">```R</span></span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a date variable</span></span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-04-25"</span>)</span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(today) <span class="co"># Output: "Date"</span></span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="co"># Date arithmetic</span></span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>next_week <span class="ot">&lt;-</span> today <span class="sc">+</span> <span class="dv">7</span></span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a POSIXct variable (date-time)</span></span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(current_time) <span class="co"># Output: "POSIXct"</span></span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>In this post we learned about different R data types and what kind of data do they hold. Data type is very important concept in programming and can not be ignored. We have explained about each data type with example in this article.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> "Understanding and using Data types in R"</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="an">description:</span><span class="co"> "Learn the primary data types in R, which are the foundation of data programming in R "</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="an">date:</span><span class="co"> "2024-01-26"</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="an">date-modified:</span><span class="co"> "2024-01-26"</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="an">categories:</span><span class="co"> [visualization, code]</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="an">image:</span><span class="co"> "data_types.png"</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co">---</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a></span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a>In the realm of data science and statistical analysis, mastering data types is akin to understanding the building blocks of a language. In R, a powerful statistical computing language, data types form the foundation upon which all analyses are conducted. From integers to dates, each data type serves a unique purpose and understanding their nuances is critical for efficient and accurate data manipulation. </span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a></span>
+<span id="cb7-18"><a href="#cb7-18"></a>Understanding and effectively utilizing these core data types in R is essential for performing data analysis, visualization, and modeling tasks. Mastery of data types empowers data scientists to manipulate data efficiently and extract valuable insights from complex datasets. Whether performing arithmetic operations, manipulating text, or handling temporal information, the versatility of R's data types makes it a powerful tool for data analysis and statistical computing.</span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a></span>
+<span id="cb7-21"><a href="#cb7-21"></a>In this guide, we will delve into the core data types in R, exploring their characteristics and providing illustrative examples. Before we dive in, let pause for a moment and watch video in @fig-datatypes</span>
+<span id="cb7-22"><a href="#cb7-22"></a></span>
+<span id="cb7-23"><a href="#cb7-23"></a>::: {#fig-datatypes}</span>
+<span id="cb7-24"><a href="#cb7-24"></a></span>
+<span id="cb7-25"><a href="#cb7-25"></a>{{&lt; video https://youtu.be/VtUVQWl0aRA &gt;}}</span>
+<span id="cb7-26"><a href="#cb7-26"></a></span>
+<span id="cb7-27"><a href="#cb7-27"></a>Primary data types in R</span>
+<span id="cb7-28"><a href="#cb7-28"></a></span>
+<span id="cb7-29"><a href="#cb7-29"></a>:::</span>
+<span id="cb7-30"><a href="#cb7-30"></a></span>
+<span id="cb7-31"><a href="#cb7-31"></a></span>
+<span id="cb7-32"><a href="#cb7-32"></a></span>
+<span id="cb7-33"><a href="#cb7-33"></a><span class="fu">### Integer:</span></span>
+<span id="cb7-34"><a href="#cb7-34"></a></span>
+<span id="cb7-35"><a href="#cb7-35"></a>Integers are whole numbers without any decimal or fractional component. In R, integers are represented by the <span class="in">`integer`</span> class. They are commonly used for indexing and counting operations.</span>
+<span id="cb7-36"><a href="#cb7-36"></a></span>
+<span id="cb7-37"><a href="#cb7-37"></a>::: {#exm-moja}</span>
+<span id="cb7-38"><a href="#cb7-38"></a></span>
+<span id="cb7-39"><a href="#cb7-39"></a><span class="in">```R</span></span>
+<span id="cb7-40"><a href="#cb7-40"></a><span class="co"># Creating an integer variable</span></span>
+<span id="cb7-41"><a href="#cb7-41"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>L</span>
+<span id="cb7-42"><a href="#cb7-42"></a><span class="fu">class</span>(x) <span class="co"># Output: "integer"</span></span>
+<span id="cb7-43"><a href="#cb7-43"></a></span>
+<span id="cb7-44"><a href="#cb7-44"></a><span class="co"># Arithmetic operations with integers</span></span>
+<span id="cb7-45"><a href="#cb7-45"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb7-46"><a href="#cb7-46"></a><span class="in">```</span></span>
+<span id="cb7-47"><a href="#cb7-47"></a>:::</span>
+<span id="cb7-48"><a href="#cb7-48"></a></span>
+<span id="cb7-49"><a href="#cb7-49"></a><span class="fu">### Numeric:</span></span>
+<span id="cb7-50"><a href="#cb7-50"></a></span>
+<span id="cb7-51"><a href="#cb7-51"></a>Numeric data type, also known as double in other programming languages, represents numbers with decimal points. Numeric data types are used for most mathematical calculations and statistical operations in R.</span>
+<span id="cb7-52"><a href="#cb7-52"></a></span>
+<span id="cb7-53"><a href="#cb7-53"></a>::: {#exm-2}</span>
+<span id="cb7-54"><a href="#cb7-54"></a><span class="in">```R</span></span>
+<span id="cb7-55"><a href="#cb7-55"></a><span class="co"># Creating a numeric variable</span></span>
+<span id="cb7-56"><a href="#cb7-56"></a>height <span class="ot">&lt;-</span> <span class="fl">175.5</span></span>
+<span id="cb7-57"><a href="#cb7-57"></a><span class="fu">class</span>(height) <span class="co"># Output: "numeric"</span></span>
+<span id="cb7-58"><a href="#cb7-58"></a></span>
+<span id="cb7-59"><a href="#cb7-59"></a><span class="co"># Arithmetic operations with numeric variables</span></span>
+<span id="cb7-60"><a href="#cb7-60"></a>bmi <span class="ot">&lt;-</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb7-61"><a href="#cb7-61"></a><span class="in">```</span></span>
+<span id="cb7-62"><a href="#cb7-62"></a>:::</span>
+<span id="cb7-63"><a href="#cb7-63"></a></span>
+<span id="cb7-64"><a href="#cb7-64"></a><span class="fu">### Character:</span></span>
+<span id="cb7-65"><a href="#cb7-65"></a></span>
+<span id="cb7-66"><a href="#cb7-66"></a>Character data type represents textual data such as strings of letters, words, or sentences. In R, character values are enclosed in either single or double quotes.</span>
+<span id="cb7-67"><a href="#cb7-67"></a></span>
+<span id="cb7-68"><a href="#cb7-68"></a>::: {#exm-3}</span>
+<span id="cb7-69"><a href="#cb7-69"></a><span class="in">```R</span></span>
+<span id="cb7-70"><a href="#cb7-70"></a><span class="co"># Creating a character variable</span></span>
+<span id="cb7-71"><a href="#cb7-71"></a>name <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
+<span id="cb7-72"><a href="#cb7-72"></a><span class="fu">class</span>(name) <span class="co"># Output: "character"</span></span>
+<span id="cb7-73"><a href="#cb7-73"></a></span>
+<span id="cb7-74"><a href="#cb7-74"></a><span class="co"># Concatenating character strings</span></span>
+<span id="cb7-75"><a href="#cb7-75"></a>greeting <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Hello"</span>, name)</span>
+<span id="cb7-76"><a href="#cb7-76"></a><span class="in">```</span></span>
+<span id="cb7-77"><a href="#cb7-77"></a>:::</span>
+<span id="cb7-78"><a href="#cb7-78"></a></span>
+<span id="cb7-79"><a href="#cb7-79"></a><span class="fu">### Logical:</span></span>
+<span id="cb7-80"><a href="#cb7-80"></a></span>
+<span id="cb7-81"><a href="#cb7-81"></a>Logical data type, often referred to as Boolean, represents binary values: TRUE or FALSE. Logical values are fundamental in controlling program flow and making decisions based on conditions.</span>
+<span id="cb7-82"><a href="#cb7-82"></a></span>
+<span id="cb7-83"><a href="#cb7-83"></a>::: {#exm-4}</span>
+<span id="cb7-84"><a href="#cb7-84"></a><span class="in">```R</span></span>
+<span id="cb7-85"><a href="#cb7-85"></a><span class="co"># Creating logical variables</span></span>
+<span id="cb7-86"><a href="#cb7-86"></a>is_adult <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb7-87"><a href="#cb7-87"></a><span class="fu">class</span>(is_adult) <span class="co"># Output: "logical"</span></span>
+<span id="cb7-88"><a href="#cb7-88"></a></span>
+<span id="cb7-89"><a href="#cb7-89"></a><span class="co"># Conditional statements with logical variables</span></span>
+<span id="cb7-90"><a href="#cb7-90"></a><span class="cf">if</span> (is_adult) {</span>
+<span id="cb7-91"><a href="#cb7-91"></a>  <span class="fu">print</span>(<span class="st">"You are an adult."</span>)</span>
+<span id="cb7-92"><a href="#cb7-92"></a>} <span class="cf">else</span> {</span>
+<span id="cb7-93"><a href="#cb7-93"></a>  <span class="fu">print</span>(<span class="st">"You are not an adult."</span>)</span>
+<span id="cb7-94"><a href="#cb7-94"></a>}</span>
+<span id="cb7-95"><a href="#cb7-95"></a><span class="in">```</span></span>
+<span id="cb7-96"><a href="#cb7-96"></a>:::</span>
+<span id="cb7-97"><a href="#cb7-97"></a></span>
+<span id="cb7-98"><a href="#cb7-98"></a><span class="fu">### Factor:</span></span>
+<span id="cb7-99"><a href="#cb7-99"></a></span>
+<span id="cb7-100"><a href="#cb7-100"></a>Factor data type is used to represent categorical data in R. Factors are stored as integers with associated labels, making them efficient for statistical modeling and analysis.</span>
+<span id="cb7-101"><a href="#cb7-101"></a></span>
+<span id="cb7-102"><a href="#cb7-102"></a>::: {#exm-5}</span>
+<span id="cb7-103"><a href="#cb7-103"></a><span class="in">```R</span></span>
+<span id="cb7-104"><a href="#cb7-104"></a><span class="co"># Creating a factor variable</span></span>
+<span id="cb7-105"><a href="#cb7-105"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>))</span>
+<span id="cb7-106"><a href="#cb7-106"></a><span class="fu">class</span>(gender) <span class="co"># Output: "factor"</span></span>
+<span id="cb7-107"><a href="#cb7-107"></a></span>
+<span id="cb7-108"><a href="#cb7-108"></a><span class="co"># Summary statistics with factors</span></span>
+<span id="cb7-109"><a href="#cb7-109"></a><span class="fu">table</span>(gender)</span>
+<span id="cb7-110"><a href="#cb7-110"></a><span class="in">```</span></span>
+<span id="cb7-111"><a href="#cb7-111"></a>:::</span>
+<span id="cb7-112"><a href="#cb7-112"></a></span>
+<span id="cb7-113"><a href="#cb7-113"></a><span class="fu">### Date and Time:</span></span>
+<span id="cb7-114"><a href="#cb7-114"></a></span>
+<span id="cb7-115"><a href="#cb7-115"></a>Date and time data types are crucial for handling temporal information in R. R provides specialized classes for dates (<span class="in">`Date`</span>) and date-time values (<span class="in">`POSIXct`</span>, <span class="in">`POSIXlt`</span>).</span>
+<span id="cb7-116"><a href="#cb7-116"></a></span>
+<span id="cb7-117"><a href="#cb7-117"></a>::: {#exm-6}</span>
+<span id="cb7-118"><a href="#cb7-118"></a><span class="in">```R</span></span>
+<span id="cb7-119"><a href="#cb7-119"></a><span class="co"># Creating a date variable</span></span>
+<span id="cb7-120"><a href="#cb7-120"></a>today <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-04-25"</span>)</span>
+<span id="cb7-121"><a href="#cb7-121"></a><span class="fu">class</span>(today) <span class="co"># Output: "Date"</span></span>
+<span id="cb7-122"><a href="#cb7-122"></a></span>
+<span id="cb7-123"><a href="#cb7-123"></a><span class="co"># Date arithmetic</span></span>
+<span id="cb7-124"><a href="#cb7-124"></a>next_week <span class="ot">&lt;-</span> today <span class="sc">+</span> <span class="dv">7</span></span>
+<span id="cb7-125"><a href="#cb7-125"></a></span>
+<span id="cb7-126"><a href="#cb7-126"></a><span class="co"># Creating a POSIXct variable (date-time)</span></span>
+<span id="cb7-127"><a href="#cb7-127"></a>current_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb7-128"><a href="#cb7-128"></a><span class="fu">class</span>(current_time) <span class="co"># Output: "POSIXct"</span></span>
+<span id="cb7-129"><a href="#cb7-129"></a><span class="in">```</span></span>
+<span id="cb7-130"><a href="#cb7-130"></a>:::</span>
+<span id="cb7-131"><a href="#cb7-131"></a></span>
+<span id="cb7-132"><a href="#cb7-132"></a></span>
+<span id="cb7-133"><a href="#cb7-133"></a></span>
+<span id="cb7-134"><a href="#cb7-134"></a>In this post we learned about different R data types and what kind of data do they hold. Data type is very important concept in programming and can not be ignored. We have explained about each data type with example in this article.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

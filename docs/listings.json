@@ -1,8 +1,11 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/archive.html",
     "items": [
+      "/posts/manipulate/index.html",
       "/posts/stats0/index.html",
+      "/posts/basicplots/index.html",
+      "/posts/ggplot2/index.html",
       "/posts/importingData/index.html",
       "/posts/vectorDataframe/index.html",
       "/posts/datastructures/index.html",
@@ -13,9 +16,12 @@
     ]
   },
   {
-    "listing": "/archive.html",
+    "listing": "/blog.html",
     "items": [
+      "/posts/manipulate/index.html",
       "/posts/stats0/index.html",
+      "/posts/basicplots/index.html",
+      "/posts/ggplot2/index.html",
       "/posts/importingData/index.html",
       "/posts/vectorDataframe/index.html",
       "/posts/datastructures/index.html",

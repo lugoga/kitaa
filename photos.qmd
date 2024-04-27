@@ -42,79 +42,70 @@ prepare_photos(
 
 ## Marine
 
-::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
-
-![The dow at the distance](images/unguja/20230108_122245.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-
-![Beautifu sun set](images/unguja/20211107_180706.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![A spendor of the evening](images/unguja/20211209_173646.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![The nature support](images/unguja/20220328_114324.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-
-
-![Enjoying in the beach](images/unguja/20230805_145149.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/unguja/IMG-20230902-WA0027.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-:::
-
-## Blue Economy
 
 ::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
 
-![Conserving our environment](images/be/20220105_102627.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+![Conserving our environment](images/unguja/beauficul_coastal001_0001.jpg){group="Marine"}
 
-![Conserving our environment](images/be/20220120_115712.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/be/20220411_120941.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/be/20220418_124014.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/be/20230813_150712.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/be/20231014_124312.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/be/IMG-20231006-WA0030.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/be/IMG-20230928-WA0014.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/be/IMG-20230905-WA0044.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+![Conserving our environment](images/unguja/beauficul_coastal002_0002.jpg)
 
 
+![Conserving our environment](images/unguja/beauficul_coastal003_0003.jpg){group="Marine"}
 
+![Conserving our environment](images/unguja/beauficul_coastal005_0005.jpg){group="Marine"}
 
-:::
+![Conserving our environment](images/unguja/beauficul_coastal006_0006.jpg){group="Marine"}
 
-## Resources
+![Conserving our environment](images/unguja/beauficul_coastal007_0007.jpg){group="Marine"}
 
-::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
+![Conserving our environment](images/unguja/beauficul_coastal009_0009.jpg){group="Marine"}
 
-
-
-![Conserving our environment](images/resources/1U3A2214.JPG){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-
-![Conserving our environment](images/resources/IMG_4180.JPG){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-
-![Conserving our environment](images/resources/IMG_4206.JPG){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/resources/_AAA4337.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-
-
-![Conserving our environment](images/resources/_AAA4440.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-
-![Conserving our environment](images/resources/_AAA4349.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
-![Conserving our environment](images/resources/_AAA4244.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
-
+![Conserving our environment](images/unguja/beauficul_coastal008_0008.jpg){group="Marine" desc-position="left"}
 
 :::
 
 
+## Seaweed
 
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
+
+![Conserving our environment](images/unguja/seaweed.jpg){group="Seaweed"}
+
+![Conserving our environment](images/unguja/seeweed.jpg){group="Seaweed"}
+![Conserving our environment](images/unguja/seeweed1.JPG){group="Seaweed"}
+:::
+
+
+
+
+## Fisheries
+
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
+
+![Conserving our environment](images/unguja/fisheries.jpg){group="Fisheries"}
+
+![Conserving our environment](images/unguja/fisheries4.jpg){group="Fisheries"}
+
+
+
+![Conserving our environment](images/unguja/fisheries1.jpg){group="Fisheries"}
+
+
+
+![Conserving our environment](images/unguja/fisheries5.jpg){group="Fisheries"}
+
+
+
+
+![Conserving our environment](images/unguja/fisheries6.jpg){group="Fisheries"}
+
+
+![Conserving our environment](images/unguja/fisheries7.jpg){group="Fisheries"}
+
+
+
+![Conserving our environment](images/unguja/fisheries8.JPG){group="Fisheries"}
+
+:::

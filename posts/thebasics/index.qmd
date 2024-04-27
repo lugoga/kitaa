@@ -3,6 +3,7 @@ title: "The basics of R and Rstudio"
 description: "Understanding the building blocks of R and its working environment Rstudio for smooth operations in  data science"
 author: "Masumbuko Semba"
 date: "2024-01-24"
+highlight-style: zenburn
 categories: [visualization, code, analysis]
 image: "../screenshots/Rproject.png"
 

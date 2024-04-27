@@ -1,0 +1,522 @@
+---
+title: "Data cleaning, merging, and appending"
+author: "Masumbuko Semba"
+date: "2024-05-01"
+categories: [visualization, code, analysis]
+# image: "../screenshots/Rproject.png"
+execute: 
+  warning: false
+  message: false
+  comment: ""
+number-sections: true  
+---
+
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+
+library(tidyverse)
+library(readxl)
+library(magrittr)
+
+knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
+
+
+```
+
+
+
+## Introduction
+
+In reality, data `cleaning` is not so much its own step in the data wrangling process as it is a constant activity that accompanies every other step, both because most data is not clean when we encounter it, and because how a data set (or part of it) needs to be “cleaned” is often revealed progressively as we work. At a high level, clean data might be summarized as being free from errors or typos -- such as mismatched units, multiple spellings of the same word or term, and fields that are not well-separated -- and missing or impossible values.
+
+While many of these are at least somewhat straightforward to recognize (though not always to correct), however, deeper data problems may still persist. Measurement changes, calculation errors and other oversights -- especially in system-generated data -- often don’t reveal themselves until some level of analysis has been done and the data has been “reality-checked” with folks who significant expertise and/or first-hand experience with the subject.
+
+The iterative nature of data cleaning is an example of why data wrangling is a cycle rather than a linear series of steps: as your work reveals more about the data and your understanding of its relationship to the world deepens, you may find that you need to revisit earlier work that you’ve done and repeat or adjust certain aspects of the data
+
+
+
+### Importing data
+
+Although creating data frames from existing data structures is extremely useful, by far the most common approach is to create a data frame by importing data from an external file. To do this, you’ll need to have your data correctly formatted and saved in a file format that R is able to recognize. Fortunately for us, R is able to recognize a wide variety of file formats, although in reality you’ll probably end up only using two or three regularly---comma separated, excel spreadsheet and tab-delimited.
+
+The easiest method of creating a data file to import into R is to enter your data into a spreadsheet using either Microsoft Excel or LibreOffice Calc and save the spreadsheet as a comma separated (`.csv`), excel spreadsheet (`.xls` or `.xlsx`) and tab-delimited (`.txt`). We then read the file into our session, for this mode, we are going to use the `LFQ_sample_1.xls`, which is an Excel spreadsheet file. To load into the R session, we use a `read_excel` function from **readxl** package [@readxl]. Before we import the data, we need to load the packages that we will use their functions in this chapter
+
+```{r}
+#| warning: false
+#| message: false
+
+require(tidyverse)
+require(magrittr)
+```
+
+
+
+```{r}
+lfq = readxl::read_excel(path = "../data/LFQ_sample_1.xls",
+                         sheet = 1, 
+                         skip = 0)
+
+```
+
+
+
+There are a few things to note about the above command. First, the file path and the filename (including the file extension) needs to be enclosed in either single or double quotes (i.e. the data/flower.txt bit) as the `read_excel()` function expects this to be a character string. If your working directory is already set to the directory which contains the file, you don’t need to include the entire file path just the `filename`. 
+
+
+In the example above, the file path is separated with a single forward slash /. This will work regardless of the operating system you are using. The argument `sheet = 1` specify the function to pick the data from first sheet as spreadsheet store data in multiple sheet. The argument `skip = 0` specify the function not to skip any row in the datase. This used to specify when the data has metadata information at the top. 
+
+After importing our data into R it doesn’t appear that R has done much, at least nothing appears in the R Console! To see the contents of the data frame we need to tell R to do so using a print `function`.
+
+
+```{r}
+lfq %>% print()
+```
+
+The data frame appears in the console and that prove to us that we successfully imported the data into R. But printing the imported data into console is only useful for small dataset and for large dataset that makes the console messy and there is nothing you can glean by simply printing the dataset in the console. The other common practice often used is looking on the internal structure of the dataset using `str()` function
+
+```{r}
+lfq %>% 
+  str()
+```
+
+and a better solution is to use a tidyverse approach of `glimpse` function
+
+```{r}
+lfq %>% 
+  glimpse()
+```
+
+The output in the console tell us that `lfq` dataset we just imported has six columns (variables) and 779 rows (records). Each of the variable are listed along with their data types and few records of the data
+The first row of the data contains the variable (column) names. 
+
+### Common import frustrations
+
+It’s quite common to get a bunch of really frustrating error messages when you first start importing data into R. Perhaps the most common is
+
+
+```r
+lfq = readxl::read_excel(path = "assets/fao_paul_dataset/LFQ_sample_1",
+                         sheet = 1, 
+                         skip = 0)
+
+```
+
+This error message is telling you that R cannot find the file you are trying to import. Several reasons can lead to that information error.The first is that you’ve made a mistake in the spelling of either the filename or file path. Another common mistake is that you have forgotten to include the file extension in the filename (i.e. .txt). Lastly, the file is not where you say it is or you’ve used an incorrect file path. Using RStudio Projects and having a logical directory structure goes a long way to avoiding these types of errors.
+
+
+
+### clean variable names
+
+```{r}
+lfq %>% 
+  names()
+```
+
+```{r}
+lfq.clean = lfq %>% 
+  janitor::clean_names() %>% 
+  janitor::remove_empty()
+```
+
+### check the structure
+
+```{r}
+lfq.clean %>% 
+  glimpse()
+```
+
+### creating variables
+
+You notice that the date is datetime and date but the display is date. Thus, we need to create three variables that represent `day`, `month`, and `year`. We can extract these variables from date variables, We can use the `day()`, `month()`, and `year()` functions from **lubridate** package [@lubridate];
+
+```{r}
+lfq.time = lfq.clean %>% 
+  mutate(
+    day = lubridate::day(date),
+    month = lubridate::month(date),
+    year = lubridate::year(date)
+    ) %>% 
+  relocate(c(landing_site, day, month, year), .before = date)
+
+lfq.time |> 
+  sample_n(30) |> 
+  select(-c(day, month, year)) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+  
+
+```
+
+### Dropping and keeping variables
+
+```{r}
+lfq.time %>% 
+  select(-date)
+```
+
+
+### Missing values
+
+R handles missing values differently than some other programs, including Stata. Missing values will appear as NA (whereas in Stata these will appear as large numeric values). Note, though, that NA is not a string, it is a symbol. If you try to conduct logical tests with NA, you are likely to get errors or NULL.
+
+## Length frequency
+
+Let's first look at the length data from the catch, which gives an indication of the size structure and health of the population. Using several case studies, we will filter the dataset to choose certain species and then plot histograms of the length data, which reveal the number of individual of each size class were measured in a sample or catch data.
+
+You have several options for dealing with `NA` values.
+-   `na.omit()` or `na.exclude()` will row-wise delete missing values in your dataset
+-   `na.fail()` will keep an object only if no missing values are present
+-   `na.action=` is a common option in many functions, for example in a linear model where you might write `model <- lm(y~x, data = data, na.action = na.omit)`.
+-   `is.na` allows you to logically test for `NA` values, for example when subsetting
+
+
+### Merging and combining data
+You may want to draw on data from multiple sources or at differing levels of aggregation. To do this, you first must know what your data look like and know what format you ultimately want them to take. Whatever you do, do not attempt to merge datasets by hand—this leads to mistakes and frustration.
+
+left join
+bind_row
+bind_col
+
+### Reshaping data
+Reshaping data into different formats is a common task. With rectangular type data (data frames have the same number of rows in each column) there are two main data frame shapes that you will come across: the `long` format (sometimes called stacked) and the `wide` format. An example of a long format data frame is given in @tbl-long1. We can see that each row is a single observation from an individual species and each species can have multiple rows with different values of year and catch.
+
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+set.seed(123)
+
+aa = read_csv("../data/tidy/fao_capture.csv")  %>% 
+  sample_n(size = 5) %>% 
+  separate(col = 'ASFIS species', into = c("english_name", "species"), sep = "-") %>% dplyr::select(1:2, 7:10) 
+
+
+```
+
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| echo: false
+#| label: tbl-long1
+#| tbl-cap: Long format data frame data format
+
+
+aa |> 
+  pivot_longer(cols = 3:6, values_to = "catch_mt", names_to = "year")  |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+  
+```
+
+We can also format the same data in the wide format as in @tbl-wide. In this format the year are treated as variables and catches are values within the years.
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| echo: false
+#| label: tbl-wide
+#| tbl-cap: Wide format data frame data format
+
+aa  |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+  
+```
+
+
+
+Whilst there’s no inherent problem with either of these formats we will sometimes need to convert between the two because some functions will require a specific format for them to work. But for the modern tidyverse function, only the dataset that is `long` format accepted.
+
+There are many ways to convert between these two formats but we’ll use the `pivot_longer()` and `pivot_wider()` functions from the **tidyr** package [@tidyr]. We will use `fao_capture.csv` dataset in this session, we can simply load it with `read_csv` function and specify the path our dataset reside;
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+capture.wide = read_csv("../data/tidy/fao_capture.csv")
+```
+
+
+```{r}
+capture.wide  |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+  
+```
+
+The `capture.wide`object we just created is the dataframe but is in wide format. To change from wide to long format data table, we use the `pivot_longer` function. The first argument specified in `pivot_longer` is `cols = 2:9` are index value of the variable in column 2 to colum 9 of the dataset we want to stack, `names_to = "year"` argument specify that the stacked variables will all be under a new variable name called `year` and the values in the stacked variables will all be under one variable called `catch`
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| echo: true
+capture.long = capture.wide %>% 
+  pivot_longer(cols = 2:9, names_to = "year", values_to = "catch")
+```
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| label: tbl-long2
+#| tbl-cap: Data values arranged in tidy wide format
+capture.long %>% 
+  FSA::headtail(n = 4) %>% 
+  gt::gt()
+```
+
+The `pivot_wider()` function is used to convert from a `long` format data frame to a `wide` format data frame. The first argument is `names_from = year` is the variable of the data frame for which we want spread across and the second argument `values_from = catch` is the corresponding values will reside in each casted variable. 
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| echo: true
+capture.wide = capture.long %>% 
+  pivot_wider(names_from = year, values_from = catch)
+```
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| label: tbl-long
+#| tbl-cap: Data values arranged in tidy wide format
+#| echo: false
+capture.wide  |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+  
+```
+
+### Saving transformed data
+Once you have transformed your data and edited variables, you may want to save your new dataframe as an external data file that your collaborators or other researchers can use. As with reading in data, for saving out data you will need the foreign package. Similarly, you can choose from a number of different data formats to export to as well. Most commonly you will want to save out data as a `.csv` or a tab-delited text file.
+
+```r
+myfile %>% write_csv("my.directory/file_name.csv")
+```
+
+## Transforming, summarising, and analysing data
+The R universe basically builds upon two (seemingly contradictive) approaches: base R and the tidyverse. While these two approaches are often seen as two different philosophies, they can form a symbiosis. We therefore recommend to pick whichever works best for you – or to combine the two.Whereas base R is already implemented in R, using the tidyverse requires users to load new packages. People often find base R unintuitive and hard to read. This is why Hadley Wickham developed and introduced the tidyverse – a more intuitive approach to managing and wrangling data [@tidyverse.
+
+Code written before 2014 was usually written in base R whereas the tidyverse style is becoming increasingly widespread. Again, which approach you prefer is rather a matter of personal taste than a decision between “right or wrong”. We first familiarize ourselves with the basic logic of the tidyverse style using some examples. For this, we use `LFQ_sample_1.xls`. since is an Excel format, lets import it in our session;
+
+```{r}
+lfq.sample1 = readxl::read_excel("../data/LFQ_sample_1.xls")
+
+```
+
+Let's print the assigned lfq.sample1
+
+```{r}
+lfq.sample1 |> 
+  FSA::headtail() |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+  
+```
+
+
+As you can see from the output generated in your console, the `lfq.sample1` data frame object contains length information of several species. The fisheries data collected in this dataset ensured that each record on a separate row and each column represents a variable. The dataset contains six variables (columns) and 779 records (rows). These variables includes;
+
+-   `Date` a sample was collected. The date is in the `YYYY-MM-DD`, which is the format that accepted
+-   `Species` the scientific name of the species
+-   `Size (cm)` the length of the fish species measured in centimeter
+-   `Size Class` of the individual
+-   `Gear type` used to catch the recorded fish, and
+-   `Landing-site` a landing station where the fish was recorded
+
+This dataset is arranged in appropriate format. The data was entered in spreadsheet with a few basics. These correspond to: what, where, when it only miss who collect the data or the originator of this dataset. The way this dataset is organized is the classical example of how set out our data in a similar fashion. This makes manipulating the data more straightforward and also maintains the multi-purpose nature of the analysis work. Having your data organized is really important!
+
+::: callout-warning
+Though the size and unit of the dataaset is provide, but it does not tell us much because we do not know whether the measurement is total length (TL), standard length (SL) or fork length (FL). It is imperative to specify in the dataset variable names what was measured and the unit
+:::
+
+
+### Renaming variables
+
+Looking `lfq.sample1` dataset presented in @tbl-case1, we notice that variable names do not adhere to standard variable names. The tidyverse style guide recommends snake case (words separated by underscores tl_cm) for object and column names. Let's look back at our column names for a minute. Using the `names()` function from the  and pipe operator `%>%` from the **magrittr** package simultaneously serves as the first pipe in a chain of commands and print names in the dataset
+
+```{r}
+lfq.sample1 %>% 
+  names()
+```
+
+There are all sorts of capital letters and spaces (e.g. "Gear type" ," "Size Class" ) as well as symbols ("Size (cm)"). Therefore we mustl convert all of these to snake case for us. We can rename specific variables using the `rename` function from the **dplyr** package [@dplyr]. Since **dplyr** is part of the **tidyverse** package [@tidyverse] that was loaded, we do not need to load it again but rather use its function to rename the variables. We'll begin by specifying the name of our data frame object `lfq.sample1`, followed by the `=` operator so that we can overwrite the existing `lfq.sample1` frame object with one that contains the renamed variables.
+
+
+Next type `lfq.sample1` followed by pipe operator `%>%` and then call a`rename` function, where you parse the new names to their corresponding old names. As the first argument, let's change the `Date` variable to `date` by typing the name of our new variable followed by = and, in quotation marks (" "), the name of the original variable `date = "Date"`. As the second argument, let's apply the same process as the second argument and change the `Species` variable to `species` by typing the name of our new variable followed by = and, in quotation marks (" "), the name of the original variable `species = "Species"`. We follow the same naming procedure to the six variables as the chunk below highlight;
+
+```{r}
+lfq.sample1 = lfq.sample1 %>% 
+  rename(
+    date = "Date",
+    species = "Species",
+    size_cm = "Size (cm)",
+    size_class = "Size Class",
+    gear_type = "Gear type",
+    landing_site = "Landing_site"
+    )
+
+
+```
+
+Using the head function from base R, let's verify that we renamed the two variables successfully.
+
+```{r}
+lfq.sample1
+```
+
+As you can see, the new names have no spaces and all are written in small letters. Spaces in variables names were replaced with the underscore symbol.
+
+Though the rename function is great tool to rename variables in the dataset, however there are times when you a dataset has hundred of variables names to change and using `rename` function from dplyr package become tedious. Furtunate , a **janitor** package has a nifty `clean_names()` function that clean all the variable names with a single line of code. I highly recommend incorporating it into your workflow.
+
+```{r}
+lfq.sample1 = readxl::read_excel("../data/LFQ_sample_1.xls") %>% 
+  janitor::clean_names()
+
+lfq.sample1
+```
+
+As you can see above, the `clean_names()` function handled every kind of messy variable name that was present in our `lfq.sample1` dataset. Everything now looks neat and tidy
+
+
+### Filtering Data
+
+Our `lfq.sample1` contains six variables -- date, species, size_cm, size_class, gear_type and landing_site;
+```{r}
+lfq.sample1 %>% 
+  glimpse()
+```
+Suppose we are only interested in *Siganus sutor* species only from the dataset. For this purpose, we can use the `filter()` function from  **dplyr** package [@dplyr]
+
+```{r}
+lfq.sample1 %>% 
+  filter(species == "Siganus sutor")
+```
+
+### Select
+Sometimes, you want to select specific variables. For instance, We are interested in three variables -- date, landing_site, species, size_cm but not so much in the other variables. A `select()` function **dplyr** package  allows you to do exactly this.
+
+
+```{r}
+lfq.sample1 %>% 
+  select(date, landing_site, species, size_cm)
+```
+
+### Arranging variables
+Let’s say we want to know the species with larges and smallest size throughout the entire dataset. This can be done with the `arrange()` function. 
+
+```{r}
+lfq.sample1 %>% 
+  arrange(size_cm)
+```
+
+As we can see, *Lethrinus* are the species with the smallest size in the datase. The smallest size in the dataset is 6cm.  By default, the `arrange()` function sorts the data in ascending order. To display the data in descending order, we add desc().
+
+
+```{r}
+lfq.sample1 %>% 
+  arrange(desc(size_cm))
+```
+
+As we can see, *Siganus sutor* are the species with the larges size in the dataset. The highest size in the dataset is 36.50cm.
+
+
+### Extracting unique observations
+Which unique species are included in the dataset? To get this information, we use the `distinct()` function in dplyr.
+
+```{r}
+
+lfq.sample1 %>% 
+  distinct(species)
+
+```
+
+As we see, there are nine species in the dataset arranged in the species variable of the dataframe. However, We might need these species in vector instead of data frame. We use the function `pull` for that, which convert from dataframe to vector dataset. 
+
+```{r}
+
+lfq.sample1 %>% 
+  distinct(species) %>% 
+  pull()
+
+```
+
+
+### Creating new variables
+The `mutate()` command allows you to generate a new variable from existing. Let’s say you want to generate a day, month and year from date variables. The lubridate packaged [@lubridate] has functions dedicated for dealing with dates, some of these functions include `day()`, `month()`, and `year()` that are used to extract values.
+
+```{r}
+
+lfq.sample1 %>% 
+  select(date, species, size_cm) %>% 
+  mutate(
+    year = lubridate::year(date),
+    month = lubridate::month(date),
+    day = lubridate::day(date)
+    )
+```
+
+
+### Group-wise operations
+Suppose we are interested to know the sample size for each species in the dataset along with the mean, median, and standard deviation of the body size. That's is not possible with single function in the tidyverse but rather a combination of functions. We use a combination of `group_by()` (to group our results by month), and parse the specific function we want to compute in the `summarise()` function.
+
+```{r}
+lfq.sample1 %>% 
+  group_by(species) %>% 
+  summarise(
+    n = n(),
+    mean_cm = mean(size_cm),
+    median_cm = median(size_cm),
+    std_cm = sd(size_cm)
+    ) 
+```
+
+
+The computed variables are grouped after performing transformations. In this case, you can pipe another command with  `ungroup()` to ungroup your result.
+
+
+```{r}
+lfq.sample1 %>% 
+  group_by(species) %>% 
+  summarise(
+    n = n(),
+    mean_cm = mean(size_cm),
+    median_cm = median(size_cm),
+    std_cm = sd(size_cm)
+    ) %>% 
+  ungroup()
+```
+
+In some cases, you might wish to arrange the sample size from lowest to highest sample size along with the computed values. You just add the `arrange` function
+
+```{r}
+lfq.sample1 %>% 
+  group_by(species) %>% 
+  summarise(
+    n = n(),
+    mean_cm = mean(size_cm),
+    median_cm = median(size_cm),
+    std_cm = sd(size_cm)
+    ) %>% 
+  arrange(n)
+```
+
+You notice that *Cheilinus chlorourus* has a only four observation where as *Siganus sutor* has 196 records in the dataset. You can also explore the summary statistics to see whether the mean and median values are close (indicator of normal distribution) or differ (indication of skewness)
+
