@@ -1,7 +1,14 @@
 ---
 title: "Famliarize with R and Rstudio"
 description: "Understanding the software and layout of the tools make it easy to access the right tools while interacting with the data and software"
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-01-26"
 draft: true
 categories: [visualization, code, analysis]
@@ -154,4 +161,6 @@ To load a library of routines into R you use the `require()` command, e.g.
 require("package.name")
 ```
 
+
+## References
 

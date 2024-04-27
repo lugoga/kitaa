@@ -1,0 +1,344 @@
+---
+title: "Tidying Data frame"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/ 
+date: "2024-04-29"
+categories: [visualization, code, analysis]
+# image: "../screenshots/Rproject.png"
+execute: 
+  warning: false
+  message: false
+  comment: ""
+number-sections: true  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+---
+
+
+
+## Introduction
+The post [Data cleaning, merging, and appending
+](https://lugoga.github.io/kitaa/posts/manipulate/) demonstrates data manipulation with a **dplyr** package [@dplyr] and [Basic plots with ggplot2](https://lugoga.github.io/kitaa/posts/basicplots/) introduce plotting data using a grammar of graphics package **ggplot2** [@ggplot]. However, before you manipulate and present your result in plots, your dataframe must be arranged in format that R can read and understand it. This post introduce and discuss an important concept in data management widely refereed to *tidy*. 
+
+
+
+## Tidy data
+The most common mistake made is treating spreadsheet programs like lab notebooks, that is, relying on context, notes in the margin, spatial layout of data and fields to convey information. As humans, we can (usually) interpret these things, but computers don’t view information the same way, and unless we explain to the computer what every single thing means (and that can be hard!), it will not be able to see how our data fits together. Using the power of computers, we can manage and analyze data in much more effective and faster ways, but to use that power, we have to organize our data for the computer to be able to understand it.
+
+This is why it’s extremely important to structure well-formatted tables from the outset - before you even start entering data from your very first preliminary experiment. Data organization is the foundation of any research project. It can make it easier or harder to work with the data throughout your analysis, so it’s worth thinking about when you’re doing your data entry or setting up your experiment. You can organize and structure data in different ways in spreadsheets, but some of these choices can limit your ability to work with the data in other programs.
+
+## What is Tidy data？
+Tidy data is a specific way of organizing data into a consistent format where each variable is a column, each row an observation, and each cell contains a single value (@fig-tidy). The benefits of data being tidy are myriad which include;
+
++ Organizing datasets as tidy data makes data cleaning efforts easier
++ Broad range of analytical tools are built upon the assumption to consume tidy data
++ Sharing tidy data increases re-use
+
+![Long and wide data organization commonly used to tidy data frames](../screenshots/tidy_data.png){#fig-tidy}
+
+
+## Objectives
+
+In this post we'll learn some tools to help make our data **tidy** and more coder-friendly. Those include:
+
+- Use `tidyr::pivot_wider()` and `tidyr::pivot_longer()` to reshape data frames
+- `janitor::clean_names()` to make column headers more manageable
+- `tidyr::unite()` and `tidyr::separate()` to merge or separate information from different columns
+- Detect or replace a string with `stringr` functions
+
+
+Lets first load the package we are going to use in this session
+
+```{r}
+#| message: false
+#| comment: ""
+#| warning: false
+#| 
+library(tidyverse)
+library(janitor)
+library(readxl)
+
+```
+
+Then we use `read_csv` function to load a file called `fao_capture.csvv` from our working directory and assign as `fao.capture.wt`.
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+fao.capture.wt = read_csv("../data/tidy/fao_capture.csv")
+```
+
+We've used `read_csv()` to import data from spreadsheets into R. Before we go further with the imported dataset in @fao-capture, we need to check whether the `fao.capture.wt` dataset we have just loaded into our session is tidy. There are three assumptions that makes a dataset tidy, which are;
+
++ Each variable is its its own column
++ Each records is its own row, and 
++ Each value is in its own cell
+
+
+```{r}
+#| label: tbl-fao-capture
+#| tbl-cap: Capture fisheries since 2012. Source FAO
+#| echo: false
+#| 
+fao.capture.wt |>
+  flextable::flextable() |> 
+  flextable::autofit() 
+```
+
+A careful check of `fao.capture.wt` dataset presented in @tbl-fao-capture and adhering to tidy assumptions, a fair question would be, is this dataset tidy? The answer is *BIG NO*. This is not tidy data but rather a *MESSY* data. We are going to look why we have given that answer that our `fao.capture.wt` dataset is messy!
+
+
+
+## Reshape from wide-to-long format
+
+Although looking @tbl-fao-capture our eyes can visually see the way the data is structured, but computers don’t view information the same way, we need to organize the data that computer can understand. If we look @tbl-fao-capture, we can see that the *year* variable is actually split over eight columns, so we'd say this is currently in **wide format** (@fig-fide-long).  There may be times when you want to have data in wide format, but often with code it is more efficient to convert to **long format** by gathering together observations for a variable that is currently split into multiple columns. Schematically, converting from wide to long format using `pivot_longer()` looks like this: 
+
+![Conceptual diagram shwoing wide and long formats](../screenshots/tidyr_pivot_longer.png){# fig-fide-long}
+
+
+We'll use `pivot_longer()` function from **dityr** package (@tidyr) to gather data from all years in *inverts* (columns 2012 to 2019) into two columns: one called *year*, which contains the year, another called *weight* containing the weight of each fish species landed and assign a name of new dataset as `fao.capture.long`. 
+
+The new data frame will be stored as *inverts_long*:
+
+```{r}
+fao.capture.long = fao.capture.wt |>
+  pivot_longer(
+    cols = '2012':'2019',
+    values_to = "wt_mt",
+    names_to = "year"
+    )
+
+```
+
+The outcome is the new long-format *fao.capture.long* data frame:
+
+```{r}
+fao.capture.long |> 
+  sample_n(size = 15) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+
+let's use a `glimpse` function from **dplyr** package to look at the internal structure of the of the `fao.capture.long` format, we just created. One thing that isn't obvious at first (but would become obvious if you continued working with this data) is that since those year numbers were initially column names (characters), when they are stacked into the *year* column, their class wasn't auto-updated to numeric. Similar way, the weight are separated with a space and are treated as character instead of being numeric. 
+
+
+```{r}
+fao.capture.long |>
+  glimpse()
+```
+
+
+That's a good thing! We don't want R to update classes of our data without our instruction. We'll use `dplyr::mutate()` in a different way here: to create a new column (that's how we've used `mutate()` in @sec-dplyr that has the same name of an existing column, in order to update and overwrite the existing column. In this case, we'll `mutate()` to add a column called *year*, which contains an `as.integer()` version of the existing *year* variable: 
+
+```{r}
+
+fao.capture.long = fao.capture.long |>
+  mutate(year = as.integer(year))
+
+```
+
+Checking the class again, we see that *year* has been updated to a numeric variable:
+
+```{r}
+fao.capture.long |>
+  glimpse()
+```
+
+## Reshape from long-to-wide format
+
+In the previous example, we had information spread over multiple columns that we wanted to *gather*. Sometimes, we'll have data that we want to *spread* over multiple columns. For example, imagine that starting from *inverts_long* we want each species in the *common_name* column to exist as its **own column**. In that case, we would be converting from a longer to a wider format, and will use `tidyr::pivot_wider()`. Specifically for our data, we'll use `pivot_wider()` to spread the *common_name* across multiple columns as follows: 
+
+```{r}
+
+fao.capture.wide = fao.capture.long |>
+  pivot_wider(
+    names_from = "ASFIS species",
+    values_from = "wt_mt"
+    )
+
+
+```
+
+```{r}
+fao.capture.wide |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+We can see that now each *species* has its own column (wider format). But also notice that those column headers (since they have spaces) might not be in the most coder-friendly format...
+
+
+## Clean variable (column) names
+
+The **janitor** package by Sam Firke is a great collection of functions for some quick data cleaning, like:
+
+- `janitor::clean_names()`: update column headers to a case of your choosing
+- `janitor::get_dupes()`: see all rows that are duplicates within variables you choose
+- `janitor::remove_empty()`: remove empty rows and/or columns
+- `janitor::adorn_*()`: jazz up tables 
+
+Here, we'll use `janitor::clean_names()` to convert all of our column headers to a more convenient case - the default is **lower_snake_case**, which means all spaces and symbols are replaced with an underscore (or a word describing the symbol), all characters are lowercase, and a few other nice adjustments. For example, `janitor::clean_names()` update `ASFIS species` variable name into much nicer `asfis_species`.
+
+```{r}
+fao.capture.long = fao.capture.long |>
+  janitor::clean_names()
+
+fao.capture.long |> 
+  sample_n(size = 10) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+## Separate merged variables
+
+Sometimes we'll want to *separate* contents of a single column into multiple columns, or *combine* entries from different columns into a single column. For example, the `fao.capture.long` has a `asfis_species` variable, which combine an english and scientific name of the particular fish group. That variable should be separated into two variables, one variable we will call `english_name` and the other `species`. **tidyr** package has a function called `separate` that is dedicated to divide variables that are combined. For our case, a `asfis_species` variable can be separate with a `hyphen`, which was used to distinguish between an english and species names. The `separate()` function accepts arguments for the name of the variable  to separate. You also need to specify the names of the variable to separate into, and an optional separator.
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+fao.capture.long.sep = fao.capture.long %>% 
+  separate(
+    col = asfis_species, 
+    into = c("english_name", "species"),
+    sep = "-"
+    )
+fao.capture.long.sep|> 
+  sample_n(size = 10) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+
+
+## Merge separate variables
+The `unite()` function is the exact opposite of `separate()` in that it combines multiple columns into a single column. While not used nearly as often as `separate()` , there may be times when you need the functionality provided by unite(). For example, we use `tidyr::unite()` to combine the variable `english_name` and `english_name` to form `common_species`, and separate them with a hyphen `-` symbol between the two variables and assign the output as `fao.capture.long.merge`. 
+
+
+```{r}
+fao.capture.long.merge = fao.capture.long.sep |>
+  unite(
+    col = "common_species", # What to name the new united column
+    c(english_name,  species), # The columns we'll unite (site, year)
+    sep = "-" # How to separate the things we're uniting
+    )
+
+fao.capture.long.merge|> 
+  sample_n(size = 10) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+## Replace a pattern
+
+One thing we noticed in the dataset we imported is that the weight are not in numeric but rather as character. The reason for that is simple because for eye to read long numbers easily, we often separate a thousand with comma or space, which is the case for the data we loaded. though the eye can easily see and distinguish the numbers, that is hard computers can understand, as a key issue in tidying is that a cell should contain a single value. Therefore, since this weigh is in character format, there is nothing we can do to get any statistic values unless we convert them into numeric format. That's simple and straight forward as R has a `as.numeric` function that convert character into numeric format values. Unfortunate, we do not get the numeric as we expected but instead we are given an NA values, which simply indicate that process isn't fit for that value of the data type. 
+
+
+```{r}
+#| warning: false
+#| 
+fao.capture.long |>
+  mutate(wt_mt = as.numeric(wt_mt))|> 
+  sample_n(size = 10) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+When you face that situation, you must keen look at the internal structure of the dataset to understand what lies behind the problem you encounter. Using a glimpse function, we notice the wt_mt variable is character format with number values, but why does the values fail to convert to numeric the answer is simple--presence of space to separate the values into thousands. We must get rid of the space before we convert the character into numeric values. 
+
+
+```{r}
+fao.capture.long |>
+  glimpse()
+```
+
+A **stringr** package has several function that works well with strings values in R. Among these function is `str_remove()`, which remove a specified string pattern. In our case we remove a space in wt_mt variable and assign the variable name as wt_mt_free
+
+
+```{r}
+fao.capture.long.free = fao.capture.long |>
+  mutate(
+    wt_mt_free = str_remove(string = wt_mt, 
+                             pattern = " ")
+    )
+
+
+```
+
+A glimpse of the `fao.capture.long.free` indicate that a `wt_mt_free` variable we just created has no spaces to separate values into thousands. 
+
+```{r}
+#| echo: false
+fao.capture.long.free |>
+  glimpse()
+```
+
+Therefore, once we have removed space in the values, the variable is in the format the R will understand that this is values and can easily convert from character into numeric with `as.numeric` function;
+
+
+```{r}
+#| warning: false
+#| 
+fao.capture.long.free = fao.capture.long.free |>
+  mutate(wt_mt = as.numeric(wt_mt_free)) |>
+  select(-wt_mt_free)
+
+fao.capture.long.free|> 
+  sample_n(size = 10) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+\newpage
+## summary
+
+The ultimate of tidy dataset is in the analysis and plotting. When the dataset is in the right format, it makes advanced analysis easy and smooth while exploring the data and expose the inherited pattern is also much easier. This is because the tools in many programming languages and database require tidy structure. For example, @fig-fao-capture is the result of tidy dataset that allows to compute the mean and standard deviation and then use the metric computed to make a plot. We will cover ploting in much detail in @sec-ggplot.
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+#| label: fig-fao-capture
+#| fig-cap: Mean weight of selected species from Capture fisheries
+#| fig-pos: H
+##| echo: true
+#| 
+
+fao.capture.long.free %>% 
+  separate(col = asfis_species, 
+           into = c("name", "species"), 
+           sep = "-") %>% 
+  group_by(species) %>% 
+  summarise(
+    mean_wt = mean(wt_mt, na.rm = TRUE),
+    std = sd(wt_mt, na.rm = TRUE)
+    ) %>% 
+  arrange(mean_wt) %>% 
+  ggplot(aes(x = reorder(species, mean_wt), y = mean_wt))+
+  geom_point(size = 3)+
+  geom_errorbar(aes(ymin = mean_wt+std, 
+                    ymax = mean_wt - std), 
+                width = .5)+
+  scale_y_continuous(name = "Landed Weight (MT)", 
+                     position = "right", 
+                     breaks = scales::pretty_breaks(n = 5),
+                     labels = scales::label_number(big.mark = ","))+
+  scale_x_discrete(name = "Species")+
+  coord_flip() +
+  theme_bw(base_size = 12)+
+  theme(panel.grid = element_blank(), axis.text.y = element_text(face = "italic"))
+
+```
+
+
+## References
+
+

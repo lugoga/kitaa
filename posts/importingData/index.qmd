@@ -1,6 +1,13 @@
 ---
 title: "Importing table files into R"
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 description: "Learning to import tabular files from local directory intot R session is an important skills in R programming"
 date: "2024-02-26"
 categories: [visualization, code]
@@ -14,7 +21,7 @@ So far, we’ve looked at several dataset in previous chapter and we have also c
 
 Much of the data we download or receive from is either comma-separated value files `.csv` or and Excel spreadsheets, `.xlsx.` .csv files are spreadsheets stored as text files - basically Excel files stripped down to the bare minimum - no formatting, no formulas, no macros. You can open and edit them in spreadsheet software like LibreOffice Calc, Google Sheets or Microsoft Excel. Many devices and databases can export data in .csv format, making it a commonly used file format that you are likely to encounter sooner rather than later. 
 
-Whether that be a comma separated (csv) or a tab delimited file, there are multiple functions that can read these data into R. We will stick to loading these data from the **tidyverse** packages but be aware these are not the only methods for doing this. We will use the tidyverse functions just to maintain consistency with everything else we do. The first package in **tidyverse** we will use is called **readr** [@readr], which is a collection of functions to load the tabular data from working directory in our machine into R session. Some of its functions include:
+Whether that be a comma separated (csv) or a tab delimited file, there are multiple functions that can read these data into R. We will stick to loading these data from the **tidyverse** packages [@tidyverse] but be aware these are not the only methods for doing this. We will use the tidyverse functions just to maintain consistency with everything else we do. The first package in **tidyverse** we will use is called **readr** [@readr], which is a collection of functions to load the tabular data from working directory in our machine into R session. Some of its functions include:
 
 + `read_csv()`: comma separated (CSV) files
 + `read_tsv()`: tab separated files
@@ -136,5 +143,7 @@ save.image("assets/fao_paul_dataset/tidy/myData.RData")
 
 ```
 
+
+## References
 
 

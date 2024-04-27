@@ -1,6 +1,13 @@
 ---
 title: "Visualizing data with grammar of graphics"
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-03-25"
 categories: [visualization, code, analysis]
 # image: "../screenshots/Rproject.png"
@@ -28,7 +35,7 @@ library(magrittr)
 The ability to create visualizations---graphical representations of data is an important step to convey results---information and findings to others. Visualizations make it much easier to spot aberrations in data and explain our findings to others. However, we should not reserve data visualizations exclusively for those we share the information with, but rather a practice that help to understand data quickly and particularly during the data exploratory analysis stage.
 
 
-R has many systems for visualization and creating plots, some of which are---base R graphics, **lattice** and **ggplot2**, but we focus on the use of **ggplot2**. **ggplot2** is the most popular data visualization package in the R community. It was created by Hadley Wickham in 2005. It was implemented based on Leland Wilkinson’s Grammar of Graphics — a general scheme for data visualization which breaks up graphs into semantic components such as scales and layers [@scales]. While using ggplot2, you provide the data, call specific function, map your desired variables to aesthetics, define graphical arguments, rest it will take care!. 
+R has many systems for visualization and creating plots, some of which are---base R graphics, **lattice** and **ggplot2**, but we focus on the use of **ggplot2** [@ggplot]. **ggplot2** is the most popular data visualization package in the R community. It was created by Hadley Wickham in 2005. It was implemented based on Leland Wilkinson’s Grammar of Graphics — a general scheme for data visualization which breaks up graphs into semantic components such as scales and layers [@scales]. While using ggplot2, you provide the data, call specific function, map your desired variables to aesthetics, define graphical arguments, rest it will take care!. 
 
 **ggplot2** is designed to build graphs layer by layer, where each layer is a building block for your graph. Making graphs in layers is useful because we can think of building up our graphs in separate parts: the data comes first, then the x-axis and y-axis, and finally other components like text labels and graph shapes. When something goes wrong and your **ggplot2** code returns an error, you can learn about what's happening by removing one layer at a time and running it again until the code works properly. Once you know which line is causing the problem, you can focus on fixing it. 
 
@@ -59,7 +66,7 @@ library(readxl)
 ```
 
 
-In this chapter we will use two datasets. The first dataset is the `octopus.csv`, a file containing length and weight of octopus fishery gathered between 2018 and 2020 in the coastal waters of Tanzania. The dataset was obtained from the Tanzania Fisheries Research Institute. The second dataset is the `landings_wio.csv`, which contain historical catch landings from 1950 to 2015 of ten countries in the Western Indian Ocean Region. The dataset was downloaded from **rfisheries** package and arranged in structure that make plotting easy. The following script imports the `landings_wio_country.csv` dataset and displays its first ten rows.
+In this chapter we will use two datasets. The first dataset is the `octopus.csv`, a file containing length and weight of octopus fishery gathered between 2018 and 2020 in the coastal waters of Tanzania. The dataset was obtained from the Tanzania Fisheries Research Institute. The second dataset is the `landings_wio.csv`, which contain historical catch landings from 1950 to 2015 of ten countries in the Western Indian Ocean Region. The dataset was downloaded from **rfisheries** package and arranged in structure that make plotting easy [@rfisheries]. The following script imports the `landings_wio_country.csv` dataset and displays its first ten rows.
 
 ```{r}
 landings = read_csv("../data/tidy/landings_wio_country.csv", skip = 4)
@@ -530,3 +537,6 @@ ggsave(here("plots", "catch.png"), dpi = 180, width = 8, height = 7)
 Notice that a .jpg image of that name and size is now stored in the `plots\` folder within your working directory. You can change the type of exported image, too (e.g. pdf, tiff, eps, png, mmp, svg).
 :::
 
+
+
+## References

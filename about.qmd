@@ -1,5 +1,5 @@
 ---
-title: "About the initiative"
+# title: "About"
 # image: education-word-cloud-Recovered.jpg
 page-layout: article
 about:
@@ -17,58 +17,45 @@ about:
 
 ---
 
-::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+## Welcome to Datika!!! {.center-text}
 
-![](https://source.unsplash.com/jlzxJuSINsw){group="my-gallery"}
+I'm glad you're here at our website, datika! As an avid enthusiast of statistics and the [R programming language](https://www.r-project.org/), we've created this platform to share our experiences, research and projects with fellows.
 
-![](https://source.unsplash.com/a-brown-dog-laying-on-top-of-a-white-bed-90ub4oBH1WU){group="my-gallery"}
+Datika is more than just a showcase of our work -- it's a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R.
 
-![](https://source.unsplash.com/ZJVXcRmaSJM){group="my-gallery"}
+Navigating through the five main sections of our website with ease:
 
-![](https://source.unsplash.com/cVpfbLcm0Bo){group="my-gallery"}
+-   "[Posts](blog.qmd)": In this tab, we share our reflections and questions that have emerged throughout my R language learning journey, providing engaging insights and perspectives on various aspects of R programming and statistics.
 
-![](https://source.unsplash.com/a-white-cat-laying-on-top-of-a-white-curtain-fIkdTouhWMg){group="my-gallery"}
+-   "[Presentations](slides.qmd)": Keep up to date with my most recent presentations, where I delve into topical subjects and share research findings, offering a wealth of knowledge on the latest advancements in R and statistics.
 
-![](https://source.unsplash.com/78YxP3PP05A){group="my-gallery"}
+-   "[Books](books.qmd)": Explore the real-world projects I've undertaken, demonstrating the power and versatility of R in addressing intricate statistical challenges, and find inspiration for your own projects.
 
-![](https://source.unsplash.com/PU1Yqe9kNpg){group="my-gallery"}
+-   "[Datasets](data.qmd)": Here you'll find a systematic approach to learning R. Explore comprehensive tutorials and guides crafted to guide you toward proficiency in R programming.
 
-![](https://source.unsplash.com/uutHQEjfx3g){group="my-gallery"}
 
-![](https://source.unsplash.com/JcIFJnZDUHQ){group="my-gallery"}
 
+-   "[About](about.qmd)": You can find out our background, what we're currently working on, and our research achievements. Our passion for statistics, R programming, and knowledge-sharing is the driving force behind Stats & R.
+
+-   "[Gallery](photos.qmd)": Provide a scenic view of nature and environment, which we are connected with and glean ecosystem benefits
+
+Once again, thank you for visiting datika. I hope you find the content engaging and informative, and that our platform serves as a valuable resource for you as you delve into the captivating realms of statistics and R programming. Enjoy your time and have fun exploring! 😘
+
+## License
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+
+<a property="dct:title" rel="cc:attributionURL" href="https://stats-r.com/">datika</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://twitter.com/ningli3739">The team</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution-NonCommercial-NoDerivatives 4.0 International<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
+
+Visit [here](license.qmd) for more information about the license.
+
+## Lastest posts
+
+::: {#main-listing}
 :::
 
+<a href="blog.qmd"> <button type="button" class="btn btn-primary float-end btn">See all</button></a>
 
-
-Are you interested in diving into the world of coding and programming using R and Python? If so, you've come to the right place. This website will guide you through the essentials of data science, focusing on how to turn raw data into valuable information to support decision making in both business and science.
-
-![The Five Key Processes of the learning workflow in R and Python languages](five_components-01.png)
-
-As often taught, we begin with the basics - an introduction to programming. Whether you're new to coding or have some experience, understanding the fundamentals of programming is crucial. We'll cover key concepts and terminology to help you get started on the right foot.
-
-Next, we'll walk you through the process of installing R and RStudio. These are essential tools for anyone working with R, as they provide a user-friendly interface and a wide range of features to enhance your coding experience.
-
-Once you have R and RStudio up and running, it's time to get familiar with the environment. We'll explore the layout and functionality of R and RStudio, helping you feel comfortable navigating and using these tools effectively.
-
-Data types in R are an important aspect of programming in R. Understanding different data types such as numeric, character, and logical is essential for data manipulation and analysis. We'll break down each data type and provide examples to ensure you have a solid grasp of this concept.
-
-Data structure in R is another crucial topic to master. From vectors to matrices to lists, we'll cover the various data structures in R and explain how each one is used in data science applications.
-
-Tidying data frames is a key step in data analysis. We'll delve into the principles of tidy data and demonstrate how to clean and organize your data frames for optimal analysis and visualization.
-
-Data visualization with ggplot2 is an exciting aspect of data science. This powerful package in R allows you to create stunning visualizations to gain insights from your data. We'll guide you through the process of using ggplot2 to create compelling graphs and charts.
-
-Data manipulation is a vital skill for any data scientist. We'll explore techniques for filtering, sorting, and transforming data to extract the information you need for your analysis.
-
-Statistics play a significant role in data science, enabling you to draw meaningful conclusions from your data. We'll cover essential statistical concepts and techniques to help you make sense of your findings.
-
-Modeling is the process of building and evaluating models to make predictions or gain a deeper understanding of your data. We'll introduce key modeling techniques and demonstrate how to apply them in R for various scenarios.
-
-Quarto for report writing is a valuable tool for creating dynamic and reproducible reports. We'll show you how to use Quarto to generate professional reports that capture your data analysis process and findings.
-
-Git and GitHub are essential for version control and collaboration in coding projects. We'll provide an overview of these tools and explain how they can streamline your coding workflow and facilitate teamwork.
-
-Finally, we'll discuss the importance of blogs and websites in showcasing your work as a data scientist. Building an online presence through blogging and creating a personal website can help you share your insights and connect with others in the field.
-
-By covering these nine major topics, we aim to equip you with the foundational knowledge and practical skills needed to excel in data science using R and Python. Whether you're just starting or looking to expand your expertise, this blog post will serve as a valuable resource on your journey in the world of programming and data science.
+<br>

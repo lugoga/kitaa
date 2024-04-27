@@ -2,19 +2,25 @@
 # title: "People you meet along the initiative"
 page-layout: full
 title-block-banner: true
+toc: false
+
 ---
 
 
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="80%"}
 
-Harnessing modern data tools allows us to access unparalleled opportunities to tackle important societal issues and create impactful change worldwide.
+# Welcome to Datika!!! {.center-text}
+
+We'are glad you're here at our website, datika! As an avid enthusiast of statistics and the [R programming language](https://www.r-project.org/), we've created this platform to share our experiences, research and projects with fellows
+
+ Datika is more than just a showcase of our work -- it's a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R. Meet the people that make datika up and running!
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="20%"}
 
 Pause for a moment and ***Join us***
 

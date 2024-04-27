@@ -1,12 +1,22 @@
 ---
 title: "Getting Started with R and RStudio"
 description: "Learn the basic of programming with R using RStudio. We’ll install R, and RStudio RStudio, an extremely popular development environment for R "
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-01-24"
 date-modified: "2024-01-28"
 categories: [visualization, code]
 image: "r_gui.png"
 ---
+
+
+## Introduction
 
 In this tutorial we\'ll learn how to begin programming with R using RStudio. We\'ll install [R](https://www.r-project.org/), and RStudio [RStudio](https://rstudio.com/products/rstudio/), an extremely popular development environment for R. We\'ll learn the key RStudio features in order to start programming in R on our own.
 
@@ -385,3 +395,7 @@ If you would like to learn R Markdown, check out these Dataquest blog posts:
 -   [R Markdown Tips, Tricks, and Shortcuts](https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/)
 
 Learn R and the tidyverse with [R for Data Science](https://r4ds.had.co.nz/) by Hadley Wickham. Solidify your knowledge by working through the exercises in RStudio and saving your work for future reference.
+
+## References
+
+

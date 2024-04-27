@@ -2,7 +2,9 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/dataviz/index.html",
       "/posts/manipulate/index.html",
+      "/posts/tidying/index.html",
       "/posts/stats0/index.html",
       "/posts/basicplots/index.html",
       "/posts/ggplot2/index.html",
@@ -11,6 +13,7 @@
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
       "/posts/get started/index.html",
+      "/posts/rbasics/index.html",
       "/posts/thebasics/index.html",
       "/posts/timeline/index.html"
     ]
@@ -18,7 +21,9 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/dataviz/index.html",
       "/posts/manipulate/index.html",
+      "/posts/tidying/index.html",
       "/posts/stats0/index.html",
       "/posts/basicplots/index.html",
       "/posts/ggplot2/index.html",
@@ -27,6 +32,7 @@
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
       "/posts/get started/index.html",
+      "/posts/rbasics/index.html",
       "/posts/thebasics/index.html",
       "/posts/timeline/index.html"
     ]

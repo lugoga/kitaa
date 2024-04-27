@@ -1,7 +1,14 @@
 ---
 title: "Understanding and using Data types in R"
 description: "Learn the primary data types in R, which are the foundation of data programming in R "
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-01-26"
 date-modified: "2024-01-26"
 categories: [visualization, code]
@@ -11,6 +18,7 @@ image: "data_types.png"
 
 
 
+## Introduction
 
 In the realm of data science and statistical analysis, mastering data types is akin to understanding the building blocks of a language. In R, a powerful statistical computing language, data types form the foundation upon which all analyses are conducted. From integers to dates, each data type serves a unique purpose and understanding their nuances is critical for efficient and accurate data manipulation. 
 
@@ -133,3 +141,4 @@ class(current_time) # Output: "POSIXct"
 
 In this post we learned about different R data types and what kind of data do they hold. Data type is very important concept in programming and can not be ignored. We have explained about each data type with example in this article.
 
+## References

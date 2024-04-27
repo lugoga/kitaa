@@ -178,6 +178,10 @@ cookieconsent.run({
     <a class="nav-link" href="../../photos.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lugoga/kitaa"> <i class="bi bi-github" role="img">
 </i> 
@@ -230,7 +234,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Mastering Data Structures in R</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <h1 class="title">Mastering Data Structures in R</h1>
                   <div>
         <div class="description">
           Learn the primary data structures (vector and data frame) in R, which are the foundation of data manipulation and analysis in R
@@ -243,16 +247,25 @@ cookieconsent.run({
                   </div>
   </div>
     
-  
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://semba.netlify.app">Masumbuko Semba</a> <a href="https://orcid.org/0000-0002-5002-9747" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://semba.netlify.app/">
+              Nelson Mandela African Institution of Science and Technology
+              </a>
+            </p>
+        </div>
+    </div>
+
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Masumbuko Semba </p>
-            </div>
-    </div>
-      
+        
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
@@ -278,9 +291,18 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link active" data-scroll-target="#vectors">Vectors:</a></li>
-  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames">Data Frames:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors:</a>
+  <ul class="collapse">
+  <li><a href="#creating-vectors" id="toc-creating-vectors" class="nav-link" data-scroll-target="#creating-vectors">Creating Vectors:</a></li>
+  <li><a href="#using-vectors-to-create-data-frames" id="toc-using-vectors-to-create-data-frames" class="nav-link" data-scroll-target="#using-vectors-to-create-data-frames">Using Vectors to Create Data Frames:</a></li>
+  </ul></li>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames">Data Frames:</a>
+  <ul class="collapse">
+  <li><a href="#creating-data-frames" id="toc-creating-data-frames" class="nav-link" data-scroll-target="#creating-data-frames">Creating Data Frames:</a></li>
+  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion:</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -291,6 +313,8 @@ cookieconsent.run({
 
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In data analysis and statistical computing, mastering data structures is essential for efficient data manipulation and analysis. In R, a powerful language for statistical computing and graphics, two fundamental data structures are vectors and data frames. Additionally, the newer tibble data structure offers enhanced features for data manipulation and visualization. In this comprehensive guide, we will explore these data structures in detail, providing illustrative examples along the way.Before we dive in, let pause for a moment and watch video in <a href="#fig-datastructure" class="quarto-xref">Figure&nbsp;1</a></p>
 <div id="fig-datastructure" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -302,11 +326,12 @@ Figure&nbsp;1: Primary data structure in R
 </figcaption>
 </figure>
 </div>
-<section id="vectors" class="level3">
-<h3 class="anchored" data-anchor-id="vectors">Vectors:</h3>
+</section>
+<section id="vectors" class="level2">
+<h2 class="anchored" data-anchor-id="vectors">Vectors:</h2>
 <p>Vectors are one-dimensional arrays that can hold numeric, character, logical, or other atomic data types. They are the simplest and most basic data structure in R.</p>
-<section id="creating-vectors" class="level4">
-<h4 class="anchored" data-anchor-id="creating-vectors">Creating Vectors:</h4>
+<section id="creating-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="creating-vectors">Creating Vectors:</h3>
 <p>Creating vectors in R is straightforward using the <code>c()</code> function, which concatenates elements into a vector.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Creating a numeric vector</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>numeric_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
@@ -317,8 +342,8 @@ Figure&nbsp;1: Primary data structure in R
 <span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Creating a logical vector</span></span>
 <span id="cb1-8"><a href="#cb1-8"></a>logical_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="using-vectors-to-create-data-frames" class="level4">
-<h4 class="anchored" data-anchor-id="using-vectors-to-create-data-frames">Using Vectors to Create Data Frames:</h4>
+<section id="using-vectors-to-create-data-frames" class="level3">
+<h3 class="anchored" data-anchor-id="using-vectors-to-create-data-frames">Using Vectors to Create Data Frames:</h3>
 <p>Data frames are two-dimensional data structures that resemble tables, where each column can be a different data type. They are commonly used for storing and analyzing structured data.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Using vectors to create a data frame</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -331,11 +356,11 @@ Figure&nbsp;1: Primary data structure in R
 <span id="cb2-9"><a href="#cb2-9"></a><span class="fu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="data-frames" class="level3">
-<h3 class="anchored" data-anchor-id="data-frames">Data Frames:</h3>
+<section id="data-frames" class="level2">
+<h2 class="anchored" data-anchor-id="data-frames">Data Frames:</h2>
 <p>Data frames are the workhorse of R for storing tabular data. They are similar to matrices but offer more flexibility, as each column can be of a different data type.</p>
-<section id="creating-data-frames" class="level4">
-<h4 class="anchored" data-anchor-id="creating-data-frames">Creating Data Frames:</h4>
+<section id="creating-data-frames" class="level3">
+<h3 class="anchored" data-anchor-id="creating-data-frames">Creating Data Frames:</h3>
 <p>Data frames can be created directly using the <code>data.frame()</code> function, where each column is specified as a vector.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Creating a data frame directly</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>student_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -346,7 +371,6 @@ Figure&nbsp;1: Primary data structure in R
 <span id="cb3-7"><a href="#cb3-7"></a></span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="co"># View the created data frame</span></span>
 <span id="cb3-9"><a href="#cb3-9"></a><span class="fu">print</span>(student_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="using-tibbles" class="level4">
 <h4 class="anchored" data-anchor-id="using-tibbles">Using Tibbles:</h4>
 <p>Tibbles are a modern alternative to data frames, introduced by the tidyverse ecosystem. They are more user-friendly, provide enhanced printing, and have better support for data analysis pipelines.</p>
@@ -364,17 +388,19 @@ Figure&nbsp;1: Primary data structure in R
 <span id="cb4-12"><a href="#cb4-12"></a><span class="fu">print</span>(student_tibble)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion:</h3>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion:</h2>
 <p>Understanding data structures such as vectors, data frames, and tibbles is crucial for effective data manipulation and analysis in R. Whether you’re working with numeric data, text data, or logical data, these data structures provide the foundation for organizing and analyzing your data efficiently. By mastering these data structures, you’ll be well-equipped to tackle a wide range of data analysis tasks in R.</p>
 <p>In this guide, we’ve covered how to create vectors, use them to construct data frames, and introduced the newer tibble data structure. Armed with this knowledge, you’re ready to dive deeper into the world of data analysis and unlock the full potential of R for your projects. Whether you’re a beginner or an experienced R user, mastering these fundamental data structures will pave the way for more advanced data analysis and modeling techniques.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 
-
-<!-- -->
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -454,57 +480,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -814,123 +789,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> "Mastering Data Structures in R"</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="an">description:</span><span class="co"> "Learn the primary data structures (vector and data frame) in R, which are the foundation of data manipulation and analysis in R "</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="an">date:</span><span class="co"> "2024-02-03"</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="an">date-modified:</span><span class="co"> "2024-04-26"</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="an">categories:</span><span class="co"> [visualization, code]</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="an">image:</span><span class="co"> "dataStructures.png"</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co">---</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a></span>
-<span id="cb5-12"><a href="#cb5-12"></a></span>
-<span id="cb5-13"><a href="#cb5-13"></a></span>
-<span id="cb5-14"><a href="#cb5-14"></a></span>
-<span id="cb5-15"><a href="#cb5-15"></a>In data analysis and statistical computing, mastering data structures is essential for efficient data manipulation and analysis. In R, a powerful language for statistical computing and graphics, two fundamental data structures are vectors and data frames. Additionally, the newer tibble data structure offers enhanced features for data manipulation and visualization. In this comprehensive guide, we will explore these data structures in detail, providing illustrative examples along the way.Before we dive in, let pause for a moment and watch video in @fig-datastructure</span>
-<span id="cb5-16"><a href="#cb5-16"></a></span>
-<span id="cb5-17"><a href="#cb5-17"></a>::: {#fig-datastructure}</span>
-<span id="cb5-18"><a href="#cb5-18"></a></span>
-<span id="cb5-19"><a href="#cb5-19"></a>{{&lt; video https://youtu.be/k0zLwDAQ6Uw &gt;}}</span>
-<span id="cb5-20"><a href="#cb5-20"></a></span>
-<span id="cb5-21"><a href="#cb5-21"></a>Primary data structure in R</span>
-<span id="cb5-22"><a href="#cb5-22"></a></span>
-<span id="cb5-23"><a href="#cb5-23"></a>:::</span>
-<span id="cb5-24"><a href="#cb5-24"></a></span>
-<span id="cb5-25"><a href="#cb5-25"></a></span>
-<span id="cb5-26"><a href="#cb5-26"></a></span>
-<span id="cb5-27"><a href="#cb5-27"></a></span>
-<span id="cb5-28"><a href="#cb5-28"></a><span class="fu">### Vectors:</span></span>
-<span id="cb5-29"><a href="#cb5-29"></a></span>
-<span id="cb5-30"><a href="#cb5-30"></a>Vectors are one-dimensional arrays that can hold numeric, character, logical, or other atomic data types. They are the simplest and most basic data structure in R.</span>
-<span id="cb5-31"><a href="#cb5-31"></a></span>
-<span id="cb5-32"><a href="#cb5-32"></a><span class="fu">#### Creating Vectors:</span></span>
-<span id="cb5-33"><a href="#cb5-33"></a></span>
-<span id="cb5-34"><a href="#cb5-34"></a>Creating vectors in R is straightforward using the <span class="in">`c()`</span> function, which concatenates elements into a vector.</span>
-<span id="cb5-35"><a href="#cb5-35"></a></span>
-<span id="cb5-36"><a href="#cb5-36"></a><span class="in">```R</span></span>
-<span id="cb5-37"><a href="#cb5-37"></a><span class="co"># Creating a numeric vector</span></span>
-<span id="cb5-38"><a href="#cb5-38"></a>numeric_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb5-39"><a href="#cb5-39"></a></span>
-<span id="cb5-40"><a href="#cb5-40"></a><span class="co"># Creating a character vector</span></span>
-<span id="cb5-41"><a href="#cb5-41"></a>character_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"orange"</span>, <span class="st">"grape"</span>, <span class="st">"pineapple"</span>)</span>
-<span id="cb5-42"><a href="#cb5-42"></a></span>
-<span id="cb5-43"><a href="#cb5-43"></a><span class="co"># Creating a logical vector</span></span>
-<span id="cb5-44"><a href="#cb5-44"></a>logical_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb5-45"><a href="#cb5-45"></a><span class="in">```</span></span>
-<span id="cb5-46"><a href="#cb5-46"></a></span>
-<span id="cb5-47"><a href="#cb5-47"></a><span class="fu">#### Using Vectors to Create Data Frames:</span></span>
-<span id="cb5-48"><a href="#cb5-48"></a></span>
-<span id="cb5-49"><a href="#cb5-49"></a>Data frames are two-dimensional data structures that resemble tables, where each column can be a different data type. They are commonly used for storing and analyzing structured data.</span>
-<span id="cb5-50"><a href="#cb5-50"></a></span>
-<span id="cb5-51"><a href="#cb5-51"></a><span class="in">```R</span></span>
-<span id="cb5-52"><a href="#cb5-52"></a><span class="co"># Using vectors to create a data frame</span></span>
-<span id="cb5-53"><a href="#cb5-53"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-54"><a href="#cb5-54"></a>  <span class="at">numeric_col =</span> numeric_vector,</span>
-<span id="cb5-55"><a href="#cb5-55"></a>  <span class="at">character_col =</span> character_vector,</span>
-<span id="cb5-56"><a href="#cb5-56"></a>  <span class="at">logical_col =</span> logical_vector</span>
-<span id="cb5-57"><a href="#cb5-57"></a>)</span>
-<span id="cb5-58"><a href="#cb5-58"></a></span>
-<span id="cb5-59"><a href="#cb5-59"></a><span class="co"># View the created data frame</span></span>
-<span id="cb5-60"><a href="#cb5-60"></a><span class="fu">print</span>(data)</span>
-<span id="cb5-61"><a href="#cb5-61"></a><span class="in">```</span></span>
-<span id="cb5-62"><a href="#cb5-62"></a></span>
-<span id="cb5-63"><a href="#cb5-63"></a><span class="fu">### Data Frames:</span></span>
-<span id="cb5-64"><a href="#cb5-64"></a></span>
-<span id="cb5-65"><a href="#cb5-65"></a>Data frames are the workhorse of R for storing tabular data. They are similar to matrices but offer more flexibility, as each column can be of a different data type.</span>
-<span id="cb5-66"><a href="#cb5-66"></a></span>
-<span id="cb5-67"><a href="#cb5-67"></a><span class="fu">#### Creating Data Frames:</span></span>
-<span id="cb5-68"><a href="#cb5-68"></a></span>
-<span id="cb5-69"><a href="#cb5-69"></a>Data frames can be created directly using the <span class="in">`data.frame()`</span> function, where each column is specified as a vector.</span>
-<span id="cb5-70"><a href="#cb5-70"></a></span>
-<span id="cb5-71"><a href="#cb5-71"></a><span class="in">```R</span></span>
-<span id="cb5-72"><a href="#cb5-72"></a><span class="co"># Creating a data frame directly</span></span>
-<span id="cb5-73"><a href="#cb5-73"></a>student_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-74"><a href="#cb5-74"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Emma"</span>, <span class="st">"Michael"</span>),</span>
-<span id="cb5-75"><a href="#cb5-75"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">23</span>, <span class="dv">27</span>, <span class="dv">22</span>, <span class="dv">24</span>),</span>
-<span id="cb5-76"><a href="#cb5-76"></a>  <span class="at">grade =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>)</span>
-<span id="cb5-77"><a href="#cb5-77"></a>)</span>
-<span id="cb5-78"><a href="#cb5-78"></a></span>
-<span id="cb5-79"><a href="#cb5-79"></a><span class="co"># View the created data frame</span></span>
-<span id="cb5-80"><a href="#cb5-80"></a><span class="fu">print</span>(student_data)</span>
-<span id="cb5-81"><a href="#cb5-81"></a><span class="in">```</span></span>
-<span id="cb5-82"><a href="#cb5-82"></a></span>
-<span id="cb5-83"><a href="#cb5-83"></a><span class="fu">#### Using Tibbles:</span></span>
-<span id="cb5-84"><a href="#cb5-84"></a></span>
-<span id="cb5-85"><a href="#cb5-85"></a>Tibbles are a modern alternative to data frames, introduced by the tidyverse ecosystem. They are more user-friendly, provide enhanced printing, and have better support for data analysis pipelines.</span>
-<span id="cb5-86"><a href="#cb5-86"></a></span>
-<span id="cb5-87"><a href="#cb5-87"></a><span class="in">```R</span></span>
-<span id="cb5-88"><a href="#cb5-88"></a><span class="co"># Creating a tibble from vectors</span></span>
-<span id="cb5-89"><a href="#cb5-89"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb5-90"><a href="#cb5-90"></a></span>
-<span id="cb5-91"><a href="#cb5-91"></a><span class="co"># Creating a tibble directly</span></span>
-<span id="cb5-92"><a href="#cb5-92"></a>student_tibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb5-93"><a href="#cb5-93"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Emma"</span>, <span class="st">"Michael"</span>),</span>
-<span id="cb5-94"><a href="#cb5-94"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">23</span>, <span class="dv">27</span>, <span class="dv">22</span>, <span class="dv">24</span>),</span>
-<span id="cb5-95"><a href="#cb5-95"></a>  <span class="at">grade =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>)</span>
-<span id="cb5-96"><a href="#cb5-96"></a>)</span>
-<span id="cb5-97"><a href="#cb5-97"></a></span>
-<span id="cb5-98"><a href="#cb5-98"></a><span class="co"># View the created tibble</span></span>
-<span id="cb5-99"><a href="#cb5-99"></a><span class="fu">print</span>(student_tibble)</span>
-<span id="cb5-100"><a href="#cb5-100"></a><span class="in">```</span></span>
-<span id="cb5-101"><a href="#cb5-101"></a></span>
-<span id="cb5-102"><a href="#cb5-102"></a><span class="fu">### Conclusion:</span></span>
-<span id="cb5-103"><a href="#cb5-103"></a></span>
-<span id="cb5-104"><a href="#cb5-104"></a>Understanding data structures such as vectors, data frames, and tibbles is crucial for effective data manipulation and analysis in R. Whether you're working with numeric data, text data, or logical data, these data structures provide the foundation for organizing and analyzing your data efficiently. By mastering these data structures, you'll be well-equipped to tackle a wide range of data analysis tasks in R.</span>
-<span id="cb5-105"><a href="#cb5-105"></a></span>
-<span id="cb5-106"><a href="#cb5-106"></a>In this guide, we've covered how to create vectors, use them to construct data frames, and introduced the newer tibble data structure. Armed with this knowledge, you're ready to dive deeper into the world of data analysis and unlock the full potential of R for your projects. Whether you're a beginner or an experienced R user, mastering these fundamental data structures will pave the way for more advanced data analysis and modeling techniques.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>©2024 <a href="../../posts/datastructures/index.html">Datika</a></p>
+</div>   
     <div class="nav-footer-center">
-
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../faq.html">
+<p>FAQ</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../feedback.html">
+<p>Feedback</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../terms.html">
+<p>Terms</p>
+</a>
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

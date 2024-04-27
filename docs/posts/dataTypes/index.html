@@ -178,6 +178,10 @@ cookieconsent.run({
     <a class="nav-link" href="../../photos.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lugoga/kitaa"> <i class="bi bi-github" role="img">
 </i> 
@@ -230,7 +234,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Understanding and using Data types in R</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <h1 class="title">Understanding and using Data types in R</h1>
                   <div>
         <div class="description">
           Learn the primary data types in R, which are the foundation of data programming in R
@@ -243,16 +247,25 @@ cookieconsent.run({
                   </div>
   </div>
     
-  
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://semba.netlify.app">Masumbuko Semba</a> <a href="https://orcid.org/0000-0002-5002-9747" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://semba.netlify.app/">
+              Nelson Mandela African Institution of Science and Technology
+              </a>
+            </p>
+        </div>
+    </div>
+
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Masumbuko Semba </p>
-            </div>
-    </div>
-      
+        
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
@@ -278,12 +291,16 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#integer" id="toc-integer" class="nav-link active" data-scroll-target="#integer">Integer:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#integer" id="toc-integer" class="nav-link" data-scroll-target="#integer">Integer:</a></li>
   <li><a href="#numeric" id="toc-numeric" class="nav-link" data-scroll-target="#numeric">Numeric:</a></li>
   <li><a href="#character" id="toc-character" class="nav-link" data-scroll-target="#character">Character:</a></li>
   <li><a href="#logical" id="toc-logical" class="nav-link" data-scroll-target="#logical">Logical:</a></li>
   <li><a href="#factor" id="toc-factor" class="nav-link" data-scroll-target="#factor">Factor:</a></li>
   <li><a href="#date-and-time" id="toc-date-and-time" class="nav-link" data-scroll-target="#date-and-time">Date and Time:</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -294,6 +311,8 @@ cookieconsent.run({
 
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In the realm of data science and statistical analysis, mastering data types is akin to understanding the building blocks of a language. In R, a powerful statistical computing language, data types form the foundation upon which all analyses are conducted. From integers to dates, each data type serves a unique purpose and understanding their nuances is critical for efficient and accurate data manipulation.</p>
 <p>Understanding and effectively utilizing these core data types in R is essential for performing data analysis, visualization, and modeling tasks. Mastery of data types empowers data scientists to manipulate data efficiently and extract valuable insights from complex datasets. Whether performing arithmetic operations, manipulating text, or handling temporal information, the versatility of R’s data types makes it a powerful tool for data analysis and statistical computing.</p>
 <p>In this guide, we will delve into the core data types in R, exploring their characteristics and providing illustrative examples. Before we dive in, let pause for a moment and watch video in <a href="#fig-datatypes" class="quarto-xref">Figure&nbsp;1</a></p>
@@ -393,13 +412,15 @@ Figure&nbsp;1: Primary data types in R
 <span id="cb6-10"><a href="#cb6-10"></a><span class="fu">class</span>(current_time) <span class="co"># Output: "POSIXct"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this post we learned about different R data types and what kind of data do they hold. Data type is very important concept in programming and can not be ignored. We have explained about each data type with example in this article.</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 
-
-<!-- -->
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -479,57 +500,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -839,151 +809,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> "Understanding and using Data types in R"</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="an">description:</span><span class="co"> "Learn the primary data types in R, which are the foundation of data programming in R "</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="an">date:</span><span class="co"> "2024-01-26"</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="an">date-modified:</span><span class="co"> "2024-01-26"</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="an">categories:</span><span class="co"> [visualization, code]</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="an">image:</span><span class="co"> "data_types.png"</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="co">---</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a></span>
-<span id="cb7-11"><a href="#cb7-11"></a></span>
-<span id="cb7-12"><a href="#cb7-12"></a></span>
-<span id="cb7-13"><a href="#cb7-13"></a></span>
-<span id="cb7-14"><a href="#cb7-14"></a></span>
-<span id="cb7-15"><a href="#cb7-15"></a>In the realm of data science and statistical analysis, mastering data types is akin to understanding the building blocks of a language. In R, a powerful statistical computing language, data types form the foundation upon which all analyses are conducted. From integers to dates, each data type serves a unique purpose and understanding their nuances is critical for efficient and accurate data manipulation. </span>
-<span id="cb7-16"><a href="#cb7-16"></a></span>
-<span id="cb7-17"><a href="#cb7-17"></a></span>
-<span id="cb7-18"><a href="#cb7-18"></a>Understanding and effectively utilizing these core data types in R is essential for performing data analysis, visualization, and modeling tasks. Mastery of data types empowers data scientists to manipulate data efficiently and extract valuable insights from complex datasets. Whether performing arithmetic operations, manipulating text, or handling temporal information, the versatility of R's data types makes it a powerful tool for data analysis and statistical computing.</span>
-<span id="cb7-19"><a href="#cb7-19"></a></span>
-<span id="cb7-20"><a href="#cb7-20"></a></span>
-<span id="cb7-21"><a href="#cb7-21"></a>In this guide, we will delve into the core data types in R, exploring their characteristics and providing illustrative examples. Before we dive in, let pause for a moment and watch video in @fig-datatypes</span>
-<span id="cb7-22"><a href="#cb7-22"></a></span>
-<span id="cb7-23"><a href="#cb7-23"></a>::: {#fig-datatypes}</span>
-<span id="cb7-24"><a href="#cb7-24"></a></span>
-<span id="cb7-25"><a href="#cb7-25"></a>{{&lt; video https://youtu.be/VtUVQWl0aRA &gt;}}</span>
-<span id="cb7-26"><a href="#cb7-26"></a></span>
-<span id="cb7-27"><a href="#cb7-27"></a>Primary data types in R</span>
-<span id="cb7-28"><a href="#cb7-28"></a></span>
-<span id="cb7-29"><a href="#cb7-29"></a>:::</span>
-<span id="cb7-30"><a href="#cb7-30"></a></span>
-<span id="cb7-31"><a href="#cb7-31"></a></span>
-<span id="cb7-32"><a href="#cb7-32"></a></span>
-<span id="cb7-33"><a href="#cb7-33"></a><span class="fu">### Integer:</span></span>
-<span id="cb7-34"><a href="#cb7-34"></a></span>
-<span id="cb7-35"><a href="#cb7-35"></a>Integers are whole numbers without any decimal or fractional component. In R, integers are represented by the <span class="in">`integer`</span> class. They are commonly used for indexing and counting operations.</span>
-<span id="cb7-36"><a href="#cb7-36"></a></span>
-<span id="cb7-37"><a href="#cb7-37"></a>::: {#exm-moja}</span>
-<span id="cb7-38"><a href="#cb7-38"></a></span>
-<span id="cb7-39"><a href="#cb7-39"></a><span class="in">```R</span></span>
-<span id="cb7-40"><a href="#cb7-40"></a><span class="co"># Creating an integer variable</span></span>
-<span id="cb7-41"><a href="#cb7-41"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>L</span>
-<span id="cb7-42"><a href="#cb7-42"></a><span class="fu">class</span>(x) <span class="co"># Output: "integer"</span></span>
-<span id="cb7-43"><a href="#cb7-43"></a></span>
-<span id="cb7-44"><a href="#cb7-44"></a><span class="co"># Arithmetic operations with integers</span></span>
-<span id="cb7-45"><a href="#cb7-45"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">3</span></span>
-<span id="cb7-46"><a href="#cb7-46"></a><span class="in">```</span></span>
-<span id="cb7-47"><a href="#cb7-47"></a>:::</span>
-<span id="cb7-48"><a href="#cb7-48"></a></span>
-<span id="cb7-49"><a href="#cb7-49"></a><span class="fu">### Numeric:</span></span>
-<span id="cb7-50"><a href="#cb7-50"></a></span>
-<span id="cb7-51"><a href="#cb7-51"></a>Numeric data type, also known as double in other programming languages, represents numbers with decimal points. Numeric data types are used for most mathematical calculations and statistical operations in R.</span>
-<span id="cb7-52"><a href="#cb7-52"></a></span>
-<span id="cb7-53"><a href="#cb7-53"></a>::: {#exm-2}</span>
-<span id="cb7-54"><a href="#cb7-54"></a><span class="in">```R</span></span>
-<span id="cb7-55"><a href="#cb7-55"></a><span class="co"># Creating a numeric variable</span></span>
-<span id="cb7-56"><a href="#cb7-56"></a>height <span class="ot">&lt;-</span> <span class="fl">175.5</span></span>
-<span id="cb7-57"><a href="#cb7-57"></a><span class="fu">class</span>(height) <span class="co"># Output: "numeric"</span></span>
-<span id="cb7-58"><a href="#cb7-58"></a></span>
-<span id="cb7-59"><a href="#cb7-59"></a><span class="co"># Arithmetic operations with numeric variables</span></span>
-<span id="cb7-60"><a href="#cb7-60"></a>bmi <span class="ot">&lt;-</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb7-61"><a href="#cb7-61"></a><span class="in">```</span></span>
-<span id="cb7-62"><a href="#cb7-62"></a>:::</span>
-<span id="cb7-63"><a href="#cb7-63"></a></span>
-<span id="cb7-64"><a href="#cb7-64"></a><span class="fu">### Character:</span></span>
-<span id="cb7-65"><a href="#cb7-65"></a></span>
-<span id="cb7-66"><a href="#cb7-66"></a>Character data type represents textual data such as strings of letters, words, or sentences. In R, character values are enclosed in either single or double quotes.</span>
-<span id="cb7-67"><a href="#cb7-67"></a></span>
-<span id="cb7-68"><a href="#cb7-68"></a>::: {#exm-3}</span>
-<span id="cb7-69"><a href="#cb7-69"></a><span class="in">```R</span></span>
-<span id="cb7-70"><a href="#cb7-70"></a><span class="co"># Creating a character variable</span></span>
-<span id="cb7-71"><a href="#cb7-71"></a>name <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
-<span id="cb7-72"><a href="#cb7-72"></a><span class="fu">class</span>(name) <span class="co"># Output: "character"</span></span>
-<span id="cb7-73"><a href="#cb7-73"></a></span>
-<span id="cb7-74"><a href="#cb7-74"></a><span class="co"># Concatenating character strings</span></span>
-<span id="cb7-75"><a href="#cb7-75"></a>greeting <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Hello"</span>, name)</span>
-<span id="cb7-76"><a href="#cb7-76"></a><span class="in">```</span></span>
-<span id="cb7-77"><a href="#cb7-77"></a>:::</span>
-<span id="cb7-78"><a href="#cb7-78"></a></span>
-<span id="cb7-79"><a href="#cb7-79"></a><span class="fu">### Logical:</span></span>
-<span id="cb7-80"><a href="#cb7-80"></a></span>
-<span id="cb7-81"><a href="#cb7-81"></a>Logical data type, often referred to as Boolean, represents binary values: TRUE or FALSE. Logical values are fundamental in controlling program flow and making decisions based on conditions.</span>
-<span id="cb7-82"><a href="#cb7-82"></a></span>
-<span id="cb7-83"><a href="#cb7-83"></a>::: {#exm-4}</span>
-<span id="cb7-84"><a href="#cb7-84"></a><span class="in">```R</span></span>
-<span id="cb7-85"><a href="#cb7-85"></a><span class="co"># Creating logical variables</span></span>
-<span id="cb7-86"><a href="#cb7-86"></a>is_adult <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb7-87"><a href="#cb7-87"></a><span class="fu">class</span>(is_adult) <span class="co"># Output: "logical"</span></span>
-<span id="cb7-88"><a href="#cb7-88"></a></span>
-<span id="cb7-89"><a href="#cb7-89"></a><span class="co"># Conditional statements with logical variables</span></span>
-<span id="cb7-90"><a href="#cb7-90"></a><span class="cf">if</span> (is_adult) {</span>
-<span id="cb7-91"><a href="#cb7-91"></a>  <span class="fu">print</span>(<span class="st">"You are an adult."</span>)</span>
-<span id="cb7-92"><a href="#cb7-92"></a>} <span class="cf">else</span> {</span>
-<span id="cb7-93"><a href="#cb7-93"></a>  <span class="fu">print</span>(<span class="st">"You are not an adult."</span>)</span>
-<span id="cb7-94"><a href="#cb7-94"></a>}</span>
-<span id="cb7-95"><a href="#cb7-95"></a><span class="in">```</span></span>
-<span id="cb7-96"><a href="#cb7-96"></a>:::</span>
-<span id="cb7-97"><a href="#cb7-97"></a></span>
-<span id="cb7-98"><a href="#cb7-98"></a><span class="fu">### Factor:</span></span>
-<span id="cb7-99"><a href="#cb7-99"></a></span>
-<span id="cb7-100"><a href="#cb7-100"></a>Factor data type is used to represent categorical data in R. Factors are stored as integers with associated labels, making them efficient for statistical modeling and analysis.</span>
-<span id="cb7-101"><a href="#cb7-101"></a></span>
-<span id="cb7-102"><a href="#cb7-102"></a>::: {#exm-5}</span>
-<span id="cb7-103"><a href="#cb7-103"></a><span class="in">```R</span></span>
-<span id="cb7-104"><a href="#cb7-104"></a><span class="co"># Creating a factor variable</span></span>
-<span id="cb7-105"><a href="#cb7-105"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>))</span>
-<span id="cb7-106"><a href="#cb7-106"></a><span class="fu">class</span>(gender) <span class="co"># Output: "factor"</span></span>
-<span id="cb7-107"><a href="#cb7-107"></a></span>
-<span id="cb7-108"><a href="#cb7-108"></a><span class="co"># Summary statistics with factors</span></span>
-<span id="cb7-109"><a href="#cb7-109"></a><span class="fu">table</span>(gender)</span>
-<span id="cb7-110"><a href="#cb7-110"></a><span class="in">```</span></span>
-<span id="cb7-111"><a href="#cb7-111"></a>:::</span>
-<span id="cb7-112"><a href="#cb7-112"></a></span>
-<span id="cb7-113"><a href="#cb7-113"></a><span class="fu">### Date and Time:</span></span>
-<span id="cb7-114"><a href="#cb7-114"></a></span>
-<span id="cb7-115"><a href="#cb7-115"></a>Date and time data types are crucial for handling temporal information in R. R provides specialized classes for dates (<span class="in">`Date`</span>) and date-time values (<span class="in">`POSIXct`</span>, <span class="in">`POSIXlt`</span>).</span>
-<span id="cb7-116"><a href="#cb7-116"></a></span>
-<span id="cb7-117"><a href="#cb7-117"></a>::: {#exm-6}</span>
-<span id="cb7-118"><a href="#cb7-118"></a><span class="in">```R</span></span>
-<span id="cb7-119"><a href="#cb7-119"></a><span class="co"># Creating a date variable</span></span>
-<span id="cb7-120"><a href="#cb7-120"></a>today <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-04-25"</span>)</span>
-<span id="cb7-121"><a href="#cb7-121"></a><span class="fu">class</span>(today) <span class="co"># Output: "Date"</span></span>
-<span id="cb7-122"><a href="#cb7-122"></a></span>
-<span id="cb7-123"><a href="#cb7-123"></a><span class="co"># Date arithmetic</span></span>
-<span id="cb7-124"><a href="#cb7-124"></a>next_week <span class="ot">&lt;-</span> today <span class="sc">+</span> <span class="dv">7</span></span>
-<span id="cb7-125"><a href="#cb7-125"></a></span>
-<span id="cb7-126"><a href="#cb7-126"></a><span class="co"># Creating a POSIXct variable (date-time)</span></span>
-<span id="cb7-127"><a href="#cb7-127"></a>current_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb7-128"><a href="#cb7-128"></a><span class="fu">class</span>(current_time) <span class="co"># Output: "POSIXct"</span></span>
-<span id="cb7-129"><a href="#cb7-129"></a><span class="in">```</span></span>
-<span id="cb7-130"><a href="#cb7-130"></a>:::</span>
-<span id="cb7-131"><a href="#cb7-131"></a></span>
-<span id="cb7-132"><a href="#cb7-132"></a></span>
-<span id="cb7-133"><a href="#cb7-133"></a></span>
-<span id="cb7-134"><a href="#cb7-134"></a>In this post we learned about different R data types and what kind of data do they hold. Data type is very important concept in programming and can not be ignored. We have explained about each data type with example in this article.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>©2024 <a href="../../posts/dataTypes/index.html">Datika</a></p>
+</div>   
     <div class="nav-footer-center">
-
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../faq.html">
+<p>FAQ</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../feedback.html">
+<p>Feedback</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../terms.html">
+<p>Terms</p>
+</a>
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

@@ -199,6 +199,10 @@ cookieconsent.run({
     <a class="nav-link" href="../../photos.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lugoga/kitaa"> <i class="bi bi-github" role="img">
 </i> 
@@ -251,7 +255,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Visualizing data with grammar of graphics</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <h1 class="title">Visualizing data with grammar of graphics</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">visualization</div>
                 <div class="quarto-category">code</div>
@@ -260,16 +264,25 @@ cookieconsent.run({
                   </div>
   </div>
     
-  
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://semba.netlify.app">Masumbuko Semba</a> <a href="https://orcid.org/0000-0002-5002-9747" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://semba.netlify.app/">
+              Nelson Mandela African Institution of Science and Technology
+              </a>
+            </p>
+        </div>
+    </div>
+
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Masumbuko Semba </p>
-            </div>
-    </div>
-      
+        
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
@@ -304,6 +317,7 @@ cookieconsent.run({
   <li><a href="#faceting-ggplot-graphs" id="toc-faceting-ggplot-graphs" class="nav-link" data-scroll-target="#faceting-ggplot-graphs">Faceting ggplot graphs</a></li>
   <li><a href="#exporting-a-ggplot-plots" id="toc-exporting-a-ggplot-plots" class="nav-link" data-scroll-target="#exporting-a-ggplot-plots">Exporting a ggplot plots</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -317,7 +331,7 @@ cookieconsent.run({
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>The ability to create visualizations—graphical representations of data is an important step to convey results—information and findings to others. Visualizations make it much easier to spot aberrations in data and explain our findings to others. However, we should not reserve data visualizations exclusively for those we share the information with, but rather a practice that help to understand data quickly and particularly during the data exploratory analysis stage.</p>
-<p>R has many systems for visualization and creating plots, some of which are—base R graphics, <strong>lattice</strong> and <strong>ggplot2</strong>, but we focus on the use of <strong>ggplot2</strong>. <strong>ggplot2</strong> is the most popular data visualization package in the R community. It was created by Hadley Wickham in 2005. It was implemented based on Leland Wilkinson’s Grammar of Graphics — a general scheme for data visualization which breaks up graphs into semantic components such as scales and layers <span class="citation" data-cites="scales">(<a href="#ref-scales" role="doc-biblioref">Wickham, Pedersen, and Seidel 2023</a>)</span>. While using ggplot2, you provide the data, call specific function, map your desired variables to aesthetics, define graphical arguments, rest it will take care!.</p>
+<p>R has many systems for visualization and creating plots, some of which are—base R graphics, <strong>lattice</strong> and <strong>ggplot2</strong>, but we focus on the use of <strong>ggplot2</strong> <span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">Wickham, 2016</a>)</span>. <strong>ggplot2</strong> is the most popular data visualization package in the R community. It was created by Hadley Wickham in 2005. It was implemented based on Leland Wilkinson’s Grammar of Graphics — a general scheme for data visualization which breaks up graphs into semantic components such as scales and layers <span class="citation" data-cites="scales">(<a href="#ref-scales" role="doc-biblioref">Wickham et al., 2023</a>)</span>. While using ggplot2, you provide the data, call specific function, map your desired variables to aesthetics, define graphical arguments, rest it will take care!.</p>
 <p><strong>ggplot2</strong> is designed to build graphs layer by layer, where each layer is a building block for your graph. Making graphs in layers is useful because we can think of building up our graphs in separate parts: the data comes first, then the x-axis and y-axis, and finally other components like text labels and graph shapes. When something goes wrong and your <strong>ggplot2</strong> code returns an error, you can learn about what’s happening by removing one layer at a time and running it again until the code works properly. Once you know which line is causing the problem, you can focus on fixing it.</p>
 <p>We’ll use the <strong>ggplot2</strong> package, but the function we use to initialize a graph will be <code>ggplot</code>, which works best for data in tidy format (i.e., a column for every variable, and a row for every observation). Graphics with <code>ggplot</code> are built step-by-step, adding new elements as layers with a plus sign (<code>+</code>) between layers (note: this is different from the pipe operator, <code>%&gt;%</code>. Adding layers in this fashion allows for extensive flexibility and customization of plots. In this chapter, our objectives are;</p>
 <ul>
@@ -334,12 +348,12 @@ cookieconsent.run({
 </section>
 <section id="load-the-packages" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-packages">Load the packages</h2>
-<p>The <code>ggplot2</code> package is part of the <code>tidyverse</code> <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>. <strong>tidyverse</strong> encapsulates the ‘ggplot2’ along with other packages for data wrangling and data discoveries. so we don’t need to load it separately. Load the <code>tidyverse</code> and <code>readxl</code> packages in the top-most code chunk of your <code>.Rmd file</code>.</p>
+<p>The <code>ggplot2</code> package is part of the <code>tidyverse</code> <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham and Wickham, 2017</a>)</span>. <strong>tidyverse</strong> encapsulates the ‘ggplot2’ along with other packages for data wrangling and data discoveries. so we don’t need to load it separately. Load the <code>tidyverse</code> and <code>readxl</code> packages in the top-most code chunk of your <code>.Rmd file</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In this chapter we will use two datasets. The first dataset is the <code>octopus.csv</code>, a file containing length and weight of octopus fishery gathered between 2018 and 2020 in the coastal waters of Tanzania. The dataset was obtained from the Tanzania Fisheries Research Institute. The second dataset is the <code>landings_wio.csv</code>, which contain historical catch landings from 1950 to 2015 of ten countries in the Western Indian Ocean Region. The dataset was downloaded from <strong>rfisheries</strong> package and arranged in structure that make plotting easy. The following script imports the <code>landings_wio_country.csv</code> dataset and displays its first ten rows.</p>
+<p>In this chapter we will use two datasets. The first dataset is the <code>octopus.csv</code>, a file containing length and weight of octopus fishery gathered between 2018 and 2020 in the coastal waters of Tanzania. The dataset was obtained from the Tanzania Fisheries Research Institute. The second dataset is the <code>landings_wio.csv</code>, which contain historical catch landings from 1950 to 2015 of ten countries in the Western Indian Ocean Region. The dataset was downloaded from <strong>rfisheries</strong> package and arranged in structure that make plotting easy <span class="citation" data-cites="rfisheries">(<a href="#ref-rfisheries" role="doc-biblioref">Ram et al., 2016</a>)</span>. The following script imports the <code>landings_wio_country.csv</code> dataset and displays its first ten rows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>landings <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"../data/tidy/landings_wio_country.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
@@ -416,7 +430,7 @@ Table&nbsp;1: Annual landings in the WIO region
 </figcaption>
 <div aria-describedby="tbl-wio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-39ed433c{}.cl-39e68f74{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-39e933a0{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-39e933aa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-39e9449e{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e9449f{width:0.965in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e944a0{width:0.71in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e944a8{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e944a9{width:0.965in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e944aa{width:0.71in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e944b2{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e944b3{width:0.965in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-39e944b4{width:0.71in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-39ed433c"><thead><tr style="overflow-wrap:break-word;"><th class="cl-39e9449e"><p class="cl-39e933a0"><span class="cl-39e68f74">year</span></p></th><th class="cl-39e9449f"><p class="cl-39e933a0"><span class="cl-39e68f74">catch</span></p></th><th class="cl-39e944a0"><p class="cl-39e933aa"><span class="cl-39e68f74">region</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-39e944a8"><p class="cl-39e933a0"><span class="cl-39e68f74">1,950</span></p></td><td class="cl-39e944a9"><p class="cl-39e933a0"><span class="cl-39e68f74">572,743</span></p></td><td class="cl-39e944aa"><p class="cl-39e933aa"><span class="cl-39e68f74">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-39e944a8"><p class="cl-39e933a0"><span class="cl-39e68f74">1,951</span></p></td><td class="cl-39e944a9"><p class="cl-39e933a0"><span class="cl-39e68f74">643,877</span></p></td><td class="cl-39e944aa"><p class="cl-39e933aa"><span class="cl-39e68f74">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-39e944a8"><p class="cl-39e933a0"><span class="cl-39e68f74">1,952</span></p></td><td class="cl-39e944a9"><p class="cl-39e933a0"><span class="cl-39e68f74">623,655</span></p></td><td class="cl-39e944aa"><p class="cl-39e933aa"><span class="cl-39e68f74">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-39e944a8"><p class="cl-39e933a0"><span class="cl-39e68f74">2,013</span></p></td><td class="cl-39e944a9"><p class="cl-39e933a0"><span class="cl-39e68f74">1,780,935</span></p></td><td class="cl-39e944aa"><p class="cl-39e933aa"><span class="cl-39e68f74">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-39e944a8"><p class="cl-39e933a0"><span class="cl-39e68f74">2,014</span></p></td><td class="cl-39e944a9"><p class="cl-39e933a0"><span class="cl-39e68f74">1,809,121</span></p></td><td class="cl-39e944aa"><p class="cl-39e933aa"><span class="cl-39e68f74">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-39e944b2"><p class="cl-39e933a0"><span class="cl-39e68f74">2,015</span></p></td><td class="cl-39e944b3"><p class="cl-39e933a0"><span class="cl-39e68f74">1,810,705</span></p></td><td class="cl-39e944b4"><p class="cl-39e933aa"><span class="cl-39e68f74">WIO</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-52f970d8{}.cl-52f2b7de{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-52f5438c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-52f54396{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-52f55674{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f5567e{width:0.965in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f5567f{width:0.71in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f55688{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f55689{width:0.965in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f55692{width:0.71in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f55693{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f55694{width:0.965in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52f5569c{width:0.71in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-52f970d8"><thead><tr style="overflow-wrap:break-word;"><th class="cl-52f55674"><p class="cl-52f5438c"><span class="cl-52f2b7de">year</span></p></th><th class="cl-52f5567e"><p class="cl-52f5438c"><span class="cl-52f2b7de">catch</span></p></th><th class="cl-52f5567f"><p class="cl-52f54396"><span class="cl-52f2b7de">region</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-52f55688"><p class="cl-52f5438c"><span class="cl-52f2b7de">1,950</span></p></td><td class="cl-52f55689"><p class="cl-52f5438c"><span class="cl-52f2b7de">572,743</span></p></td><td class="cl-52f55692"><p class="cl-52f54396"><span class="cl-52f2b7de">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-52f55688"><p class="cl-52f5438c"><span class="cl-52f2b7de">1,951</span></p></td><td class="cl-52f55689"><p class="cl-52f5438c"><span class="cl-52f2b7de">643,877</span></p></td><td class="cl-52f55692"><p class="cl-52f54396"><span class="cl-52f2b7de">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-52f55688"><p class="cl-52f5438c"><span class="cl-52f2b7de">1,952</span></p></td><td class="cl-52f55689"><p class="cl-52f5438c"><span class="cl-52f2b7de">623,655</span></p></td><td class="cl-52f55692"><p class="cl-52f54396"><span class="cl-52f2b7de">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-52f55688"><p class="cl-52f5438c"><span class="cl-52f2b7de">2,013</span></p></td><td class="cl-52f55689"><p class="cl-52f5438c"><span class="cl-52f2b7de">1,780,935</span></p></td><td class="cl-52f55692"><p class="cl-52f54396"><span class="cl-52f2b7de">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-52f55688"><p class="cl-52f5438c"><span class="cl-52f2b7de">2,014</span></p></td><td class="cl-52f55689"><p class="cl-52f5438c"><span class="cl-52f2b7de">1,809,121</span></p></td><td class="cl-52f55692"><p class="cl-52f54396"><span class="cl-52f2b7de">WIO</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-52f55693"><p class="cl-52f5438c"><span class="cl-52f2b7de">2,015</span></p></td><td class="cl-52f55694"><p class="cl-52f5438c"><span class="cl-52f2b7de">1,810,705</span></p></td><td class="cl-52f5569c"><p class="cl-52f54396"><span class="cl-52f2b7de">WIO</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </figure>
@@ -884,20 +898,27 @@ Tip
 <p>Notice that a .jpg image of that name and size is now stored in the <code>plots\</code> folder within your working directory. You can change the type of exported image, too (e.g.&nbsp;pdf, tiff, eps, png, mmp, svg).</p>
 </div>
 </div>
+</section>
+</section>
+<section id="references" class="level2">
 
 
-<!-- -->
 
 
 </section>
-</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-tidyverse" class="csl-entry" role="listitem">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-rfisheries" class="csl-entry" role="listitem">
+Ram, K., Boettiger, C., Dyck, A., 2016. <a href="https://CRAN.R-project.org/package=rfisheries">Rfisheries: ’Programmatic interface to the ’openfisheries.org’ API’</a>.
+</div>
+<div id="ref-ggplot" class="csl-entry" role="listitem">
+Wickham, H., 2016. <a href="https://ggplot2.tidyverse.org">ggplot2: Elegant graphics for data analysis</a>. Springer-Verlag New York.
 </div>
 <div id="ref-scales" class="csl-entry" role="listitem">
-Wickham, Hadley, Thomas Lin Pedersen, and Dana Seidel. 2023. <em>Scales: Scale Functions for Visualization</em>. <a href="https://CRAN.R-project.org/package=scales">https://CRAN.R-project.org/package=scales</a>.
+Wickham, H., Pedersen, T.L., Seidel, D., 2023. <a href="https://CRAN.R-project.org/package=scales">Scales: Scale functions for visualization</a>.
+</div>
+<div id="ref-tidyverse" class="csl-entry" role="listitem">
+Wickham, H., Wickham, M.H., 2017. <a href="https://CRAN.R-project.org/package=tidyverse">Tidyverse: Easily install and load the ’tidyverse’</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -979,57 +1000,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1339,549 +1309,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb33" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">---</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="an">title:</span><span class="co"> "Visualizing data with grammar of graphics"</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a><span class="an">date:</span><span class="co"> "2024-03-25"</span></span>
-<span id="cb33-5"><a href="#cb33-5"></a><span class="an">categories:</span><span class="co"> [visualization, code, analysis]</span></span>
-<span id="cb33-6"><a href="#cb33-6"></a><span class="co"># image: "../screenshots/Rproject.png"</span></span>
-<span id="cb33-7"><a href="#cb33-7"></a><span class="an">execute:</span><span class="co"> </span></span>
-<span id="cb33-8"><a href="#cb33-8"></a><span class="co">  warning: false</span></span>
-<span id="cb33-9"><a href="#cb33-9"></a><span class="co">  message: false</span></span>
-<span id="cb33-10"><a href="#cb33-10"></a><span class="co">  comment: ""</span></span>
-<span id="cb33-11"><a href="#cb33-11"></a><span class="co">  </span></span>
-<span id="cb33-12"><a href="#cb33-12"></a><span class="co">---</span></span>
-<span id="cb33-13"><a href="#cb33-13"></a></span>
-<span id="cb33-14"><a href="#cb33-14"></a></span>
-<span id="cb33-17"><a href="#cb33-17"></a><span class="in">```{r}</span></span>
-<span id="cb33-18"><a href="#cb33-18"></a><span class="co">#| message: false</span></span>
-<span id="cb33-19"><a href="#cb33-19"></a><span class="co">#| warning: false</span></span>
-<span id="cb33-20"><a href="#cb33-20"></a><span class="co">#| echo: false</span></span>
-<span id="cb33-21"><a href="#cb33-21"></a></span>
-<span id="cb33-22"><a href="#cb33-22"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb33-23"><a href="#cb33-23"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb33-24"><a href="#cb33-24"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb33-25"><a href="#cb33-25"></a><span class="in">```</span></span>
-<span id="cb33-26"><a href="#cb33-26"></a></span>
-<span id="cb33-27"><a href="#cb33-27"></a></span>
-<span id="cb33-28"><a href="#cb33-28"></a><span class="fu">## Introduction</span></span>
-<span id="cb33-29"><a href="#cb33-29"></a></span>
-<span id="cb33-30"><a href="#cb33-30"></a>The ability to create visualizations---graphical representations of data is an important step to convey results---information and findings to others. Visualizations make it much easier to spot aberrations in data and explain our findings to others. However, we should not reserve data visualizations exclusively for those we share the information with, but rather a practice that help to understand data quickly and particularly during the data exploratory analysis stage.</span>
-<span id="cb33-31"><a href="#cb33-31"></a></span>
-<span id="cb33-32"><a href="#cb33-32"></a></span>
-<span id="cb33-33"><a href="#cb33-33"></a>R has many systems for visualization and creating plots, some of which are---base R graphics, **lattice** and **ggplot2**, but we focus on the use of **ggplot2**. **ggplot2** is the most popular data visualization package in the R community. It was created by Hadley Wickham in 2005. It was implemented based on Leland Wilkinson’s Grammar of Graphics — a general scheme for data visualization which breaks up graphs into semantic components such as scales and layers <span class="co">[</span><span class="ot">@scales</span><span class="co">]</span>. While using ggplot2, you provide the data, call specific function, map your desired variables to aesthetics, define graphical arguments, rest it will take care!. </span>
-<span id="cb33-34"><a href="#cb33-34"></a></span>
-<span id="cb33-35"><a href="#cb33-35"></a>**ggplot2** is designed to build graphs layer by layer, where each layer is a building block for your graph. Making graphs in layers is useful because we can think of building up our graphs in separate parts: the data comes first, then the x-axis and y-axis, and finally other components like text labels and graph shapes. When something goes wrong and your **ggplot2** code returns an error, you can learn about what's happening by removing one layer at a time and running it again until the code works properly. Once you know which line is causing the problem, you can focus on fixing it. </span>
-<span id="cb33-36"><a href="#cb33-36"></a></span>
-<span id="cb33-37"><a href="#cb33-37"></a>We'll use the **ggplot2** package, but the function we use to initialize a graph will be <span class="in">`ggplot`</span>, which works best for data in tidy format (i.e., a column for every variable, and a row for every observation). Graphics with <span class="in">`ggplot`</span> are built step-by-step, adding new elements as layers with a plus sign (<span class="in">`+`</span>) between layers (note: this is different from the pipe operator, <span class="in">`%&gt;%`</span>. Adding layers in this fashion allows for extensive flexibility and customization of plots. In this chapter, our objectives are;</span>
-<span id="cb33-38"><a href="#cb33-38"></a></span>
-<span id="cb33-39"><a href="#cb33-39"></a><span class="ss">- </span>Read in external data (Excel files, CSVs) with <span class="in">`readr`</span> and <span class="in">`readxl`</span></span>
-<span id="cb33-40"><a href="#cb33-40"></a><span class="ss">- </span>Initial data exploration</span>
-<span id="cb33-41"><a href="#cb33-41"></a><span class="ss">- </span>Build several common types of graphs (scatterplot, column, line) in ggplot2</span>
-<span id="cb33-42"><a href="#cb33-42"></a><span class="ss">- </span>Customize gg-graph aesthetics (color, style, themes, etc.)</span>
-<span id="cb33-43"><a href="#cb33-43"></a><span class="ss">- </span>Update axis labels and titles</span>
-<span id="cb33-44"><a href="#cb33-44"></a><span class="ss">- </span>Combine compatible graph types (geoms)</span>
-<span id="cb33-45"><a href="#cb33-45"></a><span class="ss">- </span>Build multiseries graphs</span>
-<span id="cb33-46"><a href="#cb33-46"></a><span class="ss">- </span>Split up data into faceted graphs</span>
-<span id="cb33-47"><a href="#cb33-47"></a><span class="ss">- </span>Export figures with <span class="in">`ggsave()`</span></span>
-<span id="cb33-48"><a href="#cb33-48"></a></span>
-<span id="cb33-49"><a href="#cb33-49"></a></span>
-<span id="cb33-50"><a href="#cb33-50"></a></span>
-<span id="cb33-51"><a href="#cb33-51"></a><span class="fu">## Load the packages</span></span>
-<span id="cb33-52"><a href="#cb33-52"></a></span>
-<span id="cb33-53"><a href="#cb33-53"></a>The <span class="in">`ggplot2`</span> package is part of the <span class="in">`tidyverse`</span> <span class="co">[</span><span class="ot">@tidyverse</span><span class="co">]</span>. **tidyverse** encapsulates the ‘ggplot2’ along with other packages for data wrangling and data discoveries. so we don't need to load it separately. Load the <span class="in">`tidyverse`</span> and <span class="in">`readxl`</span> packages in the top-most code chunk of your <span class="in">`.Rmd file`</span>.</span>
-<span id="cb33-54"><a href="#cb33-54"></a></span>
-<span id="cb33-57"><a href="#cb33-57"></a><span class="in">```{r}</span></span>
-<span id="cb33-58"><a href="#cb33-58"></a><span class="co">#| message: false</span></span>
-<span id="cb33-59"><a href="#cb33-59"></a><span class="co">#| warning: false</span></span>
-<span id="cb33-60"><a href="#cb33-60"></a></span>
-<span id="cb33-61"><a href="#cb33-61"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb33-62"><a href="#cb33-62"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb33-63"><a href="#cb33-63"></a><span class="in">```</span></span>
-<span id="cb33-64"><a href="#cb33-64"></a></span>
-<span id="cb33-65"><a href="#cb33-65"></a></span>
-<span id="cb33-66"><a href="#cb33-66"></a>In this chapter we will use two datasets. The first dataset is the <span class="in">`octopus.csv`</span>, a file containing length and weight of octopus fishery gathered between 2018 and 2020 in the coastal waters of Tanzania. The dataset was obtained from the Tanzania Fisheries Research Institute. The second dataset is the <span class="in">`landings_wio.csv`</span>, which contain historical catch landings from 1950 to 2015 of ten countries in the Western Indian Ocean Region. The dataset was downloaded from **rfisheries** package and arranged in structure that make plotting easy. The following script imports the <span class="in">`landings_wio_country.csv`</span> dataset and displays its first ten rows.</span>
-<span id="cb33-67"><a href="#cb33-67"></a></span>
-<span id="cb33-70"><a href="#cb33-70"></a><span class="in">```{r}</span></span>
-<span id="cb33-71"><a href="#cb33-71"></a>landings <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"../data/tidy/landings_wio_country.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
-<span id="cb33-72"><a href="#cb33-72"></a></span>
-<span id="cb33-73"><a href="#cb33-73"></a>landings <span class="sc">|&gt;</span> FSA<span class="sc">::</span><span class="fu">headtail</span>()</span>
-<span id="cb33-74"><a href="#cb33-74"></a><span class="in">```</span></span>
-<span id="cb33-75"><a href="#cb33-75"></a></span>
-<span id="cb33-76"><a href="#cb33-76"></a>We can also check the internal structure of the dataset with the <span class="in">`glimpse`</span> function;</span>
-<span id="cb33-79"><a href="#cb33-79"></a><span class="in">```{r}</span></span>
-<span id="cb33-80"><a href="#cb33-80"></a>landings <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span>
-<span id="cb33-81"><a href="#cb33-81"></a><span class="in">```</span></span>
-<span id="cb33-82"><a href="#cb33-82"></a></span>
-<span id="cb33-83"><a href="#cb33-83"></a></span>
-<span id="cb33-84"><a href="#cb33-84"></a><span class="fu">### The ggplot2 basics {#sec-ggplotbasics}</span></span>
-<span id="cb33-85"><a href="#cb33-85"></a></span>
-<span id="cb33-86"><a href="#cb33-86"></a>We will use several functions from the **ggplot2** package. These functions work together to yield the desired graphs. Every **ggplot2** graph starts with the function <span class="in">`ggplot()`</span> . It basically creates the coordinate system. Over this the graphical layers are added. The first argument of this function is the input <span class="in">`data`</span> for the intended graph. Then comes the <span class="in">`geom`</span> functions which add the layers of plotting on the coordinate system according to its geom i.e. <span class="in">`geom_point`</span>, <span class="in">`geom_line`</span>, <span class="in">`geom_bar`</span> etc. </span>
-<span id="cb33-87"><a href="#cb33-87"></a></span>
-<span id="cb33-88"><a href="#cb33-88"></a>Every geom function needs a mapping argument. This defines how the variables in the dataset are mapped to visual properties. The aesthetic function <span class="in">`aes()`</span> is assigned to the mapping argument. The main arguments of the <span class="in">`aes()`</span> function are axes augments-x, y and differentiating arguments like color, size, fill, alpha. The differentiating arguments become common featured arguments when they are put outside of the <span class="in">`aes()`</span> function. <span class="in">`ggtitle()`</span>, <span class="in">`xlab()`</span>, <span class="in">`ylab()`</span>, <span class="in">`theme()`</span> these functions are used for labelling and thematic attributes. </span>
-<span id="cb33-89"><a href="#cb33-89"></a></span>
-<span id="cb33-90"><a href="#cb33-90"></a>::: callout-note</span>
-<span id="cb33-91"><a href="#cb33-91"></a>You can find detail of these functions in the help tab by executing the command — ?function_name like <span class="in">`?geom_point`</span></span>
-<span id="cb33-92"><a href="#cb33-92"></a>:::</span>
-<span id="cb33-93"><a href="#cb33-93"></a></span>
-<span id="cb33-94"><a href="#cb33-94"></a>To create a bare-bones ggplot graph, we need to tell R three basic things:</span>
-<span id="cb33-95"><a href="#cb33-95"></a></span>
-<span id="cb33-96"><a href="#cb33-96"></a><span class="ss">1.  </span>We're using <span class="in">`ggplot2::ggplot()`</span></span>
-<span id="cb33-97"><a href="#cb33-97"></a><span class="ss">2.  </span>Data we're using &amp; variables we're plotting (i.e., what is x and/or y?)</span>
-<span id="cb33-98"><a href="#cb33-98"></a><span class="ss">3.  </span>What type of graph we're making (the type of *geom*)</span>
-<span id="cb33-99"><a href="#cb33-99"></a></span>
-<span id="cb33-100"><a href="#cb33-100"></a>Generally, that structure will look like this:</span>
-<span id="cb33-101"><a href="#cb33-101"></a></span>
-<span id="cb33-102"><a href="#cb33-102"></a><span class="in">``` r</span></span>
-<span id="cb33-103"><a href="#cb33-103"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_name, </span>
-<span id="cb33-104"><a href="#cb33-104"></a><span class="fu">aes</span>(<span class="at">x =</span> x_var_name, <span class="at">y =</span> y_var_name)) <span class="sc">+</span></span>
-<span id="cb33-105"><a href="#cb33-105"></a>  <span class="fu">geom_type</span>()</span>
-<span id="cb33-106"><a href="#cb33-106"></a><span class="in">```</span></span>
-<span id="cb33-107"><a href="#cb33-107"></a></span>
-<span id="cb33-108"><a href="#cb33-108"></a>Breaking that down:</span>
-<span id="cb33-109"><a href="#cb33-109"></a></span>
-<span id="cb33-110"><a href="#cb33-110"></a><span class="ss">-   </span>First, tell R you're using <span class="in">`ggplot()`</span></span>
-<span id="cb33-111"><a href="#cb33-111"></a><span class="ss">-   </span>Then, tell it the object name where variables exist (<span class="in">`data = df_name`</span>)</span>
-<span id="cb33-112"><a href="#cb33-112"></a><span class="ss">-   </span>Next, tell it the aesthetics <span class="in">`aes()`</span> to specify which variables you want to plot</span>
-<span id="cb33-113"><a href="#cb33-113"></a><span class="ss">-   </span>Then add a layer for the type of geom (graph type) with <span class="in">`geom_*()`</span> - for example, <span class="in">`geom_point()`</span> is a scatterplot, <span class="in">`geom_line()`</span> is a line graph, <span class="in">`geom_col()`</span> is a column graph, etc.</span>
-<span id="cb33-114"><a href="#cb33-114"></a></span>
-<span id="cb33-115"><a href="#cb33-115"></a>Let's illustrate these concept by creating  a line graph of fish catches in the WIO region since 1950s. Since the <span class="in">`landings`</span> dataset that we just imported has records for ten countries, we need to summarize and get the total landing in the region by years. We can achieve this by a combination of <span class="in">`group_by`</span> and <span class="in">`summarize`</span> function as the chunk below highlight</span>
-<span id="cb33-116"><a href="#cb33-116"></a></span>
-<span id="cb33-117"><a href="#cb33-117"></a></span>
-<span id="cb33-120"><a href="#cb33-120"></a><span class="in">```{r}</span></span>
-<span id="cb33-121"><a href="#cb33-121"></a>landing.wio <span class="ot">=</span> landings <span class="sc">%&gt;%</span> </span>
-<span id="cb33-122"><a href="#cb33-122"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-123"><a href="#cb33-123"></a>  <span class="fu">summarise</span>(<span class="at">catch =</span> <span class="fu">sum</span>(catch, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-124"><a href="#cb33-124"></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="st">"WIO"</span>)</span>
-<span id="cb33-125"><a href="#cb33-125"></a></span>
-<span id="cb33-126"><a href="#cb33-126"></a><span class="in">```</span></span>
-<span id="cb33-127"><a href="#cb33-127"></a></span>
-<span id="cb33-128"><a href="#cb33-128"></a>@tbl-wio display the total catch of landing in the WIO region for early 1950s and late 2010s.</span>
-<span id="cb33-129"><a href="#cb33-129"></a></span>
-<span id="cb33-132"><a href="#cb33-132"></a><span class="in">```{r}</span></span>
-<span id="cb33-133"><a href="#cb33-133"></a><span class="co">#| label: tbl-wio</span></span>
-<span id="cb33-134"><a href="#cb33-134"></a><span class="co">#| tbl-cap: Annual landings in the WIO region</span></span>
-<span id="cb33-135"><a href="#cb33-135"></a><span class="co">#| echo: false</span></span>
-<span id="cb33-136"><a href="#cb33-136"></a><span class="co">#| warning: false</span></span>
-<span id="cb33-137"><a href="#cb33-137"></a><span class="co">#| message: false</span></span>
-<span id="cb33-138"><a href="#cb33-138"></a><span class="co">#| </span></span>
-<span id="cb33-139"><a href="#cb33-139"></a>landing.wio <span class="sc">%&gt;%</span> </span>
-<span id="cb33-140"><a href="#cb33-140"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-141"><a href="#cb33-141"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb33-142"><a href="#cb33-142"></a>  flextable<span class="sc">::</span><span class="fu">autofit</span>()</span>
-<span id="cb33-143"><a href="#cb33-143"></a><span class="in">```</span></span>
-<span id="cb33-144"><a href="#cb33-144"></a></span>
-<span id="cb33-145"><a href="#cb33-145"></a></span>
-<span id="cb33-146"><a href="#cb33-146"></a>A sample annual landing presented in @tbl-wio can visually presented in @fig-wio, which shows the annual catch landed in the ten countries of the Western Indian Ocean Region. </span>
-<span id="cb33-147"><a href="#cb33-147"></a></span>
-<span id="cb33-150"><a href="#cb33-150"></a><span class="in">```{r}</span></span>
-<span id="cb33-151"><a href="#cb33-151"></a><span class="co">#| label: fig-wio</span></span>
-<span id="cb33-152"><a href="#cb33-152"></a><span class="co">#| fig-cap: Annual landings in the WIO region</span></span>
-<span id="cb33-153"><a href="#cb33-153"></a><span class="co">#| echo: true</span></span>
-<span id="cb33-154"><a href="#cb33-154"></a><span class="co">#| warning: false</span></span>
-<span id="cb33-155"><a href="#cb33-155"></a><span class="co">#| message: false</span></span>
-<span id="cb33-156"><a href="#cb33-156"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-157"><a href="#cb33-157"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-158"><a href="#cb33-158"></a><span class="co">#| fig-height: 2.5</span></span>
-<span id="cb33-159"><a href="#cb33-159"></a><span class="co">#| </span></span>
-<span id="cb33-160"><a href="#cb33-160"></a><span class="fu">ggplot</span>(<span class="at">data =</span> landing.wio, </span>
-<span id="cb33-161"><a href="#cb33-161"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch)) <span class="sc">+</span></span>
-<span id="cb33-162"><a href="#cb33-162"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb33-163"><a href="#cb33-163"></a>  <span class="fu">coord_cartesian</span>()<span class="sc">+</span></span>
-<span id="cb33-164"><a href="#cb33-164"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Years"</span>, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1955</span>,<span class="dv">2016</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
-<span id="cb33-165"><a href="#cb33-165"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Landed catch (MT)"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>))<span class="sc">+</span></span>
-<span id="cb33-166"><a href="#cb33-166"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Years"</span>, </span>
-<span id="cb33-167"><a href="#cb33-167"></a>       <span class="at">y =</span> <span class="st">"Landed Catches (MT)"</span>, </span>
-<span id="cb33-168"><a href="#cb33-168"></a>       <span class="at">title =</span> <span class="st">"Capture fisheries trend in the WIO Region"</span>, </span>
-<span id="cb33-169"><a href="#cb33-169"></a>       <span class="at">subtitle =</span> <span class="st">"The Landed catch today is far lower than 1970s"</span>, </span>
-<span id="cb33-170"><a href="#cb33-170"></a>       <span class="at">caption =</span> <span class="st">"Coursety: FAO@2022"</span>)<span class="sc">+</span></span>
-<span id="cb33-171"><a href="#cb33-171"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb33-172"><a href="#cb33-172"></a><span class="in">```</span></span>
-<span id="cb33-173"><a href="#cb33-173"></a></span>
-<span id="cb33-174"><a href="#cb33-174"></a>Let's explore in details the key elements used to make @fig-wio: </span>
-<span id="cb33-175"><a href="#cb33-175"></a></span>
-<span id="cb33-176"><a href="#cb33-176"></a><span class="ss">+ </span>**data**: The data that is in tidy form is core for plotting with ggplot2. It must be a data frame (@tbl-wio) for ggplot2 to read and understand. </span>
-<span id="cb33-177"><a href="#cb33-177"></a><span class="ss">+ </span>**aesthetics**: is used to map the <span class="in">`x`</span> and <span class="in">`y`</span> axis for 2--dimensional plot and add the <span class="in">`z`</span> value for 3--dimensionla plots. It is also used to define visual properties like color, size, shapes or height etc, and. For instance in the figure @fig-wio), the position along the <span class="in">`y`</span>-axis is mapped to catch and the <span class="in">`x`</span> - axis is mapped to year values. Other aesthetics---like size, color, shape, and transparency have been left at their default settings.</span>
-<span id="cb33-178"><a href="#cb33-178"></a><span class="ss">+ </span>**geometry**;  a layer which define the type of plot you want to make, whether is <span class="in">`histogram`</span>, <span class="in">`boxplot`</span>, <span class="in">`barplot`</span>, <span class="in">`scatterplot`</span>, <span class="in">`lineplot`</span> etc. </span>
-<span id="cb33-179"><a href="#cb33-179"></a><span class="ss">+ </span>**coordinate system**: used to set a limit for the plot. The cartesian coordinate is the most familiar and common system that is widely used to zoom the plot and does not change the underlying data. </span>
-<span id="cb33-180"><a href="#cb33-180"></a><span class="ss">+ </span>**scales**: scales allows to customize the plot. For instance in @fig-wio) both x and y-axis used continuous data and hence the <span class="in">`scale_x_continuous()`</span> and <span class="in">`scale_y_continuous()`</span> were used to modiy the values of the axis. For color, I simply stick on <span class="in">`scale_colour_discrete()`</span> and customize the legend name.</span>
-<span id="cb33-181"><a href="#cb33-181"></a><span class="ss">+ </span>**labels**: The plot is well labelled and easy to understand. It has title, subtitle, axes and caption for the courtesy of the data. </span>
-<span id="cb33-182"><a href="#cb33-182"></a><span class="ss">+ </span>**theme**: the plot stick on the default <span class="in">`theme_gray`</span> theme, which has a gray background color and white gridlines, a sans serif font family, and a base font size of 11. We can customize all the propoerties in the theme to suit our standard. </span>
-<span id="cb33-183"><a href="#cb33-183"></a></span>
-<span id="cb33-184"><a href="#cb33-184"></a><span class="fu">### Building a plot</span></span>
-<span id="cb33-185"><a href="#cb33-185"></a>Since you now have a clue of the different layers added to create a plot, its time to work around to create a plot with the **ggplot2** package. We use the same `landing.wio` dataset that used to plot @fig-wio. To create a data visualization using **ggplot2** package, we will add `layers` for each of the plot elements described in @sec-ggplotbasics. I will take you through step by step of the key lines needed to make such a plot. First make sure the **ggplot2** or **tidyverse** packages are loaded in your R's session. You can load the package with this code;</span>
-<span id="cb33-186"><a href="#cb33-186"></a></span>
-<span id="cb33-187"><a href="#cb33-187"></a></span>
-<span id="cb33-190"><a href="#cb33-190"></a><span class="in">```{r}</span></span>
-<span id="cb33-191"><a href="#cb33-191"></a><span class="co">#| message: false</span></span>
-<span id="cb33-192"><a href="#cb33-192"></a><span class="co">#| warning: false</span></span>
-<span id="cb33-193"><a href="#cb33-193"></a><span class="co">#| echo: false</span></span>
-<span id="cb33-194"><a href="#cb33-194"></a></span>
-<span id="cb33-195"><a href="#cb33-195"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb33-196"><a href="#cb33-196"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb33-197"><a href="#cb33-197"></a><span class="in">```</span></span>
-<span id="cb33-198"><a href="#cb33-198"></a></span>
-<span id="cb33-199"><a href="#cb33-199"></a>Then, to initialize plotting with **ggplot2**, we must call <span class="in">`ggplot()`</span> function, which tell R that we are going to make plots, not with <span class="in">`plot`</span> of base R but with ggplot2 </span>
-<span id="cb33-200"><a href="#cb33-200"></a></span>
-<span id="cb33-203"><a href="#cb33-203"></a><span class="in">```{r}</span></span>
-<span id="cb33-204"><a href="#cb33-204"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-205"><a href="#cb33-205"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-206"><a href="#cb33-206"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-207"><a href="#cb33-207"></a><span class="co">#| </span></span>
-<span id="cb33-208"><a href="#cb33-208"></a><span class="fu">ggplot</span>()</span>
-<span id="cb33-209"><a href="#cb33-209"></a><span class="in">```</span></span>
-<span id="cb33-210"><a href="#cb33-210"></a></span>
-<span id="cb33-211"><a href="#cb33-211"></a>The plot above is black with grey background. This is because we have not specified the data and aesthetic arguments inside the <span class="in">`ggplot()`</span> function. Let's specify the   data, which in our case is the <span class="in">`landing.wio`</span> and also specify the x-axis with <span class="in">`year`</span> and y-axis with <span class="in">`catch`</span>. </span>
-<span id="cb33-212"><a href="#cb33-212"></a></span>
-<span id="cb33-215"><a href="#cb33-215"></a><span class="in">```{r}</span></span>
-<span id="cb33-216"><a href="#cb33-216"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-217"><a href="#cb33-217"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-218"><a href="#cb33-218"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-219"><a href="#cb33-219"></a><span class="fu">ggplot</span>(<span class="at">data =</span> landing.wio, </span>
-<span id="cb33-220"><a href="#cb33-220"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch)) </span>
-<span id="cb33-221"><a href="#cb33-221"></a><span class="in">```</span></span>
-<span id="cb33-222"><a href="#cb33-222"></a></span>
-<span id="cb33-223"><a href="#cb33-223"></a>Now the plot has gridlines and axis with values and labels---x-axis show the value of years and the y-axis show the value of catches. However, there is no graphics. This is because we have not added any <span class="in">`geom`</span> yet. Therefore, since we have already specified the data and the aesthetic values, now we can add the geom where we map the aesthetics to columns in the dataset. Let's add the <span class="in">`geom_line()`</span>.</span>
-<span id="cb33-224"><a href="#cb33-224"></a></span>
-<span id="cb33-227"><a href="#cb33-227"></a><span class="in">```{r}</span></span>
-<span id="cb33-228"><a href="#cb33-228"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-229"><a href="#cb33-229"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-230"><a href="#cb33-230"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-231"><a href="#cb33-231"></a><span class="fu">ggplot</span>(<span class="at">data =</span> landing.wio, </span>
-<span id="cb33-232"><a href="#cb33-232"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch)) <span class="sc">+</span></span>
-<span id="cb33-233"><a href="#cb33-233"></a>  <span class="fu">geom_line</span>()</span>
-<span id="cb33-234"><a href="#cb33-234"></a><span class="in">```</span></span>
-<span id="cb33-235"><a href="#cb33-235"></a></span>
-<span id="cb33-236"><a href="#cb33-236"></a></span>
-<span id="cb33-237"><a href="#cb33-237"></a>We're going to be doing a lot of plot variations with those same variables. Let's store the first line as object <span class="in">`gg.landing`</span> so that we don't need to retype it each time:</span>
-<span id="cb33-238"><a href="#cb33-238"></a></span>
-<span id="cb33-239"><a href="#cb33-239"></a></span>
-<span id="cb33-242"><a href="#cb33-242"></a><span class="in">```{r}</span></span>
-<span id="cb33-243"><a href="#cb33-243"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-244"><a href="#cb33-244"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-245"><a href="#cb33-245"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-246"><a href="#cb33-246"></a>gg.landing <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> landing.wio, </span>
-<span id="cb33-247"><a href="#cb33-247"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch)) </span>
-<span id="cb33-248"><a href="#cb33-248"></a></span>
-<span id="cb33-249"><a href="#cb33-249"></a>gg.landing</span>
-<span id="cb33-250"><a href="#cb33-250"></a><span class="in">```</span></span>
-<span id="cb33-251"><a href="#cb33-251"></a></span>
-<span id="cb33-252"><a href="#cb33-252"></a></span>
-<span id="cb33-253"><a href="#cb33-253"></a>We notice that a line plot showing the trend of catch over time. But suppose we are not interested with the line but rather an area plot, then you simply change the geom from <span class="in">`geom_line`</span> to <span class="in">`geom_area`</span></span>
-<span id="cb33-254"><a href="#cb33-254"></a></span>
-<span id="cb33-257"><a href="#cb33-257"></a><span class="in">```{r}</span></span>
-<span id="cb33-258"><a href="#cb33-258"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-259"><a href="#cb33-259"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-260"><a href="#cb33-260"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-261"><a href="#cb33-261"></a>gg.landing <span class="sc">+</span></span>
-<span id="cb33-262"><a href="#cb33-262"></a>  <span class="fu">geom_area</span>()</span>
-<span id="cb33-263"><a href="#cb33-263"></a><span class="in">```</span></span>
-<span id="cb33-264"><a href="#cb33-264"></a></span>
-<span id="cb33-265"><a href="#cb33-265"></a></span>
-<span id="cb33-266"><a href="#cb33-266"></a>Or, we could add the point just by updating the <span class="in">`geom_*`</span>:</span>
-<span id="cb33-267"><a href="#cb33-267"></a></span>
-<span id="cb33-270"><a href="#cb33-270"></a><span class="in">```{r}</span></span>
-<span id="cb33-271"><a href="#cb33-271"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-272"><a href="#cb33-272"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-273"><a href="#cb33-273"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-274"><a href="#cb33-274"></a>gg.landing<span class="sc">+</span></span>
-<span id="cb33-275"><a href="#cb33-275"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb33-276"><a href="#cb33-276"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb33-277"><a href="#cb33-277"></a><span class="in">```</span></span>
-<span id="cb33-278"><a href="#cb33-278"></a></span>
-<span id="cb33-279"><a href="#cb33-279"></a>We could even do that for a column graph:</span>
-<span id="cb33-280"><a href="#cb33-280"></a></span>
-<span id="cb33-283"><a href="#cb33-283"></a><span class="in">```{r}</span></span>
-<span id="cb33-284"><a href="#cb33-284"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-285"><a href="#cb33-285"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-286"><a href="#cb33-286"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-287"><a href="#cb33-287"></a>gg.landing <span class="sc">+</span></span>
-<span id="cb33-288"><a href="#cb33-288"></a>  <span class="fu">geom_col</span>()</span>
-<span id="cb33-289"><a href="#cb33-289"></a><span class="in">```</span></span>
-<span id="cb33-290"><a href="#cb33-290"></a></span>
-<span id="cb33-291"><a href="#cb33-291"></a></span>
-<span id="cb33-292"><a href="#cb33-292"></a>We can see that updating to different <span class="in">`geom_*`</span> types is quick, so long as the types of graphs we're switching between are compatible. The data are there, now let's customize the visualization and make these plots appealing.</span>
-<span id="cb33-293"><a href="#cb33-293"></a></span>
-<span id="cb33-294"><a href="#cb33-294"></a><span class="fu">### Intro to customizing `ggplot` graphs</span></span>
-<span id="cb33-295"><a href="#cb33-295"></a></span>
-<span id="cb33-296"><a href="#cb33-296"></a>First, we'll customize some aesthetics (e.g. colors, styles, axis labels, etc.) of our graphs based on non-variable values.</span>
-<span id="cb33-297"><a href="#cb33-297"></a></span>
-<span id="cb33-298"><a href="#cb33-298"></a>::: callout-note</span>
-<span id="cb33-299"><a href="#cb33-299"></a>We can change the aesthetics of elements in a ggplot graph by adding arguments within the layer where that element is created.</span>
-<span id="cb33-300"><a href="#cb33-300"></a>:::</span>
-<span id="cb33-301"><a href="#cb33-301"></a></span>
-<span id="cb33-302"><a href="#cb33-302"></a>Some common arguments we'll use first are:</span>
-<span id="cb33-303"><a href="#cb33-303"></a></span>
-<span id="cb33-304"><a href="#cb33-304"></a><span class="ss">-   </span><span class="in">`color =`</span> or <span class="in">`colour =`</span>: update point or line colors</span>
-<span id="cb33-305"><a href="#cb33-305"></a><span class="ss">-   </span><span class="in">`fill =`</span>: update fill color for objects with areas</span>
-<span id="cb33-306"><a href="#cb33-306"></a><span class="ss">-   </span><span class="in">`linetype =`</span>: update the line type (dashed, long dash, etc.)</span>
-<span id="cb33-307"><a href="#cb33-307"></a><span class="ss">-   </span><span class="in">`pch =`</span>: update the point style</span>
-<span id="cb33-308"><a href="#cb33-308"></a><span class="ss">-   </span><span class="in">`size =`</span>: update the element size (e.g. of points or line thickness)</span>
-<span id="cb33-309"><a href="#cb33-309"></a><span class="ss">-   </span><span class="in">`alpha =`</span>: update element opacity (1 = opaque, 0 = transparent)</span>
-<span id="cb33-310"><a href="#cb33-310"></a></span>
-<span id="cb33-311"><a href="#cb33-311"></a>Building on our first line graph, let's update the line color to "purple" and make the line type "dashed":</span>
-<span id="cb33-312"><a href="#cb33-312"></a></span>
-<span id="cb33-315"><a href="#cb33-315"></a><span class="in">```{r}</span></span>
-<span id="cb33-316"><a href="#cb33-316"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-317"><a href="#cb33-317"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-318"><a href="#cb33-318"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-319"><a href="#cb33-319"></a>gg.landing <span class="sc">+</span></span>
-<span id="cb33-320"><a href="#cb33-320"></a>  <span class="fu">geom_line</span>(</span>
-<span id="cb33-321"><a href="#cb33-321"></a>    <span class="at">color =</span> <span class="st">"purple"</span>,</span>
-<span id="cb33-322"><a href="#cb33-322"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
-<span id="cb33-323"><a href="#cb33-323"></a>  )</span>
-<span id="cb33-324"><a href="#cb33-324"></a><span class="in">```</span></span>
-<span id="cb33-325"><a href="#cb33-325"></a></span>
-<span id="cb33-326"><a href="#cb33-326"></a>How do we know which color names ggplot will recognize? If you google "R colors ggplot2" you'll find a lot of good resources. Here's one: <span class="co">[</span><span class="ot">SAPE ggplot2 colors quick reference guide</span><span class="co">](http://sape.inf.usi.ch/quick-reference/ggplot2/colour)</span></span>
-<span id="cb33-327"><a href="#cb33-327"></a></span>
-<span id="cb33-328"><a href="#cb33-328"></a>Now let's update the point, style and size of points on our previous scatterplot graph using <span class="in">`color =`</span>, <span class="in">`size =`</span>, and <span class="in">`pch =`</span> (see <span class="in">`?pch`</span> for the different point styles, which can be further customized).</span>
-<span id="cb33-329"><a href="#cb33-329"></a></span>
-<span id="cb33-332"><a href="#cb33-332"></a><span class="in">```{r}</span></span>
-<span id="cb33-333"><a href="#cb33-333"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-334"><a href="#cb33-334"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-335"><a href="#cb33-335"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-336"><a href="#cb33-336"></a>gg.landing <span class="sc">+</span> </span>
-<span id="cb33-337"><a href="#cb33-337"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb33-338"><a href="#cb33-338"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"purple"</span>,</span>
-<span id="cb33-339"><a href="#cb33-339"></a>             <span class="at">pch =</span> <span class="dv">17</span>,</span>
-<span id="cb33-340"><a href="#cb33-340"></a>             <span class="at">size =</span> <span class="dv">4</span>,</span>
-<span id="cb33-341"><a href="#cb33-341"></a>             <span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
-<span id="cb33-342"><a href="#cb33-342"></a><span class="in">```</span></span>
-<span id="cb33-343"><a href="#cb33-343"></a></span>
-<span id="cb33-344"><a href="#cb33-344"></a><span class="fu">### Mapping variables onto aesthetics</span></span>
-<span id="cb33-345"><a href="#cb33-345"></a></span>
-<span id="cb33-346"><a href="#cb33-346"></a>In the examples above, we have customized aesthetics based on constants that we input as arguments (e.g., the color / style / size isn't changing based on a variable characteristic or value). Sometimes, however, we **do** want the aesthetics of a graph to depend on a variable. To do that, we'll **map variables onto graph aesthetics**, meaning we'll change how an element on the graph looks based on a variable characteristic (usually, character or value).</span>
-<span id="cb33-347"><a href="#cb33-347"></a></span>
-<span id="cb33-348"><a href="#cb33-348"></a>::: callout-note</span>
-<span id="cb33-349"><a href="#cb33-349"></a>When we want to customize a graph element based on a variable's characteristic or value, add the argument within <span class="in">`aes()`</span> in the appropriate <span class="in">`geom_*()`</span> layer</span>
-<span id="cb33-350"><a href="#cb33-350"></a>:::</span>
-<span id="cb33-351"><a href="#cb33-351"></a></span>
-<span id="cb33-352"><a href="#cb33-352"></a>In short, if updating aesthetics based on a variable, make sure to put that argument inside of <span class="in">`aes()`</span>.</span>
-<span id="cb33-353"><a href="#cb33-353"></a></span>
-<span id="cb33-354"><a href="#cb33-354"></a>**Example:** Create a ggplot scatterplot graph where the **size** and **color** of the points change based on the **catch**, and make all points the same level of opacity (<span class="in">`alpha = 0.5`</span>). Notice the <span class="in">`aes()`</span> around the <span class="in">`size =`</span> and <span class="in">`color =`</span> arguments.</span>
-<span id="cb33-355"><a href="#cb33-355"></a></span>
-<span id="cb33-356"><a href="#cb33-356"></a>Also: this is overmapped and unnecessary. Avoid excessive / overcomplicated aesthetic mapping in data visualization.</span>
-<span id="cb33-357"><a href="#cb33-357"></a></span>
-<span id="cb33-360"><a href="#cb33-360"></a><span class="in">```{r}</span></span>
-<span id="cb33-361"><a href="#cb33-361"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-362"><a href="#cb33-362"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-363"><a href="#cb33-363"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-364"><a href="#cb33-364"></a>gg.landing <span class="sc">+</span> </span>
-<span id="cb33-365"><a href="#cb33-365"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb33-366"><a href="#cb33-366"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb33-367"><a href="#cb33-367"></a>    <span class="fu">aes</span>(<span class="at">size =</span> catch,</span>
-<span id="cb33-368"><a href="#cb33-368"></a>        <span class="at">color =</span> catch),</span>
-<span id="cb33-369"><a href="#cb33-369"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span></span>
-<span id="cb33-370"><a href="#cb33-370"></a>  )</span>
-<span id="cb33-371"><a href="#cb33-371"></a><span class="in">```</span></span>
-<span id="cb33-372"><a href="#cb33-372"></a></span>
-<span id="cb33-373"><a href="#cb33-373"></a>In the example above, notice that the two arguments that **do** depend on variables are within <span class="in">`aes()`</span>, but since <span class="in">`alpha = 0.5`</span> doesn't depend on a variable then it is *outside the `aes()` but still within the `geom_point()` layer*.</span>
-<span id="cb33-374"><a href="#cb33-374"></a></span>
-<span id="cb33-375"><a href="#cb33-375"></a><span class="fu">### Activity: map variables onto graph aesthetics</span></span>
-<span id="cb33-376"><a href="#cb33-376"></a></span>
-<span id="cb33-377"><a href="#cb33-377"></a>Create a column plot of Channel Islands National Park visitation over time, where the **fill color** (argument: `fill =`) changes based on the number of **catch**.</span>
-<span id="cb33-378"><a href="#cb33-378"></a></span>
-<span id="cb33-381"><a href="#cb33-381"></a><span class="in">```{r}</span></span>
-<span id="cb33-382"><a href="#cb33-382"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-383"><a href="#cb33-383"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-384"><a href="#cb33-384"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-385"><a href="#cb33-385"></a>gg.landing <span class="sc">+</span> </span>
-<span id="cb33-386"><a href="#cb33-386"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> catch))</span>
-<span id="cb33-387"><a href="#cb33-387"></a><span class="in">```</span></span>
-<span id="cb33-388"><a href="#cb33-388"></a></span>
-<span id="cb33-389"><a href="#cb33-389"></a><span class="fu">### Themes in ggplot2</span></span>
-<span id="cb33-390"><a href="#cb33-390"></a></span>
-<span id="cb33-391"><a href="#cb33-391"></a>While every element of a ggplot graph is manually customizable, there are also built-in themes (<span class="in">`theme_*()`</span>) that you can add to your ggplot code to make some major headway before making smaller tweaks manually.</span>
-<span id="cb33-392"><a href="#cb33-392"></a></span>
-<span id="cb33-393"><a href="#cb33-393"></a>Here are a few to try today (but also notice all the options that appear as we start typing <span class="in">`theme_`</span> into our ggplot graph code!):</span>
-<span id="cb33-394"><a href="#cb33-394"></a></span>
-<span id="cb33-395"><a href="#cb33-395"></a><span class="ss">-   </span><span class="in">`theme_light()`</span></span>
-<span id="cb33-396"><a href="#cb33-396"></a><span class="ss">-   </span><span class="in">`theme_minimal()`</span></span>
-<span id="cb33-397"><a href="#cb33-397"></a><span class="ss">-   </span><span class="in">`theme_bw()`</span></span>
-<span id="cb33-398"><a href="#cb33-398"></a></span>
-<span id="cb33-399"><a href="#cb33-399"></a>Here, let's update our previous graph with <span class="in">`theme_minimal()`</span>:</span>
-<span id="cb33-400"><a href="#cb33-400"></a></span>
-<span id="cb33-403"><a href="#cb33-403"></a><span class="in">```{r}</span></span>
-<span id="cb33-404"><a href="#cb33-404"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-405"><a href="#cb33-405"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-406"><a href="#cb33-406"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-407"><a href="#cb33-407"></a>gg.landing <span class="sc">+</span></span>
-<span id="cb33-408"><a href="#cb33-408"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb33-409"><a href="#cb33-409"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb33-410"><a href="#cb33-410"></a>    <span class="fu">aes</span>(<span class="at">size =</span> catch,</span>
-<span id="cb33-411"><a href="#cb33-411"></a>        <span class="at">color =</span> catch),</span>
-<span id="cb33-412"><a href="#cb33-412"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span></span>
-<span id="cb33-413"><a href="#cb33-413"></a>  ) <span class="sc">+</span></span>
-<span id="cb33-414"><a href="#cb33-414"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb33-415"><a href="#cb33-415"></a><span class="in">```</span></span>
-<span id="cb33-416"><a href="#cb33-416"></a></span>
-<span id="cb33-417"><a href="#cb33-417"></a><span class="fu">### Axis labels and titles</span></span>
-<span id="cb33-418"><a href="#cb33-418"></a></span>
-<span id="cb33-419"><a href="#cb33-419"></a>Use <span class="in">`labs()`</span> to update axis labels, and add a title and/or subtitle to your ggplot graph.</span>
-<span id="cb33-420"><a href="#cb33-420"></a></span>
-<span id="cb33-423"><a href="#cb33-423"></a><span class="in">```{r}</span></span>
-<span id="cb33-424"><a href="#cb33-424"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-425"><a href="#cb33-425"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-426"><a href="#cb33-426"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-427"><a href="#cb33-427"></a>gg.landing <span class="sc">+</span></span>
-<span id="cb33-428"><a href="#cb33-428"></a>  <span class="fu">geom_line</span>(<span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
-<span id="cb33-429"><a href="#cb33-429"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb33-430"><a href="#cb33-430"></a>  <span class="fu">labs</span>(</span>
-<span id="cb33-431"><a href="#cb33-431"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb33-432"><a href="#cb33-432"></a>    <span class="at">y =</span> <span class="st">"Annual Catch (MT)"</span>,</span>
-<span id="cb33-433"><a href="#cb33-433"></a>    <span class="at">title =</span> <span class="st">"Total Fisheries Annual Catches"</span>,</span>
-<span id="cb33-434"><a href="#cb33-434"></a>    <span class="at">subtitle =</span> <span class="st">"In the Western Indian Ocean Region"</span></span>
-<span id="cb33-435"><a href="#cb33-435"></a>  )</span>
-<span id="cb33-436"><a href="#cb33-436"></a><span class="in">```</span></span>
-<span id="cb33-437"><a href="#cb33-437"></a></span>
-<span id="cb33-438"><a href="#cb33-438"></a>::: callout-note</span>
-<span id="cb33-439"><a href="#cb33-439"></a>If you want to update the formatting of axis values (for example, to convert to comma format instead of scientific format above), you can use the <span class="in">`scales`</span> package options (see more from the <span class="co">[</span><span class="ot">R Cookbook</span><span class="co">]</span>(http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/)).</span>
-<span id="cb33-440"><a href="#cb33-440"></a>:::</span>
-<span id="cb33-441"><a href="#cb33-441"></a></span>
-<span id="cb33-442"><a href="#cb33-442"></a><span class="fu">### Combining geoms</span></span>
-<span id="cb33-443"><a href="#cb33-443"></a></span>
-<span id="cb33-444"><a href="#cb33-444"></a>As long as the geoms are compatible, we can layer them on top of one another to further customize a graph. For example, adding points to a line graph:</span>
-<span id="cb33-445"><a href="#cb33-445"></a></span>
-<span id="cb33-448"><a href="#cb33-448"></a><span class="in">```{r}</span></span>
-<span id="cb33-449"><a href="#cb33-449"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-450"><a href="#cb33-450"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-451"><a href="#cb33-451"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-452"><a href="#cb33-452"></a>gg.landing <span class="sc">+</span></span>
-<span id="cb33-453"><a href="#cb33-453"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb33-454"><a href="#cb33-454"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"orange"</span>,</span>
-<span id="cb33-455"><a href="#cb33-455"></a>             <span class="fu">aes</span>(<span class="at">size =</span> year),</span>
-<span id="cb33-456"><a href="#cb33-456"></a>             <span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
-<span id="cb33-457"><a href="#cb33-457"></a><span class="in">```</span></span>
-<span id="cb33-458"><a href="#cb33-458"></a></span>
-<span id="cb33-459"><a href="#cb33-459"></a>Or, combine a column and line graph (not sure why you'd want to do this, but you can):</span>
-<span id="cb33-460"><a href="#cb33-460"></a></span>
-<span id="cb33-463"><a href="#cb33-463"></a><span class="in">```{r}</span></span>
-<span id="cb33-464"><a href="#cb33-464"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-465"><a href="#cb33-465"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-466"><a href="#cb33-466"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-467"><a href="#cb33-467"></a>gg.landing <span class="sc">+</span></span>
-<span id="cb33-468"><a href="#cb33-468"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"orange"</span>,</span>
-<span id="cb33-469"><a href="#cb33-469"></a>           <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb33-470"><a href="#cb33-470"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"green"</span>)</span>
-<span id="cb33-471"><a href="#cb33-471"></a></span>
-<span id="cb33-472"><a href="#cb33-472"></a><span class="in">```</span></span>
-<span id="cb33-473"><a href="#cb33-473"></a></span>
-<span id="cb33-474"><a href="#cb33-474"></a><span class="fu">### Multi-series ggplot graphs</span></span>
-<span id="cb33-475"><a href="#cb33-475"></a></span>
-<span id="cb33-476"><a href="#cb33-476"></a>In the examples above, we only had a single series - total annual catches in the WIO region. However, we often succum a situaton where we want to visualize multiple series. For example, rather than looking the catch at the region, we may wish to visualize catch over time for individual countries.</span>
-<span id="cb33-477"><a href="#cb33-477"></a></span>
-<span id="cb33-478"><a href="#cb33-478"></a>To do that, we need to add an aesthetic that lets <span class="in">`ggplot`</span> know how things are going to be grouped. A demonstration of why that's important - what happens if we *don't* let ggplot know how to group things? Unfortunate, the dataset we have loaded is unable to to do that. we need to load into the session a dataset that have catch values for individual countries in the WIO region.</span>
-<span id="cb33-479"><a href="#cb33-479"></a></span>
-<span id="cb33-482"><a href="#cb33-482"></a><span class="in">```{r}</span></span>
-<span id="cb33-483"><a href="#cb33-483"></a><span class="co">#| warning: false</span></span>
-<span id="cb33-484"><a href="#cb33-484"></a><span class="co">#| message: false</span></span>
-<span id="cb33-485"><a href="#cb33-485"></a><span class="co">#| </span></span>
-<span id="cb33-486"><a href="#cb33-486"></a>landing.countries <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"../data/tidy/landings_wio_country.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
-<span id="cb33-487"><a href="#cb33-487"></a></span>
-<span id="cb33-488"><a href="#cb33-488"></a>landing.countries <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span>
-<span id="cb33-489"><a href="#cb33-489"></a><span class="in">```</span></span>
-<span id="cb33-490"><a href="#cb33-490"></a></span>
-<span id="cb33-491"><a href="#cb33-491"></a>Notice that the dataset has a <span class="in">`name`</span> variable that we can use for this case</span>
-<span id="cb33-492"><a href="#cb33-492"></a></span>
-<span id="cb33-495"><a href="#cb33-495"></a><span class="in">```{r}</span></span>
-<span id="cb33-496"><a href="#cb33-496"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-497"><a href="#cb33-497"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-498"><a href="#cb33-498"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-499"><a href="#cb33-499"></a><span class="fu">ggplot</span>(<span class="at">data =</span> landing.countries, </span>
-<span id="cb33-500"><a href="#cb33-500"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch)) <span class="sc">+</span></span>
-<span id="cb33-501"><a href="#cb33-501"></a>  <span class="fu">geom_line</span>()</span>
-<span id="cb33-502"><a href="#cb33-502"></a><span class="in">```</span></span>
-<span id="cb33-503"><a href="#cb33-503"></a></span>
-<span id="cb33-504"><a href="#cb33-504"></a>Well that's definitely a mess, and it's because ggplot has no idea that these should be different series based on the different countries that appear in the name' column of the dataset. We can make sure R does know by adding an explicit grouping argument (<span class="in">`group =`</span>), or by updating an aesthetic based on *name*:</span>
-<span id="cb33-505"><a href="#cb33-505"></a></span>
-<span id="cb33-508"><a href="#cb33-508"></a><span class="in">```{r}</span></span>
-<span id="cb33-509"><a href="#cb33-509"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-510"><a href="#cb33-510"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-511"><a href="#cb33-511"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-512"><a href="#cb33-512"></a><span class="fu">ggplot</span>(<span class="at">data =</span> landing.countries, </span>
-<span id="cb33-513"><a href="#cb33-513"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch, <span class="at">group =</span> name)) <span class="sc">+</span></span>
-<span id="cb33-514"><a href="#cb33-514"></a>  <span class="fu">geom_line</span>()</span>
-<span id="cb33-515"><a href="#cb33-515"></a><span class="in">```</span></span>
-<span id="cb33-516"><a href="#cb33-516"></a></span>
-<span id="cb33-517"><a href="#cb33-517"></a>::: callout-note</span>
-<span id="cb33-518"><a href="#cb33-518"></a>You could also add an aesthetic (<span class="in">`color = name`</span>) in the <span class="in">`geom_line()`</span> layer to create groupings, instead of in the topmost <span class="in">`ggplot()`</span> layer.</span>
-<span id="cb33-519"><a href="#cb33-519"></a>:::</span>
-<span id="cb33-520"><a href="#cb33-520"></a></span>
-<span id="cb33-521"><a href="#cb33-521"></a>Let's store that topmost line so that we can use it aesthetic based on *name*:</span>
-<span id="cb33-522"><a href="#cb33-522"></a></span>
-<span id="cb33-525"><a href="#cb33-525"></a><span class="in">```{r}</span></span>
-<span id="cb33-526"><a href="#cb33-526"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-527"><a href="#cb33-527"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-528"><a href="#cb33-528"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb33-529"><a href="#cb33-529"></a><span class="co">#| </span></span>
-<span id="cb33-530"><a href="#cb33-530"></a>gg_np <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> landing.countries, </span>
-<span id="cb33-531"><a href="#cb33-531"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch, <span class="at">group =</span> name)) <span class="sc">+</span></span>
-<span id="cb33-532"><a href="#cb33-532"></a>  <span class="fu">geom_line</span>()</span>
-<span id="cb33-533"><a href="#cb33-533"></a><span class="in">```</span></span>
-<span id="cb33-534"><a href="#cb33-534"></a></span>
-<span id="cb33-535"><a href="#cb33-535"></a><span class="fu">### Faceting ggplot graphs</span></span>
-<span id="cb33-536"><a href="#cb33-536"></a></span>
-<span id="cb33-537"><a href="#cb33-537"></a>When we facet graphs, we split them up into multiple plotting panels, where each panel contains a subset of the data. In our case, we'll split the graph above into different panels, each containing annual catches over time for each country in the WIO.</span>
-<span id="cb33-538"><a href="#cb33-538"></a></span>
-<span id="cb33-541"><a href="#cb33-541"></a><span class="in">```{r}</span></span>
-<span id="cb33-542"><a href="#cb33-542"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-543"><a href="#cb33-543"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-544"><a href="#cb33-544"></a><span class="co">#| fig-height: 4</span></span>
-<span id="cb33-545"><a href="#cb33-545"></a>gg_np <span class="sc">+</span></span>
-<span id="cb33-546"><a href="#cb33-546"></a>  <span class="fu">geom_line</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb33-547"><a href="#cb33-547"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span> </span>
-<span id="cb33-548"><a href="#cb33-548"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"year"</span>, <span class="at">y =</span> <span class="st">"Annual Catches (MT)"</span>) <span class="sc">+</span></span>
-<span id="cb33-549"><a href="#cb33-549"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> name)</span>
-<span id="cb33-550"><a href="#cb33-550"></a><span class="in">```</span></span>
-<span id="cb33-551"><a href="#cb33-551"></a></span>
-<span id="cb33-552"><a href="#cb33-552"></a>Unfortunate, a South Africa plot is the only visible clearly with changes of catches over time, plots for other countries are almost flat because of the catches difference between these countries and South Africa. We can use the <span class="in">`scale= "free"`</span> arguments in <span class="in">`geom_facet`</span> function to control this behaviour;</span>
-<span id="cb33-553"><a href="#cb33-553"></a></span>
-<span id="cb33-556"><a href="#cb33-556"></a><span class="in">```{r}</span></span>
-<span id="cb33-557"><a href="#cb33-557"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb33-558"><a href="#cb33-558"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb33-559"><a href="#cb33-559"></a><span class="co">#| fig-height: 4</span></span>
-<span id="cb33-560"><a href="#cb33-560"></a>gg_np <span class="sc">+</span></span>
-<span id="cb33-561"><a href="#cb33-561"></a>  <span class="fu">geom_line</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb33-562"><a href="#cb33-562"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span> </span>
-<span id="cb33-563"><a href="#cb33-563"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"year"</span>, <span class="at">y =</span> <span class="st">"Annual Catches (MT)"</span>) <span class="sc">+</span></span>
-<span id="cb33-564"><a href="#cb33-564"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> name, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span>
-<span id="cb33-565"><a href="#cb33-565"></a><span class="in">```</span></span>
-<span id="cb33-566"><a href="#cb33-566"></a></span>
-<span id="cb33-567"><a href="#cb33-567"></a><span class="fu">### Exporting a ggplot plots</span></span>
-<span id="cb33-568"><a href="#cb33-568"></a></span>
-<span id="cb33-569"><a href="#cb33-569"></a>If we want our graph to appear in a knitted html, then we don't need to do anything else. But often we'll need a saved image file, of specific size and resolution, to share or for publication. <span class="in">`ggsave()`</span> will export the *most recently run* ggplot graph by default (<span class="in">`plot = last_plot()`</span>), unless you give it the name of a different saved ggplot object. Some common arguments for <span class="in">`ggsave()`</span>:</span>
-<span id="cb33-570"><a href="#cb33-570"></a></span>
-<span id="cb33-571"><a href="#cb33-571"></a><span class="ss">-   </span><span class="in">`width =`</span>: set exported image width (default inches)</span>
-<span id="cb33-572"><a href="#cb33-572"></a><span class="ss">-   </span><span class="in">`height =`</span>: set exported image height (default height)</span>
-<span id="cb33-573"><a href="#cb33-573"></a><span class="ss">-   </span><span class="in">`dpi =`</span>: set dpi (dots per inch)</span>
-<span id="cb33-574"><a href="#cb33-574"></a></span>
-<span id="cb33-575"><a href="#cb33-575"></a>So to export the faceted graph above at 300 dpi, width a width of 8" and a height of 7", we can use:</span>
-<span id="cb33-576"><a href="#cb33-576"></a></span>
-<span id="cb33-579"><a href="#cb33-579"></a><span class="in">```{r}</span></span>
-<span id="cb33-580"><a href="#cb33-580"></a><span class="co">#| eval: false</span></span>
-<span id="cb33-581"><a href="#cb33-581"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"plots"</span>,<span class="st">"catch.jpg"</span>), <span class="at">dpi =</span> <span class="dv">180</span>, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">7</span>)</span>
-<span id="cb33-582"><a href="#cb33-582"></a><span class="in">```</span></span>
-<span id="cb33-583"><a href="#cb33-583"></a></span>
-<span id="cb33-586"><a href="#cb33-586"></a><span class="in">```{r}</span></span>
-<span id="cb33-587"><a href="#cb33-587"></a><span class="co">#| eval: false</span></span>
-<span id="cb33-588"><a href="#cb33-588"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"plots"</span>, <span class="st">"catch.png"</span>), <span class="at">dpi =</span> <span class="dv">180</span>, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">7</span>)</span>
-<span id="cb33-589"><a href="#cb33-589"></a><span class="in">```</span></span>
-<span id="cb33-590"><a href="#cb33-590"></a></span>
-<span id="cb33-591"><a href="#cb33-591"></a>::: callout-tip</span>
-<span id="cb33-592"><a href="#cb33-592"></a>Notice that a .jpg image of that name and size is now stored in the <span class="in">`plots\`</span> folder within your working directory. You can change the type of exported image, too (e.g. pdf, tiff, eps, png, mmp, svg).</span>
-<span id="cb33-593"><a href="#cb33-593"></a>:::</span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>©2024 <a href="../../posts/ggplot2/index.html">Datika</a></p>
+</div>   
     <div class="nav-footer-center">
-
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../faq.html">
+<p>FAQ</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../feedback.html">
+<p>Feedback</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../terms.html">
+<p>Terms</p>
+</a>
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

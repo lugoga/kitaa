@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Masumbuko Semba">
-<meta name="dcterms.date" content="2024-02-02">
+<meta name="dcterms.date" content="2024-02-12">
 <meta name="description" content="Understanding vectoor and dataframe as core data storage in R is an important part, which allows for data analysis and visualization">
 
 <title>DATIKA - Understanding vector and dataframe</title>
@@ -57,7 +57,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -180,6 +200,10 @@ cookieconsent.run({
     <a class="nav-link" href="../../photos.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lugoga/kitaa"> <i class="bi bi-github" role="img">
 </i> 
@@ -232,7 +256,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Understanding vector and dataframe</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <h1 class="title">Understanding vector and dataframe</h1>
                   <div>
         <div class="description">
           Understanding vectoor and dataframe as core data storage in R is an important part, which allows for data analysis and visualization
@@ -245,20 +269,29 @@ cookieconsent.run({
                   </div>
   </div>
     
-  
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://semba.netlify.app">Masumbuko Semba</a> <a href="https://orcid.org/0000-0002-5002-9747" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://semba.netlify.app/">
+              Nelson Mandela African Institution of Science and Technology
+              </a>
+            </p>
+        </div>
+    </div>
+
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Masumbuko Semba </p>
-            </div>
-    </div>
-      
+        
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 2, 2024</p>
+        <p class="date">February 12, 2024</p>
       </div>
     </div>
     
@@ -295,7 +328,10 @@ cookieconsent.run({
   <li><a href="#rounding-off-numbers" id="toc-rounding-off-numbers" class="nav-link" data-scroll-target="#rounding-off-numbers">Rounding off numbers</a></li>
   <li><a href="#number-of-elements-in-a-vector" id="toc-number-of-elements-in-a-vector" class="nav-link" data-scroll-target="#number-of-elements-in-a-vector">Number of elements in a vector</a></li>
   </ul></li>
-  <li><a href="#data-frame" id="toc-data-frame" class="nav-link" data-scroll-target="#data-frame">Data Frame</a></li>
+  <li><a href="#data-frame" id="toc-data-frame" class="nav-link" data-scroll-target="#data-frame">Data Frame</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -308,8 +344,17 @@ cookieconsent.run({
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p><strong>R</strong> language is a flexible language that allows to work with different kind of data format <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref"><strong>R-base?</strong></a>)</span>. This include <code>integer</code>, <code>numeric</code>, <code>character</code>, <code>complex</code>, <code>dates</code> and <code>logical</code>. The default data type or class in <strong>R</strong> is double precision—numeric. In a nutshell, R treats all kind of data into five categories but we deal with only four in this book. Datasets in R are often a combination of seven different data types are highlighted in <strong>?@fig-datatypes</strong>;</p>
-<p><img src="DATATYPES.svg" class="img-fluid" alt="Common data types often collected and stored for anaysis and modelling">{# fig-datatypes}</p>
+<p><strong>R</strong> language is a flexible language that allows to work with different kind of data format <span class="citation" data-cites="r-base">(<a href="#ref-r-base" role="doc-biblioref">R Core Team, 2023</a>)</span>. This include <code>integer</code>, <code>numeric</code>, <code>character</code>, <code>complex</code>, <code>dates</code> and <code>logical</code>. The default data type or class in <strong>R</strong> is double precision– numeric. In a nutshell, R treats all kind of data into five categories but we deal with only four in this book. Datasets in R are often a combination of seven different data types are highlighted in <a href="#fig-datatypes" class="quarto-xref">Figure&nbsp;1</a>;</p>
+<div id="fig-datatypes" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="DATATYPES.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Common data types often collected and stored for anaysis and modelling
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="vectors" class="level1">
 <h1>Vectors</h1>
@@ -478,7 +523,7 @@ Levels: I II III IV V</code></pre>
 <img src="index_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" data-fig-pos="H" width="288">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Normal distribution of bigeye tuna’s tota length
+Figure&nbsp;2: Normal distribution of bigeye tuna’s tota length
 </figcaption>
 </figure>
 </div>
@@ -506,7 +551,7 @@ Figure&nbsp;1: Normal distribution of bigeye tuna’s tota length
 <img src="index_files/figure-html/fig-bar-1.png" class="img-fluid figure-img" data-fig-pos="H" width="384">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Length frequency of bigeye tuna
+Figure&nbsp;3: Length frequency of bigeye tuna
 </figcaption>
 </figure>
 </div>
@@ -665,11 +710,11 @@ Figure&nbsp;2: Length frequency of bigeye tuna
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>sst <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">40</span>, <span class="at">mean =</span> <span class="dv">25</span>,<span class="at">sd =</span> <span class="fl">1.58</span>)</span>
 <span id="cb70-2"><a href="#cb70-2"></a>sst</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 22.51905 25.80313 24.22628 21.86037 28.99526 24.67710 24.16502 25.47170
- [9] 26.88654 25.60199 24.37076 27.22248 24.18528 24.85536 23.85104 25.53450
-[17] 25.36971 23.47394 25.31547 23.21039 25.51640 24.39540 25.97264 26.37607
-[25] 25.47267 21.68194 24.61381 21.08819 22.96802 26.02830 25.37427 24.85639
-[33] 26.26802 26.43708 25.48479 26.23754 24.07334 24.25398 27.26465 25.60898</code></pre>
+<pre><code> [1] 25.31649 25.69489 25.12859 22.93064 24.14226 25.61458 24.58388 25.27020
+ [9] 22.48377 27.11226 25.94136 26.43591 23.68948 27.24243 24.61578 26.58119
+[17] 26.09429 24.31786 23.92743 25.24372 25.28647 24.45213 24.84840 24.32974
+[25] 26.40932 21.81778 24.24033 23.33311 22.37589 26.70708 26.80491 23.79588
+[33] 22.62312 23.92750 23.52325 27.26202 24.07021 24.96316 25.67049 26.75803</code></pre>
 </div>
 </div>
 </section>
@@ -683,8 +728,8 @@ Figure&nbsp;2: Length frequency of bigeye tuna
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>chl <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> .<span class="dv">55</span>, <span class="at">sd =</span> .<span class="dv">2</span>)</span>
 <span id="cb72-2"><a href="#cb72-2"></a>chl <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.61 0.59 0.71 0.41 0.26 0.56 0.57 0.26 0.83 0.69 0.64 0.51 0.69 0.86 0.48
-[16] 0.49 0.44 0.53 0.17 0.28</code></pre>
+<pre><code> [1] 0.39 0.60 0.64 0.59 0.58 0.39 0.65 0.62 0.66 0.71 0.69 0.42 0.43 0.26 0.35
+[16] 0.62 0.56 0.57 0.24 0.88</code></pre>
 </div>
 </div>
 </section>
@@ -701,10 +746,19 @@ Figure&nbsp;2: Length frequency of bigeye tuna
 </section>
 <section id="data-frame" class="level1">
 <h1>Data Frame</h1>
-<p>One of R’s greatest strengths is in manipulating data. One of the primary structures for storing data in R is called a Data Frame. Much of your work in R will be working with and manipulating data frames. Data frames are made up of rows and columns. The top row is a header and describes the contents of each variable. Each row represents an individual measured or observed record. Records can also have names. Each record contains multiple cells of values. Let’s illustrates data frame using historical catch data in the Western Indian Ocean Region from FAO. This dataset is called <code>landings_wio_country.csv</code> and contains some data about total landed catches of ten countries in the WIO region reported in FAO between 1951 and 2015.</p>
+<p>One of R’s greatest strengths is in manipulating data. One of the primary structures for storing data in R is called a Data Frame. Much of your work in R will be working with and manipulating data frames. Data frames are made up of rows and columns. The top row is a header and describes the contents of each variable. Each row represents an individual measured or observed record. Records can also have names. Each record contains multiple cells of values. Let’s illustrates data frame using historical catch data in the Western Indian Ocean Region from FAO. This dataset is called <code>landings_wio_country.csv</code> and contains some data about total landed catches of ten countries in the WIO region reported in FAO between 1951 and 2015 (<a href="#tbl-landings" class="quarto-xref">Table&nbsp;1</a>).</p>
 <div class="cell">
+<div id="tbl-landings" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-landings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Landing of fish by country
+</figcaption>
+<div aria-describedby="tbl-landings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-079c35e2{}.cl-0795f164{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-07985904{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-0798590e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-0798694e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0798694f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07986950{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07986958{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07986959{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07986962{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-079c35e2"><thead><tr style="overflow-wrap:break-word;"><th class="cl-0798694e"><p class="cl-07985904"><span class="cl-0795f164">country</span></p></th><th class="cl-0798694f"><p class="cl-0798590e"><span class="cl-0795f164">year</span></p></th><th class="cl-0798694f"><p class="cl-0798590e"><span class="cl-0795f164">catch</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Kenya</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">33,080</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Tanzania</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">110,703</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Zanzibar</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">45,972</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Seychelles</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">325,291</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">South Africa</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">1,086,810</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Mozambique</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">16,080</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Somalia</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">1,831</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Mauritius</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">16,373</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986950"><p class="cl-07985904"><span class="cl-0795f164">Mayotte</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986958"><p class="cl-0798590e"><span class="cl-0795f164">28,936</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07986959"><p class="cl-07985904"><span class="cl-0795f164">Madagascar</span></p></td><td class="cl-07986962"><p class="cl-0798590e"><span class="cl-0795f164">2,015</span></p></td><td class="cl-07986962"><p class="cl-0798590e"><span class="cl-0795f164">145,629</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-add9a710{}.cl-add301c6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-add57e56{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-add57e60{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-add58dd8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-add58dd9{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-add58de2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-add58dec{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-add58ded{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-add58dee{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-add9a710"><thead><tr style="overflow-wrap:break-word;"><th class="cl-add58dd8"><p class="cl-add57e56"><span class="cl-add301c6">country</span></p></th><th class="cl-add58dd9"><p class="cl-add57e60"><span class="cl-add301c6">year</span></p></th><th class="cl-add58dd9"><p class="cl-add57e60"><span class="cl-add301c6">catch</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Kenya</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">1,950</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">19,154</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Kenya</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">1,951</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">21,318</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Kenya</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">1,952</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">19,126</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Kenya</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">1,953</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">20,989</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Kenya</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">1,954</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">17,541</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Madagascar</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">2,011</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">180,052</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Madagascar</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">2,012</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">369,808</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Madagascar</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">2,013</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">266,953</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58de2"><p class="cl-add57e56"><span class="cl-add301c6">Madagascar</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">2,014</span></p></td><td class="cl-add58dec"><p class="cl-add57e60"><span class="cl-add301c6">138,478</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-add58ded"><p class="cl-add57e56"><span class="cl-add301c6">Madagascar</span></p></td><td class="cl-add58dee"><p class="cl-add57e60"><span class="cl-add301c6">2,015</span></p></td><td class="cl-add58dee"><p class="cl-add57e60"><span class="cl-add301c6">145,629</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</figure>
 </div>
 </div>
 <p><code>data.frame</code> is very much like a simple Excel spreadsheet where each column represents a variable type and each row represent observations. A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. A data frame is a list of equal–length vectors with rows as records and columns as variables. This makes data frames unique in data storing as it can store different classes of objects in each column (i.e.&nbsp;numeric, character, factor, logic, etc).</p>
@@ -739,7 +793,7 @@ Figure&nbsp;2: Length frequency of bigeye tuna
  $ maturity: chr  "I" "II" "V"</code></pre>
 </div>
 </div>
-<p>Now the variable <code>Name</code> is of character class in the data frame. The inherited problem of data frame to convert character columns into a factor is resolved by introduction f advanced data frames called <em>tibble</em> <span class="citation" data-cites="tibble">(<a href="#ref-tibble" role="doc-biblioref"><strong>tibble?</strong></a>)</span>, which provides sticker checking and better formating than the traditional data.frame.</p>
+<p>Now the variable <code>Name</code> is of character class in the data frame. The inherited problem of data frame to convert character columns into a factor is resolved by introduction f advanced data frames called <em>tibble</em> <span class="citation" data-cites="tibble">(<a href="#ref-tibble" role="doc-biblioref">Müller and Wickham, 2019</a>)</span>, which provides sticker checking and better formating than the traditional data.frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="do">## use the vectors to make a tibble</span></span>
 <span id="cb80-2"><a href="#cb80-2"></a>tb <span class="ot">=</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(country, weight, maturity) </span>
@@ -753,19 +807,10 @@ $ weight   &lt;dbl&gt; 90, 75, 92
 $ maturity &lt;chr&gt; "I", "II", "V"</code></pre>
 </div>
 </div>
-<p><a href="#tbl-score" class="quarto-xref">Table&nbsp;1</a> show the the data frame created by fusing the two vectors together.</p>
+<p><strong>?@tbl-score</strong> show the the data frame created by fusing the two vectors together.</p>
 <div class="cell">
-<div id="tbl-score" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Variables in the data frame
-</figcaption>
-<div aria-describedby="tbl-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-07b62d08{}.cl-07b08272{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-07b28554{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-07b28555{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-07b295b2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07b295bc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07b295c6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07b295c7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07b295d0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07b295d1{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-07b62d08"><thead><tr style="overflow-wrap:break-word;"><th class="cl-07b295b2"><p class="cl-07b28554"><span class="cl-07b08272">country</span></p></th><th class="cl-07b295bc"><p class="cl-07b28555"><span class="cl-07b08272">weight</span></p></th><th class="cl-07b295b2"><p class="cl-07b28554"><span class="cl-07b08272">maturity</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-07b295c6"><p class="cl-07b28554"><span class="cl-07b08272">Kenya</span></p></td><td class="cl-07b295c7"><p class="cl-07b28555"><span class="cl-07b08272">90</span></p></td><td class="cl-07b295c6"><p class="cl-07b28554"><span class="cl-07b08272">I</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07b295c6"><p class="cl-07b28554"><span class="cl-07b08272">Mozambique</span></p></td><td class="cl-07b295c7"><p class="cl-07b28555"><span class="cl-07b08272">75</span></p></td><td class="cl-07b295c6"><p class="cl-07b28554"><span class="cl-07b08272">II</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07b295d0"><p class="cl-07b28554"><span class="cl-07b08272">Seychelles</span></p></td><td class="cl-07b295d1"><p class="cl-07b28555"><span class="cl-07b08272">92</span></p></td><td class="cl-07b295d0"><p class="cl-07b28554"><span class="cl-07b08272">V</span></p></td></tr></tbody></table></div>
-</div>
-</div>
-</figure>
+<div class="tabwid"><style>.cl-adf34832{}.cl-adedf148{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-adeff27c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-adeff286{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-adeffefc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-adeffefd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-adefff06{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-adefff07{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-adefff08{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-adefff10{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-adf34832"><thead><tr style="overflow-wrap:break-word;"><th class="cl-adeffefc"><p class="cl-adeff27c"><span class="cl-adedf148">country</span></p></th><th class="cl-adeffefd"><p class="cl-adeff286"><span class="cl-adedf148">weight</span></p></th><th class="cl-adeffefc"><p class="cl-adeff27c"><span class="cl-adedf148">maturity</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-adefff06"><p class="cl-adeff27c"><span class="cl-adedf148">Kenya</span></p></td><td class="cl-adefff07"><p class="cl-adeff286"><span class="cl-adedf148">90</span></p></td><td class="cl-adefff06"><p class="cl-adeff27c"><span class="cl-adedf148">I</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-adefff06"><p class="cl-adeff27c"><span class="cl-adedf148">Mozambique</span></p></td><td class="cl-adefff07"><p class="cl-adeff286"><span class="cl-adedf148">75</span></p></td><td class="cl-adefff06"><p class="cl-adeff27c"><span class="cl-adedf148">II</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-adefff08"><p class="cl-adeff27c"><span class="cl-adedf148">Seychelles</span></p></td><td class="cl-adefff10"><p class="cl-adeff286"><span class="cl-adedf148">92</span></p></td><td class="cl-adefff08"><p class="cl-adeff27c"><span class="cl-adedf148">V</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 <p>Because the columns have meaning and we have given them column names, it is desirable to want to access an element by the name of the column as opposed to the column number.In large Excel spreadsheets I often get annoyed trying to remember which column something was. The <code>$</code>sign and <code>[]</code>are used in R to select variable from the data frame.</p>
@@ -797,15 +842,16 @@ Table&nbsp;1: Variables in the data frame
 <span id="cb90-4"><a href="#cb90-4"></a></span>
 <span id="cb90-5"><a href="#cb90-5"></a>chinook <span class="sc">|&gt;</span></span>
 <span id="cb90-6"><a href="#cb90-6"></a>  dplyr<span class="sc">::</span><span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span></span>
-<span id="cb90-7"><a href="#cb90-7"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb90-7"><a href="#cb90-7"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb90-8"><a href="#cb90-8"></a>  flextable<span class="sc">::</span><span class="fu">autofit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-chinook" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-chinook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Longleys’ Economic dataset
+Table&nbsp;2: Length and weight of chinook samlon sampled at three different sites
 </figcaption>
 <div aria-describedby="tbl-chinook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-07cc3daa{}.cl-07c64dfa{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-07c8780a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-07c87814{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-07c8852a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07c88534{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07c88535{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07c8853e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07c8853f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07c88548{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-07cc3daa"><thead><tr style="overflow-wrap:break-word;"><th class="cl-07c8852a"><p class="cl-07c8780a"><span class="cl-07c64dfa">tl</span></p></th><th class="cl-07c8852a"><p class="cl-07c8780a"><span class="cl-07c64dfa">w</span></p></th><th class="cl-07c88534"><p class="cl-07c87814"><span class="cl-07c64dfa">loc</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">94.9</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">11.8</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">115.0</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">17.2</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">120.1</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">17.9</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">111.2</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">16.8</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">67.7</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">2.4</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">99.4</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">10.2</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Petrohue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">92.2</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">8.3</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Petrohue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">35.4</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">0.5</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">82.9</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">7.8</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">57.4</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">1.9</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">86.0</span></p></td><td class="cl-07c88535"><p class="cl-07c8780a"><span class="cl-07c64dfa">6.8</span></p></td><td class="cl-07c8853e"><p class="cl-07c87814"><span class="cl-07c64dfa">Petrohue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07c8853f"><p class="cl-07c8780a"><span class="cl-07c64dfa">71.8</span></p></td><td class="cl-07c8853f"><p class="cl-07c8780a"><span class="cl-07c64dfa">3.0</span></p></td><td class="cl-07c88548"><p class="cl-07c87814"><span class="cl-07c64dfa">Puyehue</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-ae1c425a{}.cl-ae15ffa8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-ae18bbe4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ae18bbee{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ae18c8dc{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8dd{width:0.583in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8e6{width:0.939in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8e7{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8e8{width:0.583in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8e9{width:0.939in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8f0{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8f1{width:0.583in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8f2{width:0.939in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8fa{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8fb{width:0.583in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae18c8fc{width:0.939in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-ae1c425a"><thead><tr style="overflow-wrap:break-word;"><th class="cl-ae18c8dc"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">tl</span></p></th><th class="cl-ae18c8dd"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">w</span></p></th><th class="cl-ae18c8e6"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">loc</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8e7"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">92.2</span></p></td><td class="cl-ae18c8e8"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">8.9</span></p></td><td class="cl-ae18c8e9"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Petrohue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">66.8</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">5.2</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">80.5</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">6.1</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">82.9</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">7.8</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">70.2</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">3.7</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">82.2</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">6.7</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">100.1</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">11.7</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">78.8</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">7.9</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">29.2</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">0.3</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">92.2</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">9.1</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Argentina</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8f0"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">36.9</span></p></td><td class="cl-ae18c8f1"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">3.0</span></p></td><td class="cl-ae18c8f2"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Puyehue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae18c8fa"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">62.7</span></p></td><td class="cl-ae18c8fb"><p class="cl-ae18bbe4"><span class="cl-ae15ffa8">3.0</span></p></td><td class="cl-ae18c8fc"><p class="cl-ae18bbee"><span class="cl-ae15ffa8">Puyehue</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </figure>
@@ -837,19 +883,28 @@ Table&nbsp;3: The time fishers departed for fishing with the distance to th fish
 </figcaption>
 <div aria-describedby="tbl-tab23-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-07f5b608{}.cl-07ef9d4a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-07f2213c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-07f22146{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-07f23046{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f23050{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2305a{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2305b{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2305c{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2305d{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2305e{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f23064{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f23065{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2306e{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f23078{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f23079{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2307a{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f2307b{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f23082{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-07f23083{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-07f5b608"><thead><tr style="overflow-wrap:break-word;"><th class="cl-07f23046"><p class="cl-07f2213c"><span class="cl-07ef9d4a">vessel.id</span></p></th><th class="cl-07f23050"><p class="cl-07f22146"><span class="cl-07ef9d4a">date</span></p></th><th class="cl-07f2305a"><p class="cl-07f22146"><span class="cl-07ef9d4a">time</span></p></th><th class="cl-07f2305b"><p class="cl-07f2213c"><span class="cl-07ef9d4a">distance.ground</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-07f2305c"><p class="cl-07f2213c"><span class="cl-07ef9d4a">1</span></p></td><td class="cl-07f2305d"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f2305e"><p class="cl-07f22146"><span class="cl-07ef9d4a">06:35:25</span></p></td><td class="cl-07f23064"><p class="cl-07f2213c"><span class="cl-07ef9d4a">20</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f23065"><p class="cl-07f2213c"><span class="cl-07ef9d4a">2</span></p></td><td class="cl-07f2306e"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f23078"><p class="cl-07f22146"><span class="cl-07ef9d4a">06:52:05</span></p></td><td class="cl-07f23079"><p class="cl-07f2213c"><span class="cl-07ef9d4a">85</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f2305c"><p class="cl-07f2213c"><span class="cl-07ef9d4a">3</span></p></td><td class="cl-07f2305d"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f2305e"><p class="cl-07f22146"><span class="cl-07ef9d4a">07:08:45</span></p></td><td class="cl-07f23064"><p class="cl-07f2213c"><span class="cl-07ef9d4a">45</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f23065"><p class="cl-07f2213c"><span class="cl-07ef9d4a">4</span></p></td><td class="cl-07f2306e"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f23078"><p class="cl-07f22146"><span class="cl-07ef9d4a">07:25:25</span></p></td><td class="cl-07f23079"><p class="cl-07f2213c"><span class="cl-07ef9d4a">69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f23065"><p class="cl-07f2213c"><span class="cl-07ef9d4a">5</span></p></td><td class="cl-07f2306e"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f23078"><p class="cl-07f22146"><span class="cl-07ef9d4a">07:42:05</span></p></td><td class="cl-07f23079"><p class="cl-07f2213c"><span class="cl-07ef9d4a">42</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f23065"><p class="cl-07f2213c"><span class="cl-07ef9d4a">6</span></p></td><td class="cl-07f2306e"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f23078"><p class="cl-07f22146"><span class="cl-07ef9d4a">07:58:45</span></p></td><td class="cl-07f23079"><p class="cl-07f2213c"><span class="cl-07ef9d4a">52</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f23065"><p class="cl-07f2213c"><span class="cl-07ef9d4a">7</span></p></td><td class="cl-07f2306e"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f23078"><p class="cl-07f22146"><span class="cl-07ef9d4a">08:15:25</span></p></td><td class="cl-07f23079"><p class="cl-07f2213c"><span class="cl-07ef9d4a">6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f2305c"><p class="cl-07f2213c"><span class="cl-07ef9d4a">8</span></p></td><td class="cl-07f2305d"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f2305e"><p class="cl-07f22146"><span class="cl-07ef9d4a">08:32:05</span></p></td><td class="cl-07f23064"><p class="cl-07f2213c"><span class="cl-07ef9d4a">45</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f2305c"><p class="cl-07f2213c"><span class="cl-07ef9d4a">9</span></p></td><td class="cl-07f2305d"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f2305e"><p class="cl-07f22146"><span class="cl-07ef9d4a">08:48:45</span></p></td><td class="cl-07f23064"><p class="cl-07f2213c"><span class="cl-07ef9d4a">36</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-07f2307a"><p class="cl-07f2213c"><span class="cl-07ef9d4a">10</span></p></td><td class="cl-07f2307b"><p class="cl-07f22146"><span class="cl-07ef9d4a">2018-11-20</span></p></td><td class="cl-07f23082"><p class="cl-07f22146"><span class="cl-07ef9d4a">09:05:25</span></p></td><td class="cl-07f23083"><p class="cl-07f2213c"><span class="cl-07ef9d4a">7</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-ae363386{}.cl-ae3061ea{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-ae326e5e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ae326e5f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ae327ca0{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327ca1{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327caa{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cb4{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cb5{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cb6{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cb7{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cb8{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cbe{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cc8{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cc9{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cca{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cd2{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cd3{width:1.067in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cd4{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ae327cd5{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-ae363386"><thead><tr style="overflow-wrap:break-word;"><th class="cl-ae327ca0"><p class="cl-ae326e5e"><span class="cl-ae3061ea">vessel.id</span></p></th><th class="cl-ae327ca1"><p class="cl-ae326e5f"><span class="cl-ae3061ea">date</span></p></th><th class="cl-ae327caa"><p class="cl-ae326e5f"><span class="cl-ae3061ea">time</span></p></th><th class="cl-ae327cb4"><p class="cl-ae326e5e"><span class="cl-ae3061ea">distance.ground</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-ae327cb5"><p class="cl-ae326e5e"><span class="cl-ae3061ea">1</span></p></td><td class="cl-ae327cb6"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cb7"><p class="cl-ae326e5f"><span class="cl-ae3061ea">06:35:25</span></p></td><td class="cl-ae327cb8"><p class="cl-ae326e5e"><span class="cl-ae3061ea">20</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cbe"><p class="cl-ae326e5e"><span class="cl-ae3061ea">2</span></p></td><td class="cl-ae327cc8"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cc9"><p class="cl-ae326e5f"><span class="cl-ae3061ea">06:52:05</span></p></td><td class="cl-ae327cca"><p class="cl-ae326e5e"><span class="cl-ae3061ea">85</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cb5"><p class="cl-ae326e5e"><span class="cl-ae3061ea">3</span></p></td><td class="cl-ae327cb6"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cb7"><p class="cl-ae326e5f"><span class="cl-ae3061ea">07:08:45</span></p></td><td class="cl-ae327cb8"><p class="cl-ae326e5e"><span class="cl-ae3061ea">45</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cbe"><p class="cl-ae326e5e"><span class="cl-ae3061ea">4</span></p></td><td class="cl-ae327cc8"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cc9"><p class="cl-ae326e5f"><span class="cl-ae3061ea">07:25:25</span></p></td><td class="cl-ae327cca"><p class="cl-ae326e5e"><span class="cl-ae3061ea">69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cbe"><p class="cl-ae326e5e"><span class="cl-ae3061ea">5</span></p></td><td class="cl-ae327cc8"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cc9"><p class="cl-ae326e5f"><span class="cl-ae3061ea">07:42:05</span></p></td><td class="cl-ae327cca"><p class="cl-ae326e5e"><span class="cl-ae3061ea">42</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cbe"><p class="cl-ae326e5e"><span class="cl-ae3061ea">6</span></p></td><td class="cl-ae327cc8"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cc9"><p class="cl-ae326e5f"><span class="cl-ae3061ea">07:58:45</span></p></td><td class="cl-ae327cca"><p class="cl-ae326e5e"><span class="cl-ae3061ea">52</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cbe"><p class="cl-ae326e5e"><span class="cl-ae3061ea">7</span></p></td><td class="cl-ae327cc8"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cc9"><p class="cl-ae326e5f"><span class="cl-ae3061ea">08:15:25</span></p></td><td class="cl-ae327cca"><p class="cl-ae326e5e"><span class="cl-ae3061ea">6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cb5"><p class="cl-ae326e5e"><span class="cl-ae3061ea">8</span></p></td><td class="cl-ae327cb6"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cb7"><p class="cl-ae326e5f"><span class="cl-ae3061ea">08:32:05</span></p></td><td class="cl-ae327cb8"><p class="cl-ae326e5e"><span class="cl-ae3061ea">45</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cb5"><p class="cl-ae326e5e"><span class="cl-ae3061ea">9</span></p></td><td class="cl-ae327cb6"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cb7"><p class="cl-ae326e5f"><span class="cl-ae3061ea">08:48:45</span></p></td><td class="cl-ae327cb8"><p class="cl-ae326e5e"><span class="cl-ae3061ea">36</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ae327cd2"><p class="cl-ae326e5e"><span class="cl-ae3061ea">10</span></p></td><td class="cl-ae327cd3"><p class="cl-ae326e5f"><span class="cl-ae3061ea">2018-11-20</span></p></td><td class="cl-ae327cd4"><p class="cl-ae326e5f"><span class="cl-ae3061ea">09:05:25</span></p></td><td class="cl-ae327cd5"><p class="cl-ae326e5e"><span class="cl-ae3061ea">7</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </figure>
 </div>
 </div>
+<section id="references" class="level2">
 
 
-<!-- -->
+
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-tibble" class="csl-entry" role="listitem">
+Müller, K., Wickham, H., 2019. <a href="https://CRAN.R-project.org/package=tibble">Tibble: Simple data frames</a>.
+</div>
+<div id="ref-r-base" class="csl-entry" role="listitem">
+R Core Team, 2023. <a href="https://www.R-project.org/">R: A language and environment for statistical computing</a>. R Foundation for Statistical Computing, Vienna, Austria.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -929,57 +984,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1289,484 +1293,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb93" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb93-1"><a href="#cb93-1"></a><span class="co">---</span></span>
-<span id="cb93-2"><a href="#cb93-2"></a><span class="an">title:</span><span class="co"> "Understanding vector and dataframe"</span></span>
-<span id="cb93-3"><a href="#cb93-3"></a><span class="an">description:</span><span class="co"> "Understanding vectoor and dataframe as core data storage in R is an important part, which allows for data analysis and visualization"</span></span>
-<span id="cb93-4"><a href="#cb93-4"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
-<span id="cb93-5"><a href="#cb93-5"></a><span class="an">date:</span><span class="co"> "2024-02-12"</span></span>
-<span id="cb93-6"><a href="#cb93-6"></a><span class="co"># date-modified: "2024-01-26"</span></span>
-<span id="cb93-7"><a href="#cb93-7"></a><span class="an">categories:</span><span class="co"> [visualization, code]</span></span>
-<span id="cb93-8"><a href="#cb93-8"></a><span class="an">image:</span><span class="co"> "DATATYPES.svg"</span></span>
-<span id="cb93-9"><a href="#cb93-9"></a><span class="co">---</span></span>
-<span id="cb93-10"><a href="#cb93-10"></a></span>
-<span id="cb93-11"><a href="#cb93-11"></a><span class="fu"># Introduction</span></span>
-<span id="cb93-12"><a href="#cb93-12"></a></span>
-<span id="cb93-13"><a href="#cb93-13"></a>**R** language is a flexible language that allows to work with different kind of data format [@R-base]. This include `integer`, `numeric`, `character`, `complex`, `dates` and `logical`. The default data type or class in **R** is double precision-- numeric. In a nutshell, R treats all kind of data into five categories but we deal with only four in this book. Datasets in R are often a combination of seven different data types are highlighted in @fig-datatypes;</span>
-<span id="cb93-14"><a href="#cb93-14"></a></span>
-<span id="cb93-15"><a href="#cb93-15"></a><span class="al">![Common data types often collected and stored for anaysis and modelling ](DATATYPES.svg)</span>{#fig-datatypes}</span>
-<span id="cb93-16"><a href="#cb93-16"></a></span>
-<span id="cb93-17"><a href="#cb93-17"></a></span>
-<span id="cb93-18"><a href="#cb93-18"></a><span class="fu"># Vectors</span></span>
-<span id="cb93-19"><a href="#cb93-19"></a></span>
-<span id="cb93-20"><a href="#cb93-20"></a>Often times we want to store a set of numbers in once place. One way to do this is using the vectors in R. Vector is the most basic data structure in R. It is a sequence of elements of the same data type. if the elements are of different data types, they be coerced to a common type that can accommodate all the elements. Vector are generally created using the <span class="in">`c()`</span> function widely called <span class="in">`concatenate`</span>, though depending on the type vector being created, other method. Vectors store several numbers-- a set of numbers in one container. let us look on the example below</span>
-<span id="cb93-21"><a href="#cb93-21"></a></span>
-<span id="cb93-24"><a href="#cb93-24"></a><span class="in">```{r}</span></span>
-<span id="cb93-25"><a href="#cb93-25"></a>id <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb93-26"><a href="#cb93-26"></a>mean.tl <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">158</span>,<span class="dv">659</span>,<span class="dv">782</span>,<span class="dv">659</span>,<span class="dv">759</span>)</span>
-<span id="cb93-27"><a href="#cb93-27"></a>country <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Somalia"</span>, <span class="st">"Kenya"</span>, <span class="st">"Mauritius"</span>, <span class="st">"Seychelles"</span>,  <span class="st">"Mozambique"</span>)</span>
-<span id="cb93-28"><a href="#cb93-28"></a><span class="in">```</span></span>
-<span id="cb93-29"><a href="#cb93-29"></a></span>
-<span id="cb93-30"><a href="#cb93-30"></a>Notice that the <span class="in">`c()`</span> function, which is short for concatenate wraps the list of numbers. The <span class="in">`c()`</span> function combines all numbers together into one container. Notice also that all the individual numbers are separated with a comma. The comma is referred to an an item-delimiter. It allows R to hold each of the numbers separately. This is vital as without the item-delimiter, R will treat a vector as one big, unseperated number.</span>
-<span id="cb93-31"><a href="#cb93-31"></a></span>
-<span id="cb93-32"><a href="#cb93-32"></a><span class="fu">## Numeric</span></span>
-<span id="cb93-33"><a href="#cb93-33"></a></span>
-<span id="cb93-34"><a href="#cb93-34"></a>The most common data type in R is numeric. The numeric class holds the set of real numbers --- decimal place numbers. We create a numeric vector using a <span class="in">`c()`</span> function but you can use any function that creates a sequence of numbers.  For example, we can create a numeric vector of SST as follows;</span>
-<span id="cb93-35"><a href="#cb93-35"></a></span>
-<span id="cb93-38"><a href="#cb93-38"></a><span class="in">```{r}</span></span>
-<span id="cb93-39"><a href="#cb93-39"></a>sst <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">25.4</span>, <span class="dv">26</span>, <span class="dv">28</span>, <span class="fl">27.8</span>, <span class="dv">29</span>, <span class="fl">24.8</span>, <span class="fl">22.3</span>)</span>
-<span id="cb93-40"><a href="#cb93-40"></a><span class="in">```</span></span>
-<span id="cb93-41"><a href="#cb93-41"></a></span>
-<span id="cb93-42"><a href="#cb93-42"></a>We can check whether the variable sst is numeric with <span class="in">`is.numeric`</span> function</span>
-<span id="cb93-45"><a href="#cb93-45"></a><span class="in">```{r}</span></span>
-<span id="cb93-46"><a href="#cb93-46"></a><span class="fu">is.numeric</span>(sst)</span>
-<span id="cb93-47"><a href="#cb93-47"></a><span class="in">```</span></span>
-<span id="cb93-48"><a href="#cb93-48"></a></span>
-<span id="cb93-49"><a href="#cb93-49"></a></span>
-<span id="cb93-50"><a href="#cb93-50"></a><span class="fu">## Integer</span></span>
-<span id="cb93-51"><a href="#cb93-51"></a></span>
-<span id="cb93-52"><a href="#cb93-52"></a>Integer vector data type is actually a special case of numeric data. Unlike <span class="in">`numeric`</span>, <span class="in">`integer`</span> values do not have decimal places.They are commonly used for counting or indexing.  Creating an integer vector is similar to numeric vector except that we need to instruct R to treat the data as integer and not numeric or double. To command R creating integer, we specify a suffix <span class="in">`L`</span> to an element</span>
-<span id="cb93-53"><a href="#cb93-53"></a></span>
-<span id="cb93-56"><a href="#cb93-56"></a><span class="in">```{r}</span></span>
-<span id="cb93-57"><a href="#cb93-57"></a>depth <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>L, <span class="dv">10</span>L, <span class="dv">15</span>L, <span class="dv">20</span>L, <span class="dv">25</span>L,<span class="dv">30</span>L)</span>
-<span id="cb93-58"><a href="#cb93-58"></a><span class="fu">is.vector</span>(depth);<span class="fu">class</span>(depth)</span>
-<span id="cb93-59"><a href="#cb93-59"></a><span class="in">```</span></span>
-<span id="cb93-60"><a href="#cb93-60"></a></span>
-<span id="cb93-61"><a href="#cb93-61"></a></span>
-<span id="cb93-62"><a href="#cb93-62"></a>::: callout-note</span>
-<span id="cb93-63"><a href="#cb93-63"></a>if your variable does not have decimals, R will automatically set the type as integers instead of numeric.</span>
-<span id="cb93-64"><a href="#cb93-64"></a>:::</span>
-<span id="cb93-65"><a href="#cb93-65"></a></span>
-<span id="cb93-66"><a href="#cb93-66"></a></span>
-<span id="cb93-69"><a href="#cb93-69"></a><span class="in">```{r}</span></span>
-<span id="cb93-70"><a href="#cb93-70"></a>aa <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">68</span>,<span class="dv">78</span>,<span class="dv">50</span>)</span>
-<span id="cb93-71"><a href="#cb93-71"></a><span class="in">```</span></span>
-<span id="cb93-72"><a href="#cb93-72"></a></span>
-<span id="cb93-73"><a href="#cb93-73"></a>You can check if the data is integer with <span class="in">`is.integer()`</span> and can convert numeric value to an integer with <span class="in">`as.integer()`</span> </span>
-<span id="cb93-74"><a href="#cb93-74"></a></span>
-<span id="cb93-77"><a href="#cb93-77"></a><span class="in">```{r}</span></span>
-<span id="cb93-78"><a href="#cb93-78"></a><span class="fu">is.integer</span>(aa)</span>
-<span id="cb93-79"><a href="#cb93-79"></a></span>
-<span id="cb93-80"><a href="#cb93-80"></a><span class="in">```</span></span>
-<span id="cb93-81"><a href="#cb93-81"></a></span>
-<span id="cb93-82"><a href="#cb93-82"></a>You can query the class of the object with the <span class="in">`class()`</span> to know the class of the object</span>
-<span id="cb93-85"><a href="#cb93-85"></a><span class="in">```{r}</span></span>
-<span id="cb93-86"><a href="#cb93-86"></a><span class="fu">class</span>(aa)</span>
-<span id="cb93-87"><a href="#cb93-87"></a></span>
-<span id="cb93-88"><a href="#cb93-88"></a><span class="in">```</span></span>
-<span id="cb93-89"><a href="#cb93-89"></a></span>
-<span id="cb93-90"><a href="#cb93-90"></a>Although the object bb is integer as confirmed with <span class="in">`as.integer()`</span> function, the <span class="in">`class()`</span> ouput the answer as numeric. This is because the defaul type of number in r is numeric. However, you can use the function <span class="in">`as.integer()`</span> to convert numeric value to integer</span>
-<span id="cb93-91"><a href="#cb93-91"></a></span>
-<span id="cb93-94"><a href="#cb93-94"></a><span class="in">```{r}</span></span>
-<span id="cb93-95"><a href="#cb93-95"></a><span class="fu">class</span>(<span class="fu">as.integer</span>(aa))</span>
-<span id="cb93-96"><a href="#cb93-96"></a><span class="in">```</span></span>
-<span id="cb93-97"><a href="#cb93-97"></a></span>
-<span id="cb93-98"><a href="#cb93-98"></a></span>
-<span id="cb93-99"><a href="#cb93-99"></a><span class="fu">## Character</span></span>
-<span id="cb93-100"><a href="#cb93-100"></a></span>
-<span id="cb93-101"><a href="#cb93-101"></a>In programming terms, we usually call text as *string*. This often are <span class="in">`text`</span> data like names. A character vector may contain a single character , a word or a group of words. The elements must be enclosed with a single or double quotations mark.</span>
-<span id="cb93-102"><a href="#cb93-102"></a></span>
-<span id="cb93-105"><a href="#cb93-105"></a><span class="in">```{r}</span></span>
-<span id="cb93-106"><a href="#cb93-106"></a>sites <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Pemba Channel"</span>, <span class="st">"Zanzibar Channnel"</span>, <span class="st">"Pemba Channel"</span>)</span>
-<span id="cb93-107"><a href="#cb93-107"></a><span class="fu">is.vector</span>(sites); <span class="fu">class</span>(sites)</span>
-<span id="cb93-108"><a href="#cb93-108"></a><span class="in">```</span></span>
-<span id="cb93-109"><a href="#cb93-109"></a></span>
-<span id="cb93-110"><a href="#cb93-110"></a>We can be sure whether the object is a string with <span class="in">`is.character()`</span> or check the class of the object with <span class="in">`class()`</span>.</span>
-<span id="cb93-111"><a href="#cb93-111"></a></span>
-<span id="cb93-114"><a href="#cb93-114"></a><span class="in">```{r}</span></span>
-<span id="cb93-115"><a href="#cb93-115"></a>countries <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Kenya"</span>, <span class="st">"Uganda"</span>, <span class="st">"Rwanda"</span>, <span class="st">"Tanzania"</span>)</span>
-<span id="cb93-116"><a href="#cb93-116"></a><span class="fu">class</span>(countries)</span>
-<span id="cb93-117"><a href="#cb93-117"></a><span class="in">```</span></span>
-<span id="cb93-118"><a href="#cb93-118"></a></span>
-<span id="cb93-119"><a href="#cb93-119"></a></span>
-<span id="cb93-120"><a href="#cb93-120"></a>::: callout-note   </span>
-<span id="cb93-121"><a href="#cb93-121"></a>Everything inside <span class="in">`""`</span> will be considered as character, no matter if it looks like character or not</span>
-<span id="cb93-122"><a href="#cb93-122"></a>:::</span>
-<span id="cb93-123"><a href="#cb93-123"></a></span>
-<span id="cb93-124"><a href="#cb93-124"></a></span>
-<span id="cb93-125"><a href="#cb93-125"></a><span class="fu">## Factor</span></span>
-<span id="cb93-126"><a href="#cb93-126"></a></span>
-<span id="cb93-127"><a href="#cb93-127"></a>Factor variables are a special case of character variables in the sense that it also contains text. However, factor variables are used when there are a limited number of unique character strings. It often represents a categorical variable. For instance, the gender will usually take on only two values, \"female\" or \"male\" (and will be considered as a factor variable) whereas the name will generally have lots of possibilities (and thus will be considered as a character variable). To create a factor variable use the <span class="in">`factor()`</span> function:</span>
-<span id="cb93-130"><a href="#cb93-130"></a><span class="in">```{r}</span></span>
-<span id="cb93-131"><a href="#cb93-131"></a>    maturity.stage <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"I"</span>, <span class="st">"II"</span>, <span class="st">"III"</span>, <span class="st">"IV"</span>, <span class="st">"V"</span>))</span>
-<span id="cb93-132"><a href="#cb93-132"></a>    maturity.stage</span>
-<span id="cb93-133"><a href="#cb93-133"></a><span class="in">```</span></span>
-<span id="cb93-134"><a href="#cb93-134"></a></span>
-<span id="cb93-135"><a href="#cb93-135"></a></span>
-<span id="cb93-136"><a href="#cb93-136"></a>To know the different levels of a factor variable, use <span class="in">`levels()`</span>:</span>
-<span id="cb93-137"><a href="#cb93-137"></a></span>
-<span id="cb93-140"><a href="#cb93-140"></a><span class="in">```{r}</span></span>
-<span id="cb93-141"><a href="#cb93-141"></a> <span class="fu">levels</span>(maturity.stage)</span>
-<span id="cb93-142"><a href="#cb93-142"></a><span class="in">```</span></span>
-<span id="cb93-143"><a href="#cb93-143"></a>  </span>
-<span id="cb93-144"><a href="#cb93-144"></a>   </span>
-<span id="cb93-145"><a href="#cb93-145"></a>By default, the levels are sorted alphabetically. You can reorder the levels with the argument <span class="in">`levels`</span> in the <span class="in">`factor()`</span> function:</span>
-<span id="cb93-146"><a href="#cb93-146"></a></span>
-<span id="cb93-149"><a href="#cb93-149"></a><span class="in">```{r}</span></span>
-<span id="cb93-150"><a href="#cb93-150"></a>mature <span class="ot">&lt;-</span> <span class="fu">factor</span>(maturity.stage, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"V"</span>, <span class="st">"III"</span>))</span>
-<span id="cb93-151"><a href="#cb93-151"></a>    <span class="fu">levels</span>(mature)</span>
-<span id="cb93-152"><a href="#cb93-152"></a><span class="in">```</span></span>
-<span id="cb93-153"><a href="#cb93-153"></a>  </span>
-<span id="cb93-154"><a href="#cb93-154"></a></span>
-<span id="cb93-155"><a href="#cb93-155"></a>Character strings can be converted to factors with <span class="in">`as.factor()`</span>:</span>
-<span id="cb93-156"><a href="#cb93-156"></a></span>
-<span id="cb93-159"><a href="#cb93-159"></a><span class="in">```{r}</span></span>
-<span id="cb93-160"><a href="#cb93-160"></a> text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"test1"</span>, <span class="st">"test2"</span>, <span class="st">"test1"</span>, <span class="st">"test1"</span>) <span class="co"># create a character vector</span></span>
-<span id="cb93-161"><a href="#cb93-161"></a>    <span class="fu">class</span>(text) <span class="co"># to know the class</span></span>
-<span id="cb93-162"><a href="#cb93-162"></a><span class="in">```</span></span>
-<span id="cb93-163"><a href="#cb93-163"></a>   </span>
-<span id="cb93-166"><a href="#cb93-166"></a><span class="in">```{r}</span></span>
-<span id="cb93-167"><a href="#cb93-167"></a> text_factor <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(text) <span class="co"># transform to factor</span></span>
-<span id="cb93-168"><a href="#cb93-168"></a>    <span class="fu">class</span>(text_factor) <span class="co"># recheck the class</span></span>
-<span id="cb93-169"><a href="#cb93-169"></a><span class="in">```</span></span>
-<span id="cb93-170"><a href="#cb93-170"></a></span>
-<span id="cb93-171"><a href="#cb93-171"></a>   </span>
-<span id="cb93-172"><a href="#cb93-172"></a>The character strings have been transformed to factors, as shown by its class of the type <span class="in">`factor`</span>.</span>
-<span id="cb93-173"><a href="#cb93-173"></a></span>
-<span id="cb93-174"><a href="#cb93-174"></a></span>
-<span id="cb93-175"><a href="#cb93-175"></a>Often we wish to take a continuous numerical vector and transform it into a factor. The function <span class="in">`cut()`</span> takes a vector of numerical data and creates a factor based on your give cut-points. Let us make a fictional total length of 508 bigeye tuna with <span class="in">`rnorm()`</span> function. </span>
-<span id="cb93-176"><a href="#cb93-176"></a></span>
-<span id="cb93-179"><a href="#cb93-179"></a><span class="in">```{r}</span></span>
-<span id="cb93-180"><a href="#cb93-180"></a><span class="co">#| label: fig-hist</span></span>
-<span id="cb93-181"><a href="#cb93-181"></a><span class="co">#| fig-cap: Normal distribution of bigeye tuna's tota length</span></span>
-<span id="cb93-182"><a href="#cb93-182"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb93-183"><a href="#cb93-183"></a><span class="co">#| fig-width: 3</span></span>
-<span id="cb93-184"><a href="#cb93-184"></a><span class="co">#| fig-height: 4</span></span>
-<span id="cb93-185"><a href="#cb93-185"></a><span class="co">#| warning: false</span></span>
-<span id="cb93-186"><a href="#cb93-186"></a><span class="co">#| message: false</span></span>
-<span id="cb93-187"><a href="#cb93-187"></a><span class="co">#| comment: ""</span></span>
-<span id="cb93-188"><a href="#cb93-188"></a></span>
-<span id="cb93-189"><a href="#cb93-189"></a></span>
-<span id="cb93-190"><a href="#cb93-190"></a>tl.cm <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">508</span>, <span class="at">mean =</span> <span class="dv">40</span>, <span class="at">sd =</span> <span class="dv">18</span>)</span>
-<span id="cb93-191"><a href="#cb93-191"></a></span>
-<span id="cb93-192"><a href="#cb93-192"></a><span class="co"># mosaic::plotDist(dist = "norm", mean = 40, sd = 18, under = F, kind = "cdf", add = TRUE)</span></span>
-<span id="cb93-193"><a href="#cb93-193"></a></span>
-<span id="cb93-194"><a href="#cb93-194"></a>tl.cm <span class="sc">|&gt;</span></span>
-<span id="cb93-195"><a href="#cb93-195"></a>  tibble<span class="sc">::</span><span class="fu">as.tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb93-196"><a href="#cb93-196"></a>  ggstatsplot<span class="sc">::</span><span class="fu">gghistostats</span>(<span class="at">x =</span> value, <span class="at">binwidth =</span> <span class="dv">10</span>, <span class="at">test.value =</span> <span class="fl">40.2</span>, <span class="at">type =</span> <span class="st">"n"</span>, <span class="at">normal.curve =</span> T, <span class="at">centrality.type =</span> <span class="st">"p"</span>, <span class="at">xlab =</span> <span class="st">"Total length (cm)"</span>)</span>
-<span id="cb93-197"><a href="#cb93-197"></a><span class="in">```</span></span>
-<span id="cb93-198"><a href="#cb93-198"></a></span>
-<span id="cb93-199"><a href="#cb93-199"></a>We can now breaks the distribution into groups and make a simple plot as shown in @fig-lfq, where frequency of bigeye tuna color coded with the group size</span>
-<span id="cb93-200"><a href="#cb93-200"></a></span>
-<span id="cb93-203"><a href="#cb93-203"></a><span class="in">```{r}</span></span>
-<span id="cb93-204"><a href="#cb93-204"></a>group <span class="ot">=</span> <span class="fu">cut</span>(tl.cm, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">110</span>),</span>
-<span id="cb93-205"><a href="#cb93-205"></a>            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Below 20"</span>, <span class="st">"30-60"</span>, <span class="st">"Above 60"</span>))</span>
-<span id="cb93-206"><a href="#cb93-206"></a><span class="fu">is.factor</span>(group)</span>
-<span id="cb93-207"><a href="#cb93-207"></a><span class="fu">levels</span>(group)</span>
-<span id="cb93-208"><a href="#cb93-208"></a><span class="in">```</span></span>
-<span id="cb93-209"><a href="#cb93-209"></a></span>
-<span id="cb93-210"><a href="#cb93-210"></a></span>
-<span id="cb93-213"><a href="#cb93-213"></a><span class="in">```{r}</span></span>
-<span id="cb93-214"><a href="#cb93-214"></a><span class="co">#| label: fig-bar</span></span>
-<span id="cb93-215"><a href="#cb93-215"></a><span class="co">#| fig-pos: H</span></span>
-<span id="cb93-216"><a href="#cb93-216"></a><span class="co">#| fig-cap: Length frequency of bigeye tuna</span></span>
-<span id="cb93-217"><a href="#cb93-217"></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb93-218"><a href="#cb93-218"></a><span class="co">#| fig-height: 4</span></span>
-<span id="cb93-219"><a href="#cb93-219"></a></span>
-<span id="cb93-220"><a href="#cb93-220"></a><span class="fu">barplot</span>(<span class="fu">table</span>(group), <span class="at">las =</span> <span class="dv">1</span>, <span class="at">horiz =</span> <span class="cn">FALSE</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>), <span class="at">ylab =</span> <span class="st">"Frequency"</span>, <span class="at">xlab =</span> <span class="st">""</span>)</span>
-<span id="cb93-221"><a href="#cb93-221"></a><span class="in">```</span></span>
-<span id="cb93-222"><a href="#cb93-222"></a></span>
-<span id="cb93-223"><a href="#cb93-223"></a></span>
-<span id="cb93-224"><a href="#cb93-224"></a><span class="fu">## Logical</span></span>
-<span id="cb93-225"><a href="#cb93-225"></a></span>
-<span id="cb93-226"><a href="#cb93-226"></a>Logical data (or simply logical ) represent the logical <span class="in">`TRUE`</span> state and the logical <span class="in">`FALSE`</span> state. Logical variables are the variables in which logical data are stored. Logical variables can assume only two states:</span>
-<span id="cb93-227"><a href="#cb93-227"></a></span>
-<span id="cb93-228"><a href="#cb93-228"></a><span class="ss">+ </span>FALSE, always represent by 0;</span>
-<span id="cb93-229"><a href="#cb93-229"></a><span class="ss">+ </span>TRUE, always represented by a nonzero object. Usually, the digit 1 is used for TRUE. </span>
-<span id="cb93-230"><a href="#cb93-230"></a></span>
-<span id="cb93-231"><a href="#cb93-231"></a>We can create logical variables indirectly, through logical operations, such as the result of a comparison between two numbers. These operations return logical values. For example, type the following statement at the R console: </span>
-<span id="cb93-232"><a href="#cb93-232"></a></span>
-<span id="cb93-233"><a href="#cb93-233"></a></span>
-<span id="cb93-236"><a href="#cb93-236"></a><span class="in">```{r}</span></span>
-<span id="cb93-237"><a href="#cb93-237"></a><span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">3</span>;</span>
-<span id="cb93-238"><a href="#cb93-238"></a><span class="dv">5</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
-<span id="cb93-239"><a href="#cb93-239"></a><span class="in">```</span></span>
-<span id="cb93-240"><a href="#cb93-240"></a></span>
-<span id="cb93-241"><a href="#cb93-241"></a>Since 5 is indeed greater than 3, the result of the comparison is true, however, 5 is not less than 3, and hence the comparison is false. The sign <span class="in">`&gt;`</span> and <span class="in">`&lt;`</span> are relational operators, returning logical data types as a result. </span>
-<span id="cb93-242"><a href="#cb93-242"></a></span>
-<span id="cb93-243"><a href="#cb93-243"></a></span>
-<span id="cb93-244"><a href="#cb93-244"></a></span>
-<span id="cb93-247"><a href="#cb93-247"></a><span class="in">```{r}</span></span>
-<span id="cb93-248"><a href="#cb93-248"></a> value1 <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb93-249"><a href="#cb93-249"></a>    value2 <span class="ot">&lt;-</span> <span class="dv">9</span></span>
-<span id="cb93-250"><a href="#cb93-250"></a><span class="in">```</span></span>
-<span id="cb93-251"><a href="#cb93-251"></a>   </span>
-<span id="cb93-254"><a href="#cb93-254"></a><span class="in">```{r}</span></span>
-<span id="cb93-255"><a href="#cb93-255"></a>    greater <span class="ot">&lt;-</span> value1 <span class="sc">&gt;</span> value2</span>
-<span id="cb93-256"><a href="#cb93-256"></a>    greater</span>
-<span id="cb93-257"><a href="#cb93-257"></a>    <span class="fu">class</span>(greater)</span>
-<span id="cb93-258"><a href="#cb93-258"></a></span>
-<span id="cb93-259"><a href="#cb93-259"></a><span class="in">```</span></span>
-<span id="cb93-260"><a href="#cb93-260"></a></span>
-<span id="cb93-261"><a href="#cb93-261"></a> </span>
-<span id="cb93-264"><a href="#cb93-264"></a><span class="in">```{r}</span></span>
-<span id="cb93-265"><a href="#cb93-265"></a>    <span class="co"># is value1 less than or equal to value2?</span></span>
-<span id="cb93-266"><a href="#cb93-266"></a>    less <span class="ot">&lt;-</span> value1 <span class="sc">&lt;=</span> value2</span>
-<span id="cb93-267"><a href="#cb93-267"></a>    less</span>
-<span id="cb93-268"><a href="#cb93-268"></a>    <span class="fu">class</span>(less)</span>
-<span id="cb93-269"><a href="#cb93-269"></a></span>
-<span id="cb93-270"><a href="#cb93-270"></a><span class="in">```</span></span>
-<span id="cb93-271"><a href="#cb93-271"></a></span>
-<span id="cb93-272"><a href="#cb93-272"></a></span>
-<span id="cb93-273"><a href="#cb93-273"></a>It is also possible to transform logical data into numeric data. After the transformation from logical to numeric with the <span class="in">`as.numeric()`</span> command, <span class="in">`FALSE`</span> values equal to 0 and <span class="in">`TRUE`</span> values equal to 1:</span>
-<span id="cb93-274"><a href="#cb93-274"></a></span>
-<span id="cb93-277"><a href="#cb93-277"></a><span class="in">```{r}</span></span>
-<span id="cb93-278"><a href="#cb93-278"></a> greater_num <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(greater)</span>
-<span id="cb93-279"><a href="#cb93-279"></a>    <span class="fu">sum</span>(greater)</span>
-<span id="cb93-280"><a href="#cb93-280"></a><span class="in">```</span></span>
-<span id="cb93-281"><a href="#cb93-281"></a>   </span>
-<span id="cb93-284"><a href="#cb93-284"></a><span class="in">```{r}</span></span>
-<span id="cb93-285"><a href="#cb93-285"></a>   less_num <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(less)</span>
-<span id="cb93-286"><a href="#cb93-286"></a>    <span class="fu">sum</span>(less)</span>
-<span id="cb93-287"><a href="#cb93-287"></a><span class="in">```</span></span>
-<span id="cb93-288"><a href="#cb93-288"></a></span>
-<span id="cb93-289"><a href="#cb93-289"></a></span>
-<span id="cb93-290"><a href="#cb93-290"></a>Conversely, numeric data can be converted to logical data, with <span class="in">`FALSE`</span> for all values equal to 0 and <span class="in">`TRUE`</span> for all other values.</span>
-<span id="cb93-291"><a href="#cb93-291"></a></span>
-<span id="cb93-294"><a href="#cb93-294"></a><span class="in">```{r}</span></span>
-<span id="cb93-295"><a href="#cb93-295"></a>  x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb93-296"><a href="#cb93-296"></a>  <span class="fu">as.logical</span>(x)</span>
-<span id="cb93-297"><a href="#cb93-297"></a><span class="in">```</span></span>
-<span id="cb93-298"><a href="#cb93-298"></a></span>
-<span id="cb93-299"><a href="#cb93-299"></a></span>
-<span id="cb93-302"><a href="#cb93-302"></a><span class="in">```{r}</span></span>
-<span id="cb93-303"><a href="#cb93-303"></a> y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb93-304"><a href="#cb93-304"></a><span class="fu">as.logical</span>(y)</span>
-<span id="cb93-305"><a href="#cb93-305"></a><span class="in">```</span></span>
-<span id="cb93-306"><a href="#cb93-306"></a></span>
-<span id="cb93-307"><a href="#cb93-307"></a><span class="fu">## Date and Time</span></span>
-<span id="cb93-308"><a href="#cb93-308"></a></span>
-<span id="cb93-309"><a href="#cb93-309"></a>Date and time are also treated as vector in R</span>
-<span id="cb93-310"><a href="#cb93-310"></a></span>
-<span id="cb93-313"><a href="#cb93-313"></a><span class="in">```{r}</span></span>
-<span id="cb93-314"><a href="#cb93-314"></a>date.time <span class="ot">=</span> <span class="fu">seq</span>(lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="dv">010121</span>), </span>
-<span id="cb93-315"><a href="#cb93-315"></a>                lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="dv">250121</span>), </span>
-<span id="cb93-316"><a href="#cb93-316"></a>                <span class="at">length.out =</span> <span class="dv">5</span>)</span>
-<span id="cb93-317"><a href="#cb93-317"></a>date.time</span>
-<span id="cb93-318"><a href="#cb93-318"></a><span class="in">```</span></span>
-<span id="cb93-319"><a href="#cb93-319"></a></span>
-<span id="cb93-320"><a href="#cb93-320"></a><span class="fu"># Generating vectors</span></span>
-<span id="cb93-321"><a href="#cb93-321"></a></span>
-<span id="cb93-322"><a href="#cb93-322"></a><span class="fu">## Sequence Numbers</span></span>
-<span id="cb93-323"><a href="#cb93-323"></a></span>
-<span id="cb93-324"><a href="#cb93-324"></a>There are few R operators that are designed for creating vecor of non-random numbers. These functions provide multiple ways for generating sequences of numbers</span>
-<span id="cb93-325"><a href="#cb93-325"></a></span>
-<span id="cb93-326"><a href="#cb93-326"></a>The colon <span class="in">`:`</span> operator, explicitly generate regular sequence of numbers between the lower and upper boundary numbers specified. For example, generating number beween 0 and 10, we simply write;</span>
-<span id="cb93-327"><a href="#cb93-327"></a></span>
-<span id="cb93-330"><a href="#cb93-330"></a><span class="in">```{r}</span></span>
-<span id="cb93-331"><a href="#cb93-331"></a>vector.seq <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb93-332"><a href="#cb93-332"></a>vector.seq</span>
-<span id="cb93-333"><a href="#cb93-333"></a><span class="in">```</span></span>
-<span id="cb93-334"><a href="#cb93-334"></a></span>
-<span id="cb93-335"><a href="#cb93-335"></a>However, if you want to generate a vector of sequence number with specified interval, let say we want to generate number between 0 and 10 with interval of 2, then the <span class="in">`seq()`</span> function is used</span>
-<span id="cb93-338"><a href="#cb93-338"></a><span class="in">```{r}</span></span>
-<span id="cb93-339"><a href="#cb93-339"></a>regular.vector <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>,<span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
-<span id="cb93-340"><a href="#cb93-340"></a>regular.vector</span>
-<span id="cb93-341"><a href="#cb93-341"></a><span class="in">```</span></span>
-<span id="cb93-342"><a href="#cb93-342"></a></span>
-<span id="cb93-343"><a href="#cb93-343"></a>unlike the <span class="in">`seq()`</span> function and <span class="in">`:`</span> operator that works with numbers, the <span class="in">`rep()`</span> function generate sequence of repeated numbers or strings to create a vector</span>
-<span id="cb93-344"><a href="#cb93-344"></a></span>
-<span id="cb93-347"><a href="#cb93-347"></a><span class="in">```{r}</span></span>
-<span id="cb93-348"><a href="#cb93-348"></a>id <span class="ot">=</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">3</span>, <span class="at">each =</span> <span class="dv">4</span>)</span>
-<span id="cb93-349"><a href="#cb93-349"></a>station <span class="ot">=</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="st">"Station1"</span>, <span class="at">each =</span> <span class="dv">4</span>)</span>
-<span id="cb93-350"><a href="#cb93-350"></a>id;station</span>
-<span id="cb93-351"><a href="#cb93-351"></a><span class="in">```</span></span>
-<span id="cb93-352"><a href="#cb93-352"></a><span class="fu">## Sequence characters</span></span>
-<span id="cb93-353"><a href="#cb93-353"></a></span>
-<span id="cb93-354"><a href="#cb93-354"></a>The <span class="in">`rep()`</span> function allows to parse <span class="in">`each`</span> and <span class="in">`times`</span> arguments. The <span class="in">`each`</span> argument allows creation of vector that that repeat each element in a vector according to specified number. </span>
-<span id="cb93-357"><a href="#cb93-357"></a><span class="in">```{r}</span></span>
-<span id="cb93-358"><a href="#cb93-358"></a>sampled.months <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"January"</span>, <span class="st">"March"</span>, <span class="st">"May"</span>)</span>
-<span id="cb93-359"><a href="#cb93-359"></a><span class="fu">rep</span>(<span class="at">x =</span> sampled.months, <span class="at">each =</span> <span class="dv">3</span>)</span>
-<span id="cb93-360"><a href="#cb93-360"></a></span>
-<span id="cb93-361"><a href="#cb93-361"></a><span class="in">```</span></span>
-<span id="cb93-362"><a href="#cb93-362"></a></span>
-<span id="cb93-363"><a href="#cb93-363"></a>But the <span class="in">`times`</span> argument repeat the whole vector to specfied times</span>
-<span id="cb93-366"><a href="#cb93-366"></a><span class="in">```{r}</span></span>
-<span id="cb93-367"><a href="#cb93-367"></a><span class="fu">rep</span>(<span class="at">x =</span> sampled.months, <span class="at">times =</span> <span class="dv">3</span>)</span>
-<span id="cb93-368"><a href="#cb93-368"></a><span class="in">```</span></span>
-<span id="cb93-369"><a href="#cb93-369"></a></span>
-<span id="cb93-370"><a href="#cb93-370"></a><span class="fu">## Generating normal distribution</span></span>
-<span id="cb93-371"><a href="#cb93-371"></a></span>
-<span id="cb93-372"><a href="#cb93-372"></a>The central limit theorem that ensure the data is normal distributed is well known to statistician. R has a <span class="in">`rnorm()`</span> function which makes vector of normal distributed values. For example to generate a vector of 40 sea surface temperature values from a normal distribution with a <span class="in">`mean`</span> of 25, and <span class="in">`standard deviation`</span> of 1.58, we simply type this expression in console;</span>
-<span id="cb93-375"><a href="#cb93-375"></a><span class="in">```{r}</span></span>
-<span id="cb93-376"><a href="#cb93-376"></a>sst <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">40</span>, <span class="at">mean =</span> <span class="dv">25</span>,<span class="at">sd =</span> <span class="fl">1.58</span>)</span>
-<span id="cb93-377"><a href="#cb93-377"></a>sst</span>
-<span id="cb93-378"><a href="#cb93-378"></a><span class="in">```</span></span>
-<span id="cb93-379"><a href="#cb93-379"></a><span class="fu"># Common task</span></span>
-<span id="cb93-380"><a href="#cb93-380"></a></span>
-<span id="cb93-381"><a href="#cb93-381"></a><span class="fu">## Rounding off numbers</span></span>
-<span id="cb93-382"><a href="#cb93-382"></a></span>
-<span id="cb93-383"><a href="#cb93-383"></a>There are many ways of rounding off numerical number to the nearest integers or specify the number of decimal places. the code block below illustrate the common way to round off:</span>
-<span id="cb93-384"><a href="#cb93-384"></a></span>
-<span id="cb93-387"><a href="#cb93-387"></a><span class="in">```{r}</span></span>
-<span id="cb93-388"><a href="#cb93-388"></a>chl <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> .<span class="dv">55</span>, <span class="at">sd =</span> .<span class="dv">2</span>)</span>
-<span id="cb93-389"><a href="#cb93-389"></a>chl <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb93-390"><a href="#cb93-390"></a><span class="in">```</span></span>
-<span id="cb93-391"><a href="#cb93-391"></a></span>
-<span id="cb93-392"><a href="#cb93-392"></a></span>
-<span id="cb93-393"><a href="#cb93-393"></a><span class="fu">## Number of elements in a vector</span></span>
-<span id="cb93-394"><a href="#cb93-394"></a></span>
-<span id="cb93-395"><a href="#cb93-395"></a>Sometimes you may have a long vector and want to know the numbers of elements in the object. R has <span class="in">`length()`</span> function that allows you to query the vector and print the answer</span>
-<span id="cb93-396"><a href="#cb93-396"></a></span>
-<span id="cb93-399"><a href="#cb93-399"></a><span class="in">```{r}</span></span>
-<span id="cb93-400"><a href="#cb93-400"></a><span class="fu">length</span>(chl)</span>
-<span id="cb93-401"><a href="#cb93-401"></a><span class="in">```</span></span>
-<span id="cb93-402"><a href="#cb93-402"></a></span>
-<span id="cb93-403"><a href="#cb93-403"></a><span class="fu"># Data Frame</span></span>
-<span id="cb93-404"><a href="#cb93-404"></a></span>
-<span id="cb93-405"><a href="#cb93-405"></a>One of R’s greatest strengths is in manipulating data. One of the primary structures for storing data in R is called a Data Frame. Much of your work in R will be working with and manipulating data frames. Data frames are made up of rows and columns. The top row is a header and describes the contents of each variable. Each row represents an individual measured or observed record. Records can also have names. Each record contains multiple cells of values. Let’s illustrates data frame using historical catch data in the Western Indian Ocean Region from FAO. This dataset  is called <span class="in">`landings_wio_country.csv`</span> and contains some data about total landed catches of ten countries in the WIO region reported in FAO between 1951 and 2015 (@tbl-landings).</span>
-<span id="cb93-406"><a href="#cb93-406"></a></span>
-<span id="cb93-409"><a href="#cb93-409"></a><span class="in">```{r}</span></span>
-<span id="cb93-410"><a href="#cb93-410"></a><span class="co">#| warning: false</span></span>
-<span id="cb93-411"><a href="#cb93-411"></a><span class="co">#| message: false</span></span>
-<span id="cb93-412"><a href="#cb93-412"></a><span class="co">#| echo: false</span></span>
-<span id="cb93-413"><a href="#cb93-413"></a><span class="co">#| label: tbl-landings</span></span>
-<span id="cb93-414"><a href="#cb93-414"></a><span class="co">#| tbl-cap: Landing of fish by country</span></span>
-<span id="cb93-415"><a href="#cb93-415"></a></span>
-<span id="cb93-416"><a href="#cb93-416"></a></span>
-<span id="cb93-417"><a href="#cb93-417"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"../data/landings_wio_country.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb93-418"><a href="#cb93-418"></a>  <span class="co"># dplyr::filter(year == 2015)|&gt;</span></span>
-<span id="cb93-419"><a href="#cb93-419"></a>  FSA<span class="sc">::</span><span class="fu">headtail</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb93-420"><a href="#cb93-420"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="at">country=</span>name, year, catch) <span class="sc">|&gt;</span> </span>
-<span id="cb93-421"><a href="#cb93-421"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>()</span>
-<span id="cb93-422"><a href="#cb93-422"></a></span>
-<span id="cb93-423"><a href="#cb93-423"></a></span>
-<span id="cb93-424"><a href="#cb93-424"></a><span class="in">```</span></span>
-<span id="cb93-425"><a href="#cb93-425"></a></span>
-<span id="cb93-426"><a href="#cb93-426"></a></span>
-<span id="cb93-427"><a href="#cb93-427"></a><span class="in">`data.frame`</span> is very much like a simple Excel spreadsheet where each column represents a variable type and each row represent observations. A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. A data frame is a list of equal--length vectors with rows as records and columns as variables. This makes data frames unique in data storing as it can store different classes of objects in each column (i.e. numeric, character, factor, logic, etc). </span>
-<span id="cb93-428"><a href="#cb93-428"></a></span>
-<span id="cb93-429"><a href="#cb93-429"></a>In this section, we will create data frames and add attributes to data frames. Perhaps the easiest way to create a data frame is to parse vectors in a <span class="in">`data.frame()`</span> function. For instance, in this case we create a simple data frame <span class="in">`dt`</span> and assess its internal structure</span>
-<span id="cb93-430"><a href="#cb93-430"></a></span>
-<span id="cb93-433"><a href="#cb93-433"></a><span class="in">```{r}</span></span>
-<span id="cb93-434"><a href="#cb93-434"></a><span class="co"># create vectors</span></span>
-<span id="cb93-435"><a href="#cb93-435"></a>country  <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'Kenya'</span>,<span class="st">'Mozambique'</span>,<span class="st">'Seychelles'</span>)</span>
-<span id="cb93-436"><a href="#cb93-436"></a>weight <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">92</span>)</span>
-<span id="cb93-437"><a href="#cb93-437"></a>maturity <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"I"</span>, <span class="st">"II"</span>, <span class="st">"V"</span>)</span>
-<span id="cb93-438"><a href="#cb93-438"></a></span>
-<span id="cb93-439"><a href="#cb93-439"></a><span class="do">## use the vectors to make a data frame</span></span>
-<span id="cb93-440"><a href="#cb93-440"></a>dt <span class="ot">=</span> <span class="fu">data.frame</span>(country, weight, maturity)</span>
-<span id="cb93-441"><a href="#cb93-441"></a></span>
-<span id="cb93-442"><a href="#cb93-442"></a><span class="do">## assess the internal structure</span></span>
-<span id="cb93-443"><a href="#cb93-443"></a><span class="fu">str</span>(dt)</span>
-<span id="cb93-444"><a href="#cb93-444"></a><span class="in">```</span></span>
-<span id="cb93-445"><a href="#cb93-445"></a></span>
-<span id="cb93-446"><a href="#cb93-446"></a>Note how Variable <span class="in">`Name`</span> in dt was converted to a column of factors . This is because there is a default setting in <span class="in">`data.frame()`</span> that converts character columns to factors . We can turn this off by setting the <span class="in">`stringsAsFactors = FALSE`</span> argument:</span>
-<span id="cb93-447"><a href="#cb93-447"></a></span>
-<span id="cb93-450"><a href="#cb93-450"></a><span class="in">```{r}</span></span>
-<span id="cb93-451"><a href="#cb93-451"></a><span class="do">## use the vectors to make a data frame</span></span>
-<span id="cb93-452"><a href="#cb93-452"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(country, weight, maturity, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb93-453"><a href="#cb93-453"></a>df <span class="sc">|&gt;</span> <span class="fu">str</span>()</span>
-<span id="cb93-454"><a href="#cb93-454"></a><span class="in">```</span></span>
-<span id="cb93-455"><a href="#cb93-455"></a></span>
-<span id="cb93-456"><a href="#cb93-456"></a>Now the variable <span class="in">`Name`</span> is of character class in the data frame. The inherited problem of data frame to convert character columns into a factor is resolved by introduction f advanced data frames called *tibble* <span class="co">[</span><span class="ot">@tibble</span><span class="co">]</span>, which provides sticker checking and better formating than the traditional data.frame.</span>
-<span id="cb93-457"><a href="#cb93-457"></a></span>
-<span id="cb93-460"><a href="#cb93-460"></a><span class="in">```{r}</span></span>
-<span id="cb93-461"><a href="#cb93-461"></a><span class="do">## use the vectors to make a tibble</span></span>
-<span id="cb93-462"><a href="#cb93-462"></a>tb <span class="ot">=</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(country, weight, maturity) </span>
-<span id="cb93-463"><a href="#cb93-463"></a><span class="do">## check the internal structure of the tibble</span></span>
-<span id="cb93-464"><a href="#cb93-464"></a>tb <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
-<span id="cb93-465"><a href="#cb93-465"></a><span class="in">```</span></span>
-<span id="cb93-466"><a href="#cb93-466"></a></span>
-<span id="cb93-467"><a href="#cb93-467"></a>@tbl-score show the the data frame created by fusing the two vectors together.</span>
-<span id="cb93-468"><a href="#cb93-468"></a></span>
-<span id="cb93-469"><a href="#cb93-469"></a><span class="in">```{r tab301, echo=FALSE}</span></span>
-<span id="cb93-470"><a href="#cb93-470"></a></span>
-<span id="cb93-471"><a href="#cb93-471"></a><span class="in">#| label: tbl-score</span></span>
-<span id="cb93-472"><a href="#cb93-472"></a><span class="in">#| tbl-cap: Variables in the data frame</span></span>
-<span id="cb93-473"><a href="#cb93-473"></a></span>
-<span id="cb93-474"><a href="#cb93-474"></a><span class="in">tb |&gt;</span></span>
-<span id="cb93-475"><a href="#cb93-475"></a><span class="in">  flextable::flextable()</span></span>
-<span id="cb93-476"><a href="#cb93-476"></a></span>
-<span id="cb93-477"><a href="#cb93-477"></a><span class="in">```</span></span>
-<span id="cb93-478"><a href="#cb93-478"></a></span>
-<span id="cb93-479"><a href="#cb93-479"></a>Because the columns have meaning and we have given them column names, it is desirable to want to access an element by the name of the column as opposed to the column number.In large Excel spreadsheets I often get annoyed trying to remember which column something was. The <span class="in">`$`</span>sign and <span class="in">`[]`</span>are used in R to select variable from the data frame.</span>
-<span id="cb93-480"><a href="#cb93-480"></a></span>
-<span id="cb93-483"><a href="#cb93-483"></a><span class="in">```{r}</span></span>
-<span id="cb93-484"><a href="#cb93-484"></a>dt<span class="sc">$</span>country</span>
-<span id="cb93-485"><a href="#cb93-485"></a>dt[,<span class="dv">1</span>]</span>
-<span id="cb93-486"><a href="#cb93-486"></a><span class="in">```</span></span>
-<span id="cb93-487"><a href="#cb93-487"></a></span>
-<span id="cb93-490"><a href="#cb93-490"></a><span class="in">```{r}</span></span>
-<span id="cb93-491"><a href="#cb93-491"></a>dt<span class="sc">$</span>weight</span>
-<span id="cb93-492"><a href="#cb93-492"></a>dt[,<span class="dv">2</span>]</span>
-<span id="cb93-493"><a href="#cb93-493"></a><span class="in">```</span></span>
-<span id="cb93-494"><a href="#cb93-494"></a></span>
-<span id="cb93-495"><a href="#cb93-495"></a>The FSA package in R has build in dataset that we can use for illustration. For example, <span class="in">`ChinookArg`</span> dataset  contains total length and weight of 112 Chinook salmon collected in three sites in Argentina (@tbl-chinook). </span>
-<span id="cb93-496"><a href="#cb93-496"></a></span>
-<span id="cb93-499"><a href="#cb93-499"></a><span class="in">```{r}</span></span>
-<span id="cb93-500"><a href="#cb93-500"></a><span class="co">#| label: tbl-chinook</span></span>
-<span id="cb93-501"><a href="#cb93-501"></a><span class="co">#| tbl-cap: Length and weight of chinook samlon sampled at three different sites</span></span>
-<span id="cb93-502"><a href="#cb93-502"></a></span>
-<span id="cb93-503"><a href="#cb93-503"></a>chinook <span class="ot">=</span> FSA<span class="sc">::</span>ChinookArg</span>
-<span id="cb93-504"><a href="#cb93-504"></a></span>
-<span id="cb93-505"><a href="#cb93-505"></a></span>
-<span id="cb93-506"><a href="#cb93-506"></a></span>
-<span id="cb93-507"><a href="#cb93-507"></a>chinook <span class="sc">|&gt;</span></span>
-<span id="cb93-508"><a href="#cb93-508"></a>  dplyr<span class="sc">::</span><span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span></span>
-<span id="cb93-509"><a href="#cb93-509"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb93-510"><a href="#cb93-510"></a>  flextable<span class="sc">::</span><span class="fu">autofit</span>()</span>
-<span id="cb93-511"><a href="#cb93-511"></a></span>
-<span id="cb93-512"><a href="#cb93-512"></a></span>
-<span id="cb93-513"><a href="#cb93-513"></a><span class="in">```</span></span>
-<span id="cb93-514"><a href="#cb93-514"></a></span>
-<span id="cb93-515"><a href="#cb93-515"></a>Sometimes you may need to create set of values and store them in vectors, then combine the vectors into a data frame. Let us see how this can be done. First create three vectors. One contains id for ten individuals, the second vector hold the time each individual signed in the attendance book and the third vector is the distance of each individual from office. We can concatenate the set of values to make vectors.</span>
-<span id="cb93-516"><a href="#cb93-516"></a></span>
-<span id="cb93-519"><a href="#cb93-519"></a><span class="in">```{r}</span></span>
-<span id="cb93-520"><a href="#cb93-520"></a>vessel.id  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
-<span id="cb93-521"><a href="#cb93-521"></a></span>
-<span id="cb93-522"><a href="#cb93-522"></a>departure.time <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">ymd_hms</span>(<span class="fu">c</span>(<span class="st">"2018-11-20 06:35:25 EAT"</span>, <span class="st">"2018-11-20 06:52:05 EAT"</span>, </span>
-<span id="cb93-523"><a href="#cb93-523"></a>                 <span class="st">"2018-11-20 07:08:45 EAT"</span>, <span class="st">"2018-11-20 07:25:25 EAT"</span>, </span>
-<span id="cb93-524"><a href="#cb93-524"></a>                 <span class="st">"2018-11-20 07:42:05 EAT"</span>, <span class="st">"2018-11-20 07:58:45 EAT"</span>, </span>
-<span id="cb93-525"><a href="#cb93-525"></a>                 <span class="st">"2018-11-20 08:15:25 EAT"</span>, <span class="st">"2018-11-20 08:32:05 EAT"</span>, </span>
-<span id="cb93-526"><a href="#cb93-526"></a>                 <span class="st">"2018-11-20 08:48:45 EAT"</span>, <span class="st">"2018-11-20 09:05:25 EAT"</span>), <span class="at">tz =</span> <span class="st">""</span>)</span>
-<span id="cb93-527"><a href="#cb93-527"></a></span>
-<span id="cb93-528"><a href="#cb93-528"></a>distance.ground <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">85</span>, <span class="dv">45</span>, <span class="dv">69</span>, <span class="dv">42</span>,  <span class="dv">52</span>, <span class="dv">6</span>, <span class="dv">45</span>, <span class="dv">36</span>, <span class="dv">7</span>)</span>
-<span id="cb93-529"><a href="#cb93-529"></a><span class="in">```</span></span>
-<span id="cb93-530"><a href="#cb93-530"></a></span>
-<span id="cb93-531"><a href="#cb93-531"></a>Once we have the vectors that have the same length dimension, we can use the function <span class="in">`data.frame()`</span> to combine the the three vectors into one data frame shown in @tbl-tab23</span>
-<span id="cb93-532"><a href="#cb93-532"></a></span>
-<span id="cb93-535"><a href="#cb93-535"></a><span class="in">```{r}</span></span>
-<span id="cb93-536"><a href="#cb93-536"></a>fishing.dep <span class="ot">=</span> <span class="fu">data.frame</span>(vessel.id, </span>
-<span id="cb93-537"><a href="#cb93-537"></a>                     departure.time, </span>
-<span id="cb93-538"><a href="#cb93-538"></a>                     distance.ground)</span>
-<span id="cb93-539"><a href="#cb93-539"></a><span class="in">```</span></span>
-<span id="cb93-540"><a href="#cb93-540"></a></span>
-<span id="cb93-541"><a href="#cb93-541"></a></span>
-<span id="cb93-544"><a href="#cb93-544"></a><span class="in">```{r}</span></span>
-<span id="cb93-545"><a href="#cb93-545"></a><span class="co">#| echo: false</span></span>
-<span id="cb93-546"><a href="#cb93-546"></a><span class="co">#| label: tbl-tab23</span></span>
-<span id="cb93-547"><a href="#cb93-547"></a><span class="co">#| tbl-cap: The time fishers departed for fishing with the distance to th fishing ground</span></span>
-<span id="cb93-548"><a href="#cb93-548"></a></span>
-<span id="cb93-549"><a href="#cb93-549"></a>fishing.dep <span class="sc">|&gt;</span></span>
-<span id="cb93-550"><a href="#cb93-550"></a>  tidyr<span class="sc">::</span><span class="fu">separate</span>(departure.time, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"time"</span>), <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span></span>
-<span id="cb93-551"><a href="#cb93-551"></a>  flextable<span class="sc">::</span><span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb93-552"><a href="#cb93-552"></a>  flextable<span class="sc">::</span><span class="fu">autofit</span>()</span>
-<span id="cb93-553"><a href="#cb93-553"></a></span>
-<span id="cb93-554"><a href="#cb93-554"></a><span class="in">```</span></span>
-<span id="cb93-555"><a href="#cb93-555"></a></span>
-<span id="cb93-556"><a href="#cb93-556"></a></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>©2024 <a href="../../posts/vectorDataframe/index.html">Datika</a></p>
+</div>   
     <div class="nav-footer-center">
-
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../faq.html">
+<p>FAQ</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../feedback.html">
+<p>Feedback</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../terms.html">
+<p>Terms</p>
+</a>
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

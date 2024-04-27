@@ -4,7 +4,7 @@ project:
 
 website:
   title: "DATIKA"
-  back-to-top-navigation: true
+  back-to-top-navigation: false
   page-navigation: true
   description: "Coding for all for better today and tommorow"
   
@@ -23,8 +23,8 @@ website:
         href: data.qmd
       - text: Gallery
         href: photos.qmd
-      # - text: About
-      #   href: about.qmd
+      - text: About
+        href: about.qmd
       - icon: github
         href: https://github.com/lugoga/kitaa
       # - icon: twitter
@@ -54,12 +54,22 @@ website:
     image: thumbnail_blog.png
     card-style: summary_large_image
     creator: "@semba2024"
+    
+  page-footer:
+    left:  "&copy;2024 [Datika](index.qmd)"
+    center:
+      - text: "FAQ"
+        href: faq.qmd
+      - text: "Feedback"
+        href: feedback.qmd
+      - text: "License"
+        href: license.qmd
+      - text: "Terms"
+        href: terms.qmd
+        
 feed: true
-code-line-numbers: true
-code-copy: true
-code-tools: true
-code-block-border-left: true
-bibliography: reference.bib
+
+
 # csl: apa.csl
 
 
@@ -79,9 +89,12 @@ bibliography: reference.bib
 format:
   html:
     code-fold: false
-    code-tools: true
+    code-tools: false
+    code-line-numbers: true
     theme:
       - styles.scss
+      # - theme-light.scss
+      # - theme-dark.scss
     mainfont: Nunito
     toc: true
     toc-depth: 3

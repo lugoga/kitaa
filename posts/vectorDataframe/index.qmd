@@ -1,7 +1,14 @@
 ---
 title: "Understanding vector and dataframe"
 description: "Understanding vectoor and dataframe as core data storage in R is an important part, which allows for data analysis and visualization"
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-02-12"
 # date-modified: "2024-01-26"
 categories: [visualization, code]
@@ -10,7 +17,7 @@ image: "DATATYPES.svg"
 
 # Introduction
 
-**R** language is a flexible language that allows to work with different kind of data format [@R-base]. This include `integer`, `numeric`, `character`, `complex`, `dates` and `logical`. The default data type or class in **R** is double precision-- numeric. In a nutshell, R treats all kind of data into five categories but we deal with only four in this book. Datasets in R are often a combination of seven different data types are highlighted in @fig-datatypes;
+**R** language is a flexible language that allows to work with different kind of data format [@r-base]. This include `integer`, `numeric`, `character`, `complex`, `dates` and `logical`. The default data type or class in **R** is double precision-- numeric. In a nutshell, R treats all kind of data into five categories but we deal with only four in this book. Datasets in R are often a combination of seven different data types are highlighted in @fig-datatypes;
 
 ![Common data types often collected and stored for anaysis and modelling ](DATATYPES.svg){#fig-datatypes}
 
@@ -466,4 +473,5 @@ fishing.dep |>
 ```
 
 
+## References 
 

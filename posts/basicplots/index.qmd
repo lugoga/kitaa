@@ -1,6 +1,12 @@
 ---
 title: "Basic plots with ggplot2"
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
 date: "2024-04-01"
 categories: [visualization, code, analysis]
 # image: "../screenshots/Rproject.png"
@@ -29,10 +35,7 @@ knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
 
 ## Introduction
 
-\newpage
-
-## Basic plots
-The **ggplot2** package provides a set of functions that mirror the *Grammar of Graphics*, enabling you to efficaciously specify what you want a plot to look like. To have a glimpse of **ggplot2**, we start with five basic types of plots that are familiar to most people. These include: scatterplot, linegraphs, boxplots, histograms, and barplots. The first four graphs works with *quantitative* data and barplots are appropriate for *categorical* data. 
+The **ggplot2** package provides a set of functions that mirror the *Grammar of Graphics* [@ggplot], enabling you to efficaciously specify what you want a plot to look like. To have a glimpse of **ggplot2**, we start with five basic types of plots that are familiar to most people. These include: scatterplot, linegraphs, boxplots, histograms, and barplots. The first four graphs works with *quantitative* data and barplots are appropriate for *categorical* data. 
 
 Thus, understanding the type of data is inevitable before you throw the variable into **ggplot2** to make plot for you.  In this post, we will cover the most common plot types, such as line plots, histograms, pie charts, scatter plots, and bar plots, along with several other plot types that build upon these. 
  
@@ -1231,5 +1234,9 @@ The R community has developed packages that extend the capability of **ggplot2**
 + **ggthemes**: contains extra themes, scales, and geoms, and functions for and related to ggplot2
 + **ggridges**: extend the geom_density function by plotiing closed polygons insted of ridgelines
 + **ggpmisc**
+
+
+
+## References
 
 

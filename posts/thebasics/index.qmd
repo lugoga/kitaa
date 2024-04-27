@@ -1,7 +1,14 @@
 ---
 title: "The basics of R and Rstudio"
 description: "Understanding the building blocks of R and its working environment Rstudio for smooth operations in  data science"
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-01-24"
 highlight-style: zenburn
 categories: [visualization, code, analysis]
@@ -138,7 +145,7 @@ We are going to have our first experience with R through RMarkdown, so let's do 
 
 ## R functions
 
-Like Excel, the power of R comes not from doing small operations individually (like `8*22.3`). But rather R's power comes from being able to operate on whole suites of numbers and datasets. And also like Excel, some of the biggest power in R is that there are built-in functions that you can use in your analyses (and, as we'll see, R users can easily create and share functions, and it is this open source developer and contributor community that makes R so awesome).
+Like Excel, the power of R comes not from doing small operations individually (like `8*22.3`), but rather R's power comes from being able to operate on whole suites of numbers and datasets [@r-base]. And also like Excel, some of the biggest power in R is that there are built-in functions that you can use in your analyses (and, as we'll see, R users can easily create and share functions, and it is this open source developer and contributor community that makes R so awesome).
 
 R has a mind-blowing collection of built-in functions that are used with the same syntax: function name with parentheses around what the function needs to do what it is supposed to do. We've seen a few functions already: we've seen `plot()` and `summary()`.
 
@@ -338,6 +345,7 @@ warnings()
 ```
 
 ### Getting help for R
+
 Both online and offline help documentations and manuals for R are available. You can start help while using R with help.start() function from the console. For more help, you can use online documentations from the official R website by using these links:
 + Help page: https://www.r-project.org/help.html
 + Manuals page: https://cran.r-project.org/manuals.html
@@ -387,7 +395,8 @@ plot(sin, -pi, 2*pi, las = 1)
 
 
 ## Flavours of R: base and tidyverse
-R is a programming language, and just like any language, it has different dialects. When you read about R online, you’ll frequently see people mentioning the words “base” and “tidyverse.” These are the two most common dialects of R. Base R is just that, R in its purest form. The tidyverse is a collection of add-on packages for working with different types of data. The two are fully compatible, and you can mix and match as much as you like. Both **ggplot2** and **magrittr** are part of the **tidyverse**.
+
+R is a programming language, and just like any language, it has different dialects. When you read about R online, you’ll frequently see people mentioning the words “base” and “tidyverse.” These are the two most common dialects of R. Base R is just that, R in its purest form. The tidyverse is a collection of add-on packages for working with different types of data. The two are fully compatible, and you can mix and match as much as you like. Both **ggplot2** [@ggplot] and **magrittr** [@magrittr] are part of the **tidyverse** [@tidyverse].
 
 In recent years, the tidyverse has been heavily promoted as being “modern” R which “makes data science faster, easier and more fun.” You should believe the hype. The tidyverse is marvellous. But if you only learn tidyverse R, you will miss out on much of what R has to offer. Base R is just as marvellous, and can definitely make data science as fast, easy and fun as the tidyverse. Besides, nobody uses just base R anyway - there are a ton of non-tidyverse packages that extend and enrich R in exciting new ways. Perhaps “extended R” would be better names for the non-tidyverse dialect.
 
@@ -395,4 +404,5 @@ Anyone who tells you to just learn one of these dialects is wrong. Both are grea
 
 A defining property of the tidyverse is that there are separate functions for everything, which is perfect for code that relies on pipes. In contrast, base R uses fewer functions, but with more parameters, to perform the same tasks. If you use tidyverse solutions there is a good chance that there exists a function which performs exactly the task you’re going to do with its default settings. This is great (once again, especially if you want to use pipes), but it means that there are many more functions to master for tidyverse users, whereas you can make do with much fewer in base R. You will spend more time looking up function arguments when working with  base R (which fortunately is fairly straightforward using the ? documentation), but on the other hand, looking up arguments for a function that you know the name of is easier than finding a function that does something very specific that you don’t know the name of. There are advantages and disadvantages to both approaches.
 
+## References
 

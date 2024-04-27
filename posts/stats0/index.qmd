@@ -1,7 +1,14 @@
 ---
 title: "Understanding Descriptive Statistics"
 description: "Examine measures of center and dispersion of the data so that we can gain valuable insights into the characteristics and distribution of various metrics that are in a dataset"
-author: "Masumbuko Semba"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-04-25"
 date-modified: "2024-04-26"
 categories: [visualization, code, Statistics]
@@ -425,4 +432,7 @@ length |>
 ## Summary
 
 Understanding both central tendency and dispersion is essential for gaining insights into the characteristics of a dataset. Together, these measures can help to identify patterns, trends, and potential outliers within the data.
+
+
+## References
 

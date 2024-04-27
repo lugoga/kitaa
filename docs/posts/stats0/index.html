@@ -207,6 +207,10 @@ window.Quarto = {
     <a class="nav-link" href="../../photos.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lugoga/kitaa"> <i class="bi bi-github" role="img">
 </i> 
@@ -259,7 +263,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Understanding Descriptive Statistics</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <h1 class="title">Understanding Descriptive Statistics</h1>
                   <div>
         <div class="description">
           Examine measures of center and dispersion of the data so that we can gain valuable insights into the characteristics and distribution of various metrics that are in a dataset
@@ -273,16 +277,25 @@ window.Quarto = {
                   </div>
   </div>
     
-  
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://semba.netlify.app">Masumbuko Semba</a> <a href="https://orcid.org/0000-0002-5002-9747" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://semba.netlify.app/">
+              Nelson Mandela African Institution of Science and Technology
+              </a>
+            </p>
+        </div>
+    </div>
+
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Masumbuko Semba </p>
-            </div>
-    </div>
-      
+        
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
@@ -323,6 +336,7 @@ window.Quarto = {
   <li><a href="#graphical-summaries" id="toc-graphical-summaries" class="nav-link" data-scroll-target="#graphical-summaries">Graphical Summaries</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -590,28 +604,28 @@ kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.09</code></pre>
+<pre><code>[1] 4.42</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">median</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.06</code></pre>
+<pre><code>[1] 4.66</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">sd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.96</code></pre>
+<pre><code>[1] 2.08</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">range</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.54 7.79</code></pre>
+<pre><code>[1] 0.593 7.737</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -626,8 +640,8 @@ kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">quantile</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0%  25%  50%  75% 100% 
-0.54 2.63 4.06 5.60 7.79 </code></pre>
+<pre><code>   0%   25%   50%   75%  100% 
+0.593 2.680 4.655 6.192 7.737 </code></pre>
 </div>
 </div>
 <p>Rather than computing the metrics as individual, some packages have dedicated functions that produce the summary statistic. For example, the <strong>psych</strong> package has <code>describe</code> function;</p>
@@ -635,8 +649,8 @@ kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>  psych<span class="sc">::</span><span class="fu">describe</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   vars   n mean   sd median trimmed  mad  min  max range skew kurtosis   se
-X1    1 200 4.09 1.96   4.06    4.08 2.27 0.54 7.79  7.25 0.03    -1.07 0.14</code></pre>
+<pre><code>   vars   n mean   sd median trimmed  mad  min  max range  skew kurtosis   se
+X1    1 200 4.42 2.08   4.66    4.47 2.58 0.59 7.74  7.14 -0.13    -1.13 0.15</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -649,19 +663,19 @@ N: 200
 
                     weight
 ----------------- --------
-             Mean     4.09
-          Std.Dev     1.96
-              Min     0.54
-               Q1     2.60
-           Median     4.06
-               Q3     5.61
-              Max     7.79
-              MAD     2.27
-              IQR     2.97
-               CV     0.48
-         Skewness     0.03
+             Mean     4.42
+          Std.Dev     2.08
+              Min     0.59
+               Q1     2.67
+           Median     4.66
+               Q3     6.20
+              Max     7.74
+              MAD     2.58
+              IQR     3.51
+               CV     0.47
+         Skewness    -0.13
       SE.Skewness     0.17
-         Kurtosis    -1.07
+         Kurtosis    -1.13
           N.Valid   200.00
         Pct.Valid   100.00</code></pre>
 </div>
@@ -670,24 +684,24 @@ N: 200
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  EnvStats<span class="sc">::</span><span class="fu">summaryFull</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                             weight  
-N                            200     
-Mean                           4.09  
-Median                         4.06  
-10% Trimmed Mean               4.08  
-Geometric Mean                 3.5   
-Skew                           0.0267
-Kurtosis                      -1.05  
-Min                            0.54  
-Max                            7.79  
-Range                          7.25  
-1st Quartile                   2.63  
-3rd Quartile                   5.6   
-Standard Deviation             1.96  
-Geometric Standard Deviation   1.86  
-Interquartile Range            2.97  
-Median Absolute Deviation      2.27  
-Coefficient of Variation       0.48  </code></pre>
+<pre><code>                             weight 
+N                            200    
+Mean                           4.42 
+Median                         4.66 
+10% Trimmed Mean               4.47 
+Geometric Mean                 3.77 
+Skew                          -0.133
+Kurtosis                      -1.11 
+Min                            0.593
+Max                            7.74 
+Range                          7.15 
+1st Quartile                   2.68 
+3rd Quartile                   6.19 
+Standard Deviation             2.08 
+Geometric Standard Deviation   1.89 
+Interquartile Range            3.51 
+Median Absolute Deviation      2.58 
+Coefficient of Variation       0.471</code></pre>
 </div>
 </div>
 <p>Finally, the <code>report</code> function in the report package provides a concise summary of many useful statistics.</p>
@@ -695,8 +709,8 @@ Coefficient of Variation       0.48  </code></pre>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>  report<span class="sc">::</span><span class="fu">report</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>x: n = 200, Mean = 4.09, SD = 1.96, Median = 4.06, MAD = 2.27, range: [0.54,
-7.79], Skewness = 0.03, Kurtosis = -1.05, 0% missing</code></pre>
+<pre><code>x: n = 200, Mean = 4.42, SD = 2.08, Median = 4.66, MAD = 2.58, range: [0.59,
+7.74], Skewness = -0.13, Kurtosis = -1.11, 0% missing</code></pre>
 </div>
 </div>
 <p>Likewise, the fav_stats function in <strong>mosaic</strong> package</p>
@@ -704,8 +718,8 @@ Coefficient of Variation       0.48  </code></pre>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>  mosaic<span class="sc">::</span><span class="fu">fav_stats</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  min   Q1 median  Q3  max mean   sd   n missing
- 0.54 2.63   4.06 5.6 7.79 4.09 1.96 200       0</code></pre>
+<pre><code>   min   Q1 median   Q3  max mean   sd   n missing
+ 0.593 2.68   4.66 6.19 7.74 4.42 2.08 200       0</code></pre>
 </div>
 </div>
 </section>
@@ -754,13 +768,14 @@ Coefficient of Variation       0.48  </code></pre>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>Understanding both central tendency and dispersion is essential for gaining insights into the characteristics of a dataset. Together, these measures can help to identify patterns, trends, and potential outliers within the data.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 
-
-<!-- -->
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -840,57 +855,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1200,444 +1164,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="lugoga/kitaa" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb41" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1"></a><span class="co">---</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="an">title:</span><span class="co"> "Understanding Descriptive Statistics"</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a><span class="an">description:</span><span class="co"> "Examine measures of center and dispersion of the data so that we can gain valuable insights into the characteristics and distribution of various metrics that are in a dataset"</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="an">author:</span><span class="co"> "Masumbuko Semba"</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a><span class="an">date:</span><span class="co"> "2024-04-25"</span></span>
-<span id="cb41-6"><a href="#cb41-6"></a><span class="an">date-modified:</span><span class="co"> "2024-04-26"</span></span>
-<span id="cb41-7"><a href="#cb41-7"></a><span class="an">categories:</span><span class="co"> [visualization, code, Statistics]</span></span>
-<span id="cb41-8"><a href="#cb41-8"></a><span class="an">image:</span><span class="co"> "statistics-01.png"</span></span>
-<span id="cb41-9"><a href="#cb41-9"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb41-10"><a href="#cb41-10"></a><span class="co">---</span></span>
-<span id="cb41-11"><a href="#cb41-11"></a></span>
-<span id="cb41-12"><a href="#cb41-12"></a></span>
-<span id="cb41-13"><a href="#cb41-13"></a><span class="fu">## Introduction</span></span>
-<span id="cb41-14"><a href="#cb41-14"></a></span>
-<span id="cb41-15"><a href="#cb41-15"></a>In the world of statistics, there are three main types that are commonly used to analyze and interpret data: descriptive, inferential, and Bayesian. Each type serves a specific purpose and provides valuable insights into different aspects of the data. </span>
-<span id="cb41-16"><a href="#cb41-16"></a></span>
-<span id="cb41-17"><a href="#cb41-17"></a>While descriptive statistics provides valuable insights into the basic features of a dataset (@fig-ds), inferential statistics takes it a step further by making inferences or predictions about a population based on a sample. This type of statistics involves hypothesis testing, confidence intervals, and regression analysis, among other techniques.</span>
-<span id="cb41-18"><a href="#cb41-18"></a></span>
-<span id="cb41-19"><a href="#cb41-19"></a>Bayesian statistics, on the other hand, provides a framework for updating beliefs about parameters or hypotheses based on new evidence or data. It differs from traditional frequentist statistics in that it incorporates prior knowledge or beliefs about the parameters being estimated.</span>
-<span id="cb41-20"><a href="#cb41-20"></a></span>
-<span id="cb41-21"><a href="#cb41-21"></a><span class="al">![The common metrics of descriptive statistics](statistics-01.png)</span>{#fig-ds}</span>
-<span id="cb41-22"><a href="#cb41-22"></a></span>
-<span id="cb41-23"><a href="#cb41-23"></a>In future sessions, we will delve deeper into inferential and Bayesian statistics to explore their applications and implications in data analysis. In this blog post, we will focus on descriptive statistics (@fig-ds) and explore the central tendency theorem, as well as the measures of center and dispersion.</span>
-<span id="cb41-24"><a href="#cb41-24"></a></span>
-<span id="cb41-25"><a href="#cb41-25"></a></span>
-<span id="cb41-26"><a href="#cb41-26"></a><span class="fu">## Descriptive Statistics</span></span>
-<span id="cb41-27"><a href="#cb41-27"></a></span>
-<span id="cb41-28"><a href="#cb41-28"></a>Descriptive statistics is a branch of statistics focused on summarizing, organizing, and presenting data in a clear and understandable way. Its primary aim is to define and analyze the fundamental characteristics of a dataset without making sweeping generalizations or assumptions about the entire data set.</span>
-<span id="cb41-29"><a href="#cb41-29"></a></span>
-<span id="cb41-30"><a href="#cb41-30"></a>The main purpose of descriptive statistics is to provide a straightforward and concise overview of the data, enabling researchers or analysts to gain insights and understand patterns, trends, and distributions within the dataset.</span>
-<span id="cb41-31"><a href="#cb41-31"></a></span>
-<span id="cb41-32"><a href="#cb41-32"></a>Descriptive statistics typically involve measures of central tendency (such as mean, median, mode), dispersion (such as range, variance, standard deviation), and distribution shape (including skewness and kurtosis). Additionally, graphical representations like charts, graphs, and tables are commonly used to visualize and interpret the data.</span>
-<span id="cb41-33"><a href="#cb41-33"></a></span>
-<span id="cb41-34"><a href="#cb41-34"></a>Histograms, bar charts, pie charts, scatter plots, and box plots are some examples of widely used graphical techniques in descriptive statistics.</span>
-<span id="cb41-35"><a href="#cb41-35"></a></span>
-<span id="cb41-36"><a href="#cb41-36"></a></span>
-<span id="cb41-37"><a href="#cb41-37"></a><span class="fu">## Types of Descriptive Statistics</span></span>
-<span id="cb41-38"><a href="#cb41-38"></a>There are two types of descriptive statistics:</span>
-<span id="cb41-39"><a href="#cb41-39"></a></span>
-<span id="cb41-40"><a href="#cb41-40"></a><span class="ss">1. </span>Measures of Central Tendency</span>
-<span id="cb41-41"><a href="#cb41-41"></a><span class="ss">1. </span>Measures of Dispersion</span>
-<span id="cb41-42"><a href="#cb41-42"></a></span>
-<span id="cb41-43"><a href="#cb41-43"></a><span class="fu">### Measures of Central Tendency</span></span>
-<span id="cb41-44"><a href="#cb41-44"></a></span>
-<span id="cb41-45"><a href="#cb41-45"></a>The central tendency is defined as a statistical measure that may be used to describe a complete distribution or dataset with a single value, known as a measure of central tendency. Any of the central tendency measures accurately describes the whole data distribution. In the following sections, we will look at the central tendency measures, their formulae, applications, and kinds in depth.</span>
-<span id="cb41-46"><a href="#cb41-46"></a></span>
-<span id="cb41-47"><a href="#cb41-47"></a></span>
-<span id="cb41-50"><a href="#cb41-50"></a><span class="in">```{r}</span></span>
-<span id="cb41-51"><a href="#cb41-51"></a><span class="co">#| echo: false</span></span>
-<span id="cb41-52"><a href="#cb41-52"></a><span class="co">#| warning: false</span></span>
-<span id="cb41-53"><a href="#cb41-53"></a><span class="co">#| message: false</span></span>
-<span id="cb41-54"><a href="#cb41-54"></a><span class="co">#| comment: ""</span></span>
-<span id="cb41-55"><a href="#cb41-55"></a><span class="co">#| label: fig-central</span></span>
-<span id="cb41-56"><a href="#cb41-56"></a><span class="co">#| fig-cap: The location of the mean value of the normal distribution</span></span>
-<span id="cb41-57"><a href="#cb41-57"></a></span>
-<span id="cb41-58"><a href="#cb41-58"></a></span>
-<span id="cb41-59"><a href="#cb41-59"></a>mosaic<span class="sc">::</span><span class="fu">xpnorm</span>(<span class="at">q =</span> <span class="fu">c</span>(<span class="dv">25</span>), <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="fl">1.2</span>,</span>
-<span id="cb41-60"><a href="#cb41-60"></a>               <span class="at">digits =</span> <span class="dv">2</span>,<span class="at">log.p =</span> T,<span class="at">plot =</span> T,</span>
-<span id="cb41-61"><a href="#cb41-61"></a>               <span class="at">invisible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb41-62"><a href="#cb41-62"></a>               <span class="at">xlab =</span> <span class="fu">expression</span>(Temperature<span class="sc">~</span>(degree<span class="sc">*</span>C)))</span>
-<span id="cb41-63"><a href="#cb41-63"></a></span>
-<span id="cb41-64"><a href="#cb41-64"></a><span class="in">```</span></span>
-<span id="cb41-65"><a href="#cb41-65"></a></span>
-<span id="cb41-66"><a href="#cb41-66"></a><span class="fu">#### Mean</span></span>
-<span id="cb41-67"><a href="#cb41-67"></a></span>
-<span id="cb41-68"><a href="#cb41-68"></a>Mean is the sum of all the components in a group or collection divided by the number of items in that group or collection. Mean of a data collection is typically represented as x̄ (pronounced “x bar”). The formula for calculating the mean for ungrouped data to express it as the measure is given as follows:</span>
-<span id="cb41-69"><a href="#cb41-69"></a></span>
-<span id="cb41-70"><a href="#cb41-70"></a>For a series of observations:</span>
-<span id="cb41-71"><a href="#cb41-71"></a></span>
-<span id="cb41-72"><a href="#cb41-72"></a>$$</span>
-<span id="cb41-73"><a href="#cb41-73"></a>\bar x = \sum \frac{x}{n}</span>
-<span id="cb41-74"><a href="#cb41-74"></a>$$ {#eq-eqn1}</span>
-<span id="cb41-75"><a href="#cb41-75"></a></span>
-<span id="cb41-76"><a href="#cb41-76"></a></span>
-<span id="cb41-77"><a href="#cb41-77"></a>Where,</span>
-<span id="cb41-78"><a href="#cb41-78"></a></span>
-<span id="cb41-79"><a href="#cb41-79"></a><span class="ss">  + </span>$\bar x$ = Mean values of the vector</span>
-<span id="cb41-80"><a href="#cb41-80"></a><span class="ss">  + </span>$\sum x$ Sum of all terms</span>
-<span id="cb41-81"><a href="#cb41-81"></a><span class="ss">  + </span>$n$ number of observations</span>
-<span id="cb41-82"><a href="#cb41-82"></a>  </span>
-<span id="cb41-83"><a href="#cb41-83"></a>  </span>
-<span id="cb41-84"><a href="#cb41-84"></a>  </span>
-<span id="cb41-85"><a href="#cb41-85"></a></span>
-<span id="cb41-86"><a href="#cb41-86"></a></span>
-<span id="cb41-87"><a href="#cb41-87"></a>::: {#exm-mean}</span>
-<span id="cb41-88"><a href="#cb41-88"></a>Weights of 7 girls in kg are 54, 32, 45, 61, 20, 66 and 50. create a vector object from these values and compute the mean of the data.</span>
-<span id="cb41-89"><a href="#cb41-89"></a>:::</span>
-<span id="cb41-90"><a href="#cb41-90"></a></span>
-<span id="cb41-91"><a href="#cb41-91"></a></span>
-<span id="cb41-92"><a href="#cb41-92"></a>::: {#sol-mean}</span>
-<span id="cb41-93"><a href="#cb41-93"></a></span>
-<span id="cb41-96"><a href="#cb41-96"></a><span class="in">```{r}</span></span>
-<span id="cb41-97"><a href="#cb41-97"></a>weights <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">54</span>, <span class="dv">32</span>, <span class="dv">45</span>, <span class="dv">61</span>, <span class="dv">20</span>, <span class="dv">66</span>, <span class="dv">50</span>)</span>
-<span id="cb41-98"><a href="#cb41-98"></a></span>
-<span id="cb41-99"><a href="#cb41-99"></a>weights <span class="sc">|&gt;</span> <span class="fu">mean</span>()</span>
-<span id="cb41-100"><a href="#cb41-100"></a><span class="in">```</span></span>
-<span id="cb41-101"><a href="#cb41-101"></a>:::</span>
-<span id="cb41-102"><a href="#cb41-102"></a></span>
-<span id="cb41-103"><a href="#cb41-103"></a></span>
-<span id="cb41-104"><a href="#cb41-104"></a></span>
-<span id="cb41-105"><a href="#cb41-105"></a></span>
-<span id="cb41-106"><a href="#cb41-106"></a><span class="fu">#### Median</span></span>
-<span id="cb41-107"><a href="#cb41-107"></a></span>
-<span id="cb41-108"><a href="#cb41-108"></a>Median of a data set is the value of the middle-most observation obtained after organizing the data in ascending order, which is one of the measures of central tendency. Median formula may be used to compute the median for many types of data, such as grouped and ungrouped data.</span>
-<span id="cb41-109"><a href="#cb41-109"></a></span>
-<span id="cb41-110"><a href="#cb41-110"></a></span>
-<span id="cb41-111"><a href="#cb41-111"></a>::: {#exm-med}</span>
-<span id="cb41-112"><a href="#cb41-112"></a></span>
-<span id="cb41-113"><a href="#cb41-113"></a>Weights of 7 girls in kg are 54, 32, 45, 61, 20, 66 and 50. crreate a vector object from these values and compute the median of the data.</span>
-<span id="cb41-114"><a href="#cb41-114"></a>:::</span>
-<span id="cb41-115"><a href="#cb41-115"></a></span>
-<span id="cb41-116"><a href="#cb41-116"></a></span>
-<span id="cb41-117"><a href="#cb41-117"></a>::: {#sol-med}</span>
-<span id="cb41-118"><a href="#cb41-118"></a></span>
-<span id="cb41-121"><a href="#cb41-121"></a><span class="in">```{r}</span></span>
-<span id="cb41-122"><a href="#cb41-122"></a>weights <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">54</span>, <span class="dv">32</span>, <span class="dv">45</span>, <span class="dv">61</span>, <span class="dv">20</span>, <span class="dv">66</span>, <span class="dv">50</span>)</span>
-<span id="cb41-123"><a href="#cb41-123"></a>weights <span class="sc">|&gt;</span> <span class="fu">median</span>()</span>
-<span id="cb41-124"><a href="#cb41-124"></a><span class="in">```</span></span>
-<span id="cb41-125"><a href="#cb41-125"></a>:::</span>
-<span id="cb41-126"><a href="#cb41-126"></a></span>
-<span id="cb41-127"><a href="#cb41-127"></a></span>
-<span id="cb41-128"><a href="#cb41-128"></a></span>
-<span id="cb41-129"><a href="#cb41-129"></a><span class="fu">#### Mode</span></span>
-<span id="cb41-130"><a href="#cb41-130"></a></span>
-<span id="cb41-131"><a href="#cb41-131"></a>Mode is one of the measures of central tendency, defined as the value that appears the most frequently in the provided data, i.e. the observation with the highest frequency is known as the mode of data. The mode formulae provided below can be used to compute the mode for ungrouped data.</span>
-<span id="cb41-132"><a href="#cb41-132"></a></span>
-<span id="cb41-133"><a href="#cb41-133"></a></span>
-<span id="cb41-134"><a href="#cb41-134"></a></span>
-<span id="cb41-135"><a href="#cb41-135"></a>::: {#exm-mod}</span>
-<span id="cb41-136"><a href="#cb41-136"></a>Weights of 7 girls in kg are 54, 32, 45, 61, 20, 66 and 50. create a vector object from these values and compute the mode of these data.</span>
-<span id="cb41-137"><a href="#cb41-137"></a>:::</span>
-<span id="cb41-138"><a href="#cb41-138"></a></span>
-<span id="cb41-139"><a href="#cb41-139"></a></span>
-<span id="cb41-140"><a href="#cb41-140"></a>::: {#sol-mod}</span>
-<span id="cb41-141"><a href="#cb41-141"></a></span>
-<span id="cb41-144"><a href="#cb41-144"></a><span class="in">```{r}</span></span>
-<span id="cb41-145"><a href="#cb41-145"></a><span class="co">#|eval: false</span></span>
-<span id="cb41-146"><a href="#cb41-146"></a>weights <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">54</span>, <span class="dv">32</span>, <span class="dv">45</span>, <span class="dv">61</span>, <span class="dv">20</span>, <span class="dv">55</span>, <span class="dv">50</span>)</span>
-<span id="cb41-147"><a href="#cb41-147"></a></span>
-<span id="cb41-148"><a href="#cb41-148"></a></span>
-<span id="cb41-149"><a href="#cb41-149"></a>weights <span class="sc">|&gt;</span> <span class="fu">mode</span>()</span>
-<span id="cb41-150"><a href="#cb41-150"></a><span class="in">```</span></span>
-<span id="cb41-151"><a href="#cb41-151"></a>:::</span>
-<span id="cb41-152"><a href="#cb41-152"></a></span>
-<span id="cb41-153"><a href="#cb41-153"></a></span>
-<span id="cb41-154"><a href="#cb41-154"></a></span>
-<span id="cb41-155"><a href="#cb41-155"></a></span>
-<span id="cb41-156"><a href="#cb41-156"></a><span class="fu">### Measure of Dispersion</span></span>
-<span id="cb41-157"><a href="#cb41-157"></a></span>
-<span id="cb41-158"><a href="#cb41-158"></a>Another important property of a distribution is the dispersion. Some of the parameters that can be used to quantify dispersion are illustrated in @fig-dispersion. </span>
-<span id="cb41-159"><a href="#cb41-159"></a></span>
-<span id="cb41-162"><a href="#cb41-162"></a><span class="in">```{r}</span></span>
-<span id="cb41-163"><a href="#cb41-163"></a><span class="co">#| echo: false</span></span>
-<span id="cb41-164"><a href="#cb41-164"></a><span class="co">#| warning: false</span></span>
-<span id="cb41-165"><a href="#cb41-165"></a><span class="co">#| message: false</span></span>
-<span id="cb41-166"><a href="#cb41-166"></a><span class="co">#| comment: ""</span></span>
-<span id="cb41-167"><a href="#cb41-167"></a><span class="co">#| label: fig-dispersion</span></span>
-<span id="cb41-168"><a href="#cb41-168"></a><span class="co">#| fig-cap: The location of the standard deviation values of the normal distribution</span></span>
-<span id="cb41-169"><a href="#cb41-169"></a></span>
-<span id="cb41-170"><a href="#cb41-170"></a></span>
-<span id="cb41-171"><a href="#cb41-171"></a>mosaic<span class="sc">::</span><span class="fu">xpnorm</span>(<span class="at">q =</span> <span class="fu">c</span>(<span class="fl">22.65</span>,<span class="fl">27.35</span>), <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="fl">1.2</span>,</span>
-<span id="cb41-172"><a href="#cb41-172"></a>               <span class="at">digits =</span> <span class="dv">2</span>,<span class="at">log.p =</span> T,<span class="at">plot =</span> T,</span>
-<span id="cb41-173"><a href="#cb41-173"></a>               <span class="at">invisible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb41-174"><a href="#cb41-174"></a>               <span class="at">xlab =</span> <span class="fu">expression</span>(Temperature<span class="sc">~</span>(degree<span class="sc">*</span>C)))</span>
-<span id="cb41-175"><a href="#cb41-175"></a></span>
-<span id="cb41-176"><a href="#cb41-176"></a><span class="in">```</span></span>
-<span id="cb41-177"><a href="#cb41-177"></a></span>
-<span id="cb41-178"><a href="#cb41-178"></a></span>
-<span id="cb41-179"><a href="#cb41-179"></a></span>
-<span id="cb41-180"><a href="#cb41-180"></a>If the variability of data within an experiment must be established, absolute measures of variability should be employed. These metrics often reflect differences in a data collection in terms of the average deviations of the observations. The most prevalent absolute measurements of deviation are mentioned below. In the following sections, we will look at the variability measures, their formulae in depth.</span>
-<span id="cb41-181"><a href="#cb41-181"></a></span>
-<span id="cb41-182"><a href="#cb41-182"></a><span class="ss">1. </span>Range</span>
-<span id="cb41-183"><a href="#cb41-183"></a><span class="ss">1. </span>Standard Deviation</span>
-<span id="cb41-184"><a href="#cb41-184"></a><span class="ss">1. </span>Variance</span>
-<span id="cb41-185"><a href="#cb41-185"></a></span>
-<span id="cb41-186"><a href="#cb41-186"></a></span>
-<span id="cb41-187"><a href="#cb41-187"></a><span class="fu">### Range</span></span>
-<span id="cb41-188"><a href="#cb41-188"></a>The range represents the spread of your data from the lowest to the highest value in the distribution. It is the most straightforward measure of variability to compute. To get the range, subtract the data set’s lowest and highest values.</span>
-<span id="cb41-189"><a href="#cb41-189"></a></span>
-<span id="cb41-190"><a href="#cb41-190"></a>Range = Highest Value – Lowest Value</span>
-<span id="cb41-191"><a href="#cb41-191"></a></span>
-<span id="cb41-192"><a href="#cb41-192"></a></span>
-<span id="cb41-193"><a href="#cb41-193"></a></span>
-<span id="cb41-194"><a href="#cb41-194"></a></span>
-<span id="cb41-195"><a href="#cb41-195"></a>::: {#exm-range}</span>
-<span id="cb41-196"><a href="#cb41-196"></a>Calculate the range of the following data series:  5, 13, 32, 42, 15, 84</span>
-<span id="cb41-197"><a href="#cb41-197"></a>:::</span>
-<span id="cb41-198"><a href="#cb41-198"></a></span>
-<span id="cb41-199"><a href="#cb41-199"></a></span>
-<span id="cb41-200"><a href="#cb41-200"></a>::: {#sol-range}</span>
-<span id="cb41-201"><a href="#cb41-201"></a></span>
-<span id="cb41-204"><a href="#cb41-204"></a><span class="in">```{r}</span></span>
-<span id="cb41-205"><a href="#cb41-205"></a><span class="co">#|eval: false</span></span>
-<span id="cb41-206"><a href="#cb41-206"></a>weights <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">13</span>, <span class="dv">32</span>, <span class="dv">42</span>, <span class="dv">15</span>, <span class="dv">84</span>)</span>
-<span id="cb41-207"><a href="#cb41-207"></a></span>
-<span id="cb41-208"><a href="#cb41-208"></a></span>
-<span id="cb41-209"><a href="#cb41-209"></a>weights <span class="sc">|&gt;</span> <span class="fu">range</span>()</span>
-<span id="cb41-210"><a href="#cb41-210"></a><span class="in">```</span></span>
-<span id="cb41-211"><a href="#cb41-211"></a>:::</span>
-<span id="cb41-212"><a href="#cb41-212"></a></span>
-<span id="cb41-213"><a href="#cb41-213"></a></span>
-<span id="cb41-214"><a href="#cb41-214"></a></span>
-<span id="cb41-215"><a href="#cb41-215"></a><span class="fu">### Standard Deviation</span></span>
-<span id="cb41-216"><a href="#cb41-216"></a></span>
-<span id="cb41-217"><a href="#cb41-217"></a></span>
-<span id="cb41-218"><a href="#cb41-218"></a>Standard deviation (s or SD) represents the average level of variability in your dataset. It represents the average deviation of each score from the mean. The higher the standard deviation, the more varied the dataset is.</span>
-<span id="cb41-219"><a href="#cb41-219"></a></span>
-<span id="cb41-220"><a href="#cb41-220"></a>To calculate standard deviation, follow these six steps:</span>
-<span id="cb41-221"><a href="#cb41-221"></a></span>
-<span id="cb41-222"><a href="#cb41-222"></a></span>
-<span id="cb41-223"><a href="#cb41-223"></a><span class="ss">1. </span>Make a list of each score and calculate the mean.</span>
-<span id="cb41-224"><a href="#cb41-224"></a></span>
-<span id="cb41-225"><a href="#cb41-225"></a><span class="ss">1. </span>Calculate deviation from the mean, by subtracting the mean from each score.</span>
-<span id="cb41-226"><a href="#cb41-226"></a></span>
-<span id="cb41-227"><a href="#cb41-227"></a><span class="ss">1. </span>Square each of these differences.</span>
-<span id="cb41-228"><a href="#cb41-228"></a></span>
-<span id="cb41-229"><a href="#cb41-229"></a><span class="ss">1. </span>Sum up all squared variances.</span>
-<span id="cb41-230"><a href="#cb41-230"></a></span>
-<span id="cb41-231"><a href="#cb41-231"></a><span class="ss">1. </span>Divide the total of squared variances by N-1.</span>
-<span id="cb41-232"><a href="#cb41-232"></a></span>
-<span id="cb41-233"><a href="#cb41-233"></a>1.Find the square root of the number that you discovered.</span>
-<span id="cb41-234"><a href="#cb41-234"></a></span>
-<span id="cb41-235"><a href="#cb41-235"></a></span>
-<span id="cb41-236"><a href="#cb41-236"></a></span>
-<span id="cb41-237"><a href="#cb41-237"></a></span>
-<span id="cb41-238"><a href="#cb41-238"></a>::: {#exm-sd}</span>
-<span id="cb41-239"><a href="#cb41-239"></a>Calculate standard deviation of the following data series:  5, 13, 32, 42, 15, 84.</span>
-<span id="cb41-240"><a href="#cb41-240"></a>:::</span>
-<span id="cb41-241"><a href="#cb41-241"></a></span>
-<span id="cb41-242"><a href="#cb41-242"></a></span>
-<span id="cb41-243"><a href="#cb41-243"></a>::: {#sol-sd}</span>
-<span id="cb41-244"><a href="#cb41-244"></a></span>
-<span id="cb41-247"><a href="#cb41-247"></a><span class="in">```{r}</span></span>
-<span id="cb41-248"><a href="#cb41-248"></a><span class="co">#|eval: false</span></span>
-<span id="cb41-249"><a href="#cb41-249"></a>weights <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">13</span>, <span class="dv">32</span>, <span class="dv">42</span>, <span class="dv">15</span>, <span class="dv">84</span>)</span>
-<span id="cb41-250"><a href="#cb41-250"></a></span>
-<span id="cb41-251"><a href="#cb41-251"></a></span>
-<span id="cb41-252"><a href="#cb41-252"></a>weights <span class="sc">|&gt;</span> <span class="fu">sd</span>()</span>
-<span id="cb41-253"><a href="#cb41-253"></a><span class="in">```</span></span>
-<span id="cb41-254"><a href="#cb41-254"></a>:::</span>
-<span id="cb41-255"><a href="#cb41-255"></a></span>
-<span id="cb41-256"><a href="#cb41-256"></a></span>
-<span id="cb41-257"><a href="#cb41-257"></a><span class="fu">### Variance</span></span>
-<span id="cb41-258"><a href="#cb41-258"></a></span>
-<span id="cb41-259"><a href="#cb41-259"></a>Variance is calculated as average of squared departures from the mean. Variance measures the degree of dispersion in a data collection. The more scattered the data, the larger the variance in relation to the mean. To calculate the variance, square the standard deviation.</span>
-<span id="cb41-260"><a href="#cb41-260"></a></span>
-<span id="cb41-261"><a href="#cb41-261"></a></span>
-<span id="cb41-262"><a href="#cb41-262"></a></span>
-<span id="cb41-263"><a href="#cb41-263"></a>::: {#exm-var}</span>
-<span id="cb41-264"><a href="#cb41-264"></a>Calculate standard deviation of the following data series:  5, 13, 32, 42, 15, 84.</span>
-<span id="cb41-265"><a href="#cb41-265"></a>:::</span>
-<span id="cb41-266"><a href="#cb41-266"></a></span>
-<span id="cb41-267"><a href="#cb41-267"></a></span>
-<span id="cb41-268"><a href="#cb41-268"></a>::: {#sol-var}</span>
-<span id="cb41-269"><a href="#cb41-269"></a></span>
-<span id="cb41-272"><a href="#cb41-272"></a><span class="in">```{r}</span></span>
-<span id="cb41-273"><a href="#cb41-273"></a><span class="co">#|eval: false</span></span>
-<span id="cb41-274"><a href="#cb41-274"></a>weights <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">13</span>, <span class="dv">32</span>, <span class="dv">42</span>, <span class="dv">15</span>, <span class="dv">84</span>)</span>
-<span id="cb41-275"><a href="#cb41-275"></a></span>
-<span id="cb41-276"><a href="#cb41-276"></a></span>
-<span id="cb41-277"><a href="#cb41-277"></a>weights <span class="sc">|&gt;</span> <span class="fu">sd</span>()</span>
-<span id="cb41-278"><a href="#cb41-278"></a><span class="in">```</span></span>
-<span id="cb41-279"><a href="#cb41-279"></a>:::</span>
-<span id="cb41-280"><a href="#cb41-280"></a></span>
-<span id="cb41-281"><a href="#cb41-281"></a></span>
-<span id="cb41-282"><a href="#cb41-282"></a></span>
-<span id="cb41-283"><a href="#cb41-283"></a><span class="fu">### Shape of the distribution</span></span>
-<span id="cb41-284"><a href="#cb41-284"></a></span>
-<span id="cb41-285"><a href="#cb41-285"></a><span class="fu">#### Skewness</span></span>
-<span id="cb41-286"><a href="#cb41-286"></a></span>
-<span id="cb41-287"><a href="#cb41-287"></a>Skewness is a measure of the asymmetry of the tails of a distribution. A negative skew indicates that the distribution is spread out more to the left of the mean value, assuming values increasing towards the right along the axis. Th e sample mean is in this case smaller than the mode. Distributions with positive skewness have large tails that extend towards the right. Th e skewness of the symmetric normal distribution is zero.  </span>
-<span id="cb41-288"><a href="#cb41-288"></a></span>
-<span id="cb41-289"><a href="#cb41-289"></a>The most popular way to compute the asymmetry of a distribution is by Pearson’s mode skewness: </span>
-<span id="cb41-290"><a href="#cb41-290"></a></span>
-<span id="cb41-291"><a href="#cb41-291"></a>$$</span>
-<span id="cb41-292"><a href="#cb41-292"></a>skewness = \frac{mean - mode}{standar deviation}</span>
-<span id="cb41-293"><a href="#cb41-293"></a>$$</span>
-<span id="cb41-294"><a href="#cb41-294"></a>Although Pearson’s measure is a useful one, a Fisher formula is often used, which is defined as;</span>
-<span id="cb41-295"><a href="#cb41-295"></a></span>
-<span id="cb41-296"><a href="#cb41-296"></a>$$</span>
-<span id="cb41-297"><a href="#cb41-297"></a>skewness = \sum_{i-1}^N \frac{(x - \bar x)}{s^3}^2</span>
-<span id="cb41-298"><a href="#cb41-298"></a>$$ {#eq-eqn2}</span>
-<span id="cb41-299"><a href="#cb41-299"></a></span>
-<span id="cb41-300"><a href="#cb41-300"></a><span class="fu">#### Kurtosis</span></span>
-<span id="cb41-301"><a href="#cb41-301"></a></span>
-<span id="cb41-302"><a href="#cb41-302"></a>The second important measure for the sape of the distribution is the *kurtosis*. The kurtosis is a measure of whether the data are peaked or flat relative to</span>
-<span id="cb41-303"><a href="#cb41-303"></a>a normal distribution. A normal distribution has a kurtosis of three. A high kurtosis indicates that the distribution has a distinct peak near the mean, whereas a distribution characterized by a low kurtosis shows a flat top near the mean and broad tails. Higher peakedness in a distribution results from rare extreme deviations, whereas a low kurtosis is caused by frequent moderate deviations.   Kurtosis formula is defined as :</span>
-<span id="cb41-304"><a href="#cb41-304"></a></span>
-<span id="cb41-305"><a href="#cb41-305"></a>$$</span>
-<span id="cb41-306"><a href="#cb41-306"></a>kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}</span>
-<span id="cb41-307"><a href="#cb41-307"></a>$$ {#eq-eqn3}</span>
-<span id="cb41-308"><a href="#cb41-308"></a></span>
-<span id="cb41-309"><a href="#cb41-309"></a></span>
-<span id="cb41-310"><a href="#cb41-310"></a></span>
-<span id="cb41-311"><a href="#cb41-311"></a><span class="fu">### Example of distribution</span></span>
-<span id="cb41-312"><a href="#cb41-312"></a></span>
-<span id="cb41-313"><a href="#cb41-313"></a>R has several functions to numerically summarize variables. These include the capability of calculating the mean, standard deviation, variance, median, five number summary, interquartile range (IQR) as well as arbitrary quantiles. To improve the legibility of output, we will also set the default number of digits to display to a more reasonable level (see ?options() for more configuration possibilities).</span>
-<span id="cb41-314"><a href="#cb41-314"></a></span>
-<span id="cb41-317"><a href="#cb41-317"></a><span class="in">```{r}</span></span>
-<span id="cb41-318"><a href="#cb41-318"></a><span class="fu">options</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span>
-<span id="cb41-319"><a href="#cb41-319"></a><span class="in">```</span></span>
-<span id="cb41-320"><a href="#cb41-320"></a></span>
-<span id="cb41-321"><a href="#cb41-321"></a></span>
-<span id="cb41-322"><a href="#cb41-322"></a><span class="fu">### Simulate the weight of tuna species in the WIO region</span></span>
-<span id="cb41-323"><a href="#cb41-323"></a></span>
-<span id="cb41-324"><a href="#cb41-324"></a>As an example, we can simulate the weight of yellow fin tuna in the tropical Indian ocean. According to , yellow fin tuna weight range from 0.5 to 7.8 kg and we can use <span class="in">`runif`</span> function in R to generate a sample of 200 individual as the code highlight;</span>
-<span id="cb41-325"><a href="#cb41-325"></a></span>
-<span id="cb41-326"><a href="#cb41-326"></a></span>
-<span id="cb41-329"><a href="#cb41-329"></a><span class="in">```{r}</span></span>
-<span id="cb41-330"><a href="#cb41-330"></a>weight <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="fl">0.5</span>, <span class="at">max =</span> <span class="fl">7.8</span>)</span>
-<span id="cb41-331"><a href="#cb41-331"></a><span class="co"># weight = rnorm(n = 200, mean = 4.10, sd = .28)</span></span>
-<span id="cb41-332"><a href="#cb41-332"></a></span>
-<span id="cb41-333"><a href="#cb41-333"></a>weight <span class="sc">|&gt;</span> <span class="fu">hist</span>()</span>
-<span id="cb41-334"><a href="#cb41-334"></a><span class="in">```</span></span>
-<span id="cb41-335"><a href="#cb41-335"></a></span>
-<span id="cb41-336"><a href="#cb41-336"></a>Inbuilt function exists for summary statistics.</span>
-<span id="cb41-337"><a href="#cb41-337"></a></span>
-<span id="cb41-340"><a href="#cb41-340"></a><span class="in">```{r}</span></span>
-<span id="cb41-341"><a href="#cb41-341"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-342"><a href="#cb41-342"></a>  <span class="fu">mean</span>()</span>
-<span id="cb41-343"><a href="#cb41-343"></a><span class="in">```</span></span>
-<span id="cb41-344"><a href="#cb41-344"></a></span>
-<span id="cb41-347"><a href="#cb41-347"></a><span class="in">```{r}</span></span>
-<span id="cb41-348"><a href="#cb41-348"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-349"><a href="#cb41-349"></a>  <span class="fu">median</span>()</span>
-<span id="cb41-350"><a href="#cb41-350"></a><span class="in">```</span></span>
-<span id="cb41-351"><a href="#cb41-351"></a></span>
-<span id="cb41-354"><a href="#cb41-354"></a><span class="in">```{r}</span></span>
-<span id="cb41-355"><a href="#cb41-355"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-356"><a href="#cb41-356"></a>  <span class="fu">sd</span>()</span>
-<span id="cb41-357"><a href="#cb41-357"></a><span class="in">```</span></span>
-<span id="cb41-358"><a href="#cb41-358"></a></span>
-<span id="cb41-359"><a href="#cb41-359"></a></span>
-<span id="cb41-362"><a href="#cb41-362"></a><span class="in">```{r}</span></span>
-<span id="cb41-363"><a href="#cb41-363"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-364"><a href="#cb41-364"></a>  <span class="fu">range</span>()</span>
-<span id="cb41-365"><a href="#cb41-365"></a><span class="in">```</span></span>
-<span id="cb41-366"><a href="#cb41-366"></a></span>
-<span id="cb41-367"><a href="#cb41-367"></a></span>
-<span id="cb41-368"><a href="#cb41-368"></a></span>
-<span id="cb41-371"><a href="#cb41-371"></a><span class="in">```{r}</span></span>
-<span id="cb41-372"><a href="#cb41-372"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-373"><a href="#cb41-373"></a>  <span class="fu">mode</span>()</span>
-<span id="cb41-374"><a href="#cb41-374"></a><span class="in">```</span></span>
-<span id="cb41-375"><a href="#cb41-375"></a></span>
-<span id="cb41-376"><a href="#cb41-376"></a>It is also straightforward to calculate quantiles of the distribution.</span>
-<span id="cb41-377"><a href="#cb41-377"></a></span>
-<span id="cb41-380"><a href="#cb41-380"></a><span class="in">```{r}</span></span>
-<span id="cb41-381"><a href="#cb41-381"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-382"><a href="#cb41-382"></a>  <span class="fu">quantile</span>()</span>
-<span id="cb41-383"><a href="#cb41-383"></a><span class="in">```</span></span>
-<span id="cb41-384"><a href="#cb41-384"></a></span>
-<span id="cb41-385"><a href="#cb41-385"></a>Rather than computing the metrics as individual, some packages have dedicated functions that produce the summary statistic. For example, the **psych** package has <span class="in">`describe`</span> function;</span>
-<span id="cb41-386"><a href="#cb41-386"></a></span>
-<span id="cb41-387"><a href="#cb41-387"></a></span>
-<span id="cb41-390"><a href="#cb41-390"></a><span class="in">```{r}</span></span>
-<span id="cb41-391"><a href="#cb41-391"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-392"><a href="#cb41-392"></a>  psych<span class="sc">::</span><span class="fu">describe</span>()</span>
-<span id="cb41-393"><a href="#cb41-393"></a>  </span>
-<span id="cb41-394"><a href="#cb41-394"></a><span class="in">```</span></span>
-<span id="cb41-395"><a href="#cb41-395"></a></span>
-<span id="cb41-396"><a href="#cb41-396"></a></span>
-<span id="cb41-397"><a href="#cb41-397"></a></span>
-<span id="cb41-400"><a href="#cb41-400"></a><span class="in">```{r}</span></span>
-<span id="cb41-401"><a href="#cb41-401"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-402"><a href="#cb41-402"></a>  summarytools<span class="sc">::</span><span class="fu">descr</span>()</span>
-<span id="cb41-403"><a href="#cb41-403"></a></span>
-<span id="cb41-404"><a href="#cb41-404"></a><span class="in">```</span></span>
-<span id="cb41-405"><a href="#cb41-405"></a></span>
-<span id="cb41-406"><a href="#cb41-406"></a></span>
-<span id="cb41-409"><a href="#cb41-409"></a><span class="in">```{r}</span></span>
-<span id="cb41-410"><a href="#cb41-410"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-411"><a href="#cb41-411"></a>  EnvStats<span class="sc">::</span><span class="fu">summaryFull</span>()</span>
-<span id="cb41-412"><a href="#cb41-412"></a><span class="in">```</span></span>
-<span id="cb41-413"><a href="#cb41-413"></a></span>
-<span id="cb41-414"><a href="#cb41-414"></a>Finally, the <span class="in">`report`</span> function in the report package provides a concise summary of many useful statistics.</span>
-<span id="cb41-415"><a href="#cb41-415"></a></span>
-<span id="cb41-418"><a href="#cb41-418"></a><span class="in">```{r}</span></span>
-<span id="cb41-419"><a href="#cb41-419"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-420"><a href="#cb41-420"></a>  report<span class="sc">::</span><span class="fu">report</span>()</span>
-<span id="cb41-421"><a href="#cb41-421"></a><span class="in">```</span></span>
-<span id="cb41-422"><a href="#cb41-422"></a></span>
-<span id="cb41-423"><a href="#cb41-423"></a>Likewise, the fav_stats function in **mosaic** package</span>
-<span id="cb41-424"><a href="#cb41-424"></a></span>
-<span id="cb41-427"><a href="#cb41-427"></a><span class="in">```{r}</span></span>
-<span id="cb41-428"><a href="#cb41-428"></a>weight <span class="sc">|&gt;</span></span>
-<span id="cb41-429"><a href="#cb41-429"></a>  mosaic<span class="sc">::</span><span class="fu">fav_stats</span>()</span>
-<span id="cb41-430"><a href="#cb41-430"></a><span class="in">```</span></span>
-<span id="cb41-431"><a href="#cb41-431"></a></span>
-<span id="cb41-432"><a href="#cb41-432"></a><span class="fu">### Graphical Summaries</span></span>
-<span id="cb41-435"><a href="#cb41-435"></a><span class="in">```{r}</span></span>
-<span id="cb41-436"><a href="#cb41-436"></a>length <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">8</span>)</span>
-<span id="cb41-437"><a href="#cb41-437"></a><span class="in">```</span></span>
-<span id="cb41-438"><a href="#cb41-438"></a></span>
-<span id="cb41-439"><a href="#cb41-439"></a>Th e functions <span class="in">`hist`</span> provide numerous ways of binning the data, of normalizing the data, and of displaying the histogram.</span>
-<span id="cb41-440"><a href="#cb41-440"></a></span>
-<span id="cb41-443"><a href="#cb41-443"></a><span class="in">```{r}</span></span>
-<span id="cb41-444"><a href="#cb41-444"></a>length <span class="sc">|&gt;</span></span>
-<span id="cb41-445"><a href="#cb41-445"></a>  <span class="fu">hist</span>()</span>
-<span id="cb41-446"><a href="#cb41-446"></a><span class="in">```</span></span>
-<span id="cb41-447"><a href="#cb41-447"></a></span>
-<span id="cb41-448"><a href="#cb41-448"></a>Th e functions <span class="in">`boxplot`</span> provide five summary number (min, Q1, median, Q3, max) values that are displayed in boxplot</span>
-<span id="cb41-449"><a href="#cb41-449"></a></span>
-<span id="cb41-452"><a href="#cb41-452"></a><span class="in">```{r}</span></span>
-<span id="cb41-453"><a href="#cb41-453"></a>length <span class="sc">|&gt;</span></span>
-<span id="cb41-454"><a href="#cb41-454"></a>  <span class="fu">boxplot</span>()</span>
-<span id="cb41-455"><a href="#cb41-455"></a><span class="in">```</span></span>
-<span id="cb41-456"><a href="#cb41-456"></a></span>
-<span id="cb41-457"><a href="#cb41-457"></a></span>
-<span id="cb41-460"><a href="#cb41-460"></a><span class="in">```{r}</span></span>
-<span id="cb41-461"><a href="#cb41-461"></a>length <span class="sc">|&gt;</span></span>
-<span id="cb41-462"><a href="#cb41-462"></a>  <span class="fu">densityplot</span>()</span>
-<span id="cb41-463"><a href="#cb41-463"></a><span class="in">```</span></span>
-<span id="cb41-464"><a href="#cb41-464"></a></span>
-<span id="cb41-465"><a href="#cb41-465"></a></span>
-<span id="cb41-466"><a href="#cb41-466"></a></span>
-<span id="cb41-467"><a href="#cb41-467"></a></span>
-<span id="cb41-468"><a href="#cb41-468"></a></span>
-<span id="cb41-469"><a href="#cb41-469"></a></span>
-<span id="cb41-470"><a href="#cb41-470"></a></span>
-<span id="cb41-471"><a href="#cb41-471"></a></span>
-<span id="cb41-472"><a href="#cb41-472"></a></span>
-<span id="cb41-473"><a href="#cb41-473"></a></span>
-<span id="cb41-474"><a href="#cb41-474"></a><span class="fu">## Summary</span></span>
-<span id="cb41-475"><a href="#cb41-475"></a></span>
-<span id="cb41-476"><a href="#cb41-476"></a>Understanding both central tendency and dispersion is essential for gaining insights into the characteristics of a dataset. Together, these measures can help to identify patterns, trends, and potential outliers within the data.</span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>©2024 <a href="../../posts/stats0/index.html">Datika</a></p>
+</div>   
     <div class="nav-footer-center">
-
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../faq.html">
+<p>FAQ</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../feedback.html">
+<p>Feedback</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../terms.html">
+<p>Terms</p>
+</a>
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
