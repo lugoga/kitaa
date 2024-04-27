@@ -1,13 +1,12 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/stats0/index.html",
       "/posts/importingData/index.html",
       "/posts/vectorDataframe/index.html",
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
-      "/posts/exploreR/index.html",
       "/posts/get started/index.html",
       "/posts/thebasics/index.html",
       "/posts/timeline/index.html"
@@ -21,7 +20,6 @@
       "/posts/vectorDataframe/index.html",
       "/posts/datastructures/index.html",
       "/posts/dataTypes/index.html",
-      "/posts/exploreR/index.html",
       "/posts/get started/index.html",
       "/posts/thebasics/index.html",
       "/posts/timeline/index.html"

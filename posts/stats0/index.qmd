@@ -47,8 +47,6 @@ The central tendency is defined as a statistical measure that may be used to des
 
 ```{r}
 #| echo: false
-#| fig-width: 3
-#| fig-height: 2.5
 #| warning: false
 #| message: false
 #| comment: ""
@@ -71,7 +69,7 @@ For a series of observations:
 
 $$
 \bar x = \sum \frac{x}{n}
-$${#eq-eqn1}
+$$ {#eq-eqn1}
 
 
 Where,
@@ -153,8 +151,6 @@ Another important property of a distribution is the dispersion. Some of the para
 
 ```{r}
 #| echo: false
-#| fig-width: 3
-#| fig-height: 2.5
 #| warning: false
 #| message: false
 #| comment: ""
@@ -283,7 +279,7 @@ Although Pearson’s measure is a useful one, a Fisher formula is often used, wh
 
 $$
 skewness = \sum_{i-1}^N \frac{(x - \bar x)}{s^3}^2
-$$
+$$ {#eq-eqn2}
 
 #### Kurtosis
 
@@ -292,7 +288,7 @@ a normal distribution. A normal distribution has a kurtosis of three. A high kur
 
 $$
 kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
-$$
+$$ {#eq-eqn3}
 
 
 

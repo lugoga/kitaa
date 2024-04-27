@@ -3,8 +3,10 @@ title: "Famliarize with R and Rstudio"
 description: "Understanding the software and layout of the tools make it easy to access the right tools while interacting with the data and software"
 author: "Masumbuko Semba"
 date: "2024-01-26"
+draft: true
 categories: [visualization, code, analysis]
 image: "../screenshots/rstudio_gui.png"
+
 
 ---
 
@@ -25,15 +27,8 @@ For data to make sense, you will need to use some of the tools you have come acr
 Once you have installed R, you can run it using the regular methods: you may have a shortcut on the desktop or use the Start button. Once you have run the program, you will see the main input window and a welcome text message. This will look something like @fig-rbase if you are using Windows. There is a `>` and cursor `|` to show that you can type at that point. In the examples, you’ll see the `>` to indicate where you have typed a command, and lines beginning with anything else are the results of your typing.
 
 
+![The R program interface is a bit sparse compared to most Windows programs](../screenshots/R-base.png){#fig-rbase}
 
-```{r}
-#| label: fig-rbase
-#| fig-cap: The R program interface is a bit sparse compared to most Windows programs.
-#| echo: false
-#| out-width: "100%"
-
-knitr::include_graphics("../screenshots/R-base.png")
-```
 
 The graphical user interface (GUI) of R program is somewhat sparse compared to most Windows programs. You are expected to type commands in the console. This sounds a bit daunting but is actually not that hard. Once you know a few basics, you can start to explore more and more powerful commands 
 
@@ -46,14 +41,8 @@ After a while you can start to build up a library of commands in a basic text ed
 
 Rstudio [@fig-rstudio] has made coding in R easier than ever before.
 
-```{r}
-#| label: fig-rstudio
-#| fig-cap: The RStudio program interface.
-#| echo: false
-#| out-width: "100%"
+![The RStudio program interface](../screenshots/rstudio_gui.png){#fig-rstudio}
 
-knitr::include_graphics("../screenshots/rstudio_gui.png")
-```
 
 ###  Getting help
 
@@ -147,6 +136,7 @@ The simplest approach to install packages in R is through a console by simply pa
 
 ```{r}
 #| eval: false
+#| 
 install.packages("package.name")
 ```
 
@@ -157,8 +147,10 @@ You replace `package.name` with the name of the package you want.
 ### Loading extra analysis routines using the library() command
 
 To load a library of routines into R you use the `require()` command, e.g.
+
 ```{r}
 #| eval: false
+#| 
 require("package.name")
 ```
 

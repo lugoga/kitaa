@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Illuminate Data with R"
+  title: "DATIKA"
   back-to-top-navigation: true
   page-navigation: true
   navbar:
@@ -11,8 +11,8 @@ website:
     search: false
     # logo: 
     right:
-      - text: Meet People
-        href: people.qmd
+      - text: Posts
+        href: blog.qmd
       - text: Presentations
         href: slides.qmd
       - text: Books
@@ -21,8 +21,8 @@ website:
         href: data.qmd
       - text: Gallery
         href: photos.qmd
-      - text: About
-        href: about.qmd
+      # - text: About
+      #   href: about.qmd
       - icon: github
         href: https://github.com/lugoga/kitaa
       # - icon: twitter

@@ -1,13 +1,721 @@
 ---
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+# title: "People you meet along the initiative"
 page-layout: full
 title-block-banner: true
 ---
 
 
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+Harnessing modern data tools allows us to access unparalleled opportunities to tackle important societal issues and create impactful change worldwide.
+
+:::
+
+::: {.column width="40%"}
+
+Pause for a moment and ***Join us***
+
+<!-- <iframe id="beehiiv-form" src="https://embeds.beehiiv.com/9232d2a2-6e85-4beb-b8ed-1de94e9e4f01?slim=true" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; height: 75px; width: 90%;"></iframe> -->
+
+
+<iframe src="https://embeds.beehiiv.com/6dd9beae-8348-43f1-8843-50dcd1667ad7?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+
+
+:::
+
+:::: 
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Masumbuko Semba
+
+![](resources/semba.png)
+
+**Role**: Mentor
+
+Semba works at the [Nelson Mandela African Institution of Science and Technology]{style="background: #433E49; color: #ABDFF1"}. He use programming language like R and Python to manage and analyse data and report using Web Applications, Website or blogs. Semba also design graphics and automate plots, maps for static and interactive document.
+
+<i class="fa-solid fa-envelope"></i>    [lugosemba@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>   [ +255 717 603 703]{style="color: #0069BF;"}
+
+
+<!-- {{< fa square-phone >}}   +255 717 603 703 -->
+
+<!-- {{< fa brands github >}} [Github](https://github.com/lugoga) -->
+
+:::
+
+::: {.column width="50%"}
+
+### Ms. Nyamisi Peter
+
+![](resources/michi-ofisi.png)
+
+**Role**: Mentor
+
+Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color: #ABDFF1"}. She is phytoplankton exeprt using earth observation data and automate data acquisation, process, analyse. She is excellent in using quarto that combine R codes and text to automate generation of technical documents in word, pdf or html formats.
+
+<i class="fa-solid fa-envelope"></i>    [nyamisip@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 717 516 711]{style="color: #0069BF;"}
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Kassim Said
+
+![](resources/kassim.png)
+
+**Role**: Mentee
+
+Kassim is an accountant and financial analyst. He works as an accountant at Letshego Faidika Bank and as a financial consultant at Asasi ya Uwezeshaji Tanzania under the USAID Heshimu Bahari Project.
+
+
+<i class="fa-solid fa-envelope"></i>    [kassim.salum@asuta.or.tz ]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 743 956 226]{style="color: #0069BF;"}
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Kessy Revocatus
+
+![](resources/kessy.png)
+
+**Role**: Mentor 
+
+Kessy Revocatus is a mathematician  current teaches at Hannah Bennie Schools School. Recognizing the role of data in driving business, he is learning R programming to automate data analysis, model and reporting.
+
+<i class="fa-solid fa-envelope"></i>    [kessyluhegaa@gmail.com ]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 711 396 392]{style="color: #0069BF;"}
+
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Barakael Matulu
+
+![](resources/barakael.png)
+
+**Role**: Mentee
+
+Barakael works on the USAID Heshimu Bahari Project. He is an aquatic ecologist with interests in marine resources management and climate change issues. Recently, he has also developed an interest in automating data acquisition, processing, analysis, and reporting in R, as well as graphic design.
+
+<i class="fa-solid fa-envelope"></i>    [bmatulu@gmail.com ]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>   [+255 716 349 126]{style="color: #0069BF;"}
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Emmanuel Mpina
+
+![](resources/mpina.png)
+
+**Role**: Facilitator 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Ailars MIMP
+
+![](resources/ailars.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Alex Peter
+
+![](resources/alex.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Ms. Amina Kibola
+
+![](resources/amina.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Juma Charles
+
+![](resources/juma.png)
+
+**Role**: Mentee 
+
+Juma Charles works at TANESCO as land surveyor. He uses tools like Excel, ArcGIS Pro, and AutoCAD to transform spatial data into information. Currently, he's expanding his expertise by mastering R to enhance his career capabilities.
+
+
+<i class="fa-solid fa-envelope"></i>    [charlesjuma85@gmail.com ]{style="color: #0069BF;"}
+
+
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 783 293 841]{style="color: #0069BF;"}
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Benjamini Mpinga
+
+![](resources/benja.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Bernaid MPRU
+
+![](resources/bernaid.png)
+
+**Role**: Facilitator 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Dr. Deo Shirima
+
+![](resources/deo.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+
+::: {.column width="50%"}
+
+### Ms. Elika Kileo
+
+![](resources/elika.png)
+
+**Role**: Mentee 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Dr. Elikana
+
+![](resources/elikana.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+
+::: {.column width="50%"}
+
+### Ms. Glady K.
+
+![](resources/gladys.png)
+
+**Role**: Mentee 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Hilary Mkai
+
+![](resources/mkai.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+:::
+
+::: {.column width="50%"}
+
+### Mr. Humphrey Mahundi
+
+![](resources/mahundi.png)
+
+**Role**: Mentee 
+
+Humphrey Mahudi, a Senior Marine Conservation Warden with MPRU's research and monitoring department in Tanga Coelacanth Marine Park, collaborates in biodiversity assessments using environmental DNA (eDNA). He seeks to enhance his R skills to further his work and research efforts.
+
+<i class="fa-solid fa-envelope"></i>    [xxxxxxxxxx@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>   [+255 716 196 131]{style="color: #0069BF;"}
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Ikumbi
+
+![](resources/ikumbi.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+
+::: {.column width="50%"}
+
+### Ms. Kaijage
+
+![](resources/kaijage.png)
+
+**Role**: Facilitator 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Ms. Kulwa Mtaki
+
+![](resources/kulwa.png)
+
+**Role**: Mentee
+
+Ms. Kulwa Mtaki serves as a Marine Conservation Warden at the Marine Parks and Reserves Unit in Tanzania. Her expertise lies in fisheries and aquaculture, marine ecosystem monitoring, and data management and analysis using R-program. 
+
+
+<i class="fa-solid fa-envelope"></i> mtakikulwa@yahoo.com
+
+
+:::
+
+::: {.column width="50%"}
+
+### Ms. Maria Pentzel
+
+![](resources/maria.png)
+
+**Role**: Facilitator 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Paschal Mkongola
+
+![](resources/paschal.png)
+
+**Role**: Mentee
+
+Paschal works at Marine parks and Reserves. I have also developed an interest in automatic data, Processing, analysis and Reporting in R, as well as graphic design, career capabilities.
+
+<i class="fa-solid fa-envelope"></i>    [paschalmkongola@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>   [+255 752 918 484]{style="color: #0069BF;"}
+:::
+
+
+
+::: {.column width="50%"}
+
+### Mr. Sam Job
+
+![](resources/job.png)
+
+**Role**: Facilitator 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr.Stephano Semba
+
+![](resources/stephano.png)
+
+**Role**: Mentee
+
+Stephano Semba is employed by the Tanzania Forestry Service (TFS) as a Forestry Conservator. Understanding the importance of programming, I have dedicated myself to acquiring knowledge in data science, report writing, and spatial analysis to address the challenges in conservation.
+
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 677 250 711]{style="color: #0069BF;"}
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Edward Senkondo
+
+![](resources/senkondo.png)
+
+**Role**: Facilitator 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr.Shadrack Nyanda
+
+![](resources/nyanda.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+:::
+
+::: {.column width="50%"}
+
+### Mr. January Wegoro
+
+![](resources/wegoro.png)
+
+**Role**: Mentee 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Zac Maritine
+
+![](resources/zac.png)
+
+**Role**: Facilitator
+
+Zac manages the blue economy (oceans for business) in the Western Indian Ocean for The Nature Conservancy (TNC). Before that, he worked on using maps and data for conservation across Africa at WWF. He's an expert in planning how we use the ocean sustainably, environmental protections, and land/sea surveying. 
+
+<!-- <i class="fa-solid fa-envelope"></i>    [lugosemba@gmail.com]{style="color: #0069BF;"} -->
+
+<i class="fa-brands fa-square-whatsapp"></i>   [+254 721 671642]{style="color: #0069BF;"}
+
+:::
+
+::: {.column width="50%"}
+
+### Ms. Edina G
+
+![](resources/edna.png)
+
+**Role**: Mentee 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. James Lusana
+
+![](resources/james.png)
+
+**Role**: Mentee
+
+James Lusana, an Assistant Lecturer at the University of Dar es Salaam, is researching catfish in Lake Tanganyika for his PhD. He uses advanced imaging techniques to study their physical traits and analyzes their diet and genetics to understand their ecological role and evolution. His work aims to uncover how these fish have adapted and diversified in their environment.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<i class="fa-brands fa-square-whatsapp"></i>   [+255 768 310 668]{style="color: #0069BF;"}
+
+
+:::
+
+::: {.column width="50%"}
+
+### Ms. Kally 
+
+![](resources/kally.png)
+
+**Role**: Mentee 
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Gabriely J. Namate
+
+![](resources/namate.png)
+
+**Role**: Mentee
+
+Namate is employed at Pangani District Council as a Fisheries Officer and Aquaculture Specialist. Recognizing the power of R programming in data, he decided to learn and acquired necessary skills for statistical analysis, plotting, and sharing the finding.
+
+<i class="fa-brands fa-square-whatsapp"></i>     [+255 654 989 271]{style="color: #0069BF;"}
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Samwel
+
+![](resources/samwel.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+:::
+
+
+
+
+::: columns
+::: {.column width="50%"}
+
+### Mr. Julius Olumeh
+
+![](resources/julius.png)
+
+**Role**: Mentee
+
+Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+
+<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+
+<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+
+:::
+
+::: {.column width="50%"}
+
+### Mr. Ekumbi Boniphace
+
+![](resources/ekumbi.png)
+
+**Role**: Facilitator 
+
+Ekumbi Boniphace is currently working on the [project](www.school.co.tz), where he is responsible for promoting schools in Tanzania. He utilizes various tools such as ArcGIS, Kobo, and Adobe Photoshop to carry out his tasks. Recently, he is expanding his skill set by learning R and Python for data processing, analysis and reporting.
+
+<i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"}
+
+<i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"}
+
+
+:::
+:::
+
+
+
+
+
+*****************
+
+
+```{r}
+#| column: screen-inset-shaded
+#| echo: false
+#| warning: false
+#| message: false
+#| comment: ""
+
+library(leaflet)
+
+
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=39.306, lat= -6.828, popup="The City of R")
+
+
+```
+
+
+
+
+::: {#fig-cern}
+
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+The video "CERN: The Journey of Discovery"
+
+:::

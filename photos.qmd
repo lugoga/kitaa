@@ -1,5 +1,5 @@
 ---
-title: "Photo Gallery for the Program Events"
+title: "Photo Gallery"
 title-block-banner: true
 page-layout: full
 freeze: true
@@ -29,11 +29,7 @@ descrip_exif <- function(x){
              {lubridate::as_datetime(glue::glue('{exif$DateTimeOriginal} {exif$OffsetTime}'))} UTC")
 }
 ```
-```{r}
-exifr::read_exif("images/20231105_0037.JPG")
 
-descrip_exif("images/20231105_0037.JPG")
-```
 
 ```{r}
 #| eval: false
@@ -44,47 +40,80 @@ prepare_photos(
 ```
 
 
-## Parc Naturel du Mejean, Lattes FR
-
-::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));grid-gap: 1em;"}
-
-![Greater flamingo](images/20240211_0325.jpg){description="`r descrip_exif('images/20240211_0325.jpg')`" desc-position="left" group="mejean"}
-
-![Little Egret](images/20240211_0044.jpg){description="`r descrip_exif('images/20240211_0044.jpg')`" desc-position="left" group="mejean"}
-
-![Phragmites australis](images/20240211_0259.jpg){description="`r descrip_exif('images/20240211_0259.jpg')`" desc-position="left" group="mejean"}
-
-![White Stork](images/20240211_0504.jpg){description="`r descrip_exif('images/20240211_0504.jpg')`" desc-position="left" group="mejean"}
-:::
-
-## Iceland
+## Marine
 
 ::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
-![Kirkjufell](images/20240115_0036.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
 
-![Black pebble beach of Djúpalónssandur](images/20240115_0093.jpg){description="`r descrip_exif('images/20240115_0093.jpg')` " desc-position="left" group="iceland"}
+![The dow at the distance](images/unguja/20230108_122245.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
 
-![Arnarstapi](images/20240115_0204.jpg){description="`r descrip_exif('images/20240115_0204.jpg')` " desc-position="left" group="iceland"}
 
-![Búðakirkja](images/20240115_0209.jpg){description="`r descrip_exif('images/20240115_0209.jpg')` " desc-position="left" group="iceland"}
+![Beautifu sun set](images/unguja/20211107_180706.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
 
-![Diamond beach](images/20240115_0268.jpg){description="`r descrip_exif('images/20240115_0268.jpg')` " desc-position="left" group="iceland"}
+![A spendor of the evening](images/unguja/20211209_173646.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
 
-![Skógafoss](images/20240115_0379.jpg){description="`r descrip_exif('images/20240115_0379.jpg')` " desc-position="left" group="iceland"}
+![The nature support](images/unguja/20220328_114324.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
 
-![Reykjanes Peninsula](images/20240115_0501.jpg){description="`r descrip_exif('images/20240115_0501.jpg')` " desc-position="left" group="iceland"}
 
-![Reykjanes Peninsula](images/20240115_0508.jpg){description="`r descrip_exif('images/20240115_0508.jpg')` " desc-position="left" group="iceland"}
+
+![Enjoying in the beach](images/unguja/20230805_145149.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/unguja/IMG-20230902-WA0027.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
 :::
 
-## Montpellier, FR
+## Blue Economy
 
 ::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
-![Le Peyrou](images/20231105_0054.JPG){description="`r descrip_exif('images/20231105_0054.JPG')`" desc-position="left" group="montpellier"}
 
-![Arc de triomphe](images/20231105_0037.JPG){description="`r descrip_exif('images/20231105_0037.JPG')` " desc-position="left" group="montpellier"}
+![Conserving our environment](images/be/20220105_102627.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
 
-![Les Arceaux](images/20231105_0069.JPG){description="`r descrip_exif('images/20231105_0069.JPG')` " desc-position="left" group="montpellier"}
+![Conserving our environment](images/be/20220120_115712.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/be/20220411_120941.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/be/20220418_124014.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/be/20230813_150712.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/be/20231014_124312.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/be/IMG-20231006-WA0030.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/be/IMG-20230928-WA0014.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/be/IMG-20230905-WA0044.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+
+
+
+:::
+
+## Resources
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));grid-gap: 1em;"}
+
+
+
+![Conserving our environment](images/resources/1U3A2214.JPG){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+
+![Conserving our environment](images/resources/IMG_4180.JPG){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+
+![Conserving our environment](images/resources/IMG_4206.JPG){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/resources/_AAA4337.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+
+
+![Conserving our environment](images/resources/_AAA4440.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+
+![Conserving our environment](images/resources/_AAA4349.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+![Conserving our environment](images/resources/_AAA4244.jpg){description="`r descrip_exif('images/20240115_0036.jpg')`" desc-position="left" group="iceland"}
+
+
 :::
 
 
