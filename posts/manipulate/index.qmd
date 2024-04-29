@@ -6,6 +6,8 @@ author:
     orcid: 0000-0002-5002-9747
     affiliation: Nelson Mandela African Institution of Science and Technology
     affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/manipulate/
 bibliography: ../blog.bib
 csl:  ../elsevier.csl
 date: "2024-05-01"
@@ -294,9 +296,10 @@ capture.long = capture.wide %>%
 #| comment: ""
 #| label: tbl-long2
 #| tbl-cap: Data values arranged in tidy wide format
-capture.long %>% 
-  FSA::headtail(n = 4) %>% 
-  gt::gt()
+capture.long |> 
+  FSA::headtail(n = 4) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
 ```
 
 The `pivot_wider()` function is used to convert from a `long` format data frame to a `wide` format data frame. The first argument is `names_from = year` is the variable of the data frame for which we want spread across and the second argument `values_from = catch` is the corresponding values will reside in each casted variable. 

@@ -6,6 +6,8 @@ author:
     orcid: 0000-0002-5002-9747
     affiliation: Nelson Mandela African Institution of Science and Technology
     affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/importingData/
 bibliography: ../blog.bib
 csl:  ../elsevier.csl
 description: "Learning to import tabular files from local directory intot R session is an important skills in R programming"

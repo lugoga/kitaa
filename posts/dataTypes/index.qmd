@@ -6,7 +6,9 @@ author:
     url: https://semba.netlify.app
     orcid: 0000-0002-5002-9747
     affiliation: Nelson Mandela African Institution of Science and Technology
-    affiliation-url: https://semba.netlify.app/  
+    affiliation-url: https://semba.netlify.app/ 
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/dataTypes/
 bibliography: ../blog.bib
 csl:  ../elsevier.csl
 date: "2024-01-26"

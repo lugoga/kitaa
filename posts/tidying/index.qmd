@@ -6,6 +6,10 @@ author:
     orcid: 0000-0002-5002-9747
     affiliation: Nelson Mandela African Institution of Science and Technology
     affiliation-url: https://semba.netlify.app/ 
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/tidying/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-04-29"
 categories: [visualization, code, analysis]
 # image: "../screenshots/Rproject.png"
@@ -14,8 +18,6 @@ execute:
   message: false
   comment: ""
 number-sections: true  
-bibliography: ../blog.bib
-csl:  ../elsevier.csl
 ---
 
 

@@ -1,12 +1,14 @@
 ---
-title: "Famliarize with R and Rstudio"
-description: "Understanding the software and layout of the tools make it easy to access the right tools while interacting with the data and software"
+title: "Get familiar with R and Rstudio"
+description: "Understanding the software layout make it easy to access the tools while interacting with the data and the working environment"
 author: 
   - name: Masumbuko Semba
     url: https://semba.netlify.app
     orcid: 0000-0002-5002-9747
     affiliation: Nelson Mandela African Institution of Science and Technology
     affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/exploreR/
 bibliography: ../blog.bib
 csl:  ../elsevier.csl
 date: "2024-01-26"

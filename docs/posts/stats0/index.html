@@ -604,28 +604,28 @@ kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.42</code></pre>
+<pre><code>[1] 4.27</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">median</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.66</code></pre>
+<pre><code>[1] 4.31</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">sd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.08</code></pre>
+<pre><code>[1] 2.2</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">range</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.593 7.737</code></pre>
+<pre><code>[1] 0.504 7.780</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -641,7 +641,7 @@ kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
 <span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">quantile</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   0%   25%   50%   75%  100% 
-0.593 2.680 4.655 6.192 7.737 </code></pre>
+0.504 2.250 4.309 6.453 7.780 </code></pre>
 </div>
 </div>
 <p>Rather than computing the metrics as individual, some packages have dedicated functions that produce the summary statistic. For example, the <strong>psych</strong> package has <code>describe</code> function;</p>
@@ -649,8 +649,8 @@ kurtosis = \sum \frac{(x_i - \bar x)^4}{s^4}
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>  psych<span class="sc">::</span><span class="fu">describe</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   vars   n mean   sd median trimmed  mad  min  max range  skew kurtosis   se
-X1    1 200 4.42 2.08   4.66    4.47 2.58 0.59 7.74  7.14 -0.13    -1.13 0.15</code></pre>
+<pre><code>   vars   n mean  sd median trimmed  mad min  max range  skew kurtosis   se
+X1    1 200 4.27 2.2   4.31     4.3 3.13 0.5 7.78  7.28 -0.05     -1.3 0.16</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -663,19 +663,19 @@ N: 200
 
                     weight
 ----------------- --------
-             Mean     4.42
-          Std.Dev     2.08
-              Min     0.59
-               Q1     2.67
-           Median     4.66
-               Q3     6.20
-              Max     7.74
-              MAD     2.58
-              IQR     3.51
-               CV     0.47
-         Skewness    -0.13
+             Mean     4.27
+          Std.Dev     2.20
+              Min     0.50
+               Q1     2.24
+           Median     4.31
+               Q3     6.45
+              Max     7.78
+              MAD     3.13
+              IQR     4.20
+               CV     0.52
+         Skewness    -0.05
       SE.Skewness     0.17
-         Kurtosis    -1.13
+         Kurtosis    -1.30
           N.Valid   200.00
         Pct.Valid   100.00</code></pre>
 </div>
@@ -684,24 +684,24 @@ N: 200
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  EnvStats<span class="sc">::</span><span class="fu">summaryFull</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                             weight 
-N                            200    
-Mean                           4.42 
-Median                         4.66 
-10% Trimmed Mean               4.47 
-Geometric Mean                 3.77 
-Skew                          -0.133
-Kurtosis                      -1.11 
-Min                            0.593
-Max                            7.74 
-Range                          7.15 
-1st Quartile                   2.68 
-3rd Quartile                   6.19 
-Standard Deviation             2.08 
-Geometric Standard Deviation   1.89 
-Interquartile Range            3.51 
-Median Absolute Deviation      2.58 
-Coefficient of Variation       0.471</code></pre>
+<pre><code>                             weight  
+N                            200     
+Mean                           4.27  
+Median                         4.31  
+10% Trimmed Mean               4.3   
+Geometric Mean                 3.53  
+Skew                          -0.0482
+Kurtosis                      -1.28  
+Min                            0.504 
+Max                            7.78  
+Range                          7.28  
+1st Quartile                   2.25  
+3rd Quartile                   6.45  
+Standard Deviation             2.2   
+Geometric Standard Deviation   2     
+Interquartile Range            4.2   
+Median Absolute Deviation      3.13  
+Coefficient of Variation       0.516 </code></pre>
 </div>
 </div>
 <p>Finally, the <code>report</code> function in the report package provides a concise summary of many useful statistics.</p>
@@ -709,8 +709,8 @@ Coefficient of Variation       0.471</code></pre>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>  report<span class="sc">::</span><span class="fu">report</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>x: n = 200, Mean = 4.42, SD = 2.08, Median = 4.66, MAD = 2.58, range: [0.59,
-7.74], Skewness = -0.13, Kurtosis = -1.11, 0% missing</code></pre>
+<pre><code>x: n = 200, Mean = 4.27, SD = 2.20, Median = 4.31, MAD = 3.13, range: [0.50,
+7.78], Skewness = -0.05, Kurtosis = -1.28, 0% missing</code></pre>
 </div>
 </div>
 <p>Likewise, the fav_stats function in <strong>mosaic</strong> package</p>
@@ -718,8 +718,8 @@ Coefficient of Variation       0.471</code></pre>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>weight <span class="sc">|&gt;</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>  mosaic<span class="sc">::</span><span class="fu">fav_stats</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   min   Q1 median   Q3  max mean   sd   n missing
- 0.593 2.68   4.66 6.19 7.74 4.42 2.08 200       0</code></pre>
+<pre><code>   min   Q1 median   Q3  max mean  sd   n missing
+ 0.504 2.25   4.31 6.45 7.78 4.27 2.2 200       0</code></pre>
 </div>
 </div>
 </section>
@@ -775,7 +775,17 @@ Coefficient of Variation       0.471</code></pre>
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{semba2024,
+  author = {Semba, Masumbuko},
+  title = {Understanding {Descriptive} {Statistics}},
+  date = {2024-04-25},
+  url = {https://lugoga.github.io/kitaa/posts/stats0/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-semba2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Semba, M., 2024. Understanding Descriptive Statistics [WWW Document].
+URL <a href="https://lugoga.github.io/kitaa/posts/stats0/">https://lugoga.github.io/kitaa/posts/stats0/</a>
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

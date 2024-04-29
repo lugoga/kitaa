@@ -6,6 +6,10 @@ author:
     orcid: 0000-0002-5002-9747
     affiliation: Nelson Mandela African Institution of Science and Technology
     affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/dataviz/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
 date: "2024-05-05"
 categories: [Data Science, Data Visualization]
 description: "Data Science-Data Visualization"
