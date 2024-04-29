@@ -50,10 +50,15 @@ Semba works at the [Nelson Mandela African Institution of Science and Technology
 
 <i class="fa-brands fa-square-whatsapp"></i>   [ +255 717 603 703]{style="color: #0069BF;"}
 
+<!-- <i class="fa-brands fa-google-scholar"></i>  -->
 
 <!-- {{< fa square-phone >}}   +255 717 603 703 -->
 
 <!-- {{< fa brands github >}} [Github](https://github.com/lugoga) -->
+
+<!-- {{< iconify fa6-brands apple width=50px height=20px rotate=90deg flip=vertical >}} -->
+
+
 
 :::
 
