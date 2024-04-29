@@ -1,5 +1,6 @@
 ---
 title: "The basics of R programming"
+description: "The R programming language serves as a powerful tool for statistical computing and graphics, offering extensive capabilities for data analysis, visualization, and modeling"
 author: 
   - name: Masumbuko Semba
     url: https://semba.netlify.app
@@ -12,7 +13,6 @@ bibliography: ../blog.bib
 csl:  ../elsevier.csl
 date: "2024-01-24"
 categories: [Data Science, R Basic]
-description: "Data Science-R Basic"
 image: https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?ixlib=rb-1.2.1&q=80&cs=tinysrgb&fm=jpg&crop=entropy&w=3600
 code-fold: false
 
