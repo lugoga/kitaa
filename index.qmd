@@ -394,7 +394,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 ::: {.column width="50%"}
 
-### Ms. Laurian Kaijage
+### Mr. Kaijage Laurian
 
 ![](resources/kaijage.png)
 
@@ -402,7 +402,7 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 I started as a research assistant at the University of Dar es Salaam, specializing in collecting DNA barcoding data for fish identification. Current, I work as an Ecological Data Manager at Mwambao Coastal Community Network, where I promote data-driven decision-making and community engagement. I am skilled in R programming and keen to explore the application of machine learning and artificial intelligence for ecological research and conservation.
 
-<i class="fa-solid fa-envelope"></i>    [xxxxx@gmail.com]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [kaijagelaurian25@gmail.com]{style="color: #0069BF;"}
 
 <i class="fa-brands fa-square-whatsapp"></i>   [+255 654 592 215]{style="color: #0069BF;"}
 

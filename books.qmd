@@ -1,8 +1,9 @@
 ---
-title: "Reference books for the program"
+# title: "Reference books for the program"
 page-layout: full
 title-block-banner: true
 ---
+
 
 Learning to code with the R language opens up a vast world of possibilities in data analysis, visualization, and spatial data handling. While the journey may seem daunting at first, having the right resources can significantly ease the learning curve. Here's a curated list of relevant books to help you navigate through the intricacies of R programming:
 
