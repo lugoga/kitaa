@@ -269,17 +269,17 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 ::: columns
 ::: {.column width="50%"}
 
-### Dr. Deo Shirima
+### Mr. Amon Xanda
 
 ![](resources/deo.png)
 
 **Role**: Mentee
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Amon has a strong background in GIS from various sectors such as forestry and health. Currently, he works as a Marine Spatial Planning Scientist at TNC, using his GIS expertise to drive impactful projects for marine conservation. He is actively looking to expand his skills by exploring the potential of R for advanced data analysis and visualization.
 
 <!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
 
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+<i class="fa-brands fa-square-whatsapp"></i>   [+255 684 044 789]{style="color: #0069BF;"}
 
 :::
 
@@ -572,13 +572,13 @@ Zac manages the blue economy (oceans for business) in the Western Indian Ocean f
 
 ::: {.column width="50%"}
 
-### Ms. Edina G
+### Ms. Edina Godfrey Swai
 
 ![](resources/edna.png)
 
 **Role**: Mentee 
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Ms Edina current works as Seascape coordinator based in Mtwara seascape (Mnazi Bay~Ruvuma Estuary Marine Park) under Asuta-Heshimu Bahari project. She has experience in climate change -- adaptation, mitigation, She also is an expert in  natural resource management  and environment management and conservation. She is current in R programming session with prime aim to learn modern techniques in data analytics and computation.
 
 <!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
 
@@ -705,11 +705,11 @@ Ekumbi Boniphace is currently working on the [project](www.school.co.tz), where 
 
 ### Ms Swaumu Haruna
 
-![](resources/deo.png)
+![](resources/swaumu.png)
 
 **Role**: Mentee
 
-Miss Swaumu Haruna, a graduate of Sokoine University of Agriculture (SUA) with a bachelor's degree in environmental science and management, is currently focused on mastering R programming to enhance her skills in data analysis, statistical computation, and data visualization. Her proactive pursuit of R programming reflects her commitment to continuous learning and professional growth. With a strong background in environmental sciences and growing expertise in R, she aims to contribute to the advancement of data-driven solutions for current environmental issues.
+Mis Swaumu Haruna, a has a bachelor's degree in environmental science and management from Sokoine University of Agriculture. She is currently learning R programming to enhance her skills in data analysis, statistical computation, and data visualization. She aim to leverag coding to automate data analysis and generate data-driven solutions for environmental matters. 
 
 <!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
 
