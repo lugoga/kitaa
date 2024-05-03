@@ -18,8 +18,8 @@ title-block-banner: true
       1. [Plotting and Visualization_A](https://raw.githack.com/lugoga/kitaa/main/slides/7_data_visualization.html#/title-slide)
       1. [Plotting and Visualization_B](https://raw.githack.com/lugoga/kitaa/main/slides/8_data_visualization.html)
       1. [Plotting and Visualization_C](https://raw.githack.com/lugoga/kitaa/main/slides/9_ggplot2_continues.html)
-1. Data Manipulation
-1. Descriptive Statistics
+1. [Data Manipulation](https://raw.githack.com/lugoga/kitaa/main/slides/10_data_mannipulation.html#/title-slide)
+1. [Descriptive Statistics](https://lugoga.github.io/kitaa/posts/stats0/)
 1. Inferential Statistics
 1. Modelling and simulation
 1. Spatial Handling and Analysis
