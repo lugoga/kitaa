@@ -1,13 +1,13 @@
 ---
-title: "The dataset for the program"
+title: "The datasets"
+description: "Several datasets used in this program are listed in this page, which also provide codes on how to import them"
 page-layout: full
 title-block-banner: true
 ---
 
+<!-- ### [Datasets]{style="background: lightblue; color: color"} -->
 
-### [Datasets]{style="background: lightblue; color: color"} 
-
-1. **Chinook** -- contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below; 
+1.  **Chinook** -- contains the lengths and weights for Chinook Salmon from three locations in Argentina. you can simply download the file from the internet using the code chunk below;
 
 ```{r}
 #| eval: false
@@ -33,14 +33,14 @@ chinook = readr::read_csv(
 ```
 
 ```{r}
+#| echo: false
+#| 
 chinook |> 
   FSA::headtail() |> 
   flextable::flextable()
 ```
 
-
-1. **Mauna Loa Atmospheric CO2 Concentration**-- store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk
-
+2.  **Mauna Loa Atmospheric CO2 Concentration**-- store Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale. The link to download is found in the chunk
 
 ```{r}
 #| eval: false
@@ -60,19 +60,45 @@ co = readr::read_csv("https://raw.githubusercontent.com/lugoga/kitaa/main/datase
 
 co = readr::read_csv("datasets/long_form_co2.csv")
 ```
-`
+
+\`
 
 ```{r}
+#| echo: false
+#| 
 co |> 
   FSA::headtail() |> 
   flextable::flextable()
 ```
 
 
-::: callout-info
 
+3. **Length frequency data** -- the dataset is organized to contain detailed information including the date of recording, identification of species, size measurements in centimeters, categorization of size ranges, types of gear used during sampling, and the exact locations where the data was gathered.
+
+
+
+```{r}
+#| eval: false
+#| warning: false
+#| message: false
+
+
+lfq = readr::read_csv("https://raw.githubusercontent.com/lugoga/kitaa/main/datasets/LFQ_sample_1.xls")
+
+```
+
+```{r}
+#| echo: false
+#| 
+readxl::read_excel("datasets/LFQ_sample_1.xls") |> 
+  dplyr::mutate(Date = as.Date(Date)) |> 
+  FSA::headtail() |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+
+::: callout-note
 Note that you can import the dataset from online API to Rstudio with easy as the chunk above highlight
 
 :::
-
-

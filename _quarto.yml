@@ -1,12 +1,16 @@
 project:
   type: website
   output-dir: docs
+  
 
 website:
   title: "DATIKA"
+  favicon: magnifying-glass-chart-solid.svg
+  image: education-word-cloud-Recovered.jpg
   back-to-top-navigation: false
   page-navigation: true
   description: "Coding for all for better today and tommorow"
+  site-url: https://lugoga.github.io/kitaa/
   
   navbar:
     background: dark
@@ -88,6 +92,11 @@ feed: true
 # borrowed from other sources
 format:
   html:
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1.5rem
     code-fold: false
     code-tools: false
     code-line-numbers: true
@@ -98,6 +107,8 @@ format:
     mainfont: Nunito
     toc: true
     toc-depth: 3
+    
+
 
 
 

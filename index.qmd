@@ -16,11 +16,13 @@ toc: false
   gtag('config', 'G-8KY4TDP558');
 </script>
 
+
+
 :::: {.columns}
 
 ::: {.column width="80%"}
 
-# Welcome to Datika!!! {.center-text}
+# Welcome to Datika!!! {.center-text} 
 
 We'are glad you're here at our website, datika! As an avid enthusiast of statistics and the [R programming language](https://www.r-project.org/), we've created this platform to share our experiences, research and projects with fellows
 
@@ -42,9 +44,11 @@ Pause for a moment and ***Join us***
 
 :::: 
 
+<!-- {{< qrcode https://lugoga.github.io/kitaa/ >}} -->
+
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr. Masumbuko Semba
 
@@ -54,9 +58,7 @@ Pause for a moment and ***Join us***
 
 Semba works at the [Nelson Mandela African Institution of Science and Technology]{style="background: #433E49; color: #ABDFF1"}. He use programming language like R and Python to manage and analyse data and report using Web Applications, Website or blogs. Semba also design graphics and automate plots, maps for static and interactive document.
 
-<i class="fa-solid fa-envelope"></i>    [lugosemba@gmail.com]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>   [ +255 717 603 703]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [lugosemba@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [ +255 717 603 703]{style="color: #0069BF;"}
 
 <!-- <i class="fa-brands fa-google-scholar"></i>  -->
 
@@ -70,7 +72,10 @@ Semba works at the [Nelson Mandela African Institution of Science and Technology
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
 
 ### Ms. Nyamisi Peter
 
@@ -80,17 +85,15 @@ Semba works at the [Nelson Mandela African Institution of Science and Technology
 
 Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color: #ABDFF1"}. She is phytoplankton exeprt using earth observation data and automate data acquisation, process, analyse. She is excellent in using quarto that combine R codes and text to automate generation of technical documents in word, pdf or html formats.
 
-<i class="fa-solid fa-envelope"></i>    [nyamisip@gmail.com]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>     [+255 717 516 711]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [nyamisip@gmail.com]{style="color: #0069BF;"}  | <i class="fa-brands fa-square-whatsapp"></i>     [+255 717 516 711]{style="color: #0069BF;"}
 
 :::
 :::
 
-
+***
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr. Kassim Said
 
@@ -101,13 +104,14 @@ Nyamisi works at [University of Dar es Salaam]{style="background: #433E49; color
 Kassim is an accountant and financial analyst. He works as an accountant at Letshego Faidika Bank and as a financial consultant at Asasi ya Uwezeshaji Tanzania under the USAID Heshimu Bahari Project.
 
 
-<i class="fa-solid fa-envelope"></i>    [kassim.salum@asuta.or.tz ]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>     [+255 743 956 226]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [kassim.salum@asuta.or.tz ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>     [+255 743 956 226]{style="color: #0069BF;"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
 
 ### Mr. Kessy Revocatus
 
@@ -117,18 +121,16 @@ Kassim is an accountant and financial analyst. He works as an accountant at Lets
 
 Kessy Revocatus is a mathematician  current teaches at Hannah Bennie Schools School. Recognizing the role of data in driving business, he is learning R programming to automate data analysis, model and reporting.
 
-<i class="fa-solid fa-envelope"></i>    [kessyluhegaa@gmail.com ]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>     [+255 711 396 392]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [kessyluhegaa@gmail.com ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>     [+255 711 396 392]{style="color: #0069BF;"}
 
 
 :::
 :::
 
-
+***
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr. Barakael Matulu
 
@@ -138,13 +140,16 @@ Kessy Revocatus is a mathematician  current teaches at Hannah Bennie Schools Sch
 
 Barakael works on the USAID Heshimu Bahari Project. He is an aquatic ecologist with interests in marine resources management and climate change issues. Recently, he has also developed an interest in automating data acquisition, processing, analysis, and reporting in R, as well as graphic design.
 
-<i class="fa-solid fa-envelope"></i>    [bmatulu@gmail.com ]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [bmatulu@gmail.com ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 349 126]{style="color: #0069BF;"}
 
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 716 349 126]{style="color: #0069BF;"}
+
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
 
 ### Mr. Emmanuel Mpina
 
@@ -154,54 +159,16 @@ Barakael works on the USAID Heshimu Bahari Project. He is an aquatic ecologist w
 
 Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
 
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+<i class="fa-solid fa-envelope"></i>    [emmanuel.mpina@tnc.org]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 758 327 749]{style="color: #0069BF;"}
 
 :::
 :::
 
-
+***
 
 
 ::: columns
-::: {.column width="50%"}
-
-### Mr. Ailars MIMP
-
-![](resources/ailars.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-
-::: {.column width="50%"}
-
-### Mr. Alex Peter
-
-![](resources/alex.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-:::
-
-
-
-::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Ms. Amina Kibola
 
@@ -211,13 +178,14 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 Amina works at National Environment Management Council. She has academic background in ecohydrology and natural resources management, coupled with research experience. Working in the field of environment where role of data in policy development is crucial for informing decision, I have developed interest in learning R programming to be able to automate data; process; analyse and reporting in R. 
 
-<i class="fa-solid fa-envelope"></i>    [amina.kibola@nemc.or.tz]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 784 368 987]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [amina.kibola@nemc.or.tz]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 784 368 987]{style="color: #0069BF;"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
 
 ### Mr. Juma Charles
 
@@ -228,70 +196,31 @@ Amina works at National Environment Management Council. She has academic backgro
 Juma Charles works at TANESCO as land surveyor. He uses tools like Excel, ArcGIS Pro, and AutoCAD to transform spatial data into information. Currently, he's expanding his expertise by mastering R to enhance his career capabilities.
 
 
-<i class="fa-solid fa-envelope"></i>    [charlesjuma85@gmail.com ]{style="color: #0069BF;"}
-
-
-<i class="fa-brands fa-square-whatsapp"></i>     [+255 783 293 841]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [charlesjuma85@gmail.com ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>     [+255 783 293 841]{style="color: #0069BF;"}
 :::
 :::
 
-
+***
 
 ::: columns
-::: {.column width="50%"}
-
-### Mr. Benjamini Mpinga
-
-![](resources/benja.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-
-::: {.column width="50%"}
-
-### Mr. Bernaid MPRU
-
-![](resources/bernaid.png)
-
-**Role**: Facilitator 
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-:::
-
-
-
-::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr. Amon Xanda
 
-![](resources/deo.png)
+![](resources/amon.png)
 
 **Role**: Mentee
 
 Amon has a strong background in GIS from various sectors such as forestry and health. Currently, he works as a Marine Spatial Planning Scientist at TNC, using his GIS expertise to drive impactful projects for marine conservation. He is actively looking to expand his skills by exploring the potential of R for advanced data analysis and visualization.
 
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 684 044 789]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [xxxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 684 044 789]{style="color: #0069BF;"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
 
 ### Ms. Elika Kileo
 
@@ -302,54 +231,15 @@ Amon has a strong background in GIS from various sectors such as forestry and he
 Elikananyi Kileo, a medical doctor at Kibada Health Centre, has an interest in paediatrics and child health. Recently, she has also developed an interest in automating data, processing, analysis, and reporting in R
 
 
-<i class="fa-solid fa-envelope"></i>    [elikananyikileo1@gmail.com ]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 756 048 083]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [elikananyikileo1@gmail.com ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 756 048 083]{style="color: #0069BF;"}
 
 :::
 :::
 
-
+****
 
 ::: columns
-::: {.column width="50%"}
-
-### Dr. Elikana
-
-![](resources/elikana.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-
-::: {.column width="50%"}
-
-### Ms. Glady K.
-
-![](resources/gladys.png)
-
-**Role**: Mentee 
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-:::
-
-
-
-::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr. Hilary Mkai
 
@@ -357,14 +247,16 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 **Role**: Mentee
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Hillary is contributing to the USAID Heshimu Bahari project under ASUTA. He's on a journey of discovery, mastering R to enhance his skills in data management and analysis. With an eye on the web development horizon, he's gearing up to tackle data challenges head-on, making every click and scroll count.
 
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+<i class="fa-solid fa-envelope"></i>    [mkaihillary01@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [ +255 738 238 530]{style="color: #0069BF;"}
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
+
+
+::: {.column width="47%"}
 
 ### Mr. Humphrey Mahundi
 
@@ -374,55 +266,15 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 Humphrey Mahudi, a Senior Marine Conservation Warden with MPRU's research and monitoring department in Tanga Coelacanth Marine Park, collaborates in biodiversity assessments using environmental DNA (eDNA). He seeks to enhance his R skills to further his work and research efforts.
 
-<i class="fa-solid fa-envelope"></i>    [xxxxxxxxxx@gmail.com]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 716 196 131]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [xxxxxxxxxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 196 131]{style="color: #0069BF;"}
 
 :::
 :::
 
-
+***
 
 ::: columns
-::: {.column width="50%"}
-
-### Mr. Kelvin Ngelo
-
-![](resources/ikumbi.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-
-::: {.column width="50%"}
-
-### Mr. Kaijage Laurian
-
-![](resources/kaijage.png)
-
-**Role**: Facilitator 
-
-Kaijage Laurian is an Ecological Data Manager at Mwambao Coastal Community Network, where he promotes data-driven decision-making and community engagement. He began his career as a research assistant at the University of Dar es Salaam, specializing in collecting DNA barcoding data for fish identification. With a background in R programming, Kaijage is skilled in utilizing data analytics tools and techniques. He is keen to explore the application of machine learning and artificial intelligence for ecological research and conservation.
-
-<i class="fa-solid fa-envelope"></i>    [kaijagelaurian25@gmail.com]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 654 592 215]{style="color: #0069BF;"}
-
-:::
-:::
-
-
-
-
-
-::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Ms. Kulwa Mtaki
 
@@ -433,32 +285,34 @@ Kaijage Laurian is an Ecological Data Manager at Mwambao Coastal Community Netwo
 Ms. Kulwa Mtaki serves as a Marine Conservation Warden at the Marine Parks and Reserves Unit in Tanzania. Her expertise lies in fisheries and aquaculture, marine ecosystem monitoring, and data management and analysis using R-program. 
 
 
-<i class="fa-solid fa-envelope"></i> mtakikulwa@yahoo.com
-
+<i class="fa-solid fa-envelope"></i> [mtakikulwa@yahoo.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 759 226 268]{style="color: #0069BF;"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
 
-### Ms. Maria Pentzel
+::: {.column width="47%"}
 
-![](resources/maria.png)
+### Mr. Kaijage Laurian
+
+![](resources/kaijage.png)
 
 **Role**: Facilitator 
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Kaijage Laurian, an Ecological Data Manager at Mwambao Coastal Community Network. With background in R for  data-driven decisions, Kaijage seeks to integrate machine learning and artificial intelligence into ecological researches.
 
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
 
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+<i class="fa-solid fa-envelope"></i>    [kaijagelaurian25@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 654 592 215]{style="color: #0069BF;"}
 
 :::
 :::
 
+***
 
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr. Paschal Mkongola
 
@@ -468,33 +322,37 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 Paschal works at Marine parks and Reserves. I have also developed an interest in automatic data, Processing, analysis and Reporting in R, as well as graphic design, career capabilities.
 
-<i class="fa-solid fa-envelope"></i>    [paschalmkongola@gmail.com]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 752 918 484]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [paschalmkongola@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 752 918 484]{style="color: #0069BF;"}
 :::
 
 
+::: {.column width="6%"}
+:::
 
-::: {.column width="50%"}
+::: {.column width="47%"}
 
-### Mr. Sam Job
+### Mr. Samson Job
 
 ![](resources/job.png)
 
 **Role**: Facilitator 
 
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
+Samson Job is an aquatic scientists whose interest revolves around climate changes issues and aquatic pollution. To overcome these challenges, he is advancing his skills using R to facilitate data-driven and evidence-based policy making in combating the problems of aquatic pollution and climate changes.
 
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+personal email: samjob4321@gmail.com 
 
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+Phone no: +255767525022
+
+<i class="fa-solid fa-envelope"></i>    [samjob4321@gmail.com ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 767 525 022]{style="color: #0069BF;"}
+
 :::
 :::
 
+***
 
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr.Stephano Semba
 
@@ -504,138 +362,14 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 Stephano Semba is employed by the Tanzania Forestry Service (TFS) as a Forestry Conservator. Understanding the importance of programming, I have dedicated myself to acquiring knowledge in data science, report writing, and spatial analysis to address the challenges in conservation.
 
-<i class="fa-brands fa-square-whatsapp"></i>     [+255 677 250 711]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [xxx@gmail.com ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>     [+255 677 250 711]{style="color: #0069BF;"}
 
 :::
 
-::: {.column width="50%"}
-
-### Mr. Edward Senkondo
-
-![](resources/senkondo.png)
-
-**Role**: Facilitator 
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-:::
+::: {.column width="6%"}
 :::
 
-
-
-::: columns
-::: {.column width="50%"}
-
-### Mr.Shadrack Nyanda
-
-![](resources/nyanda.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-:::
-
-::: {.column width="50%"}
-
-### Mr. January Wegoro
-
-![](resources/wegoro.png)
-
-**Role**: Mentee 
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-:::
-
-
-
-::: columns
-::: {.column width="50%"}
-
-### Mr. Zac Maritime
-
-![](resources/zac.png)
-
-**Role**: Facilitator
-
-Zac manages the blue economy (oceans for business) in the Western Indian Ocean for The Nature Conservancy (TNC). Before that, he worked on using maps and data for conservation across Africa at WWF. He's an expert in planning how we use the ocean sustainably, environmental protections, and land/sea surveying. 
-
-<!-- <i class="fa-solid fa-envelope"></i>    [lugosemba@gmail.com]{style="color: #0069BF;"} -->
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+254 721 671642]{style="color: #0069BF;"}
-
-:::
-
-::: {.column width="50%"}
-
-### Ms. Edina Godfrey Swai
-
-![](resources/edna.png)
-
-**Role**: Mentee 
-
-Ms Edina current works as Seascape coordinator based in Mtwara seascape (Mnazi Bay~Ruvuma Estuary Marine Park) under Asuta-Heshimu Bahari project. She has experience in climate change -- adaptation, mitigation, She also is an expert in  natural resource management  and environment management and conservation. She is current in R programming session with prime aim to learn modern techniques in data analytics and computation.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-:::
-
-
-
-::: columns
-::: {.column width="50%"}
-
-### Mr. James Lusana
-
-![](resources/james.png)
-
-**Role**: Mentee
-
-James Lusana, an Assistant Lecturer at the University of Dar es Salaam, is researching catfish in Lake Tanganyika for his PhD. He uses advanced imaging techniques to study their physical traits and analyzes their diet and genetics to understand their ecological role and evolution. His work aims to uncover how these fish have adapted and diversified in their environment.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 768 310 668]{style="color: #0069BF;"}
-
-
-:::
-
-::: {.column width="50%"}
-
-### Ms. Kally 
-
-![](resources/kally.png)
-
-**Role**: Mentee 
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-:::
-:::
-
-
-
-::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ### Mr. Gabriely J. Namate
 
@@ -645,48 +379,140 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 Namate is employed at Pangani District Council as a Fisheries Officer and Aquaculture Specialist. Recognizing the power of R programming in data, he decided to learn and acquired necessary skills for statistical analysis, plotting, and sharing the finding.
 
-<i class="fa-brands fa-square-whatsapp"></i>     [+255 654 989 271]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [xxx@gmail.com ]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>     [+255 654 989 271]{style="color: #0069BF;"}
 
-:::
-
-::: {.column width="50%"}
-
-### Mr. Samwel
-
-![](resources/samwel.png)
-
-**Role**: Mentee
-
-Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
 
 :::
 :::
 
-
-
+***
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="47%"}
 
-### Mr. Julius Olumeh
+### Mr.Shadrack Nyanda
 
-![](resources/julius.png)
+![](resources/nyanda.png)
 
 **Role**: Mentee
 
+
+Shadrack Nyanda is a dedicated Health, Safety & Environment (HSE) practitioner passionate about using R programming for data computation, analysis, and image generation. With a focus on data manipulation and visualization in the context of health, safety, and environmental fields, Shadrack aims to drive efficiency and promote safety and sustainability. 
+
+<i class="fa-solid fa-envelope"></i>    [sylivestershade@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 744 034 000]{style="color: #0069BF;"}
+:::
+
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
+
+### Ms. Joyceline David 
+
+![](resources/joyceline.png)
+
+**Role**: Mentee 
+
 Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobis ini tet libus, sanda debis sitatem pelignima doluptas eos sust parchitem dolor arume cumquia si coribus voluptio ent rem qui beatateseque nonsento modicia eprat.
 
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
+<i class="fa-solid fa-envelope"></i>    [gonsalvesjoyceline@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+44 7909 858960]{style="color: #0069BF;"}
 
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
+:::
+:::
+
+***
+
+::: columns
+::: {.column width="47%"}
+
+### Mr. Zac Maritime
+
+![](resources/zac.png)
+
+**Role**: Facilitator
+
+Zac manages the blue economy (oceans for business) in the Western Indian Ocean for The Nature Conservancy (TNC). Before that, he worked on using maps and data for conservation across Africa at WWF. He's an expert in planning how we use the ocean sustainably, environmental protections, and land/sea surveying. 
+
+<i class="fa-solid fa-envelope"></i>    [xxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+254 721 671642]{style="color: #0069BF;"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
+
+### Ms. Edina Godfrey Swai
+
+![](resources/edna.png)
+
+**Role**: Mentee 
+
+Ms Edina current works as Seascape coordinator based in Mtwara seascape (Mnazi Bay~Ruvuma Estuary Marine Park) under Asuta-Heshimu Bahari project. She has experience in climate change -- adaptation, mitigation, She also is an expert in  natural resource management  and environment management and conservation. She is current in R programming session with prime aim to learn modern techniques in data analytics and computation.
+
+<i class="fa-solid fa-envelope"></i>    [xxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 768 486 385]{style="color: #0069BF;"}
+
+:::
+:::
+
+***
+
+::: columns
+::: {.column width="47%"}
+
+### Mr. James Lusana
+
+![](resources/james.png)
+
+**Role**: Mentee
+
+James Lusana, an Assistant Lecturer at the University of Dar es Salaam, is researching catfish in Lake Tanganyika for his PhD. He uses advanced imaging techniques to study their physical traits and analyzes their diet and genetics to understand their ecological role and evolution. His work aims to uncover how these fish have adapted and diversified in their environment.
+
+<i class="fa-solid fa-envelope"></i>    [xxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 768 310 668]{style="color: #0069BF;"}
+
+
+:::
+
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
+
+### Mr. KELVIN KARISTO
+
+![](resources/kevin.png)
+
+**Role**: Mentee 
+
+
+With a background in transport and logistics at SAMEKI COMPANY LTD, he is taking a proactive approach to his professional development. Recognizing the increasing importance of data analysis in his field, he's currently engrossed in learning R programming.
+
+<i class="fa-solid fa-envelope"></i>    [xxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 713 363 510]{style="color: #0069BF;"}
+
+:::
+:::
+
+***
+
+::: columns
+::: {.column width="47%"}
+
+### Ms. Swaumu Haruna
+
+![](resources/swaumu.png)
+
+**Role**: Mentee
+
+Ms Swaumu Haruna, a has a bachelor's degree in environmental science and management from Sokoine University of Agriculture. She is currently learning R programming to enhance her skills in data analysis, statistical computation, and data visualization. She aim to leverag coding to automate data analysis and generate data-driven solutions for environmental matters. 
+
+<i class="fa-solid fa-envelope"></i>    [xxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 627 851 120]{style="color: #0069BF;"}
+
+:::
+
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
 
 ### Mr. Ekumbi Boniphace
 
@@ -696,56 +522,13 @@ Agnatquo digento tatqui officae rehentor reped quibero officae consenda que nobi
 
 Ekumbi Boniphace is currently working on the [project](www.school.co.tz), where he is responsible for promoting schools in Tanzania. He utilizes various tools such as ArcGIS, Kobo, and Adobe Photoshop to carry out his tasks. Recently, he is expanding his skill set by learning R and Python for data processing, analysis and reporting.
 
-<i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"}
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"}
 
 
 :::
 :::
 
-
-
-
-
-::: columns
-::: {.column width="50%"}
-
-### Ms Swaumu Haruna
-
-![](resources/swaumu.png)
-
-**Role**: Mentee
-
-Mis Swaumu Haruna, a has a bachelor's degree in environmental science and management from Sokoine University of Agriculture. She is currently learning R programming to enhance her skills in data analysis, statistical computation, and data visualization. She aim to leverag coding to automate data analysis and generate data-driven solutions for environmental matters. 
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<i class="fa-brands fa-square-whatsapp"></i>   [+255 627 851 120]{style="color: #0069BF;"}
-
-:::
-
-::: {.column width="50%"}
-
-<!-- ### Mr. Ekumbi Boniphace -->
-
-<!-- ![](resources/ekumbi.png) -->
-
-<!-- **Role**: Facilitator  -->
-
-<!-- Ekumbi Boniphace is currently working on the [project](www.school.co.tz), where he is responsible for promoting schools in Tanzania. He utilizes various tools such as ArcGIS, Kobo, and Adobe Photoshop to carry out his tasks. Recently, he is expanding his skill set by learning R and Python for data processing, analysis and reporting. -->
-
-<!-- <i class="fa-solid fa-envelope"></i>    [ekumbiboni@gmail.com]{style="color: #0069BF;"} -->
-
-<!-- <i class="fa-brands fa-square-whatsapp"></i>   [+255 716 494 125]{style="color: #0069BF;"} -->
-
-
-:::
-:::
-
-
-
-*****************
+***
 
 
 ```{r}
