@@ -11,20 +11,33 @@ website:
   page-navigation: true
   description: "Coding for all for better today and tommorow"
   site-url: https://lugoga.github.io/kitaa/
-  
+  # repo-url: https://github.com/lugoga/kitaa
+  # repo-actions: [edit, issue]
+  # 
+
+  sidebar:
+    title: "Sidebar title"
+    subtitle: "Here's a subtitle for the sidebar"
+    contents:
+      - text: "About"
+      - text: "Blog"
+
   navbar:
     background: dark
     search: false
-    # logo: 
+    logo: magnifying-glass-chart-solid.png
     right:
       - text: Posts
         href: blog.qmd
-      - text: Presentations
-        href: slides.qmd
-      - text: Books
-        href: books.qmd
-      - text: Datasets
-        href: data.qmd
+      - text: "Materials"  
+        menu:
+          - text: Presentations
+            href: slides.qmd
+          - text: Books
+            href: books.qmd
+          - text: Datasets
+            href: data.qmd
+    # right:
       - text: Gallery
         href: photos.qmd
       - text: About
@@ -70,6 +83,8 @@ website:
         href: license.qmd
       - text: "Terms"
         href: terms.qmd
+  
+
         
 feed: true
 
@@ -94,7 +109,7 @@ format:
   html:
     grid:
       sidebar-width: 300px
-      body-width: 900px
+      body-width: 800px
       margin-width: 300px
       gutter-width: 1.5rem
     code-fold: false

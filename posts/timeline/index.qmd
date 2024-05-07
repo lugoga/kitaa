@@ -15,8 +15,14 @@ date: "2023-11-24"
 date-modified: "2023-12-24"
 categories: [visualization, code, analysis]
 image: "milestone_timeline-01.png"
-
+execute: 
+  warning: false
+  message: false
+  comment: ""
 ---
+
+
+
 
 
 In this post we’re going to be using R and ggplot2 to create a project timeline with milestones and milestone statuses.
@@ -25,4 +31,120 @@ The finished product will look like as illustrated in @fig-milestone
 
 ![A timeline of the Milestone for learning Modern](milestone_timeline-01.png){#fig-milestone}
 
+
+
+
+```{r}
+require(tidyverse)
+require(lubridate)
+require(scales)
+require(ggrepel)
+```
+
+```{r, fig.width=8, fig.height=4}
+set.seed(182)
+
+asuta = tibble(
+  milestone = c("kick-off\nmeeting", "Community\nOutreach and\nEngagement", "Inception\nand Annexes", "Intervention\nStrategy 2.0", "Fisheries\npatterns", "Progress\nReport 1.0", "MEET\nReport", "Community\nProfile", "Resource \nandClimate\n","GBV\ntraining", "Intervention\nStrategy 3.0", "Financing\nAccess", "Climate change\nAdaptation", "Progress\nReport 2.0"),
+  date = c(100424, 300424, 100524, 200524, 300524, 080624, 300624, 150724,030824, 310724,180824, 200824, 310824, 100924),
+   direction = rep(c(1,-1), times = 7),
+  status = c("Implementing", "Implementing", "Reporting", "Strategy", "Implementing","Reporting", "Reporting", "Reporting",
+  "Implementing", "Reporting", "Strategy", "Reporting", "Reporting", "Reporting")
+) |> 
+  mutate(
+   date = dmy(date),
+    position =abs(rnorm(n = 14, mean = .15, sd = .08))  * direction,
+    text_position =  if_else(position >= 0, position + 0.08, position - 0.08)
+    ) |> 
+  mutate(
+    milestone = paste0("Milestone-", 1:14,"\n", milestone)
+  ) |> 
+  arrange(date)
+
+date_range = asuta |> pull(date) |> range()
+
+asuta.week = tibble(
+  daily = seq(date_range[1], date_range[2], by = "5 day")
+) |> 
+  mutate(
+    day = day(daily),
+    month = month(daily, label = T),
+    year = year(daily)
+    )
+```
+
+
+```{r, fig.width=8, fig.height=4}
+
+ggplot()+
+  geom_hline(yintercept = 0)+
+  geom_segment(data = asuta, aes(x = date, y = 0, yend = position, color = status))+
+  geom_point(data = asuta, aes(x = date, y = position, color = status),size = 3) +
+  geom_text(data = asuta, aes(x = date, y = text_position, label = milestone, color = status), size = 3)+
+  scale_x_date(expand = expansion(mult = 0.08))+
+  theme_minimal()+
+  theme(
+    axis.title = element_blank(), 
+    axis.text = element_blank(), 
+    axis.ticks = element_blank(), 
+    panel.background = element_blank(),
+    panel.grid = element_blank(), 
+    legend.position = "top",
+    legend.title = element_blank(),
+    legend.background = element_blank()
+    ) +
+  geom_text(data = asuta.week, aes(x = daily, y = -0.02, label = day), size = 2.5, color = "gray50")+
+  geom_text(data = asuta.week |> distinct(month, .keep_all = TRUE), aes(x = daily, y = -0.05, label = month), fontface = "bold", color = "grey20", size = 3)+
+   geom_text(data = asuta.week |> distinct(month, .keep_all = TRUE) |> slice(1) , aes(x = daily, y = -0.09, label = year), color = "black", size = 3.5)+
+  ggsci::scale_color_d3(limits = c("Implementing", "Strategy", "Reporting"))
+
+
+# ggsave("milestone_timeline.pdf", width = 8, height = 4, dpi = 300)
+```
+
+
+
+```{r, fig.width=8, fig.height=4}
+
+asuta = asuta |> 
+  mutate(date = date+days(19))
+
+date_range = asuta |> pull(date) |> range()
+
+
+asuta.week = tibble(
+  daily = seq(date_range[1], date_range[2], by = "5 day")
+) |> 
+  mutate(
+    day = day(daily),
+    month = month(daily, label = T),
+    year = year(daily)
+    )
+
+
+ggplot()+
+  geom_hline(yintercept = 0)+
+  geom_segment(data = asuta, aes(x = date, y = 0, yend = position, color = status))+
+  geom_point(data = asuta, aes(x = date, y = position, color = status),size = 3) +
+  geom_text(data = asuta, aes(x = date, y = text_position, label = milestone, color = status), size = 3)+
+  scale_x_date(expand = expansion(mult = 0.08))+
+  theme_minimal()+
+  theme(
+    axis.title = element_blank(), 
+    axis.text = element_blank(), 
+    axis.ticks = element_blank(), 
+    panel.background = element_blank(),
+    panel.grid = element_blank(), 
+    legend.position = "top",
+    legend.title = element_blank(),
+    legend.background = element_blank()
+    ) +
+  geom_text(data = asuta.week, aes(x = daily, y = -0.02, label = day), size = 2.5, color = "gray50")+
+  geom_text(data = asuta.week |> distinct(month, .keep_all = TRUE), aes(x = daily, y = -0.05, label = month), fontface = "bold", color = "grey20", size = 3)+
+   geom_text(data = asuta.week |> distinct(month, .keep_all = TRUE) |> slice(1) , aes(x = daily, y = -0.09, label = year), color = "black", size = 3.5)+
+  ggsci::scale_color_lancet(limits = c("Implementing", "Strategy", "Reporting"))
+
+today()+days(10)
+
+```
 

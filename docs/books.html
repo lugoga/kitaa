@@ -112,6 +112,9 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./magnifying-glass-chart-solid.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">DATIKA</span>
     </a>
@@ -126,18 +129,25 @@ cookieconsent.run({
     <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./slides.html"> 
-<span class="menu-text">Presentations</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-classes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Classes</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-classes">    
+        <li>
+    <a class="dropdown-item" href="./slides.html">
+ <span class="dropdown-text">Presentations</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./books.html" aria-current="page"> 
-<span class="menu-text">Books</span></a>
+        <li>
+    <a class="dropdown-item" href="./books.html">
+ <span class="dropdown-text">Books</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./data.html"> 
-<span class="menu-text">Datasets</span></a>
+        <li>
+    <a class="dropdown-item" href="./data.html">
+ <span class="dropdown-text">Datasets</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./photos.html"> 
 <span class="menu-text">Gallery</span></a>
