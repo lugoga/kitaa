@@ -4,6 +4,7 @@ project:
   
 
 website:
+  reader-mode: true
   title: "DATIKA"
   favicon: magnifying-glass-chart-solid.svg
   image: education-word-cloud-Recovered.jpg
@@ -15,12 +16,7 @@ website:
   # repo-actions: [edit, issue]
   # 
 
-  sidebar:
-    title: "Sidebar title"
-    subtitle: "Here's a subtitle for the sidebar"
-    contents:
-      - text: "About"
-      - text: "Blog"
+
 
   navbar:
     background: dark
@@ -31,12 +27,9 @@ website:
         href: blog.qmd
       - text: "Materials"  
         menu:
-          - text: Presentations
-            href: slides.qmd
-          - text: Books
-            href: books.qmd
-          - text: Datasets
-            href: data.qmd
+          - slides.qmd
+          - books.qmd
+          - data.qmd
     # right:
       - text: Gallery
         href: photos.qmd

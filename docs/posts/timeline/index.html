@@ -183,7 +183,7 @@ cookieconsent.run({
   </li>  
         <li>
     <a class="dropdown-item" href="../../data.html">
- <span class="dropdown-text">Datasets</span></a>
+ <span class="dropdown-text">The datasets</span></a>
   </li>  
     </ul>
   </li>
@@ -332,32 +332,37 @@ Figure&nbsp;1: A timeline of the Milestone for learning Modern
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">set.seed</span>(<span class="dv">182</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a>asuta <span class="ot">=</span> <span class="fu">tibble</span>(</span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="at">milestone =</span> <span class="fu">c</span>(<span class="st">"kick-off</span><span class="sc">\n</span><span class="st">meeting"</span>, <span class="st">"Community</span><span class="sc">\n</span><span class="st">Outreach and</span><span class="sc">\n</span><span class="st">Engagement"</span>, <span class="st">"Inception</span><span class="sc">\n</span><span class="st">and Annexes"</span>, <span class="st">"Intervention</span><span class="sc">\n</span><span class="st">Strategy 2.0"</span>, <span class="st">"Fisheries</span><span class="sc">\n</span><span class="st">patterns"</span>, <span class="st">"Progress</span><span class="sc">\n</span><span class="st">Report 1.0"</span>, <span class="st">"MEET</span><span class="sc">\n</span><span class="st">Report"</span>, <span class="st">"Community</span><span class="sc">\n</span><span class="st">Profile"</span>, <span class="st">"Resource </span><span class="sc">\n</span><span class="st">andClimate</span><span class="sc">\n</span><span class="st">"</span>,<span class="st">"GBV</span><span class="sc">\n</span><span class="st">training"</span>, <span class="st">"Intervention</span><span class="sc">\n</span><span class="st">Strategy 3.0"</span>, <span class="st">"Financing</span><span class="sc">\n</span><span class="st">Access"</span>, <span class="st">"Climate change</span><span class="sc">\n</span><span class="st">Adaptation"</span>, <span class="st">"Progress</span><span class="sc">\n</span><span class="st">Report 2.0"</span>),</span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="at">date =</span> <span class="fu">c</span>(<span class="dv">100424</span>, <span class="dv">300424</span>, <span class="dv">100524</span>, <span class="dv">200524</span>, <span class="dv">300524</span>, <span class="dv">080624</span>, <span class="dv">300624</span>, <span class="dv">150724</span>,<span class="dv">030824</span>, <span class="dv">310724</span>,<span class="dv">180824</span>, <span class="dv">200824</span>, <span class="dv">310824</span>, <span class="dv">100924</span>),</span>
-<span id="cb2-6"><a href="#cb2-6"></a>   <span class="at">direction =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>), <span class="at">times =</span> <span class="dv">7</span>),</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="at">status =</span> <span class="fu">c</span>(<span class="st">"Implementing"</span>, <span class="st">"Implementing"</span>, <span class="st">"Reporting"</span>, <span class="st">"Strategy"</span>, <span class="st">"Implementing"</span>,<span class="st">"Reporting"</span>, <span class="st">"Reporting"</span>, <span class="st">"Reporting"</span>,</span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="st">"Implementing"</span>, <span class="st">"Reporting"</span>, <span class="st">"Strategy"</span>, <span class="st">"Reporting"</span>, <span class="st">"Reporting"</span>, <span class="st">"Reporting"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-11"><a href="#cb2-11"></a>   <span class="at">date =</span> <span class="fu">dmy</span>(date),</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    <span class="at">position =</span><span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">14</span>, <span class="at">mean =</span> .<span class="dv">15</span>, <span class="at">sd =</span> .<span class="dv">08</span>))  <span class="sc">*</span> direction,</span>
-<span id="cb2-13"><a href="#cb2-13"></a>    <span class="at">text_position =</span>  <span class="fu">if_else</span>(position <span class="sc">&gt;=</span> <span class="dv">0</span>, position <span class="sc">+</span> <span class="fl">0.08</span>, position <span class="sc">-</span> <span class="fl">0.08</span>)</span>
-<span id="cb2-14"><a href="#cb2-14"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="at">milestone =</span> <span class="fu">c</span>(<span class="st">"kick-off</span><span class="sc">\n</span><span class="st">meeting"</span>, <span class="st">"Community</span><span class="sc">\n</span><span class="st">Outreach and</span><span class="sc">\n</span><span class="st">Engagement"</span>, </span>
+<span id="cb2-5"><a href="#cb2-5"></a>                <span class="st">"Inception</span><span class="sc">\n</span><span class="st">and Annexes"</span>, <span class="st">"Intervention</span><span class="sc">\n</span><span class="st">Strategy 2.0"</span>, <span class="st">"Fisheries</span><span class="sc">\n</span><span class="st">patterns"</span>, </span>
+<span id="cb2-6"><a href="#cb2-6"></a>                <span class="st">"Progress</span><span class="sc">\n</span><span class="st">Report 1.0"</span>, <span class="st">"MEET</span><span class="sc">\n</span><span class="st">Report"</span>, <span class="st">"Community</span><span class="sc">\n</span><span class="st">Profile"</span>, </span>
+<span id="cb2-7"><a href="#cb2-7"></a>                <span class="st">"Resource </span><span class="sc">\n</span><span class="st">andClimate</span><span class="sc">\n</span><span class="st">"</span>,<span class="st">"GBV</span><span class="sc">\n</span><span class="st">training"</span>, <span class="st">"Intervention</span><span class="sc">\n</span><span class="st">Strategy 3.0"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8"></a>                <span class="st">"Financing</span><span class="sc">\n</span><span class="st">Access"</span>, <span class="st">"Climate change</span><span class="sc">\n</span><span class="st">Adaptation"</span>, <span class="st">"Progress</span><span class="sc">\n</span><span class="st">Report 2.0"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="at">date =</span> <span class="fu">c</span>(<span class="dv">100424</span>, <span class="dv">300424</span>, <span class="dv">100524</span>, <span class="dv">200524</span>, <span class="dv">300524</span>, <span class="dv">080624</span>, <span class="dv">300624</span>, <span class="dv">150724</span>,<span class="dv">030824</span>, <span class="dv">310724</span>,<span class="dv">180824</span>, <span class="dv">200824</span>, <span class="dv">310824</span>, <span class="dv">100924</span>),</span>
+<span id="cb2-10"><a href="#cb2-10"></a>   <span class="at">direction =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>), <span class="at">times =</span> <span class="dv">7</span>),</span>
+<span id="cb2-11"><a href="#cb2-11"></a>  <span class="at">status =</span> <span class="fu">c</span>(<span class="st">"Implementing"</span>, <span class="st">"Implementing"</span>, <span class="st">"Reporting"</span>, <span class="st">"Strategy"</span>, <span class="st">"Implementing"</span>,<span class="st">"Reporting"</span>, </span>
+<span id="cb2-12"><a href="#cb2-12"></a>             <span class="st">"Reporting"</span>, <span class="st">"Reporting"</span>,<span class="st">"Implementing"</span>, <span class="st">"Reporting"</span>, <span class="st">"Strategy"</span>, <span class="st">"Reporting"</span>, </span>
+<span id="cb2-13"><a href="#cb2-13"></a>             <span class="st">"Reporting"</span>, <span class="st">"Reporting"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14"></a>) <span class="sc">|&gt;</span> </span>
 <span id="cb2-15"><a href="#cb2-15"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-16"><a href="#cb2-16"></a>    <span class="at">milestone =</span> <span class="fu">paste0</span>(<span class="st">"Milestone-"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">14</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, milestone)</span>
-<span id="cb2-17"><a href="#cb2-17"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb2-18"><a href="#cb2-18"></a>  <span class="fu">arrange</span>(date)</span>
-<span id="cb2-19"><a href="#cb2-19"></a></span>
-<span id="cb2-20"><a href="#cb2-20"></a>date_range <span class="ot">=</span> asuta <span class="sc">|&gt;</span> <span class="fu">pull</span>(date) <span class="sc">|&gt;</span> <span class="fu">range</span>()</span>
-<span id="cb2-21"><a href="#cb2-21"></a></span>
-<span id="cb2-22"><a href="#cb2-22"></a>asuta.week <span class="ot">=</span> <span class="fu">tibble</span>(</span>
-<span id="cb2-23"><a href="#cb2-23"></a>  <span class="at">daily =</span> <span class="fu">seq</span>(date_range[<span class="dv">1</span>], date_range[<span class="dv">2</span>], <span class="at">by =</span> <span class="st">"5 day"</span>)</span>
-<span id="cb2-24"><a href="#cb2-24"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-25"><a href="#cb2-25"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-26"><a href="#cb2-26"></a>    <span class="at">day =</span> <span class="fu">day</span>(daily),</span>
-<span id="cb2-27"><a href="#cb2-27"></a>    <span class="at">month =</span> <span class="fu">month</span>(daily, <span class="at">label =</span> T),</span>
-<span id="cb2-28"><a href="#cb2-28"></a>    <span class="at">year =</span> <span class="fu">year</span>(daily)</span>
-<span id="cb2-29"><a href="#cb2-29"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-16"><a href="#cb2-16"></a>   <span class="at">date =</span> <span class="fu">dmy</span>(date),</span>
+<span id="cb2-17"><a href="#cb2-17"></a>    <span class="at">position =</span><span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">14</span>, <span class="at">mean =</span> .<span class="dv">15</span>, <span class="at">sd =</span> .<span class="dv">08</span>))  <span class="sc">*</span> direction,</span>
+<span id="cb2-18"><a href="#cb2-18"></a>    <span class="at">text_position =</span>  <span class="fu">if_else</span>(position <span class="sc">&gt;=</span> <span class="dv">0</span>, position <span class="sc">+</span> <span class="fl">0.08</span>, position <span class="sc">-</span> <span class="fl">0.08</span>)</span>
+<span id="cb2-19"><a href="#cb2-19"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb2-20"><a href="#cb2-20"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-21"><a href="#cb2-21"></a>    <span class="at">milestone =</span> <span class="fu">paste0</span>(<span class="st">"Milestone-"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">14</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, milestone)</span>
+<span id="cb2-22"><a href="#cb2-22"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb2-23"><a href="#cb2-23"></a>  <span class="fu">arrange</span>(date)</span>
+<span id="cb2-24"><a href="#cb2-24"></a></span>
+<span id="cb2-25"><a href="#cb2-25"></a>date_range <span class="ot">=</span> asuta <span class="sc">|&gt;</span> <span class="fu">pull</span>(date) <span class="sc">|&gt;</span> <span class="fu">range</span>()</span>
+<span id="cb2-26"><a href="#cb2-26"></a></span>
+<span id="cb2-27"><a href="#cb2-27"></a>asuta.week <span class="ot">=</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-28"><a href="#cb2-28"></a>  <span class="at">daily =</span> <span class="fu">seq</span>(date_range[<span class="dv">1</span>], date_range[<span class="dv">2</span>], <span class="at">by =</span> <span class="st">"5 day"</span>)</span>
+<span id="cb2-29"><a href="#cb2-29"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-30"><a href="#cb2-30"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-31"><a href="#cb2-31"></a>    <span class="at">day =</span> <span class="fu">day</span>(daily),</span>
+<span id="cb2-32"><a href="#cb2-32"></a>    <span class="at">month =</span> <span class="fu">month</span>(daily, <span class="at">label =</span> T),</span>
+<span id="cb2-33"><a href="#cb2-33"></a>    <span class="at">year =</span> <span class="fu">year</span>(daily)</span>
+<span id="cb2-34"><a href="#cb2-34"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
@@ -435,10 +440,7 @@ Figure&nbsp;1: A timeline of the Milestone for learning Modern
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">today</span>()<span class="sc">+</span><span class="fu">days</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-05-17"</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># today()+days(10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

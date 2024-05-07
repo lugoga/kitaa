@@ -41,15 +41,22 @@ require(scales)
 require(ggrepel)
 ```
 
+
+
 ```{r, fig.width=8, fig.height=4}
 set.seed(182)
 
 asuta = tibble(
-  milestone = c("kick-off\nmeeting", "Community\nOutreach and\nEngagement", "Inception\nand Annexes", "Intervention\nStrategy 2.0", "Fisheries\npatterns", "Progress\nReport 1.0", "MEET\nReport", "Community\nProfile", "Resource \nandClimate\n","GBV\ntraining", "Intervention\nStrategy 3.0", "Financing\nAccess", "Climate change\nAdaptation", "Progress\nReport 2.0"),
+  milestone = c("kick-off\nmeeting", "Community\nOutreach and\nEngagement", 
+                "Inception\nand Annexes", "Intervention\nStrategy 2.0", "Fisheries\npatterns", 
+                "Progress\nReport 1.0", "MEET\nReport", "Community\nProfile", 
+                "Resource \nandClimate\n","GBV\ntraining", "Intervention\nStrategy 3.0", 
+                "Financing\nAccess", "Climate change\nAdaptation", "Progress\nReport 2.0"),
   date = c(100424, 300424, 100524, 200524, 300524, 080624, 300624, 150724,030824, 310724,180824, 200824, 310824, 100924),
    direction = rep(c(1,-1), times = 7),
-  status = c("Implementing", "Implementing", "Reporting", "Strategy", "Implementing","Reporting", "Reporting", "Reporting",
-  "Implementing", "Reporting", "Strategy", "Reporting", "Reporting", "Reporting")
+  status = c("Implementing", "Implementing", "Reporting", "Strategy", "Implementing","Reporting", 
+             "Reporting", "Reporting","Implementing", "Reporting", "Strategy", "Reporting", 
+             "Reporting", "Reporting")
 ) |> 
   mutate(
    date = dmy(date),
@@ -144,7 +151,7 @@ ggplot()+
    geom_text(data = asuta.week |> distinct(month, .keep_all = TRUE) |> slice(1) , aes(x = daily, y = -0.09, label = year), color = "black", size = 3.5)+
   ggsci::scale_color_lancet(limits = c("Implementing", "Strategy", "Reporting"))
 
-today()+days(10)
+# today()+days(10)
 
 ```
 

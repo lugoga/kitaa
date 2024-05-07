@@ -1,5 +1,5 @@
 ---
-title: "The datasets"
+title: "Datasets"
 description: "Several datasets used in this program are listed in this page, which also provide codes on how to import them"
 page-layout: full
 title-block-banner: true

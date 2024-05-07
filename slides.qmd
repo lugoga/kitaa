@@ -1,5 +1,5 @@
 ---
-title: "Agenda and Presentations for covered topics"
+title: "Presentations"
 page-layout: full
 title-block-banner: true
 ---
