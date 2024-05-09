@@ -549,7 +549,15 @@ Ms. Maria Pentzel, Marine Conservation Warden at Marine Parks and Reserves Unit 
 
 ::: {.column width="47%"}
 
+### Mr.  Daniel Mallya
 
+![](resources/daniel.png)
+
+**Role**: Mentee
+
+Daniel Mallya  a Marine Community  Conservation Warden with MPRU in Mafia Island Marine Park I’m current in R programming session  with Prime aim to learn modern techniques in data analytic and computation
+
+<i class="fa-solid fa-envelope"></i>    [johndan818@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 687 352 428]{style="color: #0069BF;"}
 
 
 :::
