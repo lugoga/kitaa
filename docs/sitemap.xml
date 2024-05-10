@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lugoga.github.io/kitaa/index.html</loc>
-    <lastmod>2024-05-09T18:45:45.082Z</lastmod>
+    <lastmod>2024-05-10T03:24:33.157Z</lastmod>
   </url>
   <url>
     <loc>https://lugoga.github.io/kitaa/blog.html</loc>
@@ -43,5 +43,9 @@
   <url>
     <loc>https://lugoga.github.io/kitaa/photos.html</loc>
     <lastmod>2024-04-27T20:43:37.523Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/about.html</loc>
+    <lastmod>2024-05-10T03:17:04.439Z</lastmod>
   </url>
 </urlset>

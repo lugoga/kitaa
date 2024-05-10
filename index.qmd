@@ -3,8 +3,9 @@
 page-layout: full
 title-block-banner: true
 toc: false
-
 ---
+
+
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
@@ -444,7 +445,7 @@ Zac manages the blue economy (oceans for business) in the Western Indian Ocean f
 
 **Role**: Mentee 
 
-Ms Edina current works as Seascape coordinator based in Mtwara seascape (Mnazi Bay~Ruvuma Estuary Marine Park) under Asuta-Heshimu Bahari project. She has experience in climate change -- adaptation, mitigation, She also is an expert in  natural resource management  and environment management and conservation. She is current in R programming session with prime aim to learn modern techniques in data analytics and computation.
+Ms. Edina works as the Seascape coordinator for Asasi ya Uwezeshaji Tanzania (ASUTA) under the USAID Heshimu Bahari Project, based in the Mtwara Seascape (Mnazi Bay~Ruvuma Estuary Marine Park). She has experience in climate change adaptation and mitigation, as well as expertise in natural resource management, environmental management, and conservation. She is currently participating in an R programming session with the primary aim of learning modern techniques in data analytics and computation.
 
 <i class="fa-solid fa-envelope"></i>    [xxx@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 768 486 385]{style="color: #0069BF;"}
 

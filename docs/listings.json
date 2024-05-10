@@ -36,5 +36,36 @@
       "/posts/thebasics/index.html",
       "/posts/timeline/index.html"
     ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/dataviz/index.html",
+      "/posts/manipulate/index.html",
+      "/posts/tidying/index.html",
+      "/posts/stats0/index.html",
+      "/posts/basicplots/index.html",
+      "/posts/ggplot2/index.html",
+      "/posts/importingData/index.html",
+      "/posts/vectorDataframe/index.html",
+      "/posts/datastructures/index.html",
+      "/posts/dataTypes/index.html",
+      "/posts/getStarted/index.html",
+      "/posts/rbasics/index.html",
+      "/posts/thebasics/index.html",
+      "/posts/timeline/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/dataviz/index.html",
+    "items": [
+      "/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/manipulate/index.html",
+    "items": [
+      "/index.html"
+    ]
   }
 ]
