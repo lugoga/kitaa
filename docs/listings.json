@@ -40,6 +40,50 @@
   {
     "listing": "/index.html",
     "items": [
+      "/archive.html",
+      "/posts/basicplots/index.html",
+      "/books.html",
+      "/posts/timeline/index.html",
+      "/license.html",
+      "/posts/dataviz/index.html",
+      "/posts/manipulate/index.html",
+      "/data.html",
+      "/posts/getStarted/index.html",
+      "/posts/importingData/index.html",
+      "/posts/datastructures/index.html",
+      "/404.html",
+      "/photos.html",
+      "/slides.html",
+      "/feedback.html",
+      "/posts/thebasics/index.html",
+      "/posts/rbasics/index.html",
+      "/posts/tidying/index.html",
+      "/posts/stats0/index.html",
+      "/posts/dataTypes/index.html",
+      "/posts/vectorDataframe/index.html",
+      "/posts/ggplot2/index.html",
+      "/about.html",
+      "/faq.html",
+      "/blog.html",
+      "/terms.html"
+    ]
+  },
+  {
+    "listing": "/posts/dataviz/index.html",
+    "items": [
+      "/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/manipulate/index.html",
+    "items": [
+      "/index.html"
+    ]
+  },
+  {
+    "listing": "/feedback.html",
+    "items": [
+      "/index.html",
       "/posts/dataviz/index.html",
       "/posts/manipulate/index.html",
       "/posts/tidying/index.html",
@@ -54,18 +98,6 @@
       "/posts/rbasics/index.html",
       "/posts/thebasics/index.html",
       "/posts/timeline/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/dataviz/index.html",
-    "items": [
-      "/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/manipulate/index.html",
-    "items": [
-      "/index.html"
     ]
   }
 ]
