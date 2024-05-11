@@ -568,7 +568,8 @@ Daniel Mallya  a Marine Community  Conservation Warden with MPRU in Mafia Island
 
 ***
 ```{r}
-#| column: screen-inset-shaded
+#| eval: false
+#| #| column: screen-inset-shaded
 #| echo: false
 #| warning: false
 #| message: false
@@ -586,6 +587,87 @@ leaflet() %>%
 
 
 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+require(sf)
+require(leaflet)
+require(leafpop)
+require(rvest)
+require(tidyverse)
+
+
+web.members = read_csv("members.csv")
+
+
+members.sf = web.members |> 
+  separate(coords, into = c("lat", "lon"), sep = ",") |> 
+  mutate(
+    lat = as.numeric(lat) |> round(5),
+    lon = as.numeric(lon) |> round(5),
+    fullnames = paste0(title, ".", " ", first, " ", second)
+    ) |> 
+  st_as_sf(coords = c("lon", "lat"), crs = 4326) |> 
+  mutate(
+    html_labels = glue::glue(  
+      "<strong>INFORMATION</strong><br>",
+      "<hr>",
+      "<b>Title: </b> {web.members$title}<br/>",
+      "<b>First name: </b> {web.members$first}<br/>",
+      "<b>Surname: </b> {web.members$second}<br/>",
+      # "<b>Photo: </b> {web.members$picha}<br/>",
+      "<b>Affiliation: </b> {web.members$institute}<br/>",
+      "<b>Mobile: </b> {web.members$phone}<br/>",
+      "<b>Email: </b> {web.members$email}<br/>"
+    )%>%
+      lapply(htmltools::HTML)
+  )
+
+
+images = members.sf |> st_drop_geometry() |> pull(picha)
+```
+
+
+```{r}
+#| eval: true
+#| #| column: screen-inset-shaded
+#| echo: false
+#| warning: false
+#| message: false
+#| comment: ""
+#| 
+leaflet(data = members.sf) |> 
+   setView(lng = 39.306, lat = -6.828 , zoom = 6) |> 
+  # Base groups
+  addTiles(group = "OSM (default)") |> 
+  addProviderTiles(provider = "Esri.WorldImagery", group = "Esri imagery") |> 
+  addTiles() |> 
+  addCircleMarkers(
+    color = NA, 
+    fillColor = "blue", 
+    fillOpacity = .6,
+    label = ~html_labels, 
+    popup = popupImage(images),
+    clusterOptions = markerClusterOptions(spiderfyOnMaxZoom = TRUE)
+    )  |> 
+  addLayersControl(
+        baseGroups = c("OSM (default)", "Esri imagery", "NHD")
+  ) %>%
+      addMeasure(
+        position = "topleft", primaryLengthUnit = "meters", 
+        secondaryLengthUnit = "kilometers", primaryAreaUnit = "sqmeters", 
+        secondaryAreaUnit = "acres", thousandsSep = ",") %>%
+      addScaleBar(position = "topleft")
+
+
+```
+
+
+***
 
 ::: {#fig-cern}
 
