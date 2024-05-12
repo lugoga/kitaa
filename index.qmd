@@ -565,8 +565,9 @@ Daniel Mallya  a Marine Community  Conservation Warden with MPRU in Mafia Island
 :::
 
 
-
 ***
+
+
 ```{r}
 #| eval: false
 #| #| column: screen-inset-shaded
@@ -628,18 +629,23 @@ members.sf = web.members |>
   )
 
 
-images = members.sf |> st_drop_geometry() |> pull(picha)
+
+
 ```
 
 
 ```{r}
 #| eval: true
-#| #| column: screen-inset-shaded
+#| column: screen-inset-right
 #| echo: false
 #| warning: false
 #| message: false
 #| comment: ""
-#| 
+
+images = members.sf |> st_drop_geometry() |> pull(picha)
+pal = colorFactor(palette = c("navy", "red"), domain = c("Ms", "Mr"))
+
+
 leaflet(data = members.sf) |> 
    setView(lng = 39.306, lat = -6.828 , zoom = 6) |> 
   # Base groups
@@ -648,7 +654,7 @@ leaflet(data = members.sf) |>
   addTiles() |> 
   addCircleMarkers(
     color = NA, 
-    fillColor = "blue", 
+    fillColor =  ~pal(title),
     fillOpacity = .6,
     label = ~html_labels, 
     popup = popupImage(images),

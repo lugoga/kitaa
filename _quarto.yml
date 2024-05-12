@@ -102,9 +102,9 @@ feed: true
 format:
   html:
     grid:
-      sidebar-width: 300px
-      body-width: 800px
-      margin-width: 300px
+      # sidebar-width: 300px
+      # body-width: 800px
+      # margin-width: 300px
       gutter-width: 1.5rem
     code-fold: false
     code-tools: false
@@ -118,7 +118,7 @@ format:
     toc-depth: 3
     toc-location: left
     toc-title: "CONTENTS"
-    toc-expand: true
+    toc-expand: false
     
 
 
