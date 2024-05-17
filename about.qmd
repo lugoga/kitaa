@@ -174,7 +174,7 @@ To teach and learn data science, we need the right tools, materials (information
 
 2.  An R interface: The [RStudio IDE](https://posit.co/products/open-source/rstudio/) (by [Posit](https://posit.co/)) provides an integrated development environment for R.^[2](https://bookdown.org/hneth/i2ds/#fn2)^
 
-3.  Additional tools: The R packages of the [tidyverse](https://cran.r-project.org/package=tidyverse) ([Wickham, 2023b](https://bookdown.org/hneth/i2ds/references.html#ref-R-tidyverse)) and [ds4psy](https://cran.r-project.org/package=ds4psy) ([Neth, 2023b](https://bookdown.org/hneth/i2ds/references.html#ref-R-ds4psy)).
+3.  Additional tools: The R packages of the [tidyverse](https://cran.r-project.org/package=tidyverse) ([Wickham, 2023b](https://bookdown.org/hneth/i2ds/references.html#ref-R-tidyverse)).
 
 
 
@@ -201,6 +201,11 @@ The [Posit cheatsheet](https://posit.co/resources/cheatsheets/) on the RStudio I
 {{< pdf rstudio.pdf width=100% height=400 >}}
 
 
+### Developer and Maintainer
+
+Masumbuko Semba designed this static website along with its dynamic blog. This website was designed and developed using [quarto](https://quarto.org/) and was deployed and hosted in GitHub. You can browse and learn more about Semba's work in his resume
+
+{{< pdf semba.pdf width=100% height=400 >}}
 
 ### License
 
