@@ -42,10 +42,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
 <script src="site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="site_libs/quarto-contrib/lordicon-bundle-1.4.2/bundle.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -241,8 +243,8 @@ cookieconsent.run({
 </script>
 <div class="columns">
 <div class="column" style="width:80%;">
-<section id="welcome-to-datika" class="level1 center-text">
-<h1 class="center-text">Welcome to Datika!!!</h1>
+<section id="welcome-to-datika" class="level1">
+<h1>Welcome to Datika!!! <lord-icon delay="1000" src="https://cdn.lordicon.com/wxnxiano.json" trigger="loop"></lord-icon></h1>
 <p>We’are glad you’re here at our website, datika! As an avid enthusiast of statistics and the <a href="https://www.r-project.org/">R programming language</a>, we’ve created this platform to share our experiences, research and projects with fellows</p>
 <p>Datika is more than just a showcase of our work – it’s a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R. Meet the people that make datika up and running!</p>
 </section>
@@ -1014,6 +1016,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>
+    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const watermark = new XWatermark.XWatermark();
+    watermark.init("datika", {
+      parentSelector: "body",
+      prevent: true,
+      observer: true,
+      mode: "normal",
+      font: "system-ui, -apple-system, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
+      fontsize: baseFontSize * 2.000000,
+      angle: -15.000000,
+      color: "#000000",
+      alpha: 0.050000,
+      cols: 10,
+      rows: 50,
+      xSpace: baseFontSize * 15.000000,
+      ySpace: baseFontSize * 15.000000,
+      zIndex: -1
+    });
+    </script>
 
 
 

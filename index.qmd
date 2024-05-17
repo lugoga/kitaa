@@ -21,7 +21,9 @@ toc: true
 
 ::: {.column width="80%"}
 
-# Welcome to Datika!!! {.center-text} 
+# Welcome to Datika!!! {{< li wxnxiano trigger=loop delay=1000 >}}
+
+
 
 We'are glad you're here at our website, datika! As an avid enthusiast of statistics and the [R programming language](https://www.r-project.org/), we've created this platform to share our experiences, research and projects with fellows
 
@@ -53,7 +55,7 @@ Pause for a moment and ***Join us***
 
 ### Mr. Masumbuko Semba
 
-![](resources/semba.png)
+![](resources/semba.png) 
 
 **Role**: Mentor
 

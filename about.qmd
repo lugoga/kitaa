@@ -2,6 +2,8 @@
 # title: "About"
 # image: education-word-cloud-Recovered.jpg
 page-layout: article
+toc: true
+toc-depth: 4
 about:
   template: solana
   links:
@@ -30,7 +32,9 @@ about:
 
 <!-- </style> -->
 
-## Welcome to Datika!!! {.center-text}
+## Welcome to Datika!!! 
+
+{{< li lupuorrc trigger=loop speed=0.5 >}}
 
 I'm glad you're here at our website, datika! As an avid enthusiast of statistics and the [R programming language](https://www.r-project.org/), we've created this platform to share our experiences, research and projects with fellows. Datika is more than just a showcase of our work -- it's a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R.
 
@@ -159,14 +163,14 @@ leaflet(data = members.sf) |>
 
 
 
-### Goals
+## Goals for training
 
 Our prime goal for this training is to enables you to understand, transform, analyze, and visualize data in a variety of ways. Whereas initial lessons provide an introduction to data types, data visualization, and exploratory data analysis (using **base** R and **tidyverse** packages), later lessons address more advanced issues of programming, running simulations, and predictive modeling. The course uses the technologies and tools provided by [R](https://www.r-project.org/) ([R Core Team, 2023](https://bookdown.org/hneth/i2ds/references.html#ref-R)), the [RStudio IDE](https://posit.co/products/open-source/rstudio/), [RMarkdown](https://rmarkdown.rstudio.com/), including some key packages of the [tidyverse](https://www.tidyverse.org/) ([Wickham et al., 2019](https://bookdown.org/hneth/i2ds/references.html#ref-tidyverse)) (e.g., **dplyr**, **ggplot2**, **tibble**, and **tidyr**).
 
 ![](right_coding.png)
 
 
-### Software
+## R and RStudio installation {{< fa road >}} 
 
 To teach and learn data science, we need the right tools, materials (information), and agree on some rules (structure). Working through this course assumes an installation of three types of software programs:
 
@@ -198,15 +202,16 @@ Enjoy learning with a video that highlight key aspect of tidyverse and how relev
 {{< video https://www.youtube.com/watch?v=KsBBRHAgAhM >}}
 
 
-#### Welcome to the R world
+### Welcome to the R world {{< fa heart >}} 
 
 Once you have installed the software, take a moment to reflect on a curious fact: You just installed software that was written by hundreds of highly-trained experts, who dedicate years of their professional lives to its creation and improvement. Interestingly, you could just download their products and had to pay nothing to do so. This is possible because most R developers subscribe to an [open source](https://en.wikipedia.org/wiki/Open_source) philosophy that was ridiculed by corporations when it started in the 1980s and 1990s, but has become one of the most powerful paradigms in software development.
 
 But actually, you *did* invest time and effort to install all these programs and packages. And by doing so, you are taking first steps to join a world-wide community that shares certain interests, assumptions, and ideals. So, *welcome* to the R community --- but be aware: Learning R can profoundly transform your life.
 
-#### Working with RStudio
+### Working with RStudio {{< fa anchor >}} 
 
 The distinctions between R, RStudio, and R packages are somewhat confusing at first. Thus, it is good to know that we will typically be using the [RStudio IDE](https://posit.co/products/open-source/rstudio/) to interact with R and manage our library of R packages. The basic idea of an integrated development environment (IDE) is to make it easier to access and manage all R-related concerns through a single interface. So think of RStudio as your console or dashboard that allows you to monitor and control the R engine underneath.
+
 
 Given its large variety of functions, the RStudio interface is divided into many sub-windows that can be arranged and expanded in various ways. At this point, we only need to distinguish between the main **Editor** window (typically located on the top left), the **Console** (for entering R commands), and a few auxiliary windows that may display outputs (e.g., a **Viewer** for showing visualizations) and provide information on our current **Environment** or the **Packages** available on our computer. A useful window is **Help**: Although its main page provides mostly links to online materials, any R package contains detailed documentations on its functions and examples that illustrate their use.
 
@@ -215,13 +220,13 @@ The [Posit cheatsheet](https://posit.co/resources/cheatsheets/) on the RStudio I
 {{< pdf rstudio.pdf width=100% height=400 >}}
 
 
-### Developer and Maintainer
+## Developer and Maintainer {{< li wxnxiano trigger=loop delay=1000 >}}
 
 Masumbuko Semba designed this static website along with its dynamic blog. This website was designed and developed using [quarto](https://quarto.org/) and was deployed and hosted in GitHub. You can browse and learn more about Semba's work in his resume
 
 {{< pdf semba.pdf width=100% height=400 >}}
 
-### License
+## Authorized License
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
 
@@ -231,7 +236,7 @@ Masumbuko Semba designed this static website along with its dynamic blog. This w
 
 Visit [here](license.qmd) for more information about the license.
 
-### Latest posts
+## Latest posts
 
 ::: {#main-listing}
 :::

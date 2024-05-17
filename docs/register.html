@@ -43,6 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
+<script src="site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
 <link href="site_libs/quarto-contrib/forms/forms.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -262,6 +264,11 @@ function submit() {
 
 
 
+<div id="qrcode" class="qrcode"></div>
+<script type="text/javascript">
+var qrcode = new QRCode("qrcode", {"width":128,"colorDark":"#000000","text":"https://lugoga.github.io/kitaa/register.html","colorLight":"#ffffff","height":128});
+</script>
+    
 <p></p><div id="form-div" class="form-wrapper">
  <form id="form" action="javascript:submit()" method="GET">
 <div class="form-group">
@@ -817,6 +824,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>
+    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const watermark = new XWatermark.XWatermark();
+    watermark.init("datika", {
+      parentSelector: "body",
+      prevent: true,
+      observer: true,
+      mode: "normal",
+      font: "system-ui, -apple-system, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
+      fontsize: baseFontSize * 2.000000,
+      angle: -15.000000,
+      color: "#000000",
+      alpha: 0.050000,
+      cols: 10,
+      rows: 50,
+      xSpace: baseFontSize * 15.000000,
+      ySpace: baseFontSize * 15.000000,
+      zIndex: -1
+    });
+    </script>
 
 
 
