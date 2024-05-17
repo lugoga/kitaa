@@ -558,7 +558,46 @@ Ms. Maria Pentzel, Marine Conservation Warden at Marine Parks and Reserves Unit 
 
 Daniel Mallya  a Marine Community  Conservation Warden with MPRU in Mafia Island Marine Park I’m current in R programming session  with Prime aim to learn modern techniques in data analytic and computation
 
-<i class="fa-solid fa-envelope"></i>    [johndan818@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 687 352 428]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [johndan818@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 679 942 386]{style="color: #0069BF;"}
+
+
+:::
+:::
+
+
+***
+
+
+
+::: columns
+::: {.column width="47%"}
+
+### Mr. Alex Peter Rubekie
+
+![](resources/alex.png)
+
+**Role**: Mentee
+
+Alex is an Assistant Lecturer working at the Institute of Marine Sciences of the University of Dar es Salaam. Alex has experience of using programming languages like STATA and R to explore and analyse data . Recognizing the power of data analysis in digital age,  Alex is expanding his skillset by learning modern technique to manage, manipulate, visualize, analyse and model data using tidyverse and story-telling data by rendering findings through blog, website, report and presentation with Quarto.
+
+<i class="fa-solid fa-envelope"></i>    [alexpeter281@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 679 942 386]{style="color: #0069BF;"}
+
+:::
+
+::: {.column width="6%"}
+:::
+
+::: {.column width="47%"}
+
+### Mr. Alex Peter Rubekie
+
+![](resources/alex.png)
+
+**Role**: Mentee
+
+Alex is an Assistant Lecturer working at the Institute of Marine Sciences of the University of Dar es Salaam. Alex has experience of using programming languages like STATA and R to explore and analyse data . Recognizing the power of data analysis in digital age,  Alex is expanding his skillset by learning modern technique to manage, manipulate, visualize, analyse and model data using tidyverse and story-telling data by rendering findings through blog, website, report and presentation with Quarto.
+
+<i class="fa-solid fa-envelope"></i>    [alexpeter281@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 687 352 428]{style="color: #0069BF;"}
 
 
 :::

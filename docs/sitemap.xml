@@ -1,63 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lugoga.github.io/kitaa/index.html</loc>
-    <lastmod>2024-05-12T02:15:41.912Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/blog.html</loc>
-    <lastmod>2024-04-24T19:26:07.580Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/posts/manipulate/index.html</loc>
-    <lastmod>2024-04-29T02:42:23.077Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/books.html</loc>
-    <lastmod>2024-05-07T08:24:55.591Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/data.html</loc>
-    <lastmod>2024-05-07T08:28:49.177Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/posts/dataviz/index.html</loc>
-    <lastmod>2024-04-29T03:29:05.249Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/archive.html</loc>
-    <lastmod>2023-02-14T07:27:08.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/slides.html</loc>
-    <lastmod>2024-05-09T11:04:27.700Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/posts/timeline/index.html</loc>
-    <lastmod>2024-05-07T08:28:10.748Z</lastmod>
-  </url>
-  <url>
     <loc>https://lugoga.github.io/kitaa/terms.html</loc>
     <lastmod>2024-04-27T22:34:36.328Z</lastmod>
   </url>
   <url>
-    <loc>https://lugoga.github.io/kitaa/photos.html</loc>
-    <lastmod>2024-04-27T20:43:37.523Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/about.html</loc>
-    <lastmod>2024-05-11T06:06:33.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lugoga.github.io/kitaa/feedback.html</loc>
-    <lastmod>2024-04-27T22:34:07.040Z</lastmod>
+    <loc>https://lugoga.github.io/kitaa/posts/vectorDataframe/index.html</loc>
+    <lastmod>2024-04-29T03:06:27.127Z</lastmod>
   </url>
   <url>
     <loc>https://lugoga.github.io/kitaa/posts/tidying/index.html</loc>
     <lastmod>2024-04-29T02:56:05.751Z</lastmod>
   </url>
   <url>
+    <loc>https://lugoga.github.io/kitaa/posts/stats0/index.html</loc>
+    <lastmod>2024-04-29T02:58:23.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/manipulate/index.html</loc>
+    <lastmod>2024-04-29T02:42:23.077Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/ggplot2/index.html</loc>
+    <lastmod>2024-04-29T03:00:15.073Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/dataTypes/index.html</loc>
+    <lastmod>2024-04-29T03:11:40.506Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/basicplots/index.html</loc>
+    <lastmod>2024-04-29T03:13:39.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/license.html</loc>
+    <lastmod>2024-04-27T22:34:50.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/feedback.html</loc>
+    <lastmod>2024-04-27T22:34:07.040Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/data.html</loc>
+    <lastmod>2024-05-07T08:28:49.177Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/blog.html</loc>
+    <lastmod>2024-04-24T19:26:07.580Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/about.html</loc>
+    <lastmod>2024-05-11T06:06:33.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/archive.html</loc>
+    <lastmod>2023-02-14T07:27:08.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/books.html</loc>
+    <lastmod>2024-05-07T08:24:55.591Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/faq.html</loc>
+    <lastmod>2024-04-27T22:33:31.036Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/index.html</loc>
+    <lastmod>2024-05-17T03:44:20.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/photos.html</loc>
+    <lastmod>2024-04-27T20:43:37.523Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/datastructures/index.html</loc>
+    <lastmod>2024-04-29T03:12:10.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/dataviz/index.html</loc>
+    <lastmod>2024-04-29T03:29:05.249Z</lastmod>
+  </url>
+  <url>
     <loc>https://lugoga.github.io/kitaa/posts/getStarted/index.html</loc>
     <lastmod>2024-04-29T03:03:06.194Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/importingData/index.html</loc>
+    <lastmod>2024-04-29T02:59:31.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/rbasics/index.html</loc>
+    <lastmod>2024-04-29T03:32:31.452Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/thebasics/index.html</loc>
+    <lastmod>2024-04-29T02:57:34.456Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/posts/timeline/index.html</loc>
+    <lastmod>2024-05-13T21:35:42.589Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lugoga.github.io/kitaa/slides.html</loc>
+    <lastmod>2024-05-09T11:04:27.700Z</lastmod>
   </url>
 </urlset>

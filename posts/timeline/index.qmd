@@ -23,8 +23,6 @@ execute:
 
 
 
-
-
 In this post we’re going to be using R and ggplot2 to create a project timeline with milestones and milestone statuses.
 
 The finished product will look like as illustrated in @fig-milestone
