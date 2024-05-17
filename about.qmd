@@ -170,16 +170,26 @@ Our prime goal for this training is to enables you to understand, transform, ana
 
 To teach and learn data science, we need the right tools, materials (information), and agree on some rules (structure). Working through this course assumes an installation of three types of software programs:
 
-1.  An R engine: [The R project for statistical computing](https://cran.r-project.org/) ([R Core Team, 2023](https://bookdown.org/hneth/i2ds/references.html#ref-R)) is the origin of all things R. A current distribution of R --- e.g., R version 4.3.2 (2023-10-31)  --- for your machine can be downloaded from one if its [mirrors](https://cran.r-project.org/mirrors.html).
+1.  An R engine: [The R project for statistical computing](https://cran.r-project.org/). A current distribution of R --- e.g., R version 4.4.0 (2024-04-26)  --- for your machine can be downloaded from one if its [mirrors](https://cran.r-project.org/mirrors.html).
 
-2.  An R interface: The [RStudio IDE](https://posit.co/products/open-source/rstudio/) (by [Posit](https://posit.co/)) provides an integrated development environment for R.^[2](https://bookdown.org/hneth/i2ds/#fn2)^
+
+```{=html}
+<iframe width="780" height="300" src="https://cran.rstudio.com/" title="R Core Team website"></iframe>
+
+```
+
+2.  An R interface: The [RStudio IDE](https://posit.co/download/rstudio-desktop/) (by [Posit](https://posit.co/) provides an integrated development environment for R.
+
+![](rstudio_website.png)
+
+
 
 3.  Additional tools: The R packages of the [tidyverse](https://cran.r-project.org/package=tidyverse) ([Wickham, 2023b](https://bookdown.org/hneth/i2ds/references.html#ref-R-tidyverse)).
 
 
 
 ```{=html}
-<iframe width="780" height="500" src="https://www.tidyverse.org/" title="tidyverse website"></iframe>
+<iframe width="780" height="300" src="https://www.tidyverse.org/" title="tidyverse website"></iframe>
 
 ```
 
