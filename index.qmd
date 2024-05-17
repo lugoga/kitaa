@@ -2,10 +2,8 @@
 # title: "People you meet along the initiative"
 page-layout: full
 title-block-banner: true
-toc: false
+toc: true
 ---
-
-
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
@@ -39,6 +37,8 @@ Pause for a moment and ***Join us***
 
 
 <iframe src="https://embeds.beehiiv.com/6dd9beae-8348-43f1-8843-50dcd1667ad7?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+
+
 
 
 :::
@@ -597,7 +597,7 @@ Alex is an Assistant Lecturer working at the Institute of Marine Sciences of the
 
 Alex is an Assistant Lecturer working at the Institute of Marine Sciences of the University of Dar es Salaam. Alex has experience of using programming languages like STATA and R to explore and analyse data . Recognizing the power of data analysis in digital age,  Alex is expanding his skillset by learning modern technique to manage, manipulate, visualize, analyse and model data using tidyverse and story-telling data by rendering findings through blog, website, report and presentation with Quarto.
 
-<i class="fa-solid fa-envelope"></i>    [alexpeter281@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 687 352 428]{style="color: #0069BF;"}
+<i class="fa-solid fa-envelope"></i>    [alexpeter281@gmail.com]{style="color: #0069BF;"} | <i class="fa-brands fa-square-whatsapp"></i>   [+255 679 942 386]{style="color: #0069BF;"}
 
 
 :::
@@ -607,117 +607,3 @@ Alex is an Assistant Lecturer working at the Institute of Marine Sciences of the
 ***
 
 
-```{r}
-#| eval: false
-#| #| column: screen-inset-shaded
-#| echo: false
-#| warning: false
-#| message: false
-#| comment: ""
-
-library(leaflet)
-
-
-leaflet() %>%
-  addTiles() %>%  # Add default OpenStreetMap map tiles
-  addMarkers(lng=39.306, lat= -6.828, popup="The City of R")
-
-
-```
-
-
-
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-#| comment: ""
-#| 
-require(sf)
-require(leaflet)
-require(leafpop)
-require(rvest)
-require(tidyverse)
-
-
-web.members = read_csv("members.csv")
-
-
-members.sf = web.members |> 
-  separate(coords, into = c("lat", "lon"), sep = ",") |> 
-  mutate(
-    lat = as.numeric(lat) |> round(5),
-    lon = as.numeric(lon) |> round(5),
-    fullnames = paste0(title, ".", " ", first, " ", second)
-    ) |> 
-  st_as_sf(coords = c("lon", "lat"), crs = 4326) |> 
-  mutate(
-    html_labels = glue::glue(  
-      "<strong>INFORMATION</strong><br>",
-      "<hr>",
-      "<b>Title: </b> {web.members$title}<br/>",
-      "<b>First name: </b> {web.members$first}<br/>",
-      "<b>Surname: </b> {web.members$second}<br/>",
-      # "<b>Photo: </b> {web.members$picha}<br/>",
-      "<b>Affiliation: </b> {web.members$institute}<br/>",
-      "<b>Mobile: </b> {web.members$phone}<br/>",
-      "<b>Email: </b> {web.members$email}<br/>"
-    )%>%
-      lapply(htmltools::HTML)
-  )
-
-
-
-
-```
-
-
-```{r}
-#| eval: true
-#| column: screen-inset-right
-#| echo: false
-#| warning: false
-#| message: false
-#| comment: ""
-
-images = members.sf |> st_drop_geometry() |> pull(picha)
-pal = colorFactor(palette = c("navy", "red"), domain = c("Ms", "Mr"))
-
-
-leaflet(data = members.sf) |> 
-   setView(lng = 39.306, lat = -6.828 , zoom = 6) |> 
-  # Base groups
-  addTiles(group = "OSM (default)") |> 
-  addProviderTiles(provider = "Esri.WorldImagery", group = "Esri imagery") |> 
-  addTiles() |> 
-  addCircleMarkers(
-    color = NA, 
-    fillColor =  ~pal(title),
-    fillOpacity = .6,
-    label = ~html_labels, 
-    popup = popupImage(images),
-    clusterOptions = markerClusterOptions(spiderfyOnMaxZoom = TRUE)
-    )  |> 
-  addLayersControl(
-        baseGroups = c("OSM (default)", "Esri imagery", "NHD")
-  ) %>%
-      addMeasure(
-        position = "topleft", primaryLengthUnit = "meters", 
-        secondaryLengthUnit = "kilometers", primaryAreaUnit = "sqmeters", 
-        secondaryAreaUnit = "acres", thousandsSep = ",") %>%
-      addScaleBar(position = "topleft")
-
-
-```
-
-
-***
-
-::: {#fig-cern}
-
-{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
-
-The video "CERN: The Journey of Discovery"
-
-:::

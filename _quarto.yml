@@ -26,16 +26,18 @@ website:
     right:
       - text: Posts
         href: blog.qmd
+      - text: About
+        href: about.qmd
       - text: "Materials"  
         menu:
           - slides.qmd
           - books.qmd
           - data.qmd
     # right:
+      - text: Register
+        href: register.qmd
       - text: Gallery
         href: photos.qmd
-      - text: About
-        href: about.qmd
       - icon: github
         href: https://github.com/lugoga/kitaa
       # - icon: twitter

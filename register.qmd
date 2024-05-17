@@ -1,0 +1,120 @@
+---
+title: "Fill in your information"
+description: "Please we would like your biography information to populate the landing pages. Therefore, we are requested to share their biography information and a photo. Therefore, we are cordially requesting you to fill in the information in the form."
+page-layout: article
+title-block-banner: true
+
+format: 
+  html:
+    include-in-header: 
+    - file: submit_form.md
+    toc: true
+
+form:
+  id: MyFormID
+  submit: "Submit"
+  action: "javascript:submit()"
+  method: GET
+  fields:
+  - name: Text1
+    type: text
+    id: textid
+    label: "First name"
+    required: true
+  - name: Text2
+    type: text
+    id: textid2
+    label: "Surname"
+    required: true
+  - name: Radio
+    type: radio
+    label: "Choose your title"
+    id: radio1
+    values:
+    - text: Mr
+      value: 1
+    - text: Ms
+      value: 0
+  - text: --- # a spacer
+  - name: Checkbox
+    type: checkbox
+    id: checkbox1
+    label: "Choose (multiple) nature of the insitution your affiliated"
+    values:
+    - text: "Goverment"
+      value: "go"
+    - text: "Research"
+      value: "re"
+    - text: "Academic"
+      value: "ac"
+    - text: "NGO"
+      value: "ng"
+    - text: "Private"
+      value: "pr"
+    - text: "Others"
+      value: "or"
+  - text: ---
+  - name: Checkbox
+    type: checkbox
+    id: checkbox2
+    label: "Choose (multiple) software you use for data analysis"
+    values:
+    - text: "SPSS"
+      value: "sp"
+    - text: "Excel"
+      value: "ex"
+    - text: "R"
+      value: "r"
+    - text: "OriginPro"
+      value: "or"
+    - text: "SigmaPlot"
+      value: "si"
+    - text: "Python"
+      value: "py"
+    - text: "MATLAB"
+      value: "mt"
+    - text: "QGIS"
+      value: "qg"
+    - text: "ESRI"
+      value: "es"
+    - text: "None of the Above"
+      value: "no"
+  - text: ---
+  - name: Selector
+    type: select
+    id: selector1
+    label: What is your highest academic level?
+    multiple: true #multiple selections?
+    size: 3 #number to size
+    values:
+    - text: Primary
+      value: 1
+    - text: Secondary
+      value: 2
+    - text: Bachelor
+      value: 3
+    - text: Master
+      value: 4
+    - text: PhD
+      value: 5
+  - text: ---  
+  - name: BigText
+    id: textarea1
+    type: textarea
+    label: Please write your short biography that describe you. Key issues include your name, affiliated institutions, your expertise and why you have joined for this class
+    width: 30 #in rows
+    height: 30 #in cols
+  - name: MyEmail
+    id: email1
+    type: email
+    label: "Enter your email"
+  - name: FileUpload
+    id: file1
+    type: file
+    label: Upload your profile picture
+---
+
+
+
+{{< form >}}
+
