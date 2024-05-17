@@ -178,6 +178,10 @@ To teach and learn data science, we need the right tools, materials (information
 
 
 
+```{=html}
+<iframe width="780" height="500" src="https://www.tidyverse.org/" title="tidyverse website"></iframe>
+
+```
 
 Enjoy learning with a video that highlight key aspect of tidyverse and how relevant this ecosystem is chainging the digital age of data organization, manipulation, analysis, modelling and even presentation of the results using a plephora of rendered documents. 
 
