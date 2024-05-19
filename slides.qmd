@@ -18,11 +18,14 @@ crossref:
 
 ::: {#vid-installation}
 
-{{< video https://www.youtube.com/watch?v=shjEeLT7CaU >}}
+{{< video https://www.youtube.com/watch?v=GnDlvpbS3ec >}}
+
+<!-- {{< video https://www.youtube.com/watch?v=shjEeLT7CaU >}} -->
 
 Installation R, Rstudio, and tidyverse package
 
 :::
+
 
 
 2. [Data types](https://raw.githack.com/lugoga/kitaa/main/slides/4.data_types.html#/title-slide)

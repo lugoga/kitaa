@@ -11,7 +11,7 @@
     "href": "slides.html",
     "title": "Presentations",
     "section": "",
-    "text": "Our Agenda\n\nINTRODUCTION – with a presentation introducing the training and the tools needed. The steps for installing R, Rstudio and packages is in this slide along with a YouTube Video to visually see each step in Video 1\n\n\n\n\n\n\n\nVideo 1: Installation R, Rstudio, and tidyverse package\n\n\n\n\nData types\nData structures\nReading and writing data in Rstudio\nTidying Data with tidyverse\nPlotting\n\nPlotting and Visualization_A\nPlotting and Visualization_B\nPlotting and Visualization_C\n\nData Manipulation\nDescriptive Statistics\nInferential Statistics\nModelling and simulation\nSpatial Handling and Analysis\nFurther topics\n\nGIt and Github\nReproducibility with Quarto\nWebsites and blog\nUsing python from Rstudio\nGenerating HTML, PDF and Word Reports"
+    "text": "Our Agenda\n\nINTRODUCTION – with a presentation introducing the training and the tools needed. The steps for installing R, Rstudio and packages is in this slide along with a YouTube Video to visually see each step in Video 1\n\n\n\n\n\n\n\n\nVideo 1: Installation R, Rstudio, and tidyverse package\n\n\n\n\nData types\nData structures\nReading and writing data in Rstudio\nTidying Data with tidyverse\nPlotting\n\nPlotting and Visualization_A\nPlotting and Visualization_B\nPlotting and Visualization_C\n\nData Manipulation\nDescriptive Statistics\nInferential Statistics\nModelling and simulation\nSpatial Handling and Analysis\nFurther topics\n\nGIt and Github\nReproducibility with Quarto\nWebsites and blog\nUsing python from Rstudio\nGenerating HTML, PDF and Word Reports"
   },
   {
     "objectID": "posts/vectorDataframe/index.html",
