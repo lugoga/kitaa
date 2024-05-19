@@ -1,37 +1,44 @@
 ---
 title: "Presentations"
-page-layout: full
+page-layout: article
 title-block-banner: true
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Video
+      key: vid
 ---
 
 
-### [Our Agenda]{style="background: lightblue; color: color"} 
+### [Our Agenda]{style="background: lightblue; color: color"}  
 
 
-1. [An introduction](https://raw.githack.com/lugoga/kitaa/main/slides/1.prerequisite.html#/key-concepts)
+1. INTRODUCTION -- with [a presentation](https://raw.githack.com/lugoga/kitaa/main/slides/1.prerequisite.html#/key-concepts) introducing the training and the tools needed. The steps for installing R, Rstudio and packages is in this [slide](https://raw.githack.com/lugoga/kitaa/main/slides/2.%20installs.html#/title-slide) along with a YouTube Video to visually see each step in @vid-installation
 
 
-{{< video https://www.youtube.com/watch?v=shjEeLT7CaU 
-    title="Installation R, Rstudio, and tidyverse package"
-    start="0"
-    aspect-ratio="21x9" 
->}}
+::: {#vid-installation}
 
-1. [Get familiar with R and Rstudio](https://raw.githack.com/lugoga/kitaa/main/slides/2.%20installs.html#/title-slide)
-1. [Data types](https://raw.githack.com/lugoga/kitaa/main/slides/4.data_types.html#/title-slide)
-1. [Data structures](https://raw.githack.com/lugoga/kitaa/main/slides/5.data_structure.html)
-1. [Reading and writing data in Rstudio](https://raw.githack.com/lugoga/kitaa/main/slides/6.xlds_csv_format.html)
-1. [Tidying Data with tidyverse](https://raw.githack.com/lugoga/kitaa/main/slides/7.%20data_manipulation.html#/title-slide)
-1. Plotting
+{{< video https://www.youtube.com/watch?v=shjEeLT7CaU >}}
+
+Installation R, Rstudio, and tidyverse package
+
+:::
+
+
+2. [Data types](https://raw.githack.com/lugoga/kitaa/main/slides/4.data_types.html#/title-slide)
+3. [Data structures](https://raw.githack.com/lugoga/kitaa/main/slides/5.data_structure.html)
+4. [Reading and writing data in Rstudio](https://raw.githack.com/lugoga/kitaa/main/slides/6.xlds_csv_format.html)
+5. [Tidying Data with tidyverse](https://raw.githack.com/lugoga/kitaa/main/slides/7.%20data_manipulation.html#/title-slide)
+7. Plotting
       1. [Plotting and Visualization_A](https://raw.githack.com/lugoga/kitaa/main/slides/7_data_visualization.html#/title-slide)
       1. [Plotting and Visualization_B](https://raw.githack.com/lugoga/kitaa/main/slides/8_data_visualization.html)
       1. [Plotting and Visualization_C](https://raw.githack.com/lugoga/kitaa/main/slides/9_ggplot2_continues.html)
-1. [Data Manipulation](https://raw.githack.com/lugoga/kitaa/main/slides/10_data_mannipulation.html#/title-slide)
-1. [Descriptive Statistics](https://lugoga.github.io/kitaa/posts/stats0/)
-1. Inferential Statistics
-1. Modelling and simulation
-1. Spatial Handling and Analysis
-1. Further topics
+8. [Data Manipulation](https://raw.githack.com/lugoga/kitaa/main/slides/10_data_mannipulation.html#/title-slide)
+9. [Descriptive Statistics](https://lugoga.github.io/kitaa/posts/stats0/)
+10. Inferential Statistics
+11. Modelling and simulation
+12. Spatial Handling and Analysis
+13. Further topics
   
     1. GIt and Github
     1. Reproducibility with Quarto
