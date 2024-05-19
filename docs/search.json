@@ -11,7 +11,7 @@
     "href": "slides.html",
     "title": "Presentations",
     "section": "",
-    "text": "Our Agenda\n\nAn introduction\nGet familiar with R and Rstudio\nData types\nData structures\nReading and writing data in Rstudio\nTidying Data with tidyverse\nPlotting\n\nPlotting and Visualization_A\nPlotting and Visualization_B\nPlotting and Visualization_C\n\nData Manipulation\nDescriptive Statistics\nInferential Statistics\nModelling and simulation\nSpatial Handling and Analysis\nFurther topics\n\nGIt and Github\nReproducibility with Quarto\nWebsites and blog\nUsing python from Rstudio\nGenerating HTML, PDF and Word Reports"
+    "text": "Our Agenda\n\nAn introduction\n\n\n\nGet familiar with R and Rstudio\nData types\nData structures\nReading and writing data in Rstudio\nTidying Data with tidyverse\nPlotting\n\nPlotting and Visualization_A\nPlotting and Visualization_B\nPlotting and Visualization_C\n\nData Manipulation\nDescriptive Statistics\nInferential Statistics\nModelling and simulation\nSpatial Handling and Analysis\nFurther topics\n\nGIt and Github\nReproducibility with Quarto\nWebsites and blog\nUsing python from Rstudio\nGenerating HTML, PDF and Word Reports"
   },
   {
     "objectID": "posts/vectorDataframe/index.html",

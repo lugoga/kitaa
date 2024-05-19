@@ -9,6 +9,14 @@ title-block-banner: true
 
 
 1. [An introduction](https://raw.githack.com/lugoga/kitaa/main/slides/1.prerequisite.html#/key-concepts)
+
+
+{{< video https://www.youtube.com/watch?v=shjEeLT7CaU 
+    title="Installation R, Rstudio, and tidyverse package"
+    start="0"
+    aspect-ratio="21x9" 
+>}}
+
 1. [Get familiar with R and Rstudio](https://raw.githack.com/lugoga/kitaa/main/slides/2.%20installs.html#/title-slide)
 1. [Data types](https://raw.githack.com/lugoga/kitaa/main/slides/4.data_types.html#/title-slide)
 1. [Data structures](https://raw.githack.com/lugoga/kitaa/main/slides/5.data_structure.html)

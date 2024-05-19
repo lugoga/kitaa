@@ -42,6 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -254,7 +255,10 @@ cookieconsent.run({
 <section id="our-agenda" class="level3">
 <h3 class="anchored" data-anchor-id="our-agenda"><span style="background: lightblue; color: color">Our Agenda</span></h3>
 <ol type="1">
-<li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/1.prerequisite.html#/key-concepts">An introduction</a></p></li>
+<li><a href="https://raw.githack.com/lugoga/kitaa/main/slides/1.prerequisite.html#/key-concepts">An introduction</a></li>
+</ol>
+<div class="quarto-video ratio ratio-21x9"><iframe data-external="1" src="https://www.youtube.com/embed/shjEeLT7CaU?start=0" title="Installation R, Rstudio, and tidyverse package" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ol type="1">
 <li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/2.%20installs.html#/title-slide">Get familiar with R and Rstudio</a></p></li>
 <li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/4.data_types.html#/title-slide">Data types</a></p></li>
 <li><p><a href="https://raw.githack.com/lugoga/kitaa/main/slides/5.data_structure.html">Data structures</a></p></li>
@@ -707,6 +711,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>
+    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const watermark = new XWatermark.XWatermark();
+    watermark.init("datika", {
+      parentSelector: "body",
+      prevent: true,
+      observer: true,
+      mode: "normal",
+      font: "system-ui, -apple-system, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
+      fontsize: baseFontSize * 2.000000,
+      angle: -15.000000,
+      color: "#000000",
+      alpha: 0.050000,
+      cols: 10,
+      rows: 50,
+      xSpace: baseFontSize * 15.000000,
+      ySpace: baseFontSize * 15.000000,
+      zIndex: -1
+    });
+    </script>
 
 
 
