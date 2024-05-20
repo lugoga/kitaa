@@ -1,0 +1,305 @@
+---
+title: "Vector Structure and Data types in R"
+description: "The post provides an overview of the different data types in R, including numeric, integer, character, factor, and logical. It explains the characteristics of each data type and how to work with them. The article also covers some common operations and conversions between data types."
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/dataTypesRevised/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "2024-05-19"
+toc: true
+toc-depth: 4
+categories: [Data Science, Data Visualization]
+image: https://www.rforecology.com/post/data-types-in-r/featured_hu8cb41dadf508881dfb88de884fb97a1e_29022_720x0_resize_lanczos_2.png
+code-fold: false
+filters: 
+  - webr
+---
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
+## A glimpse
+
+We are all quite familiar with different data types. For example, we can easily recognize that 1, 2, 3, and 4 are numbers, specifically *integers.* Similarly, 15.7 is also a number but with a *decimal point*. We understand that every word in this sentence is made up of *characters*, and in mathematics, "*true*" and "*false*" represent the outcomes of logical statements.
+
+Just as we mentally categorize data, R also organizes data into different classes. These classes are similar to the real-life examples mentioned earlier, but there are some differences in terms of syntax and considerations for coding.
+
+To effectively work in R and conduct data analyses, it's important to have a strong grasp of data types. In this post, we are going to learn various data types, how to utilize and manipulate each of them, and how to determine the type of data you are working with. Let's get started.
+
+## What is a vector?
+
+Often times we store a set of numbers in one place. One way to do this is using vectors. Vector is the most basic data structure in R. A vector is indeed the simplest data structure in R. A layman language, a vector is a sequence of elements of the same data type. It can store elements of various types, such as numeric, character, logical, or factors. Here are a few examples illustrating the concept of a vector:
+
+
+```{webr-r}
+
+size =  c(1.5, 2.7, 3.9, 4.2)
+
+fruits = c("apple", "banana", "mango")
+
+logic =  c(TRUE, FALSE, TRUE, FALSE)
+
+state =  factor(c("Low", "Medium", "High"))
+
+```
+
+
+Each of these examples represents a vector with elements of the same data type. The elements within a vector maintain their order, allowing for easy indexing and manipulation. Therefore, understanding vector data structure is fundamental as they serve as building blocks for more complex data structures and facilitate data analysis and manipulation in R.
+
+## Creating vector objects
+
+### The `c` function
+
+Vector objects in R are generally created using the `c()` function widely called *concatenate*. Vectors store several numbers– a set of numbers in one container. let us look on the example below;
+
+```{webr-r}
+
+size =  c(1.5, 2.7, 3.9, 4.2)
+
+fruits = c("apple", "banana", "mango")
+
+logic =  c(TRUE, FALSE, TRUE, FALSE)
+
+state =  factor(c("Low", "Medium", "High"))
+
+```
+
+In addition to the `c` function, there are two commonly used methods for creating consecutive or repetitive vectors: the `seq` and `rep` functions. 
+
+### Consecutive vectors
+
+The `seq` function generates a sequence of numbers that can be either increasing or decreasing. It takes arguments such as the starting point, ending point, and the increment or decrement value. For example,seq(1, 10, 2) creates a vector with the numbers 1, 3, 5, 7, 9, indicating an increasing sequence with a step of 2.
+
+```{webr-r}
+seq(1, 10, 2)
+```
+
+### Repetitive vectors
+
+The `rep` function, on the other hand, replicates elements of a vector. It can replicate a single element or an entire vector multiple times. By specifying the times argument, you can control the number of repetitions. For instance, rep(c(1, 2, 3), times = 3) generates a vector containing three repetitions of the sequence 1, 2, 3: 1, 2, 3, 1, 2, 3, 1, 2, 3.
+
+```{webr-r}
+rep(c(1, 2, 3), times = 3)
+```
+
+Replicate a vector multiple times
+
+```{webr-r}
+
+herufi = c("A", "B", "C")
+
+rep(herufi, each = 3)
+```
+
+
+## Common Data types
+
+In R, there are six main types of data that commonly used in R [@fig-types]. These include;
+
+
+1.  Numeric data, such as decimal numbers like 1.2 or 3.14159,
+2.  Integers, like 1, 2, 3, 4, and 5.
+3.  Character data, which includes letters or strings of text like "a" or "apple."
+4.  Logical- take the values of TRUE or FALSE,
+5.  Factor - used to represent categorical data
+6.  Date
+
+
+![Common Data Types in R](https://lugoga.github.io/spatialgoR/graphics/chp3E/DATATYPES-01.png) {#fig-types}
+
+::: callout-note
+
+Complex numbers, which involve a real part and an imaginary part (e.g., i + 4), are rarely used for data analysis in R and will not be discussed further.
+
+:::
+
+
+
+### Numeric Vectors
+
+
+The most common data type in R is numeric. The numeric class holds the set of real numbers — decimal place numbers. We create a numeric vector using a c() function but you can use any function that creates a sequence of numbers. For example, we can create a numeric vector of SST as follows;
+
+```{webr-r}
+sst = c(25.4, 26, 28, 27.8, 29, 24.8, 22.3)
+```
+
+
+```{webr-r}
+sst
+```
+
+
+We can check if our vector is numeric by using the function `is.numeric()` function
+
+```{webr-r}
+
+sst |> is.numeric()
+
+```
+
+
+We can further check our data type by using the functions `class()` and `typeof()`. `class()` tells us that we’re working with numeric values, while `typeof()` is more specific and tells us we’re working with doubles (i.e., numbers with decimals).
+
+::: {#exr-1}
+
+Given a series of temperature 25.4,26.3,24.5,26.1,23.4, how can you create a vector in R and check the type of values in the data you created? Do that task online using the interactive chunk below;
+
+:::
+
+
+::: {#sol-1}
+We first need to create a vector object and assign it a name as *temperature*. Then we pipe *temperature* object with `class` and `typeof`
+
+```{webr-r}
+temperature = c(25.4,26.3,24.5,26.1,23.4)
+temperature
+```
+
+
+```{webr-r}
+temperature |> class()
+temperature |> typeof()
+
+```
+
+:::
+
+
+
+
+### Integer vector
+
+Integer vector are real numbers but without decimal places. They are commonly used for counting or frequencies. Creating an integer vector is similar to numeric vector except that we need to instruct R to treat the data as integer and not numeric or double. To command R creating integer, we specify a suffix `L` to an element
+
+```{webr-r}
+
+depth = c(5L, 10L, 15L, 20L, 25L,30L)
+
+```
+
+
+You can check if the data is integer with `is.integer()` and can convert numeric value to an integer with `as.integer()`. You can query the class of the object with the class() to know the class of the object
+
+
+
+```{webr-r}
+depth |> class()
+depth |> is.integer()
+```
+
+
+###  Character vector
+
+Another frequently used data type in R is *characters*, which are used to store text (also known as "strings"). To specify that a particular data type is a character, we enclose it in quotation marks "".
+
+```{webr-r}
+
+channels = c("Pemba", "Zanzibar", "Pemba")
+
+```
+
+
+We can be sure whether the object is a string with `is.character()` or check the class of the object with `class()`.
+
+```{webr-r}
+channels |> class()
+channels |> is.character()
+
+```
+
+
+Putting quotation marks around numbers will also turn them into characters, which can get confusing.
+
+```{webr-r}
+
+id =  c("1", "4", "5", "7", "8")
+
+```
+
+
+### Factor
+
+Factors are a unique data type mainly used to store recurring element in a vector, such as categorical variables. It often represents a categorical variable. For instance, the gender will usually take only two values, "female" or "male" (and will be considered as a factor variable). When analyzing your data, it's important to consider that categorical variables and continuous variables are typically treated differently in statistical analyses. Below is an example of a code where I've constructed a data frame that displays the height and sex of five people.
+
+```{webr-r}
+
+
+sex = c("female", "female", "female", "male", "female")
+sex
+```
+
+Check the class of the sex object
+
+```{webr-r}
+
+```
+
+Currently, the sex column is in a character format due to the data being entered in quotation marks. However, our intention is to designate sex as a categorical variable with "female" and "male" as factor. This can be achieved by using the `as.factor()` function.
+
+```{webr-r}
+sex |> as.factor()
+```
+
+### Logical
+
+Logical data (or simply logical ) represent the logical `TRUE` state and the logical `FALSE` state. Logical variables are the variables in which logical data are stored. Logical variables can assume only two states:
+
++ FALSE, always represent by 0;
++ TRUE, always represented by a nonzero object. Usually, the digit 1 is used for TRUE.
+
+
+We can create logical variables indirectly, through logical operations, such as the result of a comparison between two numbers. These operations return logical values. For example, run the following statement at the R console:
+
+```{webr-r}
+3 > 5
+```
+
+
+```{webr-r}
+4 == 4
+```
+
+
+```{webr-r}
+5 < 8
+```
+
+
+### Date and time
+
+The six data types commonly used in R is date and time. Despite its usefulness in forecasting and predicting scenarios that are about to occur, date and time data types is less known data types. Dates are stored internally as the number of days since January 1, 1970 in the order of YYYY-MM-DD. where YYYY is year, MM month and DD a day in that month. You can create a Date object using the as.Date() function:
+
+```{webr-r}
+
+date <- as.Date("2023-04-15")
+date
+```
+
+
+The `POSIXct` classes represent date-time information. POSIXct stores the date and time as the number of seconds since January 1, 1970 in the order of YYYY-MM-DD HH:MM:SS. where HH is hour, MM a minutes and SS are seconds.  
+
+
+## Conclusion
+
+Thanks for reading.
+
+I hope this article helped you to understand the basic data types in R and their particularities. As always, if you have a question or a suggestion related to the topic covered in this article, please add it as a comment so other readers can benefit from the discussion.
+

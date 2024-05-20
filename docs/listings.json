@@ -1,7 +1,8 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/archive.html",
     "items": [
+      "/posts/dataTypesRevised/index.html",
       "/posts/dataviz/index.html",
       "/posts/manipulate/index.html",
       "/posts/tidying/index.html",
@@ -19,8 +20,9 @@
     ]
   },
   {
-    "listing": "/archive.html",
+    "listing": "/blog.html",
     "items": [
+      "/posts/dataTypesRevised/index.html",
       "/posts/dataviz/index.html",
       "/posts/manipulate/index.html",
       "/posts/tidying/index.html",
