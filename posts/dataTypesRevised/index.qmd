@@ -122,7 +122,7 @@ In R, there are six main types of data that commonly used in R [@fig-types]. The
 6.  Date
 
 
-![Common Data Types in R](https://lugoga.github.io/spatialgoR/graphics/chp3E/DATATYPES-01.png) {#fig-types}
+![Common Data Types in R](https://lugoga.github.io/spatialgoR/graphics/chp3E/DATATYPES-01.png){#fig-types}
 
 ::: callout-note
 

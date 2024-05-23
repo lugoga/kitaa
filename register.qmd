@@ -114,9 +114,12 @@ form:
     label: Upload your profile picture
 ---
 
-{{< qrcode https://lugoga.github.io/kitaa/register.html >}}
+<!-- {{< qrcode https://lugoga.github.io/kitaa/register.html >}} -->
 
 
 
-{{< form >}}
+<!-- {{< form >}} -->
+
+
+<iframe src=https://ee.kobotoolbox.org/i/b59cDuZo width="800" height="600"></iframe>
 
