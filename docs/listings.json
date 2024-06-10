@@ -2,6 +2,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/visualize_line/index.html",
       "/posts/dataTypesRevised/index.html",
       "/posts/dataviz/index.html",
       "/posts/manipulate/index.html",
@@ -22,6 +23,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/visualize_line/index.html",
       "/posts/dataTypesRevised/index.html",
       "/posts/dataviz/index.html",
       "/posts/manipulate/index.html",

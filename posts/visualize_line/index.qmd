@@ -1,0 +1,224 @@
+---
+title: "Visualize changing catch landings with ggplot2"
+description: "The post takes step-by-step on generating a line plot using ggplot2 in R to visualize how the capture fisheries landing has changed over time. It also illustrate how to annotate plot to highlight specific aspects or data points"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/dataTypesRevised/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "today"
+toc: true
+toc-depth: 4
+categories: [Data Science, Data Visualization]
+image: theplot.png
+code-fold: false
+execute: 
+  warning: false
+  message: false
+  comment: ""
+filters: 
+  - webr
+---
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
+
+## Introduction
+
+In this work, we will create a line plot to visualize the trends in fish landings over time, highlighting and annotating data from the Kenya, Uganda, and Tanzania. This plot aims to illustrate the rise and fall of fish landings in these countries, providing a comparative analysis of their fishing activities. 
+
+The line plot will feature data points representing fish landings across different years, allowing us to observe fluctuations and identify significant patterns or anomalies. By focusing on the Kenya, Uganda, and Tanzania, we can gain insights into the impact of various fishing policies, environmental changes, and market demands on their fishing industries.
+
+Annotations will be strategically placed to highlight key events or trends, such as regulatory changes, shifts in fish population dynamics, or economic factors that influenced fish landings. This visual representation will help in understanding the complex interplay between these factors and their effects on fish landings.
+
+Using ggplot2, a powerful data visualization package in R, we will ensure that the plot is not only informative but also aesthetically appealing. ggplot2 offers advanced customization options, enabling us to create a polished and professional graphic that effectively communicates the data.
+
+## Packages and data cleaup
+
+
+```{r}
+require(tidyverse)
+require(magrittr)
+
+theme_set(theme_minimal(base_size = 15)) # global theme
+```
+
+The catch data is sourced from  *rfisheries* package, designed specifically to access  various fisheries data sources and APIs (Application Programming Interfaces). The given code chunk demonstrates how to use the *rfisheries* package to retrieve and combine fisheries landing data from multiple African countries into a single dataset. 
+
+```{r}
+fisheries = bind_rows(
+rfisheries::of_landings(country = "TZA"),
+rfisheries::of_landings(country = "KEN"),
+rfisheries::of_landings(country = "UGA"),
+rfisheries::of_landings(country = "EAZ"),
+rfisheries::of_landings(country = "MOZ"),
+rfisheries::of_landings(country = "MDG"),
+rfisheries::of_landings(country = "MUS"),
+rfisheries::of_landings(country = "NGA"),
+rfisheries::of_landings(country = "LBR"),
+rfisheries::of_landings(country = "LBY"),
+rfisheries::of_landings(country = "ETH"),
+rfisheries::of_landings(country = "EGY"),
+rfisheries::of_landings(country = "DJI"),
+rfisheries::of_landings(country = "TCD"),
+rfisheries::of_landings(country = "BEN"),
+rfisheries::of_landings(country = "AGO"),
+rfisheries::of_landings(country = "DZA")
+)
+
+```
+
+
+The aim of this code is to generate a consolidated dataset for conducting in-depth analysis of fish landings in various African countries. The dataset created above is the one we are going to use to plot fish landing sites over time to detect patterns and trends.
+
+
+## Visualize landing over time
+
+Create a basic line graph to display the catch landing of capture fisheries in each country. The grey lines will provide a background for highlighting three specific countries later on.
+
+```{r}
+f1 = ggplot(data = fisheries |> filter(!country == "NGA"), aes(x = year, y = catch, group = country))+
+  geom_line(color = "snow3")
+
+f1 
+```
+
+
+Highlight the cigarette sales in three selected countries.
+
+
+```{r}
+riparian = fisheries |> filter(country %in% c("TZA", "KEN", "UGA"))
+
+f2 = f1 +
+  geom_line(data = riparian, 
+            aes(color = country), linewidth = 1)+
+  scale_color_manual(values = c("skyblue3", "steelblue4", "firebrick"))
+
+f2
+  
+```
+
+Replace the default legend with text annotations for the three highlighted lines and use a text annotation to replace the default y-axis title. The default legend and y-axis title will be removed in a later step.
+
+```{r}
+f3 = f2 +
+  annotate(
+    geom = "text",
+    x = c(2009, 1986, 2008),
+    y = c(185164.3, 457018.2,501196),
+    hjust = c(1, 0, 0), # 1, right justify;  0, left justify
+    label = c("KENYA", "TANZANIA", "UGANDA"),
+    color = c("skyblue3", "steelblue4", "firebrick"),
+    fontface = "bold", size = c(5, 5, 5))
+
+f3 
+  
+```
+
+Modify the axis breaks and scales, eliminate axis titles, and include plot titles. When adding a long plot subtitle, utilize the `str_wrap()` function from the widely used stringr package to automatically format lengthy strings into neatly wrapped paragraphs.
+
+```{r}
+f4 = f3 + 
+  labs(
+    # add plot title and subtitle
+    title = "Total Capture Fisheries Landing in Selected African Countries",
+    subtitle = str_wrap(
+      "Landing of the East African Countries became increasingly popular since 1990s, peaked around 1995s ~ 2005s, and significant decreased in 2010s.", 
+      width = 85) # number of characters per line
+  )
+
+f4
+```
+
+The final polish-up of the theme involves making the last adjustments and improvements to ensure that every detail is perfect. This stage may include refining the design elements, tweaking the color scheme, adjusting the layout, and making any necessary final edits. The goal is to achieve a polished and cohesive look that meets the desired aesthetic and functionality. This process ensures that the theme is ready for implementation and will provide a smooth and visually appealing experience for its users.
+
+```{r}
+f5 = f4 +
+  scale_x_continuous(breaks = seq(1950,2020,10))+
+  scale_y_continuous(
+    breaks = scales::pretty_breaks(n = 8), 
+    labels = scales::label_number(big.mark = ","))+
+    theme(
+    axis.title = element_blank(),
+    legend.position = "none",
+    panel.grid = element_blank(),
+    panel.grid.major.y = element_line(linewidth = .1, linetype = "dashed"),
+    axis.line.x = element_line(color = "snow4"),
+    axis.ticks.x = element_line(color = "snow4"),
+    plot.title = element_text(face = "bold", size = 15),
+    plot.subtitle = element_text(size = 12, face = "italic", color = "orange4",
+                                 margin = margin(b = 15))) 
+
+f5
+
+```
+
+The whole code for the process involved is here;
+
+```{r}
+ggplot(data = fisheries |> filter(!country == "NGA"), aes(x = year, y = catch, group = country))+
+  geom_line(color = "snow3")+
+  geom_line(data = fisheries |> filter(country %in% c("TZA", "KEN", "UGA")), 
+            aes(color = country), linewidth = 1)+
+  scale_color_manual(values = c("skyblue3", "steelblue4", "firebrick"))+
+  scale_x_continuous(breaks = seq(1950,2020,10))+
+  scale_y_continuous(
+    breaks = scales::pretty_breaks(n = 8), 
+    labels = scales::label_number(big.mark = ","))+
+  annotate(
+    geom = "text",
+    x = c(2009, 1986, 2008),
+    y = c(185164.3, 457018.2,501196),
+    hjust = c(1, 0, 0), # 1, right justify;  0, left justify
+    label = c("KENYA", "TANZANIA", "UGANDA"),
+    color = c("skyblue3", "steelblue4", "firebrick"),
+    fontface = "bold", size = c(5, 5, 5)) +
+  # expand to fill up the entire plotting range
+  coord_cartesian(expand = 0.5) +
+  labs(
+    # add plot title and subtitle
+    title = "Total Capture Fisheries Landing in Selected African Countries",
+    subtitle = str_wrap(
+      "Landing of the East African Countries became increasingly popular since 1990s, peaked around 1995s ~ 2005s, and significant decreased in 2010s.", 
+      width = 85) # number of characters per line
+  ) +
+    theme(
+    axis.title = element_blank(),
+    legend.position = "none",
+    panel.grid = element_blank(),
+    panel.grid.major.y = element_line(linewidth = .1, linetype = "dashed"),
+    axis.line.x = element_line(color = "snow4"),
+    axis.ticks.x = element_line(color = "snow4"),
+    plot.title = element_text(face = "bold", size = 15),
+    plot.subtitle = element_text(size = 12, face = "italic", color = "orange4",
+                                 margin = margin(b = 15))) 
+
+ggsave("theplot.png", width = 6, height = 4, dpi = 300)
+
+```
+
+
+## Conclusion
+
+This post describes the process of creating an annotated line plot in R using the ggplot2 library to visualize the changing capture fish landings, with a focus on the Kenya, Uganda and Tanzania.
+
+
+
