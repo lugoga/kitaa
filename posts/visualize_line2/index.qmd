@@ -1,0 +1,224 @@
+---
+title: "Create lineplots using ggplot2 to visualize changes in global life expectancy"
+description: "using ggplot2, a popular data visualization package in R, to create line plots that visualize changes in global life expectancy over time."
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/visualize_line2/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "2024-06-02"
+toc: true
+toc-depth: 4
+categories: [Data Science, Data Visualization, ggplot]
+image: lineplot.png
+code-fold: false
+execute: 
+  warning: false
+  message: false
+  comment: ""
+filters: 
+  - webr
+---
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
+
+## Introduction
+
+This post provides a step-by-step guide to visualizing changes in global life expectancy using the data from the World Bank group through its package wbstats and the ggplot2 library in R. The post demonstrates various techniques for creating an informative and visually appealing line plot, including arranging the order of faceted panels, creating efficient visualizations of summary statistics, displaying graphic elements that extend beyond the plot boundary, making unique annotations in selected faceted panels, and loading custom fonts.
+
+
+
+## Packages and data cleaup
+
+
+```{r}
+require(tidyverse)
+require(magrittr)
+require(wbstats)
+
+
+theme_set(theme_minimal(base_size = 15)) # global theme
+```
+
+
+## Getting data from the World Bank
+
+It is very simple to use `wbstats` if you know the names of the indicators from the World Development Indicators database. Today we download the 3 indicators used in gapminder: life expectancy, GDP per capita, and the total population. We also get the database of countries that we can look at.
+
+
+
+```{r}
+my_indicators <- c(
+  life_expectancy = "SP.DYN.LE00.IN", 
+  gdp_capita ="NY.GDP.PCAP.CD", 
+  pop = "SP.POP.TOTL"
+  )
+```
+
+
+```{r}
+ data = wb(
+   country = "all",
+   indicator = my_indicators, 
+   startdate = 1880, 
+   enddate = 2023,  
+   return_wide = TRUE
+   ) |> 
+  rename(life_expectancy = 6, gdp_capita = 5, pop = 7)
+
+```
+
+```{r}
+data |> FSA::headtail()
+```
+
+The current dataset consists of individual countries around the world, lacking information about their respective continents. In order to link each country with its corresponding continent, we require an additional file containing a mapping of countries to continents. 
+
+
+```{r}
+countries_continents = read_csv("../data/countries_continents.csv") |> 
+  janitor::clean_names() |> 
+  mutate(continent = str_replace(continent, "Middle East & North Africa", "MENA"))
+```
+
+By combining this supplementary file with our original dataset using country names as the main identifier, we can enhance our data with continental details. This process is essential for conducting continent-level analysis and developing visual representations that offer a more comprehensive geographical perspective.
+
+```{r}
+lf.data = data |> 
+  left_join(countries_continents) |> 
+  filter(!is.na(continent)) |> 
+  select(year = date, country, continent, gdp_capita:pop) |> 
+  mutate(year = as.integer(year))
+```
+
+```{r}
+theme_set(theme_classic(base_size = 12))
+
+f1 = lf.data |> 
+  ggplot(aes(x = year, y = life_expectancy, 
+             color = continent, fill = continent )) +
+  geom_line(aes(group = country), alpha = .2)+
+  stat_summary(fun = mean, geom = "line", size = 2)+
+  scale_x_continuous(breaks = seq(1960,2020,20))+
+  scale_y_continuous(limits = c(30, 85))
+
+f1
+```
+
+
+```{r}
+
+f2 = f1+
+  facet_wrap(~continent, nrow = 1)+
+  ggsci::scale_color_aaas()+
+  ggsci::scale_fill_aaas() +
+  theme(legend.position = "none")
+
+f2 
+
+```
+
+
+
+```{r}
+f3 = f2 +
+  # year 1960
+  geom_vline(xintercept = 1960, linetype = "dashed", color = "orange3") +
+  # year 2020
+  geom_vline(xintercept = 2020, linetype = "dashed", color = "skyblue3") +
+  # add text annotation
+  # year 1952
+  annotate(geom = "text", x = 1960, y = 30, label = " 1960", 
+           fontface = "bold", size = 2.8, hjust = 0, color = "orange3") +
+  # year 2007
+  annotate(geom = "text", x = 2020, y = 30, label = "2020 ", 
+           fontface = "bold", size = 2.8, hjust = 1, color = "skyblue3") 
+
+f3
+```
+
+
+```{r}
+
+life.1960_2020 <- lf.data %>% 
+  filter(year %in% c(1960, 2020)) %>% 
+  group_by(continent, year) %>% 
+  summarise(life_expectancy = mean(life_expectancy, na.rm = T) %>% round())
+
+
+life.1960_2020 |> head()
+```
+
+
+
+```{r}
+#| warning: false
+#| message: false
+#| comment: ""
+
+panel.titles <- lf.data |> distinct(continent) |> arrange(continent) 
+
+
+f3 + 
+  # not clip graphical elements beyond the panel range
+  coord_cartesian(clip = "off") + 
+  geom_text(
+    data = panel.titles,
+    aes(x = 1980, y = 85, label = continent),
+    size = 4.5, nudge_x = 10, fontface = "bold") +
+  # titles
+  labs(
+    # title = "Steady increase of Human Life Expectancy", 
+    caption = "Each line represents one country; central line: the average; \nribbon, one standard deviation around the mean.",
+    x = NULL)  +
+  theme(
+    strip.text = element_blank(), 
+    
+    axis.line.y = element_blank(),
+    axis.line.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.ticks.length.y = unit(5, "pt"),
+    axis.ticks.y = element_line(linetype = "solid", linewidth = .15),
+    
+    plot.title = element_text(size = 18, family = "fat"),
+    plot.caption = element_text(hjust = 0, size = 10, color = "grey50"),
+    plot.background = element_rect(fill = "#d8cfd0"),
+    panel.background = element_rect(fill = "#f2f1ef")
+  ) 
+
+```
+
+```{r}
+#| echo: false
+#| eval: false
+
+ggsave("lineplot.png",  height = 4, dpi = 300)
+
+```
+
+## Conclusion
+
+This post describes the process of creating an annotated line plot in R using the ggplot2 library to visualize the changing capture fish landings, with a focus on the Kenya, Uganda and Tanzania.
+
+
+
