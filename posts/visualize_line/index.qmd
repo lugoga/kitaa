@@ -14,7 +14,7 @@ csl:  ../elsevier.csl
 date: "today"
 toc: true
 toc-depth: 4
-categories: [Data Science, Data Visualization]
+categories: [Data Science, Data Visualization, ggplot]
 image: theplot.png
 code-fold: false
 execute: 
