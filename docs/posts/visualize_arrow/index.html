@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Masumbuko Semba">
-<meta name="dcterms.date" content="2024-06-11">
-<meta name="description" content="The post takes step-by-step on generating a line plot using ggplot2 in R to visualize how the capture fisheries landing has changed over time. It also illustrate how to annotate plot to highlight specific aspects or data points">
+<meta name="dcterms.date" content="2024-06-06">
+<meta name="description" content="The post takes step-by-step on generating a arrow line plot using ggplot2 in R to visualize how the capture fisheries landing has increased or decreased between 2000 and 2018 It also illustrate how to annotate the percenatage change for each country">
 
-<title>DATIKA - Visualize changing catch landings with ggplot2</title>
+<title>DATIKA - Visualize percentage change of catch landings using arrows in ggplot2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,13 +136,13 @@ cookieconsent.run({
   
 
 
-<meta name="twitter:title" content="DATIKA - Visualize changing catch landings with ggplot2">
-<meta name="twitter:description" content="The post takes step-by-step on generating a line plot using ggplot2 in R to visualize how the capture fisheries landing has changed over time. It also illustrate how to annotate plot to highlight specific aspects or data points">
-<meta name="twitter:image" content="https://lugoga.github.io/kitaa/posts/visualize_line/theplot.png">
+<meta name="twitter:title" content="DATIKA - Visualize percentage change of catch landings using arrows in ggplot2">
+<meta name="twitter:description" content="The post takes step-by-step on generating a arrow line plot using ggplot2 in R to visualize how the capture fisheries landing has increased or decreased between 2000 and 2018 It also illustrate how to annotate the percenatage change for each country">
+<meta name="twitter:image" content="https://lugoga.github.io/kitaa/posts/visualize_arrow/theplot.png">
 <meta name="twitter:creator" content="@semba2024">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image-height" content="1200">
-<meta name="twitter:image-width" content="1800">
+<meta name="twitter:image-height" content="2100">
+<meta name="twitter:image-width" content="2100">
 </head>
 
 <body class="floating nav-fixed">
@@ -257,15 +257,16 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Visualize changing catch landings with ggplot2</h1>
+      <h1 class="title">Visualize percentage change of catch landings using arrows in ggplot2</h1>
                   <div>
         <div class="description">
-          The post takes step-by-step on generating a line plot using ggplot2 in R to visualize how the capture fisheries landing has changed over time. It also illustrate how to annotate plot to highlight specific aspects or data points
+          The post takes step-by-step on generating a arrow line plot using ggplot2 in R to visualize how the capture fisheries landing has increased or decreased between 2000 and 2018 It also illustrate how to annotate the percenatage change for each country
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">Data Science</div>
                 <div class="quarto-category">Data Visualization</div>
+                <div class="quarto-category">ggplot</div>
               </div>
                   </div>
   </div>
@@ -292,7 +293,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 11, 2024</p>
+        <p class="date">June 6, 2024</p>
       </div>
     </div>
     
@@ -308,9 +309,7 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#packages-and-data-cleaup" id="toc-packages-and-data-cleaup" class="nav-link" data-scroll-target="#packages-and-data-cleaup">Packages and data cleaup</a></li>
-  <li><a href="#visualize-landing-over-time" id="toc-visualize-landing-over-time" class="nav-link" data-scroll-target="#visualize-landing-over-time">Visualize landing over time</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize">Visualize</a></li>
   </ul>
 </nav>
 </nav>
@@ -336,20 +335,15 @@ cookieconsent.run({
 </script>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this work, we will create a line plot to visualize the trends in fish landings over time, highlighting and annotating data from the Kenya, Uganda, and Tanzania. This plot aims to illustrate the rise and fall of fish landings in these countries, providing a comparative analysis of their fishing activities.</p>
-<p>The line plot will feature data points representing fish landings across different years, allowing us to observe fluctuations and identify significant patterns or anomalies. By focusing on the Kenya, Uganda, and Tanzania, we can gain insights into the impact of various fishing policies, environmental changes, and market demands on their fishing industries.</p>
-<p>Annotations will be strategically placed to highlight key events or trends, such as regulatory changes, shifts in fish population dynamics, or economic factors that influenced fish landings. This visual representation will help in understanding the complex interplay between these factors and their effects on fish landings.</p>
-<p>Using ggplot2, a powerful data visualization package in R, we will ensure that the plot is not only informative but also aesthetically appealing. ggplot2 offers advanced customization options, enabling us to create a polished and professional graphic that effectively communicates the data.</p>
-</section>
-<section id="packages-and-data-cleaup" class="level2">
-<h2 class="anchored" data-anchor-id="packages-and-data-cleaup">Packages and data cleaup</h2>
+<p>This post visualizes the changes in the proportion of catch landings in national fisheries from 2000 to 2018, using faceted arrow plots created with the ggplot2 library in R. The post covers various techniques for customizing the plot, such as drawing arrows, handling aesthetics inheritance, creating unique annotations in selected faceted panels, and controlling annotation alignment and plot margins. First, let’s load the necessary libraries and the data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">require</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">require</span>(magrittr)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">15</span>)) <span class="co"># global theme</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">require</span>(rfisheries)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">require</span>(magrittr)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">15</span>)) <span class="co"># global theme</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The catch data is sourced from <em>rfisheries</em> package, designed specifically to access various fisheries data sources and APIs (Application Programming Interfaces). The given code chunk demonstrates how to use the <em>rfisheries</em> package to retrieve and combine fisheries landing data from multiple African countries into a single dataset.</p>
+<p>Then download the catch data for each country</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>fisheries <span class="ot">=</span> <span class="fu">bind_rows</span>(</span>
 <span id="cb2-2"><a href="#cb2-2"></a>rfisheries<span class="sc">::</span><span class="fu">of_landings</span>(<span class="at">country =</span> <span class="st">"TZA"</span>),</span>
@@ -371,75 +365,54 @@ cookieconsent.run({
 <span id="cb2-18"><a href="#cb2-18"></a>rfisheries<span class="sc">::</span><span class="fu">of_landings</span>(<span class="at">country =</span> <span class="st">"DZA"</span>)</span>
 <span id="cb2-19"><a href="#cb2-19"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The aim of this code is to generate a consolidated dataset for conducting in-depth analysis of fish landings in various African countries. The dataset created above is the one we are going to use to plot fish landing sites over time to detect patterns and trends.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>fisheries <span class="sc">|&gt;</span> FSA<span class="sc">::</span><span class="fu">headtail</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     year    catch country
+1    1950  32600.0     TZA
+2    1951  32600.0     TZA
+3    1952  35600.0     TZA
+4    1953  60000.0     TZA
+5    1954  59900.0     TZA
+1169 2014  97828.0     DZA
+1170 2015  95946.0     DZA
+1171 2016 100180.0     DZA
+1172 2017 104100.1     DZA
+1173 2018 115255.0     DZA</code></pre>
+</div>
+</div>
+<p>The dataset <code>d.long</code> has been prepared to contain data for the years 2000 and 2018, excluding information related to Nigeria. The year column has been converted to a factor, which means it is now treated as a categorical variable rather than a numerical one. This dataset is now in a suitable format for conducting additional analysis or visualization tasks. For example, it can be used to create faceted arrow plots, which are a type of data visualization that allows for comparison and analysis of multiple variables across different categories or factors. Overall, the d.long dataset is now well-prepared for further exploration and interpretation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>d.long <span class="ot">=</span> fisheries <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2018</span>) <span class="sc">&amp;</span> <span class="sc">!</span>country <span class="sc">==</span> <span class="st">"NGA"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.factor</span>(year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, transform the <code>d.long</code> dataset into a wide format, clean the column names, add new columns to indicate changes and calculations, round numeric values, and create a formatted percentage change label. The result is stored in the <code>d.wide</code> dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>d.wide <span class="ot">=</span> d.long <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> catch) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()  <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="at">increased =</span> <span class="fu">if_else</span>(x2018 <span class="sc">&gt;</span> x2000 , <span class="st">"Increased"</span>, <span class="st">"Decreased"</span>), </span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="at">pct.change =</span> (x2018<span class="sc">-</span>x2000)<span class="sc">/</span>x2000<span class="sc">*</span><span class="dv">100</span>,</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="at">midpoint =</span> (x2018<span class="sc">+</span>x2000)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(is.numeric, round, <span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">mutate</span>(<span class="at">pct_label =</span> <span class="fu">paste0</span>(pct.change <span class="sc">|&gt;</span> <span class="fu">abs</span>(), <span class="st">"%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="visualize-landing-over-time" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-landing-over-time">Visualize landing over time</h2>
-<p>Create a basic line graph to display the catch landing of capture fisheries in each country. The grey lines will provide a background for highlighting three specific countries later on.</p>
+<section id="visualize" class="level2">
+<h2 class="anchored" data-anchor-id="visualize">Visualize</h2>
+<ol type="1">
+<li>Create arrows to indicate the changes in the catch landings from 2000 (start of arrows) to 2018 (end of arrows).</li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>f1 <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> fisheries <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span>country <span class="sc">==</span> <span class="st">"NGA"</span>), <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch, <span class="at">group =</span> country))<span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"snow3"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a>f1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Highlight the cigarette sales in three selected countries.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>riparian <span class="ot">=</span> fisheries <span class="sc">|&gt;</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"TZA"</span>, <span class="st">"KEN"</span>, <span class="st">"UGA"</span>))</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a>f2 <span class="ot">=</span> f1 <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> riparian, </span>
-<span id="cb4-5"><a href="#cb4-5"></a>            <span class="fu">aes</span>(<span class="at">color =</span> country), <span class="at">linewidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"skyblue3"</span>, <span class="st">"steelblue4"</span>, <span class="st">"firebrick"</span>))</span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a>f2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Replace the default legend with text annotations for the three highlighted lines and use a text annotation to replace the default y-axis title. The default legend and y-axis title will be removed in a later step.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>f3 <span class="ot">=</span> f2 <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">annotate</span>(</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2009</span>, <span class="dv">1986</span>, <span class="dv">2008</span>),</span>
-<span id="cb5-5"><a href="#cb5-5"></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">185164.3</span>, <span class="fl">457018.2</span>,<span class="dv">501196</span>),</span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">hjust =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="co"># 1, right justify;  0, left justify</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"KENYA"</span>, <span class="st">"TANZANIA"</span>, <span class="st">"UGANDA"</span>),</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"skyblue3"</span>, <span class="st">"steelblue4"</span>, <span class="st">"firebrick"</span>),</span>
-<span id="cb5-9"><a href="#cb5-9"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>))</span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a>f3 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Modify the axis breaks and scales, eliminate axis titles, and include plot titles. When adding a long plot subtitle, utilize the <code>str_wrap()</code> function from the widely used stringr package to automatically format lengthy strings into neatly wrapped paragraphs.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>f4 <span class="ot">=</span> f3 <span class="sc">+</span> </span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="co"># add plot title and subtitle</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">title =</span> <span class="st">"Total Capture Fisheries Landing in Selected African Countries"</span>,</span>
-<span id="cb6-5"><a href="#cb6-5"></a>    <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(</span>
-<span id="cb6-6"><a href="#cb6-6"></a>      <span class="st">"Landing of the East African Countries became increasingly popular since 1990s, peaked around 1995s ~ 2005s, and significant decreased in 2010s."</span>, </span>
-<span id="cb6-7"><a href="#cb6-7"></a>      <span class="at">width =</span> <span class="dv">85</span>) <span class="co"># number of characters per line</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>  )</span>
-<span id="cb6-9"><a href="#cb6-9"></a></span>
-<span id="cb6-10"><a href="#cb6-10"></a>f4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>f1 <span class="ot">=</span> d.wide <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(country, x2018), <span class="at">xend =</span> <span class="fu">reorder</span>(country, x2018), <span class="at">y =</span> x2000, <span class="at">yend =</span> x2018, <span class="at">color =</span> increased),</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"pt"</span>)), <span class="at">linewidth =</span> <span class="fl">1.2</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>f1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -448,25 +421,13 @@ cookieconsent.run({
 </div>
 </div>
 </div>
-<p>The final polish-up of the theme involves making the last adjustments and improvements to ensure that every detail is perfect. This stage may include refining the design elements, tweaking the color scheme, adjusting the layout, and making any necessary final edits. The goal is to achieve a polished and cohesive look that meets the desired aesthetic and functionality. This process ensures that the theme is ready for implementation and will provide a smooth and visually appealing experience for its users.</p>
+<ol start="2" type="1">
+<li><strong>Flip the axes</strong> The code f2 = f1 + coord_flip(expand = 0, clip = “off”) modifies the plot f1 by flipping the coordinates, which essentially swaps the x-axis and y-axis. This means that any horizontal elements in the plot become vertical and vice versa. The parameters expand = 0 and clip = “off” are used to ensure that there is no additional space around the plot, allowing elements to extend beyond the plot limits if needed. Overall, this modification helps in changing the orientation of the plot to better visualize the data in a different layout.</li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>f5 <span class="ot">=</span> f4 <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1950</span>,<span class="dv">2020</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb7-4"><a href="#cb7-4"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>), </span>
-<span id="cb7-5"><a href="#cb7-5"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>))<span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="fu">theme</span>(</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb7-8"><a href="#cb7-8"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb7-9"><a href="#cb7-9"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb7-10"><a href="#cb7-10"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>),</span>
-<span id="cb7-11"><a href="#cb7-11"></a>    <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>),</span>
-<span id="cb7-12"><a href="#cb7-12"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>),</span>
-<span id="cb7-13"><a href="#cb7-13"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">15</span>),</span>
-<span id="cb7-14"><a href="#cb7-14"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">color =</span> <span class="st">"orange4"</span>,</span>
-<span id="cb7-15"><a href="#cb7-15"></a>                                 <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>))) </span>
-<span id="cb7-16"><a href="#cb7-16"></a></span>
-<span id="cb7-17"><a href="#cb7-17"></a>f5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>f2 <span class="ot">=</span> f1 <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">coord_flip</span>(<span class="at">expand =</span> <span class="dv">0</span>, <span class="at">clip =</span> <span class="st">"off"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>f2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -475,44 +436,24 @@ cookieconsent.run({
 </div>
 </div>
 </div>
-<p>The whole code for the process involved is here;</p>
+<ol start="3" type="1">
+<li>Enhance color, scale and annotation</li>
+</ol>
+<p>The code <code>f3 = f2 + further</code> enhances the plot <code>f2</code> in several ways. It adds a custom color scale using <code>scale_color_manual</code> and customizes the y-axis with <code>scale_y_continuous</code>, positioning it on the right side and formatting the labels using commas. Additionally, the code includes text annotations for percentage change, a title, a subtitle, and a caption, which collectively improve the plot’s readability and provide context for better understanding. This customization and annotation of the plot will help viewers interpret the data more effectively and gain insights from the visual representation of the changes in the percentage of seats held by women in national parliaments from 2000 to 2020.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fisheries <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span>country <span class="sc">==</span> <span class="st">"NGA"</span>), <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> catch, <span class="at">group =</span> country))<span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"snow3"</span>)<span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> fisheries <span class="sc">|&gt;</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"TZA"</span>, <span class="st">"KEN"</span>, <span class="st">"UGA"</span>)), </span>
-<span id="cb8-4"><a href="#cb8-4"></a>            <span class="fu">aes</span>(<span class="at">color =</span> country), <span class="at">linewidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"skyblue3"</span>, <span class="st">"steelblue4"</span>, <span class="st">"firebrick"</span>))<span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1950</span>,<span class="dv">2020</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb8-8"><a href="#cb8-8"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>), </span>
-<span id="cb8-9"><a href="#cb8-9"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>))<span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">annotate</span>(</span>
-<span id="cb8-11"><a href="#cb8-11"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
-<span id="cb8-12"><a href="#cb8-12"></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2009</span>, <span class="dv">1986</span>, <span class="dv">2008</span>),</span>
-<span id="cb8-13"><a href="#cb8-13"></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">185164.3</span>, <span class="fl">457018.2</span>,<span class="dv">501196</span>),</span>
-<span id="cb8-14"><a href="#cb8-14"></a>    <span class="at">hjust =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="co"># 1, right justify;  0, left justify</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a>    <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"KENYA"</span>, <span class="st">"TANZANIA"</span>, <span class="st">"UGANDA"</span>),</span>
-<span id="cb8-16"><a href="#cb8-16"></a>    <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"skyblue3"</span>, <span class="st">"steelblue4"</span>, <span class="st">"firebrick"</span>),</span>
-<span id="cb8-17"><a href="#cb8-17"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb8-18"><a href="#cb8-18"></a>  <span class="co"># expand to fill up the entire plotting range</span></span>
-<span id="cb8-19"><a href="#cb8-19"></a>  <span class="fu">coord_cartesian</span>(<span class="at">expand =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb8-20"><a href="#cb8-20"></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-21"><a href="#cb8-21"></a>    <span class="co"># add plot title and subtitle</span></span>
-<span id="cb8-22"><a href="#cb8-22"></a>    <span class="at">title =</span> <span class="st">"Total Capture Fisheries Landing in Selected African Countries"</span>,</span>
-<span id="cb8-23"><a href="#cb8-23"></a>    <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(</span>
-<span id="cb8-24"><a href="#cb8-24"></a>      <span class="st">"Landing of the East African Countries became increasingly popular since 1990s, peaked around 1995s ~ 2005s, and significant decreased in 2010s."</span>, </span>
-<span id="cb8-25"><a href="#cb8-25"></a>      <span class="at">width =</span> <span class="dv">85</span>) <span class="co"># number of characters per line</span></span>
-<span id="cb8-26"><a href="#cb8-26"></a>  ) <span class="sc">+</span></span>
-<span id="cb8-27"><a href="#cb8-27"></a>    <span class="fu">theme</span>(</span>
-<span id="cb8-28"><a href="#cb8-28"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb8-29"><a href="#cb8-29"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb8-30"><a href="#cb8-30"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb8-31"><a href="#cb8-31"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>),</span>
-<span id="cb8-32"><a href="#cb8-32"></a>    <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>),</span>
-<span id="cb8-33"><a href="#cb8-33"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>),</span>
-<span id="cb8-34"><a href="#cb8-34"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">15</span>),</span>
-<span id="cb8-35"><a href="#cb8-35"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">color =</span> <span class="st">"orange4"</span>,</span>
-<span id="cb8-36"><a href="#cb8-36"></a>                                 <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>f3 <span class="ot">=</span> f2 <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"firebrick4"</span>, <span class="st">"steelblue4"</span>))<span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Annual landings (tons)"</span>,<span class="at">position =</span> <span class="st">"right"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>))<span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> <span class="fu">if_else</span>(increased <span class="sc">==</span> <span class="st">"Increased"</span>, x2018 <span class="sc">+</span><span class="dv">20000</span>, x2018<span class="dv">-15000</span>), <span class="at">label =</span> pct_label), <span class="at">size =</span> <span class="fl">3.5</span>)<span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="at">title =</span> <span class="st">"Catch Landings Changes betwen 2000 and 2018"</span>, </span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(</span>
+<span id="cb9-8"><a href="#cb9-8"></a>      <span class="st">"Catch landings in selected African countries show significant fluctuations, with overall trends indicating both increases and decreases."</span> </span>
+<span id="cb9-9"><a href="#cb9-9"></a>      ,<span class="at">width =</span> <span class="dv">80</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>      ),</span>
+<span id="cb9-11"><a href="#cb9-11"></a>    <span class="at">caption =</span> <span class="st">"Data sourced from FAO through rfisheries package"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12"></a></span>
+<span id="cb9-13"><a href="#cb9-13"></a>f3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -520,26 +461,93 @@ cookieconsent.run({
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggsave</span>(<span class="st">"theplot.png"</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>This post describes the process of creating an annotated line plot in R using the ggplot2 library to visualize the changing capture fish landings, with a focus on the Kenya, Uganda and Tanzania.</p>
+<ol start="4" type="1">
+<li>Theming</li>
+</ol>
+<p>We can further use theme to customize the visual aspects of the plot by making specific changes to various elements like legends, axis titles, grid lines, axis line style, and the plot’s title and subtitle. These alterations aim to improve the overall presentation and aesthetic appeal of the plot in R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>f3 <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">85</span>,.<span class="dv">25</span>), </span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-8"><a href="#cb10-8"></a>    <span class="co"># panel.grid.major.y = element_line(linewidth = .1, linetype = "dashed"),</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>    <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>),</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>),</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">15</span>), </span>
+<span id="cb10-12"><a href="#cb10-12"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">"italic"</span>),</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">color =</span> <span class="st">"orange4"</span>,</span>
+<span id="cb10-14"><a href="#cb10-14"></a>                                 <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>))</span>
+<span id="cb10-15"><a href="#cb10-15"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>The final</li>
+</ol>
+<p>To sum up, the code generates a visually appealing chart that illustrates variations in catch landings from 2000 to 2018 in chosen African nations. Through the use of segmented arrows and personalized annotations, it clearly and aesthetically conveys the fluctuations in yearly landings, demonstrating both rising and falling trends.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>d.wide <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb11-4"><a href="#cb11-4"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(country, x2018), <span class="at">xend =</span> <span class="fu">reorder</span>(country, x2018), <span class="at">y =</span> x2000, <span class="at">yend =</span> x2018, <span class="at">color =</span> increased),</span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"pt"</span>)), <span class="at">linewidth =</span> <span class="fl">1.2</span>)<span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"firebrick4"</span>, <span class="st">"steelblue4"</span>))<span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Annual landings (tons)"</span>,<span class="at">position =</span> <span class="st">"right"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>))<span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> <span class="fu">if_else</span>(increased <span class="sc">==</span> <span class="st">"Increased"</span>, x2018 <span class="sc">+</span><span class="dv">20000</span>, x2018<span class="dv">-15000</span>), <span class="at">label =</span> pct_label), <span class="at">size =</span> <span class="fl">3.5</span>)<span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-11"><a href="#cb11-11"></a>    <span class="at">title =</span> <span class="st">"Catch Landings Changes betwen 2000 and 2018"</span>, </span>
+<span id="cb11-12"><a href="#cb11-12"></a>    <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(</span>
+<span id="cb11-13"><a href="#cb11-13"></a>      <span class="st">"Catch landings in selected African countries show significant fluctuations, with overall trends indicating both increases and decreases."</span> </span>
+<span id="cb11-14"><a href="#cb11-14"></a>      ,<span class="at">width =</span> <span class="dv">80</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>      ),</span>
+<span id="cb11-16"><a href="#cb11-16"></a>    <span class="at">caption =</span> <span class="st">"Data sourced from FAO through rfisheries package"</span>)<span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-18"><a href="#cb11-18"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb11-19"><a href="#cb11-19"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">85</span>,.<span class="dv">25</span>), </span>
+<span id="cb11-20"><a href="#cb11-20"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-21"><a href="#cb11-21"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-22"><a href="#cb11-22"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-23"><a href="#cb11-23"></a>    <span class="co"># panel.grid.major.y = element_line(linewidth = .1, linetype = "dashed"),</span></span>
+<span id="cb11-24"><a href="#cb11-24"></a>    <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>),</span>
+<span id="cb11-25"><a href="#cb11-25"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"snow4"</span>), </span>
+<span id="cb11-26"><a href="#cb11-26"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">"italic"</span>),</span>
+<span id="cb11-27"><a href="#cb11-27"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">15</span>),</span>
+<span id="cb11-28"><a href="#cb11-28"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">color =</span> <span class="st">"orange4"</span>,</span>
+<span id="cb11-29"><a href="#cb11-29"></a>                                 <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>))</span>
+<span id="cb11-30"><a href="#cb11-30"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{semba2024,
   author = {Semba, Masumbuko},
-  title = {Visualize Changing Catch Landings with Ggplot2},
-  date = {2024-06-11},
-  url = {https://lugoga.github.io/kitaa/posts/visualize_line/},
+  title = {Visualize Percentage Change of Catch Landings Using Arrows in
+    Ggplot2},
+  date = {2024-06-06},
+  url = {https://lugoga.github.io/kitaa/posts/visualize_arrow/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-semba2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Semba, M., 2024. Visualize changing catch landings with ggplot2 [WWW
-Document]. URL <a href="https://lugoga.github.io/kitaa/posts/visualize_line/">https://lugoga.github.io/kitaa/posts/visualize_line/</a>
+Semba, M., 2024. Visualize percentage change of catch landings using
+arrows in ggplot2 [WWW Document]. URL <a href="https://lugoga.github.io/kitaa/posts/visualize_arrow/">https://lugoga.github.io/kitaa/posts/visualize_arrow/</a>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -956,7 +964,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>©2024 <a href="../../posts/visualize_line/index.html">Datika</a></p>
+<p>©2024 <a href="../../posts/visualize_arrow/index.html">Datika</a></p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
