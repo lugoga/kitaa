@@ -1,0 +1,361 @@
+---
+title: "The key process for plotting using ggplot2"
+description: "ggplot2 is a powerful and versatile data visualization framework in R that allows users to create elegant and informative plots through a structured, layered approach."
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/visualize_ggplotP1/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "today"
+toc: true
+toc-depth: 4
+categories: [Data Science, Data Visualization, ggplot]
+image: ggplot.png
+code-fold: false
+execute: 
+  warning: false
+  message: false
+  comment: ""
+filters: 
+  - webr
+---
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
+## Introduction
+
+ggplot2 is a popular graphics framework in R known for its elegant and aesthetically pleasing visualizations [@ggplot]. It is well-structured and offers a comprehensive approach to creating various types of plots [@ggpubr]. This post aims to uncover the underlying structure of ggplot2, providing a foundation for creating any type of ggplot. However, it is important to note that creating plots in ggplot2 differs significantly from base graphics, which may require a steep learning curve for those familiar with traditional graphics methods [@tidyverse]. 
+
+To fully grasp ggplot2, it's essential to set aside preconceived notions about base graphics and embrace the unique approach of ggplot2. By following this tutorial, you are just 5 steps away from mastering the art of creating ggplots. The distinctive feature of the ggplot2 framework is the way you make plots through adding *layers*. The process of making any ggplot is as follows.
+
+
+We begin by loading a tidyverse ecosystem in our session. This is required because it contains several function that we are going to use
+
+```{r}
+require(tidyverse)
+```
+
+## Data
+
+We then use the chinook dataset, which has 112 rows and 3 columns, named loc, tl, and w. The loc column is character type and represents  location names. The tl and w columns are numeric (double type), representing continuous variables total length and weight, respectively.
+
+```{r}
+chinook = read_csv("../data/chinook_lw.csv")
+```
+```{r}
+chinook |> glimpse()
+```
+
+
+## The Setup
+
+First, you need to tell ggplot what dataset to use. This is done using the `ggplot(df)` function, where `df` is a dataframe that contains all features needed to make the plot. This is the most basic step. Unlike base graphics, ggplot doesn't take vectors as arguments.
+
+Optionally you can add whatever aesthetics you want to apply to your ggplot (inside `aes()` argument) - such as X and Y axis by specifying the respective variables from the dataset. The variable based on which the color, size, shape and stroke should change can also be specified here itself. The aesthetics specified here will be inherited by all the geom layers you will add subsequently.
+
+If you intend to add more layers later on, may be a bar chart on top of a line graph, you can specify the respective aesthetics when you add those layers.
+
+Below, I show few examples of how to setup ggplot using in the `chinook`
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w))
+```
+
+However, no plot will be printed until you add the geom layers.
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w))+
+  geom_point()
+```
+
+The `aes` argument stands for aesthetics. ggplot2 considers the X and Y axis of the plot to be aesthetics as well, along with color, size, shape, fill etc. 
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w, color = loc))+
+  geom_point()
+```
+
+
+If you want to have the color, size etc fixed (i.e.not vary based on a variable from the dataframe), you need to specify it outside the `aes()`, like this.
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w))+
+  geom_point(color = "steelblue", size = 4, shape = 16)
+```
+
+
+
+### The Layers
+
+The layers in ggplot2 are also called *geoms*. Once the base setup is done, you can append the geoms one on top of the other.
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w))+
+  geom_point()+
+  geom_smooth()
+```
+
+
+We have added two layers (geoms) to this plot - the `geom_point()` and `geom_smooth()`. 
+
+
+```{r}
+ ggplot()+
+  geom_point(data = chinook, aes(x = tl, y = w))+
+  geom_smooth(data = chinook, aes(x = tl, y = w))
+```
+
+Since the X axis Y axis and the color were defined in `ggplot()` setup itself, these two layers inherited those aesthetics. Alternatively, you can specify those aesthetics inside the geom layer also as shown below.
+
+
+```{r}
+ ggplot()+
+  geom_point(data = chinook, aes(x = tl, y = w, color = loc))+
+  geom_smooth(data = chinook, aes(x = tl, y = w, fill = loc, color = loc))
+```
+
+
+Notice the X and Y axis and how the color of the points vary based on the value of `loc` variable. The legend was automatically added. I would like to propose a change though. 
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w, color = loc, fill = loc))+
+  geom_point()+
+  geom_smooth()
+
+```
+
+The points in the plot are colored based on the values of the `loc` variable, and a legend has been automatically added. However, instead of having multiple smoothing lines for each level of `'loc`, you would like to have just one smoothing line that integrates all the levels.
+
+
+### The Labels
+
+Labels play a crucial role in creating clear and informative plots in ggplot2. They include titles, axis labels, legend labels, and annotations, and can be customized in a variety of ways within ggplot2.
+
+Once you have created the main elements of the plot in ggplot2, you may want to add a title for the overall plot and customize the titles for the x and y axes. This can be accomplished using the labs layer, which is designed for specifying the labels in your ggplot2 visualization.
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w, color = loc))+
+  geom_point()+
+  geom_smooth()+
+  labs(
+    title = "The Chinook fish", 
+    subtitle = "The length and weight relationship",
+    y = "Weight (kg)",
+    x = "Length (cm)"
+      )
+
+```
+
+
+::: callout-note
+
+If you are showing a ggplot inside a function, you need to explicitly save it and then print using the `print(gg)`, like we just did above.
+
+:::
+
+### The Theme
+
+Themes in ggplot2 are responsible for controlling the overall look of the plot, which includes elements like text, lines, and background colors. These themes can be tailored to suit the visual requirements of your plot. Below are some important elements and ways to customize themes in ggplot2.
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w, color = loc))+
+  geom_point()+
+  geom_smooth()+
+  labs(
+    title = "The Chinook fish", 
+    subtitle = "The length and weight relationship",
+    y = "Weight (kg)",
+    x = "Length (cm)"
+      ) +
+  theme(
+    legend.position = c(.25,.65),
+    plot.title=element_text(size=30, face="bold"),   
+     plot.subtitle = element_text(size=18, face="plain"),   
+    axis.text.x=element_text(size=12),       
+    axis.text.y=element_text(size=12),    
+    axis.title.x=element_text(size=15), 
+    axis.title.y=element_text(size=15),
+    legend.title = element_text(size = 13, face = "bold"),
+    legend.text = element_text(size = 10, face = "italic"),
+    legend.background = element_rect(fill = "grey90", color = "black", linewidth = .1)
+    )
+
+```
+
+
+### Scale
+
+In ggplot2, scales control the mapping between data and aesthetics. They are used to customize the appearance of plots, such as axis labels, colors, sizes, and shapes. Here are some key aspects of scales in ggplot2:
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w, color = loc, fill = loc))+
+  geom_point()+
+  geom_smooth()+
+  labs(
+    title = "The Chinook fish", 
+    subtitle = "The length and weight relationship",
+    y = "Weight (kg)",
+    x = "Length (cm)"
+      ) +
+  theme(
+    legend.position = c(.25,.65),
+    plot.title=element_text(size=30, face="bold"),   
+     plot.subtitle = element_text(size=18, face="plain"),   
+    axis.text.x=element_text(size=12),       
+    axis.text.y=element_text(size=12),    
+    axis.title.x=element_text(size=15), 
+    axis.title.y=element_text(size=15),
+    legend.title = element_text(size = 13, face = "bold"),
+    legend.text = element_text(size = 10, face = "italic"),
+    legend.background = element_rect(fill = "grey90", color = "black", linewidth = .1)
+    )+
+  scale_x_continuous(breaks = seq(20,125,10))+
+  scale_y_continuous(breaks = seq(2,30,4))+
+  scale_color_manual(values = c("firebrick", "steelblue", "orange"))+
+  scale_fill_manual(values = c("firebrick", "steelblue", "orange"))
+
+```
+
+
+
+### The Facets
+
+In the previous chart, you had the scatterplot for all different values of `cut` plotted in the same chart. What if you want one chart for one `cut`?
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w, color = loc, fill = loc))+
+  geom_point()+
+  geom_smooth()+
+  labs(
+    title = "The Chinook fish", 
+    subtitle = "The length and weight relationship",
+    y = "Weight (kg)",
+    x = "Length (cm)"
+      ) +
+  theme(
+    legend.position = "none",
+    plot.title=element_text(size=30, face="bold"),   
+     plot.subtitle = element_text(size=18, face="plain"),   
+    axis.text.x=element_text(size=12),       
+    axis.text.y=element_text(size=12),    
+    axis.title.x=element_text(size=15), 
+    axis.title.y=element_text(size=15),
+    legend.title = element_text(size = 13, face = "bold"),
+    legend.text = element_text(size = 10, face = "italic"),
+    legend.background = element_rect(fill = "grey90", color = "black", linewidth = .1)
+    )+
+  scale_x_continuous(breaks = seq(20,125,10))+
+  scale_y_continuous(breaks = seq(2,30,4))+
+  scale_color_manual(values = c("firebrick", "steelblue", "orange"))+
+  scale_fill_manual(values = c("firebrick", "steelblue", "orange"))+
+  facet_wrap(~loc, nrow = 1)
+
+```
+
+
+
+In `facet_wrap`, the scales of the X and Y axis are fixed to accomodate all points by default. This would make comparison of attributes meaningful because they would be in the same scale. However, it is possible to make the scales roam free making the charts look more evenly distributed by setting the argument `scales=free`.
+
+
+
+```{r}
+ ggplot(data = chinook, aes(x = tl, y = w, color = loc, fill = loc))+
+  geom_point()+
+  geom_smooth()+
+  labs(
+    title = "The Chinook fish", 
+    subtitle = "The length and weight relationship",
+    y = "Weight (kg)",
+    x = "Length (cm)"
+      ) +
+  theme(
+    legend.position = "none",
+    plot.title=element_text(size=30, face="bold"),   
+     plot.subtitle = element_text(size=18, face="plain"),   
+    axis.text.x=element_text(size=12),       
+    axis.text.y=element_text(size=12),    
+    axis.title.x=element_text(size=15), 
+    axis.title.y=element_text(size=15),
+    legend.title = element_text(size = 13, face = "bold"),
+    legend.text = element_text(size = 10, face = "italic"),
+    legend.background = element_rect(fill = "grey90", color = "black", linewidth = .1)
+    )+
+  scale_x_continuous(breaks = seq(20,125,10))+
+  scale_y_continuous(breaks = seq(2,30,4))+
+  scale_color_manual(values = c("firebrick", "steelblue", "orange"))+
+  scale_fill_manual(values = c("firebrick", "steelblue", "orange"))+
+  facet_wrap(~loc, nrow = 1, scales = "free")
+
+```
+
+```{r, fig.width=5, fig.height=3}
+#| echo: false
+#| eval: false
+
+
+ggplot(data = chinook, aes(x = tl, y = w, color = loc, fill = loc))+
+  geom_point()+
+  geom_smooth()+
+  labs(
+    title = "The Chinook fish", 
+    subtitle = "The length and weight relationship",
+    y = "Weight (kg)",
+    x = "Length (cm)"
+      ) +
+  theme(
+    legend.position = "none",
+    plot.title=element_text(size=30, face="bold"),   
+     plot.subtitle = element_text(size=18, face="plain"),   
+    axis.text.x=element_text(size=12),       
+    axis.text.y=element_text(size=12),    
+    axis.title.x=element_text(size=15), 
+    axis.title.y=element_text(size=15),
+    legend.title = element_text(size = 13, face = "bold"),
+    legend.text = element_text(size = 10, face = "italic"),
+    legend.background = element_rect(fill = "grey90", color = "black", linewidth = .1)
+    )+
+  scale_x_continuous(breaks = seq(20,125,10))+
+  scale_y_continuous(breaks = seq(2,30,4))+
+  scale_color_manual(values = c("firebrick", "steelblue", "orange"))+
+  scale_fill_manual(values = c("firebrick", "steelblue", "orange"))+
+  facet_wrap(~loc, nrow = 1, scales = "free")
+
+
+ggsave("ggplot.png", width = 5, height = 3)
+
+```
+
+## Wind up
+
+ggplot2 is a powerful and versatile graphics framework in R that is renowned for its ability to create elegant and visually appealing visualizations. By following the principles and techniques outlined in this post, you are well on your way to becoming a skilled ggplot2 practitioner, capable of harnessing the power of this popular graphics framework to enhance the impact and clarity of your data-driven insights.
+
+
+## References 
+
+

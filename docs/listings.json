@@ -2,6 +2,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/visualize_ggplotP1/index.html",
       "/posts/visualize_line/index.html",
       "/posts/visualize_arrow/index.html",
       "/posts/visualize_line2/index.html",
@@ -25,6 +26,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/visualize_ggplotP1/index.html",
       "/posts/visualize_line/index.html",
       "/posts/visualize_arrow/index.html",
       "/posts/visualize_line2/index.html",
