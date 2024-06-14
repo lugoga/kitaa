@@ -19,6 +19,19 @@ image: "../screenshots/rstudio_gui.png"
 
 ---
 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
 # Introduction
 
 For data to make sense, you will need to use some of the tools you have come across already, namely your spreadsheet and the R program. You will see the various specifics as you go along but before you go any further you need to become a bit more familiar with the R program and with some important tools in Excel. What you will learn in this chapter***

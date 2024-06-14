@@ -17,6 +17,20 @@ categories: [visualization, code]
 image: "DATATYPES.svg"
 ---
 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
+
 # Introduction
 
 **R** language is a flexible language that allows to work with different kind of data format [@r-base]. This include `integer`, `numeric`, `character`, `complex`, `dates` and `logical`. The default data type or class in **R** is double precision-- numeric. In a nutshell, R treats all kind of data into five categories but we deal with only four in this book. Datasets in R are often a combination of seven different data types are highlighted in @fig-datatypes;

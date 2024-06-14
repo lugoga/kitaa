@@ -22,6 +22,17 @@ execute:
 ---
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
 
 In this post we’re going to be using R and ggplot2 to create a project timeline with milestones and milestone statuses.
 

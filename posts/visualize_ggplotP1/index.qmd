@@ -356,6 +356,8 @@ ggsave("ggplot.png", width = 5, height = 3)
 ggplot2 is a powerful and versatile graphics framework in R that is renowned for its ability to create elegant and visually appealing visualizations. By following the principles and techniques outlined in this post, you are well on your way to becoming a skilled ggplot2 practitioner, capable of harnessing the power of this popular graphics framework to enhance the impact and clarity of your data-driven insights.
 
 
+
+
 ## References 
 
 

@@ -18,6 +18,17 @@ image: "r_gui.png"
 ---
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
 ## Introduction
 
 In this tutorial we\'ll learn how to begin programming with R using RStudio. We\'ll install [R](https://www.r-project.org/), and RStudio [RStudio](https://rstudio.com/products/rstudio/), an extremely popular development environment for R. We\'ll learn the key RStudio features in order to start programming in R on our own.

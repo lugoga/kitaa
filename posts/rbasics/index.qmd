@@ -18,6 +18,19 @@ code-fold: false
 
 ---
 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
 # R Basics, Functions, and Data Types
 
 In this section, I will introduce you to R Basics, Functions, and Datatypes.

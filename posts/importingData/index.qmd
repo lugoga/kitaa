@@ -17,6 +17,17 @@ image: "data_types.png"
 ---
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
 
 ## Importing Data
 So far, we’ve looked at several dataset in previous chapter and we have also created ourselves some datasets. While you can do all your data entry work in R or Excel, it is much more common to load data from other sources. Local and international organization have been collecting fisheries dependent and fisheries independent data for years. These historical dataset with fisheries information like fish catch, effort, landing sites, fishing ground and critical habitats can be obtained from several databases---some are open and other closed. 
