@@ -69,7 +69,8 @@ theme_set(theme_minimal(base_size = 15)) # global theme
 
 ## Data
 
-For this post, we'll use data from a NetCDF file containing projections of aragonite saturation levels in the global ocean. The data spans from 2020 to 2100 and covers the entire globe. To explore the contents and structure of the NetCDF file Aragonite_median_ssp370.nc, we can use the tidync package in R. This package provides tools for efficiently working with NetCDF data. The following code snippet will load the dataset and display its information:
+For this post, we'll use data from a NetCDF file containing projections of aragonite saturation levels in the global ocean. The data can be accessed either through [OA](https://www.ncei.noaa.gov/access/ocean-carbon-acidification-data-system/synthesis/surface-oa-indicators.html) or 
+[OA data](https://www.ncei.noaa.gov/data/oceans/ncei/ocads/data/0259391/nc/median/). The data spans from 2020 to 2100 and covers the entire globe. To explore the contents and structure of the NetCDF file Aragonite_median_ssp370.nc, we can use the tidync package in R. This package provides tools for efficiently working with NetCDF data. The following code snippet will load the dataset and display its information:
 
 ```{r}
 tidync::tidync("../data/Aragonite_median_ssp370.nc")
