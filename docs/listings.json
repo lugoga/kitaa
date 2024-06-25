@@ -3,6 +3,7 @@
     "listing": "/archive.html",
     "items": [
       "/posts/bio_oracle/index.html",
+      "/posts/visualize_animate/index.html",
       "/posts/visualize_spatial/index.html",
       "/posts/visualize_line/index.html",
       "/posts/visualize_ggplotP1/index.html",
@@ -29,6 +30,7 @@
     "listing": "/blog.html",
     "items": [
       "/posts/bio_oracle/index.html",
+      "/posts/visualize_animate/index.html",
       "/posts/visualize_spatial/index.html",
       "/posts/visualize_line/index.html",
       "/posts/visualize_ggplotP1/index.html",
