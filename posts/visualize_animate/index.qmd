@@ -8,7 +8,7 @@ author:
     affiliation: Nelson Mandela African Institution of Science and Technology
     affiliation-url: https://semba.netlify.app/  
 citation: 
-    url: https://lugoga.github.io/kitaa/posts/visualize_line2/
+    url: https://lugoga.github.io/kitaa/posts/visualize_animate/
 bibliography: ../blog.bib
 csl:  ../elsevier.csl
 date: "2024-06-20"
@@ -16,7 +16,7 @@ toc: true
 toc-depth: 4
 categories: [Data Science, Data Visualization, ggplot]
 image: cement_production_racee_chart.gif
-code-fold: true
+code-fold: false
 execute: 
   warning: false
   message: false
