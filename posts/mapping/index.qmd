@@ -1,0 +1,356 @@
+---
+title: "Static Map for Publication in R"
+description: "This blog post takes you through steps you many need to create and generate maps for publication and presentation. "
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/mapping/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "2024-07-12"
+toc: true
+toc-depth: 4
+categories: [Data Science, Data Visualization, ggplot]
+image: map.png
+code-fold: false
+execute: 
+  warning: false
+  message: false
+  comment: ""
+  
+filters: 
+  - webr
+
+---
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
+
+## Introduction
+
+This post provides a detailed step-by-step on how to create maps in R using ggplot2 package. It highlight key aspect such as reading in spatial data to plotting visualizations. It covers various aspects of mapping, including handling coordinate reference systems, dealing with distortions, and integrating different spatial data types such as rasters and vectors, and tables. The post also demonstrates techniques for creating visually appealing and informative maps, including adding labels, scale bars, and custom color palettes. 
+
+Let's begin by loading some packages that we need their function of these task. If the packages are not installed, please install them first before loading them in the session
+
+
+```{r}
+require(tidyverse)
+require(sf)
+require(patchwork)
+require(magrittr)
+require(ggforce)
+require(cowplot)
+require(terra)
+require(tidyterra)
+
+```
+
+Let us begin by creating a data frame with the tibble package in R. This data frame includes information about three notable marine parks: Mafia Island Marine Park (MIMP), Mnazi Bay-Ruvuma Estuary Marine Park (MBREMP), and Tanga Coelacanth Marine Park (TACMAP).
+
+```{r}
+# Create the data frame
+marine_parks <- tibble(
+  Name = c("MIMP", "MBREMP", "TACMAP"),
+  name = c("Mafia Island \nMarine Park", "Mnazi Bay-Ruvuma \nEstuary Marine Park", "Tanga Coelacanth \nMarine Park"),
+  Latitude = c(-7.8257, -10.4244, -5.044),
+  Longitude = c(39.7586, 40.4743, 39.042),
+  Description = c(
+    "Is known for its rich marine biodiversity, including coral reefs, mangroves, and seagrass beds.",
+    "Has a variety of marine habitats including coral reefs, seagrass beds, and mangroves.",
+    "Is famous for being home to the coelacanth, a rare and ancient species of fish."
+  )
+) |> 
+  janitor::clean_names()
+
+
+```
+
+
+The we load basemaps. First, I load a geopackage file containing geographical data for Africa into the africa object using the `st_read()` function. 
+
+```{r}
+#| eval: false
+#| 
+africa = st_read("africa_wgs84.gpkg", quiet = T)
+
+```
+
+
+```{r}
+#| echo: false
+#| 
+africa = st_read("f:/2023/FAD/geopackages/africa_wgs84.gpkg", quiet = T)
+```
+
+Next, I read a bathymetry file, which contains underwater depth data, into the bathy object using the `rast()` function. 
+
+```{r}
+#| eval: false
+#| 
+bathy = rast("wioregio-7753.asc")
+
+```
+
+```{r}
+#| echo: false
+bathy = rast("f:/2023/FAD/wioregio-7753.asc")
+```
+
+I then crop the bathymetry data to focus on the region within the coordinates (37, 45, -13, -1), covering parts of Tanzania, and rename the depth column in the resulting bathy.tz object. 
+
+```{r}
+bathy.tz = bathy |> 
+  crop(ext(c(37,45,-13,-1))) |> 
+  rename(depth = 1)
+```
+
+Finally, I set any positive depth values (indicating land areas) to NA, ensuring that only underwater features are retained in the bathy.tz dataset.
+
+```{r}
+bathy.tz[bathy.tz > 0] = NA
+
+```
+
+
+### Main map
+
+Then we map the Marine Parks along the coastal waters of Tanzania superimposed on bathymetry and land layer (@fig-map. First, the code creates a base map using ggplot() and spatial packages like ggspatial. It adds a layer of Africa (africa) filled with light green color and a grey border. Bathymetry data bathy.tz. The code uses two geomtries (geom_spatraster and geom_spatraster_contour) to represent bathymetry as a colored grid and black contour lines. The color gradient is set based on depth, going from light blue (shallow) to dark blue (deep). Marine parks  are added as circles using `geom_mark_circle` over these locations. Each circle has a label showing the park name and a black connecting line. Labels, scale bars, and custom color palettes are added to enhance the appearance and readability of the final map.
+
+```{r, fig.width=8, fig.height=8}
+#| fig-width: 8
+#| fig-height: 8
+#| fig-cap: The coastal and marine waters of Tanzani with major marine parks
+#| label: fig-map
+#| 
+
+fig.main =   ggplot() +
+  geom_spatraster(data = bathy.tz) + 
+  geom_spatraster_contour(data = bathy.tz, breaks = c(-200), color = "black") +
+  # geom_spatraster_contour_text(data = bathy.tz, aes(label = depth), breaks = c(-200, -2000), color = "black", ) +
+  ggspatial::layer_spatial(data = africa, fill = "palegreen4", color = "grey30") +
+  ggforce::geom_mark_circle(
+    data = marine_parks, 
+    aes(x = longitude, y = latitude, label = name, group = name, description = description), 
+    show.legend=F,
+    alpha=0.8,
+    label.fontsize = 10,
+    # label.minwidth = unit(5.25, "mm"),
+    label.buffer = unit(8, "mm"),
+    label.fill = "ivory", 
+    con.size = unit(.5, "mm"), 
+    con.cap = unit(.5, "mm"),
+    con.type = "elbow", 
+    con.colour = "black")+
+  coord_sf(xlim = c(38,42.5), ylim = c(-11.2,-4))+
+  scale_fill_gradientn(name = "Depth (m)",
+                       colours=c("#5e24d6","#22496d","#042f66","#054780","#1074a6",
+                                "#218eb7","#48b5d2","#72d0e1","#9ddee7","#c6edec"),
+                       breaks=c(0,-200,-500,-1000,-2000,-4000),
+                       labels=c(0,200,500,1000,2000,4000),
+                       trans = scales::modulus_trans(p = .4),
+                       na.value = NA)+
+  ggspatial::annotation_north_arrow(location = "tr", width = unit(.8, "cm"), height = unit(.8, "cm")) +
+  ggspatial::annotation_scale(location = "bl")+
+  theme_bw(base_size = 10)+
+  theme(
+    panel.background = element_blank(), # bg of the panel
+    panel.grid.major = element_line(linetype = "dotted", colour="grey30",linewidth=0.15),
+    panel.ontop = TRUE,
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.title = element_blank(), 
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 9),
+    legend.background = element_rect(colour = "black", linewidth = .3),
+    legend.position = c(0.12,.15)
+    )
+  
+fig.main
+```
+
+We can conclude our mapping exercise by creating a multi-panel map using the patchwork package, allowing for detailed zoomed-in views of specific regions. let's first create subset maps for Mafia Island Marine Park, Mnazi Bay-Ruvuma Estuary Marine Park, Tanga Coelacanth Marine Park
+
+### Mnazi Bay
+
+```{r}
+#| eval: false
+#| 
+fig.mt = ggplot() +
+  geom_spatraster(data = bathy.tz) + 
+  geom_spatraster_contour_text(data = bathy.tz, breaks = -200) + 
+  ggspatial::layer_spatial(data = africa, fill = "#689868")  +
+  ggforce::geom_mark_circle(
+    data = marine_parks, 
+    aes(x = longitude, y = latitude, label = name, group = name),
+    show.legend=F,
+    alpha=0.8,
+    label.fontsize = 6,
+    label.buffer = unit(0.5, "mm"),
+    expand = unit(0.5, "mm") , 
+    radius = unit(1.5, "mm") ,
+    label.fill = "ivory", con.type = "elbow", con.colour = "black")+
+  coord_sf(xlim = c(40,40.8), ylim = c(-10.8,-10.2))+
+  scale_fill_gradientn(colours=c("#5e24d6","#22496d","#042f66","#054780","#1074a6",
+                                "#218eb7","#48b5d2","#72d0e1","#9ddee7","#c6edec"),
+                       # breaks=c(0,-2500,-5000,-7500),
+                       # labels=c("0","2,500","5,000","7,500"),
+                       trans = scales::modulus_trans(p = .4),
+                       na.value = NA)+
+  theme_bw(base_size = 10)+
+  theme(
+    panel.background = element_blank(), # bg of the panel
+    panel.grid.major = element_blank(),
+    panel.ontop = TRUE,
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = "none"
+    )
+```
+
+### Mafia Island Marine Park
+
+```{r}
+#| eval: false
+#| 
+fig.mafia = ggplot() +
+  geom_spatraster(data = bathy.tz) + 
+  geom_spatraster_contour_text(data = bathy.tz, breaks = -200) + 
+  ggspatial::layer_spatial(data = africa, fill = "#689868")  +
+  ggforce::geom_mark_circle(
+    data = marine_parks, 
+    aes(x = longitude, y = latitude, label = name, group = name),
+    show.legend=F,
+    alpha=0.8,
+    label.fontsize = 6,
+    label.buffer = unit(0.5, "mm"),
+    expand = unit(0.5, "mm") , 
+    radius = unit(1.5, "mm") ,
+    label.fill = "ivory", con.type = "elbow", con.colour = "black")+
+  coord_sf(xlim = c(39.2,40.), ylim = c(-7.6,-8.2))+
+  scale_fill_gradientn(colours=c("#5e24d6","#22496d","#042f66","#054780","#1074a6",
+                                "#218eb7","#48b5d2","#72d0e1","#9ddee7","#c6edec"),
+                       # breaks=c(0,-2500,-5000,-7500),
+                       # labels=c("0","2,500","5,000","7,500"),
+                       trans = scales::modulus_trans(p = .4),
+                       na.value = NA)+
+  theme_bw(base_size = 10)+
+  theme(
+    panel.background = element_blank(), # bg of the panel
+    panel.grid.major = element_blank(),
+    panel.ontop = TRUE,
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = "none"
+    )
+```
+
+
+### Tanga Coelocanth
+
+```{r}
+#| eval: false
+#| 
+fig.pemba = ggplot() +
+  geom_spatraster(data = bathy.tz) + 
+  geom_spatraster_contour_text(data = bathy.tz, breaks = -200) + 
+  ggspatial::layer_spatial(data = africa, fill = "#689868") +
+  ggforce::geom_mark_circle(
+    data = marine_parks, 
+    aes(x = longitude, y = latitude, label = name, group = name),
+    show.legend=F,
+    alpha=0.8,
+    label.fontsize = 6,
+    label.buffer = unit(0.5, "mm"),
+    expand = unit(0.5, "mm") , 
+    radius = unit(1.5, "mm") ,
+    label.fill = "ivory", con.type = "elbow", con.colour = "black")+
+  coord_sf(xlim = c(38.8,40.), ylim = c(-5.6,-4.5))+
+  scale_fill_gradientn(colours=c("#5e24d6","#22496d","#042f66","#054780","#1074a6",
+                                "#218eb7","#48b5d2","#72d0e1","#9ddee7","#c6edec"),
+                       # breaks=c(0,-2500,-5000,-7500),
+                       # labels=c("0","2,500","5,000","7,500"),
+                       trans = scales::modulus_trans(p = .4),
+                       na.value = NA)+
+  theme_bw(base_size = 10)+
+  theme(
+    panel.background = element_blank(), # bg of the panel
+    panel.grid.major = element_blank(),
+    panel.ontop = TRUE,
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = "none"
+    )
+```
+
+
+
+
+
+```{r}
+#| eval: false
+#| 
+layout<-c(
+  patchwork::area(t=1,l=1,b=65,r=25),
+  patchwork::area(t=1,l=27,b=25,r=40),
+  patchwork::area(t=26,l=27,b=45,r=40),
+  patchwork::area(t=46,l=27,b=65,r=40)
+)
+
+plot(layout)
+```
+
+### Combined map
+
+The multi-panel map that combine the main map along with subset for Mafia Island Marine Park, Mnazi Bay-Ruvuma Estuary Marine Park, Tanga Coelacanth Marine Park is presented in @fig-final
+
+```{r, fig.width=8, fig.height=8}
+#| eval: false
+#| 
+
+fig.main+fig.pemba+fig.mafia+fig.mt +
+  plot_layout(guides = "collect",design = layout) +
+  plot_annotation(tag_levels = "A") &
+  theme(plot.title = element_text(face = "bold",size=25))
+
+# ggsave("map.png", width = 8, height = 8, dpi = 300)
+
+```
+
+
+![A map of the coastal and marine water of Tanzania with insets for Mafia Island Marine Park, Mnazi Bay-Ruvuma Estuary Marine Park, Tanga Coelacanth Marine Park](map.png){#fig-final}
+
+
+## References
+
+
+
+
+
+
+
+

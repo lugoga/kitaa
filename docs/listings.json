@@ -2,6 +2,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/mapping/index.html",
       "/posts/bio_oracle/index.html",
       "/posts/visualize_animate/index.html",
       "/posts/visualize_spatial/index.html",
@@ -29,6 +30,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/mapping/index.html",
       "/posts/bio_oracle/index.html",
       "/posts/visualize_animate/index.html",
       "/posts/visualize_spatial/index.html",
