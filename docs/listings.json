@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/archive.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/mapping_wio/index.html",
       "/posts/mapping/index.html",
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/archive.html",
     "items": [
       "/posts/mapping_wio/index.html",
       "/posts/mapping/index.html",
