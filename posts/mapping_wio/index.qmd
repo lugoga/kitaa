@@ -1,0 +1,298 @@
+---
+title: "Mapped: the bathymetry of WIO-Region"
+description: "Creating a Map of the Western Indian Ocean Region with Bathymetry and Country Labels in R"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/mapping_wio/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "2024-07-24"
+toc: true
+toc-depth: 4
+categories: [Mapping, Data Visualization, ggplot]
+image: map.png
+code-fold: false
+execute: 
+  warning: false
+  message: false
+  comment: ""
+  
+filters: 
+  - webr
+
+---
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KY4TDP558"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KY4TDP558');
+</script>
+
+
+
+
+## Introduction
+
+Mapping the western Indian Ocean region with bathymetry and country labels can provide valuable insights into the geographical and topographical features of the area. Using R, we can achieve this by leveraging powerful libraries such as ggplot2, sf, rnaturalearth, and marmap. This allows for the creation of detailed maps that showcase the underwater terrain, coastlines, and political boundaries of the region, enabling a deeper understanding of its physical geography.
+
+First, we need to load the required packages. These packages will provide the necessary functions and datasets to create our map. If the packages are not installed, please install them first before loading them in the session
+
+
+```{r}
+require(tidyverse)
+require(sf)
+require(rnaturalearth)
+require(rnaturalearthdata)
+require(marmap)
+require(terra)
+require(tidyterra)
+require(magrittr)
+require(ggforce)
+
+```
+
+
+## Define Map Extent
+
+Then we define the geographic extent of a map by specifying the minimum and maximum longitudes and latitudes. This step is important for focusing the map specifically on the western Indian Ocean region. By setting these boundaries, the map will display only the area within the specified coordinates, allowing for a targeted visualization of the desired region. 
+
+
+```{r}
+lon_min = 20
+lon_max = 80
+lat_min = -40
+lat_max = 20
+
+```
+
+
+## Get Bathymetry Data
+
+We then use he `getNOAA.bathy` function from the **marmap** package [@marmap] to retrieve bathymetry data (underwater topography) for the region, and the resolution parameter sets the resolution of the data.
+
+
+```{r}
+bathy = getNOAA.bathy(
+  lon1 = lon_min, lon2 = lon_max, 
+  lat1 = lat_min, lat2 = lat_max, 
+  resolution = 10
+  )
+
+```
+
+
+
+## Convert Bathymetry Data to Data Frame
+
+The bathymetry data obtained from the NOAA dataset is in matrix form. To plot it with **ggplot2** package [@ggplot], we need to convert it to a data frame or raster. This makes it easier to work with in the context of plotting functions.
+
+
+```{r}
+# Convert bathymetry data to a data frame
+bathy_df = marmap::as.xyz(bathy = bathy) |> 
+  rename(lon = 1, lat = 2, elevation = 3) |> 
+  as_tibble()
+```
+
+
+```{r}
+## Convert the bathymetry data to raster
+
+bathy.rast = bathy |>
+  marmap::as.raster() |> 
+  rast()
+
+bathy.rast[bathy.rast > 0] = NA
+```
+
+
+
+## Get World Map Data and Crop to Extent
+
+We retrieve world map data using the `ne_countries` function from the **rnaturalearth** package [@rnaturalearth]. This function returns spatial data for world countries. 
+
+```{r}
+world = ne_countries(
+  scale = "medium", 
+  returnclass = "sf"
+  )
+```
+
+We then crop this data to the desired map extent using the `st_crop` function from the **sf** package [@sf].
+
+```{r}
+world_cropped = world |> 
+  select(name, pop = pop_est, gdp = gdp_md, economy, income_grp) |> 
+  st_crop(
+    xmin = lon_min, xmax = lon_max, 
+    ymin = lat_min, ymax = lat_max
+    )
+```
+
+Then we filter the countries that are within the Western Indian Ocean region. We use `filter` function from **dplyr** package [@dplyr] to pick ten countries in the region.
+
+```{r}
+wio.sf = world_cropped |> 
+  filter(name %in% c("Somalia", "Kenya", "Tanzania", "Mozambique", "South Africa", "Madagascar", "Seychelles", "Comoros", "Mauritius", "Reunion"))
+```
+
+
+## Create a labels and description
+
+Then we create a tibble derived from the simple feature that contains coordinates (latitude and longitude) and description of population and economy for each country in the region
+
+```{r}
+wio.tb = wio.sf |> 
+  st_centroid() |> 
+  st_coordinates() |> 
+  as_tibble() |> 
+  select(lon = 1, lat = 2) |> 
+  bind_cols(
+    wio.sf |> 
+      st_drop_geometry() |> 
+      separate(economy, into = c("a", "economy"), sep = 2) |> 
+      separate(income_grp, into = c("a", "income_grp"), sep = 2) |> 
+      select(-a) |> 
+      mutate(
+        name = str_to_upper(name),
+        description = paste0(
+          "Population: ", scales::number(pop, big.mark = ","),"\n",
+          "Income group: ", income_grp
+          )
+        )
+)
+
+```
+
+## Plot the Map with Bathymetry
+We use ggplot2 to generate the map. The geom_raster function is employed to plot the bathymetry data, employing a color gradient to represent varying depth. The `geom_sf` function is used to plot the country boundaries, and the `coord_sf` function ensures the map is plotted within the defined geographic extent. The `geom_mark_circle` function from **ggforce** package [@ggforce] is then used to add these labels to the map. This enhances the map by providing clear, readable labels for key countries in the region.
+
+
+```{r, fig.width=8, fig.height=8}
+#| warning: false
+#| message: false
+#| 
+
+ggplot() +
+  geom_spatraster(data = bathy.rast) +
+  geom_spatraster_contour(data = bathy.rast, breaks = -600) +
+  ggspatial::layer_spatial(data = world_cropped, fill = "grey70", color = "white") +
+  ggspatial::layer_spatial(data = wio.sf, fill = "palegreen4", color = "white") +
+  ggforce::geom_mark_circle(
+    data = wio.tb,
+    aes(x = lon, y = lat, label = name, group = name, description = description),
+    show.legend=F, fill = "white",
+    alpha=0.8,
+    label.fontsize = 9,
+    label.fill = "grey85", 
+    position = "jitter", 
+    con.type = "elbow",
+    label.buffer = unit(8, "mm"), 
+    expand = unit(2.5, "mm"),
+    con.cap = unit(.8, "mm"), 
+    con.size = unit(.5, "mm"),
+    con.colour = "black")+
+  geom_point(data = wio.tb, aes(x = lon, y = lat), size = 2) +
+  ggspatial::annotation_scale(location =  "bl")+
+  ggspatial::annotation_north_arrow(
+    location = "tr", width = unit(6, "mm"), height = unit(6, "mm")) +
+  coord_sf(xlim = c(25,65), ylim = c(-35,15))+
+  scale_fill_gradientn(
+    name = "Depth (m)",
+    colours=c("#5e24d6","#22496d","#042f66","#054780","#1074a6",
+              "#218eb7","#48b5d2","#72d0e1","#9ddee7","#c6edec"),
+    breaks=seq(0,-7000,-1000),
+    labels=seq(0,7000,1000),
+    trans = scales::modulus_trans(p = .6),
+    na.value = NA)+
+  theme_bw(base_size = 10)+
+  theme(
+    panel.background = element_blank(), # bg of the panel
+    panel.grid.major = element_line(linetype = "dotted", colour="grey30",linewidth=0.15),
+    panel.ontop = TRUE,
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.title = element_blank(),
+    legend.position = c(0.90,.18)
+    )
+  
+```
+
+## Conclusion
+
+This map offers valuable geographical and topographical insights, making it useful for various applications in research, education, and more. Adjust the coordinates and resolution as needed for more detailed or broader plotting, and feel free to customize the map further to suit your specific needs. By following these steps, you can create any detailed map of interest that includes both seafloor depth and country labels.
+
+
+## References
+
+
+
+```{r, fig.width=8, fig.height=4}
+#| warning: false
+#| message: false
+#| eval: false
+#| echo: false
+
+ggplot() +
+  geom_spatraster(data = bathy.rast) +
+  geom_spatraster_contour(data = bathy.rast, breaks = -600) +
+  # ggspatial::layer_spatial(data = asia, fill = "grey70", color = "white") +
+   ggspatial::layer_spatial(data = world_cropped, fill = "grey70", color = "white") +
+  # ggspatial::layer_spatial(data = wio.eez|> st_transform(Projection3D), fill = NA, color = "black") +
+  ggspatial::layer_spatial(data = wio.sf, fill = "palegreen4", color = "white") +
+  ggforce::geom_mark_circle(
+    data = wio.tb,
+    aes(x = lon, y = lat, label = name, group = name, description = description),
+    show.legend=F, fill = "white",
+    alpha=0.8,
+    label.fontsize = 9,
+    label.fill = "grey85", 
+    position = "jitter", 
+    con.type = "elbow",
+    label.buffer = unit(8, "mm"), 
+    expand = unit(2.5, "mm"),
+    con.cap = unit(.8, "mm"), 
+    con.size = unit(.5, "mm"),
+    con.colour = "black")+
+  geom_point(data = wio.tb, aes(x = lon, y = lat), size = 2) +
+  ggspatial::annotation_scale(location =  "bl")+
+  ggspatial::annotation_north_arrow(location = "tr", width = unit(6, "mm"), height = unit(6, "mm")) +
+  coord_sf(xlim = c(25,65), ylim = c(-15,5))+
+  scale_fill_gradientn(
+    name = "Depth (m)",
+    colours=c("#5e24d6","#22496d","#042f66","#054780","#1074a6",
+              "#218eb7","#48b5d2","#72d0e1","#9ddee7","#c6edec"),
+    breaks=seq(0,-7000,-1000),
+    labels=seq(0,7000,1000),
+    trans = scales::modulus_trans(p = .6),
+    na.value = NA)+
+  theme_bw(base_size = 10)+
+  theme(
+    panel.background = element_blank(), # bg of the panel
+    panel.grid.major = element_line(linetype = "dotted", colour="grey30",linewidth=0.15),
+    panel.ontop = TRUE,
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.title = element_blank(),
+    legend.position = c(0.90,.25)
+    )
+
+ggsave("map.png", width = 8, height = 4, dpi = 300)
+  
+```
+
+
+
+
+

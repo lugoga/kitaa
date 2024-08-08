@@ -14,7 +14,7 @@ csl:  ../elsevier.csl
 date: "2024-07-12"
 toc: true
 toc-depth: 4
-categories: [Data Science, Data Visualization, ggplot]
+categories: [Mapping, Data Visualization, ggplot]
 image: map.png
 code-fold: false
 execute: 
