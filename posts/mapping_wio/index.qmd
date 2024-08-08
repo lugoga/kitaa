@@ -46,6 +46,8 @@ filters:
 
 Mapping the western Indian Ocean region with bathymetry and country labels can provide valuable insights into the geographical and topographical features of the area. Using R, we can achieve this by leveraging powerful libraries such as ggplot2, sf, rnaturalearth, and marmap. This allows for the creation of detailed maps that showcase the underwater terrain, coastlines, and political boundaries of the region, enabling a deeper understanding of its physical geography.
 
+![](map.png)
+
 First, we need to load the required packages. These packages will provide the necessary functions and datasets to create our map. If the packages are not installed, please install them first before loading them in the session
 
 
