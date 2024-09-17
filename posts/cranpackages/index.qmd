@@ -1,0 +1,128 @@
+---
+title: "Tracking the Growth of CRAN Packages"
+description: "This post explaining how to analyze and visualize the cumulative increase of CRAN packages using R and ggplot2"
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/summarytool/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "2024-09-02"
+date-modified: "2024-09-22"
+categories: [visualization, code, Statistics]
+image: "cranpack.png"
+toc: true
+execute: 
+  warning: false
+  message: false
+  comment: ""
+  
+---
+
+
+
+
+## Introduction
+
+If you're interested in the growth of CRAN packages over time, you can analyze and visualize this using R. This post will walk you through a simple example using data from CRAN to track how the number of packages has increased over time. We'll use the `rvest` package to scrape the data, `dplyr` for data manipulation, and `ggplot2` for visualization.
+
+```{r}
+require(tidyverse)
+```
+
+
+
+
+### Step 1: Fetching Data from CRAN
+
+First, we need to get the data on CRAN packages. We'll use the `rvest` package to scrape the information from CRAN's webpage:
+
+```{r}
+
+
+# Read the HTML table from CRAN's available packages page
+
+packages = rvest::read_html("https://cran.r-project.org/web/packages/available_packages_by_date.html") |>
+
+rvest::html_table()
+
+```
+
+Here, we use `read_html()` to load the webpage and `html_table()` to extract the table containing package release dates.
+
+```{r}
+#| echo: false
+#| 
+packages |> 
+  purrr::pluck(1) |> 
+  FSA::headtail(n = 5) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+```
+
+
+### Step 2: Data Manipulation
+
+Next, we'll manipulate the data to calculate the cumulative number of packages. We'll use `dplyr` for this:
+
+```{r}
+# Process the data
+
+packages = packages |>
+purrr::pluck(1) |> # Extract the first table
+group_by(Date) |> # Group by Date
+tally() |> # Count the number of packages released on each date
+mutate(
+total = cumsum(n), # Calculate cumulative total
+Date = as.Date(Date) # Ensure Date column is of Date type
+) |>
+ungroup()
+```
+
+
+The function `purrr::pluck(1)` is used to extract the first table from the list obtained from the HTML page. Next, `group_by(Date)` organizes the data by each release date, allowing us to group the packages released on the same day. We then use `tally()` to count the number of packages released on each of these dates. Finally, `cumsum(n)` calculates the cumulative total of packages, giving us a running total of the number of packages available over time.
+
+```{r}
+packages |> 
+  FSA::headtail(n = 5) |> 
+  flextable::flextable() |> 
+  flextable::autofit()
+
+```
+
+
+
+### Step 3: Visualizing the Data
+
+Finally, we use `ggplot2` to create a line plot of the cumulative number of packages over time:
+
+```{r}
+#| fig-width: 6
+#| fig-height: 3
+
+packages |>
+  ggplot(aes(x = Date, y = total)) +
+  geom_path(linewidth = 0.6) +
+  labs(
+    title = "Cumulative Increase of CRAN Packages Over Time",
+      subtitle =str_wrap(string = "Represents the total count of unique packages available over time, illustrating the overall growth and expansion of the CRAN repository",width = 90),
+      x = "Date",
+      y = "Packages"
+  ) +
+  scale_y_continuous(labels = scales::label_number(big.mark = ","))+
+  theme_minimal(base_size = 10)+
+  theme(axis.title.x = element_blank(), panel.grid = element_blank(), 
+    plot.title = element_text(face = "bold", size = 15),
+    plot.subtitle = element_text(size = 10, face = "plain", color = "cyan4",
+                                 margin = margin(b = 15))) 
+```
+
+
+### Conclusion
+
+With this approach, you can easily visualize how the number of CRAN packages has grown over time. This method can be adapted for other types of time-series data and can provide valuable insights into trends and growth patterns.
+
