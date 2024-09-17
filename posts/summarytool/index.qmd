@@ -1,0 +1,148 @@
+---
+title: "Summarize data frame with easy using the `summarytools` Package in R"
+description: "This post shows how to use the summarytools package in R with the Palmer Penguins dataset to summarize data."
+author: 
+  - name: Masumbuko Semba
+    url: https://semba.netlify.app
+    orcid: 0000-0002-5002-9747
+    affiliation: Nelson Mandela African Institution of Science and Technology
+    affiliation-url: https://semba.netlify.app/  
+citation: 
+    url: https://lugoga.github.io/kitaa/posts/summarytool/
+bibliography: ../blog.bib
+csl:  ../elsevier.csl
+date: "2024-08-20"
+date-modified: "2024-08-22"
+categories: [visualization, code, Statistics]
+image: "summarytool.png"
+toc: true
+execute: 
+  warning: false
+  message: false
+  comment: ""
+
+---
+
+
+
+## Introduction
+
+Summarizing data is a critical first step in any data analysis project. The `summarytools` package in R is a powerful tool designed to facilitate this process, providing a range of summary statistics, descriptive statistics, and frequency tables that allow users to explore datasets quickly and efficiently. In this blog post, we will walk through how to use `summarytools` with the famous Palmer Penguins dataset from the `palmerpenguins` package. By the end of this guide, you'll be equipped with the skills to explore and summarize your data with ease.
+
+
+
+## Load Packages and Data
+
+The `summarytools` package provides multiple functions that allow you to summarize data in different formats, making it a perfect tool for exploratory data analysis (EDA). First, let's load the necessary packages and data. We'll be using `summarytools` for summarizing and `palmerpenguins` for the dataset.
+
+
+
+```{r}
+require(tidyverse)
+require(summarytools)
+require(magrittr)
+```
+
+
+The `penguins` dataset consists of observations on three species of penguins from the Palmer Archipelago in Antarctica. It includes various measurements like body mass, bill length, and flipper length.
+
+
+```{r}
+penguins = palmerpenguins::penguins
+penguins |> glimpse()
+```
+
+## Data Frame Summary with `dfSummary()`
+
+The `dfSummary()` function provides a comprehensive summary of the entire dataframe, including the number of missing values, unique values, and the distribution of categorical and numerical variables.
+
+
+```{r}
+penguins |> 
+  select(-year) |> 
+  dfSummary() |> 
+  print(method = "render")
+```
+
+The output will give you a detailed overview of each column, highlighting potential issues like missing values or unbalanced classes. This is especially useful when working with large datasets, as it provides insights at a glance.
+
+## Descriptive Statistics with `descr()`
+
+For numerical data, `descr()` is the go-to function for descriptive statistics. It calculates key summary statistics like the mean, median, standard deviation, and more.
+
+
+
+```{r}
+penguins |> 
+  select(-year) |> 
+  descr()|> 
+  print(method = "render")
+```
+
+
+This will provide a table showing the descriptive statistics for numerical variables such as `bill_length_mm`, `flipper_length_mm`, and `body_mass_g`. The function is flexible and can also handle weighted statistics if needed.
+
+## Frequency Table with `freq()`
+
+For categorical variables, the `freq()` function generates frequency tables that show the count and proportion of each category. This is particularly useful for understanding the distribution of factors like species or island.
+
+```{r}
+penguins |> 
+  select(species) |> 
+  freq() |> 
+  print(method = "render")
+
+```
+
+In the case of the `species` variable, this function will provide the count and percentage of each species of penguin (Adelie, Chinstrap, Gentoo) in the dataset, giving you insights into the dataset's composition.
+
+
+## Cross tabulation
+
+The `ctable()` function from the summarytools package allows to perform cross-tabulation, which helps analyze the relationship between two categorical variables by displaying the frequency distribution of their combinations.
+
+
+```{r}
+
+penguins |> 
+  drop_na() %$%
+  ctable(
+    x = species, y = sex,
+    OR =  TRUE,
+    RR = TRUE
+    ) |> 
+  print(method = "render")
+
+```
+
+
+
+To include the chi-square statistic in the cross-tabulation, you can set the chisq = TRUE argument in the ctable() function. Here's how you can do it using the Palmer Penguins dataset:
+
+```{r}
+
+penguins |> 
+  drop_na() %$%
+  ctable(
+    x = species, y = sex,
+    OR =  TRUE,
+    RR = TRUE,
+    chisq = TRUE
+    ) |> 
+  print(method = "render")
+
+```
+
+
+
+## Summary and Conclusion
+
+In this blog post, we've demonstrated the use of the `summarytools` package in R with the Palmer Penguins dataset. We explored how to use key functions like `dfSummary()` for an overall dataframe summary, `descr()` for descriptive statistics, and `freq()` for frequency tables. These tools are invaluable for gaining a deeper understanding of your data and preparing it for further analysis.
+
+## References
+
+-   Palmer Penguins Data: https://allisonhorst.github.io/palmerpenguins/
+
+-   Summarytools Documentation: https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
+
+

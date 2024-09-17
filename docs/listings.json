@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/summarytool/index.html",
       "/posts/mapping_gdp/index.html",
       "/posts/mapping_wio/index.html",
       "/posts/mapping/index.html",
@@ -32,6 +33,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/summarytool/index.html",
       "/posts/mapping_gdp/index.html",
       "/posts/mapping_wio/index.html",
       "/posts/mapping/index.html",
