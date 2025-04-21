@@ -14,4 +14,5 @@ Datika is a platform for sharing experiences and projects related to statistics 
 
 
 Masumbuko Semba developed the Datika website using Quarto, hosted on GitHub. 
+
 Datika is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International. 
